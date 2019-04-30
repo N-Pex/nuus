@@ -1,7 +1,6 @@
 {
   "name": "nuus",
   "short_name": "nuus",
-  "version": "0.1",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
