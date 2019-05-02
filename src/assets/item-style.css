@@ -1,0 +1,40 @@
+h1 {
+    color: #000;
+    font-size: 28pt;
+}
+
+h1.white {
+    color: #fff;
+    background-color: #000;
+    font-size: 23pt;
+}
+
+h2 {
+    color: #000;
+    font-size: 17pt;
+}
+
+h3 {
+    color: #1B9739 !important;
+    font-size: 13pt;
+}
+
+h4 {
+    color: #9B9B9B;
+    font-size: 11pt;
+}
+
+.body {
+    color: #000;
+    font-size: 14pt;
+}
+
+.mediaDescription {
+    color: #000;
+    font-size: 11pt;
+}
+
+.date {
+    color: #000;
+    font-size: 8pt;
+}

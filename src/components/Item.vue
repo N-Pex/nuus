@@ -30,7 +30,8 @@
             </div>
           </v-card-title>
           <v-card-text>
-              <div v-html="item.description" />
+              <div v-html="item.pubDate" class="date" />
+              <div v-html="item.description" class="body" />
           </v-card-text>
 
           <v-card-actions>
@@ -56,6 +57,7 @@ export default {
 
   mounted: function () {
     var self = this;
+    if (this.$root.showMedia) {
     if (this.hasVideoEnclosure()) {
       this.enclosure().then(function(res) {
        self.enclosureURL = res;
@@ -66,6 +68,7 @@ export default {
        self.enclosureURL = res;
        self.$refs.audio.load();
       });
+    }
     }
   },
   data: () => ({
@@ -112,5 +115,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@import url("../assets/item-style.css");
 </style>
+
