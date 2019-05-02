@@ -1,6 +1,7 @@
 <template>
 <v-content>
-      <div>Onboarding</div>
+      <div><h3>Onboarding</h3></div>
+      <div>Your language is {{ language }}</div>
       <v-btn color="success" @click="done();">Done</v-btn>
 </v-content>
 </template>
@@ -10,21 +11,20 @@
 export default {
   name: 'Onboarding',
   computed: {
-        onboarded: {
-          get: function () {
-            return this.$store.state.onboarded;
-          },
-          set: function (val) {
-            this.$store.commit("onboarded", val);
-          }
-        }
+    language: function() {
+      var lang = navigator.language || navigator.userLanguage; 
+      return lang;
+    }
   },
   methods: {
     done() {
-      console.log("Setting onboarded to true from " + this.onboarded);
-      this.onboarded = true;
+      this.$root.onboarded = true;
       this.$root.$router.replace("/");
     }
   }
 }
 </script>
+
+<style scoped>
+@import url("../assets/item-style.css");
+</style>

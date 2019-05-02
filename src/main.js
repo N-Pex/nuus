@@ -9,6 +9,13 @@ import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
+// Make sure Array.isArray is defined
+if (!Array.isArray) {
+  Array.isArray = function(arg) {
+    return Object.prototype.toString.call(arg) === '[object Array]';
+  };
+}
+
 router.beforeEach((to, from, next) => {
   console.log("Before router redir " + store.state.onboarded);
   if (to.path.startsWith("/onboarding") || store.state.onboarded) {
