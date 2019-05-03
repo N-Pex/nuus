@@ -2,16 +2,16 @@
   <v-card class="ma-3">
     <div v-if="$root.showMedia">
       <video
-        v-if="hasVideoEnclosure()"
+        v-if="item.hasVideoEnclosure()"
         ref="video"
         width="100%"
         controls
         @timeupdate="onTimeUpdate"
         v-bind:currentTime.prop="savedPlayTime(item.enclosure)"
       >
-        <source :src="enclosure()" :type="item.enclosureType">Your browser does not support the video tag.
+        <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the video tag.
       </video>
-      <audio v-if="hasAudioEnclosure()" ref="audio" width="100%" controls>
+      <audio v-if="item.hasAudioEnclosure()" ref="audio" width="100%" controls>
         <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the audio tag.
       </audio>
       <v-img v-else-if="item.imageSrc != null" :src="imageUrl()" aspect-ratio="2.75"></v-img>
@@ -27,8 +27,8 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn flat color="orange">Share</v-btn>
-      <v-btn flat color="orange">Explore</v-btn>
+      <v-btn flat color="accent">Share</v-btn>
+      <v-btn flat color="accent">Explore</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -36,13 +36,14 @@
 
 <script>
 import db from "../database";
+import ItemModel from "../models/itemmodel";
 
 export default {
   props: {
     item: {
-      type: Object,
+      type: ItemModel,
       default: function() {
-        return {};
+        return new ItemModel();
       }
     }
   },
@@ -50,12 +51,12 @@ export default {
   mounted: function() {
     var self = this;
     if (this.$root.showMedia) {
-      if (this.hasVideoEnclosure()) {
+      if (this.item.hasVideoEnclosure()) {
         this.enclosure().then(function(res) {
           self.enclosureURL = res;
           self.$refs.video.load();
         });
-      } else if (this.hasAudioEnclosure()) {
+      } else if (this.item.hasAudioEnclosure()) {
         this.enclosure().then(function(res) {
           self.enclosureURL = res;
           self.$refs.audio.load();
@@ -68,18 +69,6 @@ export default {
     //   savedPlayTime: 30
   }),
   methods: {
-    hasVideoEnclosure() {
-      return (
-        this.item.enclosureType != null &&
-        this.item.enclosureType.indexOf("video") === 0
-      );
-    },
-    hasAudioEnclosure() {
-      return (
-        this.item.enclosureType != null &&
-        this.item.enclosureType.indexOf("audio") === 0
-      );
-    },
     async enclosure() {
       if (this.item.enclosure.startsWith("file://")) {
         let blob = await db.getMediaFile(this.item.enclosure);
