@@ -51,7 +51,6 @@ Vue.instance = new Vue({
         this.$store.commit("showMedia", val);
       }
     } 
- 
   }
 }).$mount('#app')
 

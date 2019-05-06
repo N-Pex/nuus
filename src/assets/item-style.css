@@ -31,7 +31,7 @@ h4 {
 
 .body {
     color: var(--v-primary-base);
-    font-size: 14pt;
+    font: var(--v-theme-body-font);
 }
 
 .mediaDescription {
@@ -43,3 +43,13 @@ h4 {
     color: var(--v-primary-base);
     font-size: 8pt;
 }
+
+.contentBlock::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.0), #fff);
+    margin-top: -20px;
+    height: 20px;
+    width: 100%;
+    content: '';
+  }

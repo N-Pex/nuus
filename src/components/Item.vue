@@ -1,5 +1,6 @@
 <template>
-  <v-card class="ma-3">
+<v-flex ref="card">
+  <v-card class="ma-3" @click="itemClicked()">
     <div v-if="$root.showMedia">
       <video
         v-if="item.hasVideoEnclosure()"
@@ -11,7 +12,7 @@
       >
         <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the video tag.
       </video>
-      <audio v-if="item.hasAudioEnclosure()" ref="audio" width="100%" controls>
+      <audio v-else-if="item.hasAudioEnclosure()" ref="audio" width="100%" controls>
         <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the audio tag.
       </audio>
       <v-img v-else-if="item.imageSrc != null" :src="imageUrl()" aspect-ratio="2.75"></v-img>
@@ -21,16 +22,16 @@
         <h3>{{ item.title }}</h3>
       </div>
     </v-card-title>
-    <v-card-text>
+    <v-card-text class="contentBlock">
       <div v-html="item.pubDate" class="date"/>
-      <div v-html="item.description" class="body"/>
+      <div v-html="item.description" class="body" style="max-height:150px;overflow:hidden" />
     </v-card-text>
 
     <v-card-actions>
-      <v-btn flat color="accent">Share</v-btn>
-      <v-btn flat color="accent">Explore</v-btn>
+      <v-btn flat color="accent" @click="readMore()">Read more</v-btn>
     </v-card-actions>
   </v-card>
+</v-flex>
 </template>
 
 
@@ -97,6 +98,16 @@ export default {
         return localStorage.getItem("playhead:" + url);
       }
       return 0;
+    },
+    
+    itemClicked() {
+      console.log("Item " + this.$refs.card.getBoundingClientRect());
+      this.$emit("itemClicked", {item: this.item, rect: this.$refs.card.getBoundingClientRect()});
+    },
+
+    readMore() {
+      console.log("Item " + this.$refs.card.getBoundingClientRect());
+      this.$emit("itemClicked", {item: this.item, rect: this.$refs.card.getBoundingClientRect()});
     }
   }
 };

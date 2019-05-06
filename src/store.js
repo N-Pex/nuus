@@ -12,7 +12,10 @@ const vuexPersist = new VuexPersist({
 export default new Vuex.Store({
   state: {
     onboarded: false,
-    showMedia: false
+    showMedia: false,
+    themeBodyFont: "Open Sans",
+    themeBodySize: 14,
+    textSizeAdjustment: 0
   },
   mutations: {
     onboarded (state, onboarded) {
@@ -20,7 +23,16 @@ export default new Vuex.Store({
     },
     showMedia (state, value) {
       state.showMedia = value;
+    },
+    setThemeBodyFont(state, font) {
+      state.themeBodyFont = font;
+    },
+    setThemeBodySize(state, size) {
+      state.themeBodySize = size;
+    },
+    setTextSizeAdjustment(state, adjustment) {
+      state.textSizeAdjustment = adjustment;
     }
-  },
+ },
   plugins: [vuexPersist.plugin]
 })

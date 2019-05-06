@@ -51,12 +51,18 @@
             <v-list-tile-sub-title>Show images, video and audio</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-slider v-model="textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
 
     <v-content>
       <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
-      <ItemList v-bind:items="items"/>
+      <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)"/>
     </v-content>
   </v-app>
 </template>
@@ -82,6 +88,11 @@ export default {
       rssparser.fetchUrl(url, function(items) {
         self.items = items;
       });
+    },
+    itemClicked(eventInfo) {
+      console.log(
+        "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
+      );
     }
   },
   data() {
@@ -97,6 +108,16 @@ export default {
       ]
       //
     };
+  },
+  computed: {
+    textSizeAdjustment: {
+      get: function() {
+        return this.$store.state.textSizeAdjustment;
+      },
+      set: function(val) {
+        this.$store.commit("setTextSizeAdjustment", val);
+      }
+    }
   }
 };
 </script>
