@@ -63,6 +63,18 @@
     <v-content>
       <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
       <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)"/>
+      <transition
+        v-on:before-enter="beforeEnter"
+        v-on:enter="enter"
+        v-on:leave="leave"
+        v-bind:css="false"
+      >
+        <v-container class="ma-0 pa-0 fullScreenItemDisplay" v-if="showItemFullscreen">
+          <v-layout row wrap>
+            <Item class="ma-3" :item="itemFullscreen" v-on:itemClicked="itemCloseClicked($event)"/>
+          </v-layout>
+        </v-container>
+      </transition>
     </v-content>
   </v-app>
 </template>
@@ -70,18 +82,55 @@
 <script>
 import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
+import Item from "../components/Item";
+
 import axios from "axios";
 import sanitizeHTML from "sanitize-html";
 import db from "../database";
 import rssparser from "../services/rssparser";
+import velocity from "velocity-animate";
 
 export default {
   name: "Home",
   components: {
     UrlInput,
-    ItemList
+    ItemList,
+    Item
   },
   methods: {
+    beforeEnter: function(el) {
+      el.style.opacity = 0;
+      el.style.left = this.itemRect.x + "px";
+      el.style.top = this.itemRect.y + "px";
+      el.style.width = this.itemRect.width + "px";
+      el.style.height = this.itemRect.height + "px";
+    },
+    enter: function(el, done) {
+      Velocity(
+        el,
+        {
+          opacity: 1,
+          left: "0px",
+          top: "0px",
+          width: "100%",
+          height: "100%"
+        },
+        { duration: 600, complete: done }
+      );
+    },
+    leave: function(el, done) {
+      Velocity(
+        el,
+        {
+          opacity: 0,
+          left: this.itemRect.x + "px",
+          top: this.itemRect.y + "px",
+          width: this.itemRect.width + "px",
+          height: this.itemRect.height + "px"
+        },
+        { duration: 600, complete: done }
+      );
+    },
     urlUpdated(url) {
       this.url = url;
       const self = this;
@@ -93,6 +142,12 @@ export default {
       console.log(
         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
       );
+      this.itemFullscreen = eventInfo.item;
+      this.itemRect = eventInfo.rect;
+      this.showItemFullscreen = true;
+    },
+    itemCloseClicked(eventInfo) {
+      this.showItemFullscreen = false;
     }
   },
   data() {
@@ -100,6 +155,9 @@ export default {
       url: "Please enter a URL",
       items: [],
       drawer: null,
+      itemRect: new DOMRect(0, 0, 0, 0),
+      itemFullscreen: null,
+      showItemFullscreen: false,
       menuItems: [
         /*
         { title: 'Home', icon: 'dashboard' },
@@ -108,6 +166,11 @@ export default {
       ]
       //
     };
+  },
+  watch: {
+    showItemFullscreen: function(isOpen) {
+       document.querySelector('html').classList.toggle('application--dialog-opened', isOpen);
+    }
   },
   computed: {
     textSizeAdjustment: {
@@ -124,4 +187,19 @@ export default {
 
 <style scoped>
 @import url("../assets/item-style.css");
+</style>
+
+<style>
+.application--dialog-opened{
+  overflow: hidden;
+}
+
+.fullScreenItemDisplay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ff0;
+}
 </style>
