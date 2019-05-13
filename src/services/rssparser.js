@@ -1,6 +1,7 @@
 import axios from "axios";
 import sanitizeHTML from 'sanitize-html';
 import db from '../database';
+import FeedModel from '../models/feedmodel.js';
 import ItemModel from '../models/itemmodel.js';
 
 export default class RSSParser {
@@ -76,8 +77,20 @@ export default class RSSParser {
         var items = [];
         var index = 0;
         parseString(data, { explicitArray: false }, function (err, result) {
+            var feed = new FeedModel();
+            feed.title = result.rss.channel.title;
+            feed.link = result.rss.channel.link;
+            feed.description = result.rss.channel.description;
+            if (result.rss.channel.image != null) {
+                feed.imageUrl = result.rss.channel.image.url;
+            }
+            if (feed.imageUrl == null) {
+                feed.imageUrl = result.rss.channel["itunes:image"].$.href;
+            }
+
             result.rss.channel.item.forEach(i => {
                 var item = new ItemModel();
+                item.feed = feed;
                 item.title = i.title;
                 item.link = i.link;
                 item.guid = i.guid;

@@ -1,5 +1,10 @@
 <template>
-  <v-container align-start v-if="item != null && item.hasVideoEnclosure()" :class="{ 'ma-0': true, 'pa-0': true, 'floatingPlayer': true, docked: isDocked }" :style="cssProps">
+  <v-container
+    align-start
+    v-if="item != null && item.hasVideoEnclosure()"
+    :class="{ 'ma-0': true, 'pa-0': true, 'floatingPlayer': true, docked: isDocked }"
+    :style="cssProps"
+  >
     <v-layout justify-end class="toolbar">
       <v-btn flat icon color="white" @click="dock()" class="ma-0 pa-0" style="min-width: 0">
         <v-icon small class="ma-0 pa-0">minimize</v-icon>
@@ -9,14 +14,18 @@
       </v-btn>
     </v-layout>
 
-    <video align-start ref="video" controls :class="{ 'videoPlayer': true, docked: isDocked }" 
+    <video
+      align-start
+      ref="video"
+      controls
+      :class="{ 'videoPlayer': true, docked: isDocked }"
       @loadeddata="onVideoLoaded"
       @seeked="onVideoSeeked"
       @pause="onVideoPaused"
-      >
+    >
       <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the video tag.
     </video>
-  </v-container >
+  </v-container>
 </template>
 
 
@@ -35,17 +44,17 @@ export default {
   watch: {
     item: function() {
       if (this.item != null && this.item.hasVideoEnclosure()) {
-          const self = this;
-          this.enclosure().then(function(res) {
-            self.enclosureURL = res;
-            self.$refs.video.pause();
-            self.$refs.video.load();
-          });
-          this.isDocked = false;
-          this.show = true;
-        } else {
-          this.show = false;
-        }
+        const self = this;
+        this.enclosure().then(function(res) {
+          self.enclosureURL = res;
+          self.$refs.video.pause();
+          self.$refs.video.load();
+        });
+        this.isDocked = false;
+        this.show = true;
+      } else {
+        this.show = false;
+      }
     }
   },
   computed: {
@@ -65,7 +74,7 @@ export default {
       }
       return this.item.enclosure;
     },
-        
+
     onVideoLoaded() {
       // Check if we have stored a playhead position for this video
       //
@@ -73,6 +82,22 @@ export default {
       if (localStorage.getItem("playhead:" + url) != null) {
         let time = localStorage.getItem("playhead:" + url);
         this.$refs.video.currentTime = time;
+      }
+
+      if ("mediaSession" in navigator) {
+        let meta = {
+          title: this.item.title,
+          artist: this.item.feed.title,
+        }
+        if (this.item.feed.imageUrl != null) {
+          console.log("Set artwork to " + this.item.feed.imageUrl);
+          meta.artwork = [
+            {
+              src: this.item.feed.imageUrl
+            }
+          ]
+        }
+        navigator.mediaSession.metadata = new MediaMetadata(meta);
       }
     },
 
@@ -136,5 +161,4 @@ export default {
   height: 60px;
   padding-left: 10px;
 }
-
 </style>

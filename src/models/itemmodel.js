@@ -1,4 +1,7 @@
 export default class ItemModel extends Object {
+    // The feed this item is part of
+    feed = null;
+
     title = "";
     link = "";
     guid = "";
