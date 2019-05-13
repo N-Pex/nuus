@@ -13,8 +13,7 @@ export default new Vuex.Store({
   state: {
     onboarded: false,
     showMedia: false,
-    themeBodyFont: "Open Sans",
-    themeBodySize: 14,
+    flavor: "english",
     textSizeAdjustment: 0
   },
   mutations: {
@@ -24,11 +23,8 @@ export default new Vuex.Store({
     showMedia (state, value) {
       state.showMedia = value;
     },
-    setThemeBodyFont(state, font) {
-      state.themeBodyFont = font;
-    },
-    setThemeBodySize(state, size) {
-      state.themeBodySize = size;
+    setFlavor(state, flavor) {
+      state.flavor = flavor;
     },
     setTextSizeAdjustment(state, adjustment) {
       state.textSizeAdjustment = adjustment;

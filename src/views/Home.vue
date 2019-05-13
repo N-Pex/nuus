@@ -63,7 +63,7 @@
     <v-content>
       <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
       <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)"/>
-      <FloatingVideoPlayer ref="videoPlayer" />
+      <FloatingVideoPlayer ref="videoPlayer"/>
       <transition
         v-on:before-enter="beforeEnter"
         v-on:enter="enter"
@@ -91,6 +91,7 @@ import sanitizeHTML from "sanitize-html";
 import db from "../database";
 import rssparser from "../services/rssparser";
 import velocity from "velocity-animate";
+import flavors from "../config";
 
 export default {
   name: "Home",
@@ -154,6 +155,14 @@ export default {
       this.showItemFullscreen = false;
     }
   },
+
+  mounted() {
+    let flavor = flavors[this.$store.state.flavor];
+    console.log("Loading web font " + flavor.themeBodyFont);
+    var WebFont = require("webfontloader");
+    WebFont.load(flavor.webFontConfig);
+  },
+
   data() {
     return {
       url: "Please enter a URL",
@@ -173,7 +182,9 @@ export default {
   },
   watch: {
     showItemFullscreen: function(isOpen) {
-       document.querySelector('html').classList.toggle('application--dialog-opened', isOpen);
+      document
+        .querySelector("html")
+        .classList.toggle("application--dialog-opened", isOpen);
     }
   },
   computed: {
@@ -194,7 +205,7 @@ export default {
 </style>
 
 <style>
-.application--dialog-opened{
+.application--dialog-opened {
   overflow: hidden;
 }
 

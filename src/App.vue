@@ -11,6 +11,7 @@ import axios from "axios";
 import sanitizeHTML from "sanitize-html";
 import db from "./database";
 import { constants } from "fs";
+import flavors from "./config";
 
 //import xml2js from "xml2js";
 
@@ -40,12 +41,18 @@ export default {
       ]
     };
   },
+
+  mounted() {
+    console.log("App mounted");
+  },
+
   computed: {
     cssProps() {
+      let flavor = flavors[this.$store.state.flavor];
       let fontDeclaration =
-        (this.$store.state.themeBodySize +
+        (flavor.themeBodySize +
           this.$store.state.textSizeAdjustment) +
-        "pt" + " '" + this.$store.state.themeBodyFont +
+        "pt" + " '" + flavor.themeBodyFont +
         "'";
       console.log("Returning font declaration: " + fontDeclaration);
       return {

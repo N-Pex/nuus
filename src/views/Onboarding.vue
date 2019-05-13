@@ -17,36 +17,14 @@
 </template>
 
 <script>
+
+import flavors from '../config';
+
 export default {
   name: "Onboarding",
   data() {
     return {
       loadFont: false,
-      configs: {
-        uyghur: {
-          themeBodyFont: "AlpidaUnicodeSystem",
-          themeBodySize: 14,
-          webFontConfig: {
-            custom: {
-              families: ["AlpidaUnicodeSystem"],
-              urls: ["./assets/fonts/uighur.css"],
-              testStrings: {
-                "AlpidaUnicodeSystem": "\u067E"
-              }
-            }
-          }
-        },
-        english: {
-          themeBodyFont: "Indie Flower",
-          themeBodySize: 14,
-          webFontConfig: {
-            custom: {
-              families: ["Indie Flower"],
-              urls: ["./assets/fonts/english.css"]
-            }
-          }
-        }
-      }
     };
   },
   computed: {
@@ -57,12 +35,7 @@ export default {
   },
   methods: {
     useConfig(config) {
-      let c = this.configs[config];
-
-      var WebFont = require("webfontloader");
-      WebFont.load(c.webFontConfig);
-      this.$store.commit("setThemeBodyFont", c.themeBodyFont);
-      this.$store.commit("setThemeBodySize", c.themeBodySize);
+      this.$store.commit("setFlavor", config);
     },
 
     done() {
