@@ -63,6 +63,7 @@
     <v-content>
       <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
       <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)"/>
+      <FloatingVideoPlayer ref="videoPlayer" />
       <transition
         v-on:before-enter="beforeEnter"
         v-on:enter="enter"
@@ -83,6 +84,7 @@
 import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
 import Item from "../components/Item";
+import FloatingVideoPlayer from "../components/FloatingVideoPlayer";
 
 import axios from "axios";
 import sanitizeHTML from "sanitize-html";
@@ -95,7 +97,8 @@ export default {
   components: {
     UrlInput,
     ItemList,
-    Item
+    Item,
+    FloatingVideoPlayer
   },
   methods: {
     beforeEnter: function(el) {
@@ -144,7 +147,8 @@ export default {
       );
       this.itemFullscreen = eventInfo.item;
       this.itemRect = eventInfo.rect;
-      this.showItemFullscreen = true;
+      // this.showItemFullscreen = true;
+      this.$refs.videoPlayer.item = eventInfo.item;
     },
     itemCloseClicked(eventInfo) {
       this.showItemFullscreen = false;
