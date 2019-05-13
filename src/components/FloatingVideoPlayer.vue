@@ -69,6 +69,7 @@ export default {
     onVideoLoaded() {
       // Check if we have stored a playhead position for this video
       //
+      var url = this.item.enclosure;
       if (localStorage.getItem("playhead:" + url) != null) {
         let time = localStorage.getItem("playhead:" + url);
         this.$refs.video.currentTime = time;
