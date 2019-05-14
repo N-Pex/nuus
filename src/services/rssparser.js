@@ -22,7 +22,7 @@ export default class RSSParser {
                             if (relativePath == "index.rss") {
                                 promises.push(file.async("string")
                                     .then(function (text) {
-                                        items = self.parseRSS(self, text);
+                                        items = self.parseFeed(self, text);
                                     }));
                             } else if (relativePath.startsWith("enc/") && !file.dir) {
                                 let url = "file://" + relativePath;
@@ -55,9 +55,10 @@ export default class RSSParser {
                     // always executed
                 });
         } else {
+            console.log("Ask axios to get: " + url);
             axios.get(url)
                 .then(function (response) {
-                    let items = self.parseRSS(self, response.data);
+                    let items = self.parseFeed(self, response.data);
                     callback(items);
                 })
                 .catch(function (error) {
@@ -70,52 +71,76 @@ export default class RSSParser {
         }
     }
 
-    static parseRSS(self, data) {
+    static parseFeed(self, data) {
         // Get the parseString function
         var parseString = require('xml2js').parseString;
 
         var items = [];
-        var index = 0;
         parseString(data, { explicitArray: false }, function (err, result) {
-            var feed = new FeedModel();
-            feed.title = result.rss.channel.title;
-            feed.link = result.rss.channel.link;
-            feed.description = result.rss.channel.description;
-            if (result.rss.channel.image != null) {
-                feed.imageUrl = result.rss.channel.image.url;
+            console.log(result);
+            if (result["rdf:RDF"] != null) {
+                items = self.parseRDF(self, result);
+            } else if (result.rss != null) {
+                items = self.parseRSS(self, result);
             }
-            if (feed.imageUrl == null) {
-                feed.imageUrl = result.rss.channel["itunes:image"].$.href;
+        });
+        return items;
+    }
+
+    static parseRSS(self, result) {
+        return self.parseData(self, result.rss.channel, result.rss.channel);
+    }
+
+    static parseRDF(self, result) {
+        return self.parseData(self, result["rdf:RDF"].channel, result["rdf:RDF"]);
+    }
+
+    static parseData(self, channelElement, itemParentElement) {
+        var items = [];
+        var index = 0;
+
+        var feed = new FeedModel();
+        feed.title = channelElement.title;
+        feed.link = channelElement.link;
+        feed.description = channelElement.description;
+        if (channelElement.image != null) {
+            if (channelElement.image.$["rdf:resource"] != null) {
+                feed.imageUrl = channelElement.image.$["rdf:resource"]
+            } else {
+                feed.imageUrl = channelElement.image.url;
+            }
+        }
+        if (feed.imageUrl == null && channelElement["itunes:image"] != null) {
+            feed.imageUrl = channelElement["itunes:image"].$.href;
+        }
+
+        itemParentElement.item.forEach(i => {
+            var item = new ItemModel();
+            item.feed = feed;
+            item.title = i.title;
+            item.link = i.link;
+            item.guid = i.guid;
+            item.description = sanitizeHTML(i.description);
+            item.pubDate = i.pubDate;
+            item.author = i.author;
+            item.content = i["content:encoded"];
+            var mediaContent = i["media:content"];
+            if (Array.isArray(mediaContent) && mediaContent.length > 0) {
+                item.imageSrc = mediaContent[0].$.url;
+            } else if (mediaContent != null) {
+                item.imageSrc = mediaContent.$.url;
             }
 
-            result.rss.channel.item.forEach(i => {
-                var item = new ItemModel();
-                item.feed = feed;
-                item.title = i.title;
-                item.link = i.link;
-                item.guid = i.guid;
-                item.description = sanitizeHTML(i.description);
-                item.pubDate = i.pubDate;
-                item.author = i.author;
-                item.content = i["content:encoded"];
-                var mediaContent = i["media:content"];
-                if (Array.isArray(mediaContent) && mediaContent.length > 0) {
-                    item.imageSrc = mediaContent[0].$.url;
-                } else if (mediaContent != null) {
-                    item.imageSrc = mediaContent.$.url;
-                }
+            var enclosure = i["enclosure"];
+            if (Array.isArray(enclosure) && enclosure.length > 0) {
+                item.enclosure = enclosure[0].$.url
+                item.enclosureType = enclosure[0].$.type
+            } else if (enclosure != null) {
+                item.enclosure = enclosure.$.url
+                item.enclosureType = enclosure.$.type
+            }
 
-                var enclosure = i["enclosure"];
-                if (Array.isArray(enclosure) && enclosure.length > 0) {
-                    item.enclosure = enclosure[0].$.url
-                    item.enclosureType = enclosure[0].$.type
-                } else if (enclosure != null) {
-                    item.enclosure = enclosure.$.url
-                    item.enclosureType = enclosure.$.type
-                }
-
-                items.push(item);
-            });
+            items.push(item);
         });
         return items;
     }

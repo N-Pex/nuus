@@ -27,9 +27,19 @@
 </template>
 
 <script>
+
+import flavors from "../config";
+
 export default {
   props: {
     url: String
+  },
+  mounted: function() {
+    let feeds = flavors[this.$store.state.flavor].feeds;
+    for (var i = 0; i < feeds.length; ++i) {
+      let feed = feeds[i];
+      this.menuItems.push({title: "Built in " + (i+1), url: feed});
+    }
   },
   data: () => ({
     menuItems: [

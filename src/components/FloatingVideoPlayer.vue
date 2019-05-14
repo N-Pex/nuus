@@ -104,9 +104,11 @@ export default {
     onVideoSeeked() {
       // Save the current playhead position for this video (identified by url)
       //
-      var url = this.item.enclosure;
-      var time = this.$refs.video.currentTime;
-      localStorage.setItem("playhead:" + url, time);
+      if (this.item != null && this.item.enclosure != null) {
+        var url = this.item.enclosure;
+        var time = this.$refs.video.currentTime;
+        localStorage.setItem("playhead:" + url, time);
+      }
     },
 
     onVideoPaused() {

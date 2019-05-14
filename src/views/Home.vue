@@ -158,6 +158,14 @@ export default {
 
   mounted() {
     let flavor = flavors[this.$store.state.flavor];
+
+    // Insert link to font style sheet so the web font loader will find the fonts.
+    let file = document.createElement("link");
+    file.rel = "stylesheet";
+    file.type = "text/css";
+    file.href = flavor.webFontCssFile;
+    document.head.appendChild(file);
+
     console.log("Loading web font " + flavor.themeBodyFont);
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
