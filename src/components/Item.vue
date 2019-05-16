@@ -1,37 +1,56 @@
 <template>
-<v-flex ref="card">
-  <v-card class="ma-3" @click="itemClicked()">
-    <div v-if="$root.showMedia">
-      <video
-        v-if="item.hasVideoEnclosure()"
-        ref="video"
-        width="100%"
-        controls
-        @timeupdate="onTimeUpdate"
-        v-bind:currentTime.prop="savedPlayTime(item.enclosure)"
-      >
-        <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the video tag.
-      </video>
-      <audio v-else-if="item.hasAudioEnclosure()" ref="audio" width="100%" controls>
-        <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the audio tag.
-      </audio>
-      <v-img v-else-if="item.imageSrc != null" :src="imageUrl()" aspect-ratio="2.75"></v-img>
-    </div>
-    <v-card-title primary-title>
-      <div>
-        <h3>{{ item.title }}</h3>
-      </div>
-    </v-card-title>
-    <v-card-text class="contentBlock">
-      <div v-html="item.pubDate" class="date"/>
-      <div v-html="item.description" class="body" style="max-height:150px;overflow:hidden" />
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn flat color="accent" @click="readMore()">Read more</v-btn>
-    </v-card-actions>
-  </v-card>
-</v-flex>
+  <v-container fluid grid-list-lg pa-2>
+    <v-layout row wrap>
+      <v-flex ref="card" xs12>
+        <v-card color="cardBackground" class="black--text" @click="itemClicked()">
+          <v-layout ma-0>
+            <v-flex
+              xs4
+              ma-1
+              v-if="imageUrl != null"
+              v-bind:class="{ 'order-lg2': odd, 'order-md2': odd, 'order-sm2': odd, 'order-xs2': odd }"
+            >
+              <v-img
+                :src="imageUrl"
+                width="100%"
+                class="ma-1"
+                contain
+              ></v-img>
+            </v-flex>
+            <v-flex v-bind:class="'xs'+ ((imageUrl != null) ? '8' : '12')">
+              <v-card-title primary-title class="pa-1">
+                <div class="contentBlock">
+                  <div class="headline">{{ item.title }}</div>
+                  <div v-html="item.pubDate" class="date"/>
+                  <div
+                    v-html="item.description"
+                    class="body"
+                    style="max-height:100px;overflow:hidden"
+                  />
+                </div>
+              </v-card-title>
+            </v-flex>
+          </v-layout>
+          <v-divider light></v-divider>
+          <v-card-actions class="pa-3">
+                <v-btn v-if="item.hasVideoEnclosure()" flat icon color="black" class="ma-0 pa-0" style="min-width: 0">
+                  <v-icon small class="ma-0 pa-0">videocam</v-icon>
+                </v-btn>
+                <v-btn v-if="item.hasAudioEnclosure()" flat icon color="black" class="ma-0 pa-0" style="min-width: 0">
+                  <v-icon small class="ma-0 pa-0">audiotrack</v-icon>
+                </v-btn>
+            Rate this album
+            <v-spacer></v-spacer>
+            <v-icon>star_border</v-icon>
+            <v-icon>star_border</v-icon>
+            <v-icon>star_border</v-icon>
+            <v-icon>star_border</v-icon>
+            <v-icon>star_border</v-icon>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 
@@ -46,69 +65,60 @@ export default {
       default: function() {
         return new ItemModel();
       }
-    }
+    },
+    odd: false
   },
 
   mounted: function() {
     var self = this;
-    if (this.$root.showMedia) {
-      if (this.item.hasVideoEnclosure()) {
-        this.enclosure().then(function(res) {
-          self.enclosureURL = res;
-          self.$refs.video.load();
-        });
-      } else if (this.item.hasAudioEnclosure()) {
-        this.enclosure().then(function(res) {
-          self.enclosureURL = res;
-          self.$refs.audio.load();
-        });
-      }
+    if (Math.random() > 0.5) {
+      this.imageUrl = this.item.imageSrc;
     }
   },
   data: () => ({
-    enclosureURL: ""
-    //   savedPlayTime: 30
+    enclosureURL: "",
+    imageUrl: null
   }),
   methods: {
-    async enclosure() {
-      if (this.item.enclosure.startsWith("file://")) {
-        let blob = await db.getMediaFile(this.item.enclosure);
-        var myURL = window.URL || window.webkitURL;
-        let url = myURL.createObjectURL(blob.blob);
-        return url;
-      }
-      return this.item.enclosure;
-    },
-    imageUrl() {
-      if (this.item.imageSrc.startsWith("file://")) {
-        console.log("It is a file");
-      }
-      return this.item.imageSrc;
-    },
-    onTimeUpdate() {
-      // Save playhead position
-      var url = this.item.enclosure;
-      //TODO - save audio as well
-      var time = this.$refs.video.currentTime;
-      localStorage.setItem("playhead:" + url, time);
-    },
-    savedPlayTime(url) {
-      // Get saved playhead position, if any
-      if (localStorage.getItem("playhead:" + url) != null) {
-        return localStorage.getItem("playhead:" + url);
-      }
-      return 0;
-    },
-    
     itemClicked() {
       console.log("Item " + this.$refs.card.getBoundingClientRect());
-      this.$emit("itemClicked", {item: this.item, rect: this.$refs.card.getBoundingClientRect()});
+      this.$emit("itemClicked", {
+        item: this.item,
+        rect: this.$refs.card.getBoundingClientRect()
+      });
     },
 
     readMore() {
       console.log("Item " + this.$refs.card.getBoundingClientRect());
-      this.$emit("itemClicked", {item: this.item, rect: this.$refs.card.getBoundingClientRect()});
+      this.$emit("itemClicked", {
+        item: this.item,
+        rect: this.$refs.card.getBoundingClientRect()
+      });
     }
   }
 };
 </script>
+
+<style>
+.contentBlock::after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    var(--v-cardBackground-base)
+  );
+  margin-top: -20px;
+  height: 20px;
+  width: 100%;
+  content: "";
+}
+
+/* Special cleanup of the display */
+a:empty {
+  display: none;
+}
+br {
+  display: none;
+}
+</style>

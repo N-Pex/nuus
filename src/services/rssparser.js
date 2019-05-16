@@ -104,7 +104,7 @@ export default class RSSParser {
         feed.link = channelElement.link;
         feed.description = channelElement.description;
         if (channelElement.image != null) {
-            if (channelElement.image.$["rdf:resource"] != null) {
+            if (channelElement.image.$ != null && channelElement.image.$["rdf:resource"] != null) {
                 feed.imageUrl = channelElement.image.$["rdf:resource"]
             } else {
                 feed.imageUrl = channelElement.image.url;

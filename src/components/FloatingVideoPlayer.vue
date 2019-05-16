@@ -1,6 +1,5 @@
 <template>
   <v-container
-    align-start
     v-if="item != null && item.hasVideoEnclosure()"
     :class="{ 'ma-0': true, 'pa-0': true, 'floatingPlayer': true, docked: isDocked }"
     :style="cssProps"
@@ -139,9 +138,9 @@ export default {
 
 .floatingPlayer.docked {
   background-color: #aaa;
-  top: calc(100vh - 120px);
-  left: 10px;
-  width: 100%;
+  top: calc(100vh - 102px);
+  left: 2px;
+  width: calc(100vw - 4px);
   height: 100px;
 }
 

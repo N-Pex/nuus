@@ -10,6 +10,7 @@ Vue.use(Vuetify, {
   theme: {
     primary: '#000000',
     secondary: '#9b9b9b',
-    accent: '#1b9739'
+    accent: '#1b9739',
+    cardBackground: '#f2f2f2'
   }
 })

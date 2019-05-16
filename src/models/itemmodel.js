@@ -9,7 +9,7 @@ export default class ItemModel extends Object {
     pubDate = 0;
     author = "";
     content = "";
-    imageSrc = "";
+    imageSrc = null;
     enclosure = "";
     enclosureType = "";
 

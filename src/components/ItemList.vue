@@ -2,7 +2,7 @@
   <v-container class="ma-0 pa-0">
     <v-layout row wrap>
       <v-list>
-        <Item v-for="item in items" :key="item.number" class="ma-3" :item="item" v-on:itemClicked="itemClicked($event)"/>
+        <Item v-for="(item, index) in items" :key="item.number" class="ma-0" :item="item" :odd="index % 2 != 0" v-on:itemClicked="itemClicked($event)"/>
       </v-list>
     </v-layout>
   </v-container>
