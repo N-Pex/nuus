@@ -1,53 +1,77 @@
 <template>
-  <v-container fluid grid-list-lg pa-2>
-    <v-layout row wrap>
-      <v-flex ref="card" xs12>
-        <v-card color="cardBackground" class="black--text" @click="itemClicked()">
-          <v-layout ma-0>
-            <v-flex
-              xs4
-              ma-1
-              v-if="imageUrl != null"
-              v-bind:class="{ 'order-lg2': odd, 'order-md2': odd, 'order-sm2': odd, 'order-xs2': odd }"
+  <v-container fluid grid-list-lg pb-2 pt-0 pl-0 pr-0 mb-5>
+    <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
+      <v-flex
+        xs1
+        ma-0
+        pa-0
+        v-if="playable"
+        style="min-width: 50px"
+        v-bind:class="{ 'order-lg3': odd, 'order-md3': odd, 'order-sm3': odd, 'order-xs3': odd, 'text-xs-center': true
+        , 'ma-0': true, 'pa-0': true }"
+      >
+        <v-btn
+          large
+          flat
+          icon
+          color="black"
+          class="ma-0 pa-0"
+          style="min-width: 0"
+          @click="playItem()"
+        >
+          <v-icon large class="ma-0 pa-0">play_circle_outline</v-icon>
+        </v-btn>
+      </v-flex>
+      <v-flex
+        xs3
+        mt-0
+        pt-0
+        v-if="imageUrl != null"
+        v-bind:class="{ 'order-lg2': odd, 'order-md2': odd, 'order-sm2': odd, 'order-xs2': odd, 'pl-0': odd, 'pr-0': !odd, 'ml-0': odd, 'mr-0': !odd }"
+      >
+        <div class="imageContainer">
+          <v-img aspect-radio="1" :src="imageUrl" class="ma-0 pa-0 image"/>
+        </div>
+      </v-flex>
+      <v-flex
+        v-bind:class="'xs'+ (((imageUrl != null) ? 9 : 12) - (playable ? 1 : 0))"
+        ml-2
+        mr-2
+        mt-0
+        pt-0
+      >
+        <div class="headline">
+          <h3>{{ item.title }}</h3>
+        </div>
+        <div class="contentBlock mt-2">
+          <div v-html="item.description" class="body" style="max-height:4.4em;overflow:hidden"/>
+        </div>
+        <div>
+          <span class="date">{{ item.pubDate }}</span>
+          &nbsp;
+          <span>
+            <v-btn
+              v-if="item.hasVideoAttachment()"
+              flat
+              icon
+              color="secondary"
+              class="ma-0 pa-0"
+              style="min-width: 0"
             >
-              <v-img
-                :src="imageUrl"
-                width="100%"
-                class="ma-1"
-                contain
-              ></v-img>
-            </v-flex>
-            <v-flex v-bind:class="'xs'+ ((imageUrl != null) ? '8' : '12')">
-              <v-card-title primary-title class="pa-1">
-                <div class="contentBlock">
-                  <div class="headline">{{ item.title }}</div>
-                  <div v-html="item.pubDate" class="date"/>
-                  <div
-                    v-html="item.description"
-                    class="body"
-                    style="max-height:100px;overflow:hidden"
-                  />
-                </div>
-              </v-card-title>
-            </v-flex>
-          </v-layout>
-          <v-divider light></v-divider>
-          <v-card-actions class="pa-3">
-                <v-btn v-if="item.hasVideoEnclosure()" flat icon color="black" class="ma-0 pa-0" style="min-width: 0">
-                  <v-icon small class="ma-0 pa-0">videocam</v-icon>
-                </v-btn>
-                <v-btn v-if="item.hasAudioEnclosure()" flat icon color="black" class="ma-0 pa-0" style="min-width: 0">
-                  <v-icon small class="ma-0 pa-0">audiotrack</v-icon>
-                </v-btn>
-            Rate this album
-            <v-spacer></v-spacer>
-            <v-icon>star_border</v-icon>
-            <v-icon>star_border</v-icon>
-            <v-icon>star_border</v-icon>
-            <v-icon>star_border</v-icon>
-            <v-icon>star_border</v-icon>
-          </v-card-actions>
-        </v-card>
+              <v-icon small class="ma-0 pa-0">videocam</v-icon>
+            </v-btn>
+            <v-btn
+              v-if="item.hasAudioAttachment()"
+              flat
+              icon
+              color="secondary"
+              class="ma-0 pa-0"
+              style="min-width: 0"
+            >
+              <v-icon small class="ma-0 pa-0">volume_up</v-icon>
+            </v-btn>
+          </span>
+        </div>
       </v-flex>
     </v-layout>
   </v-container>
@@ -71,15 +95,22 @@ export default {
 
   mounted: function() {
     var self = this;
-    if (Math.random() > 0.5) {
-      this.imageUrl = this.item.imageSrc;
+    this.imageUrl = this.item.imageSrc;
+    if (this.item.hasVideoAttachment() || this.item.hasAudioAttachment()) {
+      this.playable = true;
     }
   },
   data: () => ({
     enclosureURL: "",
-    imageUrl: null
+    imageUrl: null,
+    playable: false
   }),
   methods: {
+    playItem() {
+      this.$emit("playItem", {
+        item: this.item
+      });
+    },
     itemClicked() {
       console.log("Item " + this.$refs.card.getBoundingClientRect());
       this.$emit("itemClicked", {
@@ -100,6 +131,10 @@ export default {
 </script>
 
 <style>
+.contentBlock {
+  display: block;
+}
+
 .contentBlock::after {
   display: block;
   position: relative;
@@ -108,10 +143,25 @@ export default {
     rgba(255, 255, 255, 0),
     var(--v-cardBackground-base)
   );
-  margin-top: -20px;
-  height: 20px;
+  margin-top: -0.3em;
+  height: 0.3em;
   width: 100%;
   content: "";
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
 }
 
 /* Special cleanup of the display */

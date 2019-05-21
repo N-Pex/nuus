@@ -15,8 +15,9 @@ h2 {
 }
 
 h3 {
-    color: var(--v-accent-base);
+    color: var(--v-primary-base);
     font-size: 13pt;
+    line-height: 1.2em;
 }
 
 h4 {
@@ -32,6 +33,7 @@ h4 {
 .body {
     color: var(--v-primary-base);
     font: var(--v-theme-body-font);
+    line-height: 1.1em;
 }
 
 .mediaDescription {
@@ -40,6 +42,6 @@ h4 {
 }
 
 .date {
-    color: var(--v-primary-base);
+    color: var(--v-secondary-base);
     font-size: 8pt;
 }

@@ -62,9 +62,14 @@
 
     <v-content>
       <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
-      <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)"/>
-      <FloatingVideoPlayer ref="videoPlayer"/>
-      <transition
+      <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)" v-on:playItem="playItem($event)"/>
+      <div class="itemContainer" v-show="showItemFullscreen">
+      <FloatingVideoPlayer ref="videoPlayer" v-on:close="onClose()" v-on:minimize="onMinimize()"/>
+      <div class="test" >
+        asdlaksdjlaksdj
+        </div>
+      </div>
+      <!--<transition
         v-on:before-enter="beforeEnter"
         v-on:enter="enter"
         v-on:leave="leave"
@@ -75,7 +80,7 @@
             <Item class="ma-3" :item="itemFullscreen" v-on:itemClicked="itemCloseClicked($event)"/>
           </v-layout>
         </v-container>
-      </transition>
+      </transition>-->
     </v-content>
   </v-app>
 </template>
@@ -151,7 +156,23 @@ export default {
       // this.showItemFullscreen = true;
       this.$refs.videoPlayer.item = eventInfo.item;
     },
+    playItem(eventInfo) {
+      console.log(
+        "Play item " + eventInfo.item.title
+      );
+      this.$refs.videoPlayer.item = eventInfo.item;
+      this.itemFullscreen = eventInfo.item;
+      this.showItemFullscreen = true;
+    },
     itemCloseClicked(eventInfo) {
+      this.showItemFullscreen = false;
+    },
+
+    onClose() {
+      this.showItemFullscreen = false;
+    },
+
+    onMinimize() {
       this.showItemFullscreen = false;
     }
   },
@@ -225,4 +246,25 @@ export default {
   left: 0;
   background-color: #ff0;
 }
+
+.itemContainer {
+  position: absolute;
+  display: table;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f;
+}
+
+.test {
+  display: table-row;
+  width: 100%;
+  height: 100%;
+  background-color: #f00;
+  z-index: 900;
+}
+
 </style>

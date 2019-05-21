@@ -13,13 +13,13 @@ export default class ItemModel extends Object {
     enclosure = "";
     enclosureType = "";
 
-    hasVideoEnclosure = function() {
+    hasVideoAttachment = function() {
         return (
             this.enclosureType != null &&
             this.enclosureType.indexOf("video") === 0
         );
     }
-    hasAudioEnclosure = function() {
+    hasAudioAttachment = function() {
         return (
             this.enclosureType != null &&
             this.enclosureType.indexOf("audio") === 0

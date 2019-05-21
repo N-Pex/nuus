@@ -77,7 +77,7 @@ export default class RSSParser {
 
         var items = [];
         parseString(data, { explicitArray: false }, function (err, result) {
-            console.log(result);
+            //console.log(result);
             if (result["rdf:RDF"] != null) {
                 items = self.parseRDF(self, result);
             } else if (result.rss != null) {
@@ -133,14 +133,43 @@ export default class RSSParser {
 
             var enclosure = i["enclosure"];
             if (Array.isArray(enclosure) && enclosure.length > 0) {
-                item.enclosure = enclosure[0].$.url
-                item.enclosureType = enclosure[0].$.type
+                item.enclosure = enclosure[0].$.url;
+                item.enclosureType = enclosure[0].$.type;
             } else if (enclosure != null) {
-                item.enclosure = enclosure.$.url
-                item.enclosureType = enclosure.$.type
+                item.enclosure = enclosure.$.url;
+                item.enclosureType = enclosure.$.type;
+            }
+
+            // Try RDF enclosure
+            if (item.enclosure == null || item.enclosure.length == 0) {
+                var enclosure = i["enc:enclosure"];
+                if (Array.isArray(enclosure) && enclosure.length > 0) {
+                    item.enclosure = enclosure[0].$["rdf:resource"];
+                    item.enclosureType = enclosure[0].$.type;
+                } else if (enclosure != null) {
+                    item.enclosure = enclosure.$["rdf:resource"];
+                    item.enclosureType = enclosure.$.type;
+                }
             }
 
             items.push(item);
+
+            if (item.imageSrc == null && i["content:encoded"] != null) {
+                //Try to find an image in the content
+                var parseString = require('xml2js').parseString;
+                parseString("<root>" + i["content:encoded"]._ + "</root>", {
+                    explicitRoot: true,
+                    explicitArray: true,
+                    strict: true
+                }, function (err, result) {
+                    if (err == null && result != null) {
+                        var image = (result.root.img == null) ? null : result.root.img[0];
+                        if (image != null) {
+                            item.imageSrc = image.$.src;
+                        }
+                    }
+                });
+            }
         });
         return items;
     }

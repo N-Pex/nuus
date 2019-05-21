@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns="http://purl.org/rss/1.0/" xmlns:enc="http://purl.oclc.org/net/rss_2.0/enc#">
+
+
+
+
+    
+
+
+
+
+<channel rdf:about="https://www.rfa.org/english/RSS">
+  <title>RFA Home</title>
+  <link>https://www.rfa.org</link>
+
+  <description>
+    
+      RFA is a private, nonprofit corporation that broadcasts news and information to listeners in Asian countries where full, accurate, and timely news reports are unavailable.
+    
+  </description>
+  
+
+  
+            <syn:updatePeriod>hourly</syn:updatePeriod>
+            <syn:updateFrequency>1</syn:updateFrequency>
+            <syn:updateBase>2012-05-16T23:01:44Z</syn:updateBase>
+        
+
+  <image rdf:resource="/english/images/rfa-logo-400.jpg"/>
+
+  <items>
+    <rdf:Seq>
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/tibet/tibetan-language-05162019211809.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/bangladesh-investor-05162019192122.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/activist-redetained-05162019172543.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/cambodia/battambang-cnrp-questioning-05162019174704.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/tibet/downward-05162019164816.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/uyghur/language-05162019163951.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/myanmar/twitter-military-05162019162336.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/myanmar/sites-05162019151000.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/tibet/airport-05162019151427.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/prison-05162019144537.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/canada-huawei-05162019140629.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/myanmar/plant-05152019164405.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/korea/nk-hrw-seven-repatriation-05152019164656.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/philippines-southchinasea-05152019163110.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/laos/collapse-05152019161026.html"/>
+          
+      
+    </rdf:Seq>
+  </items>
+
+</channel>
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/tibet/tibetan-language-05162019211809.html">
+		<title>Prefecture in Qinghai to Drastically Cut Tibetan Language Education</title>
+    <link>https://www.rfa.org/english/news/tibet/tibetan-language-05162019211809.html</link>
+    <description>Golog Tibetan Autonomous Prefecture will stop teaching most subjects in Tibetan for first grade students.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/tibet/pilgrim-missing-04132018160220.html/image.jpg"></img><p>Authorities in the Golog (in Chinese, Guoluo) Tibetan Autonomous Prefecture have ordered schools to stop teaching all subjects in Tibetan except the Tibetan language in first grade classes, according to documents seen by RFA’s Tibetan Service.</p>
+<p>The new directive in Golog, which takes effect in fall, changes the practice in which all subjects are taught in Tibetan except the Chinese language and requires subjects such as history, geography, math and biology are to be taught in Chinese.</p>
+<p>The directive was carried in an official document titled “Article 101,” which says says the goal “is to provide more academic opportunities for the students” and the decision was “taken on the basis of recommendations from various research advisory committees in the Golog area.”</p>
+<p>“The implementation of this decision will eventually begin with all the elementary and middle schools. The county education office will supervise their respective schools and help make sure that the law is implemented.</p>
+<p>“By this fall all the first graders must be taught in Chinese, and workshops will be organized for the teachers in the future to improve the standard of their Chinese language and get accustomed to the new Chinese textbooks,” it said.</p>
+<p>Golog lies in the historic region of Tibet known to Tibetans as Amdo, incorporated into northwestern China’s Qinghai Province.</p>
+<p>Authorities in Tibetan-populated areas of China have long sought to restrict the size and influence of Tibetan Buddhist monasteries, traditionally a focus of Tibetan cultural and national identity, sources in the region say.</p>
+<p><strong><i>Reported by RFA’s Tibetan Service. Translated by </i></strong><strong><i>Tenzin Dickyi. Written in English by Paul Eckert.</i></strong></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-05-17T01:19:19Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/china/bangladesh-investor-05162019192122.html">
+		<title>China No. 1 Foreign Investor in Bangladesh, New Official Figures Show</title>
+    <link>https://www.rfa.org/english/news/china/bangladesh-investor-05162019192122.html</link>
+    <description>More than $800 million of $1.3 billion in Chinese investments last year were concentrated in the power sector.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/china/bangladesh-investor-05162019192122.html/bangladesh.jpg"></img><p>China’s footprint in Bangladesh’s economy has expanded massively since 2016 and Beijing is now the South Asian nation’s biggest foreign investor, official figures show, with most of the Chinese money invested in a power sector tainted by allegations of bureaucratic corruption.</p>
+<p>Beijing outpaced the United States as Bangladesh’s top investor in 2018, during which Dhaka recorded U.S. $3.6 billion in foreign direct investments (FDI), according to newly released official figures obtained by BenarNews.</p>
+<p>“The Chinese are now the largest foreign direct investors in Bangladesh,” Shams al-Mujahid, a director-general at the Bangladesh Investment Development Authority (BIDA), told BenarNews. BIDA is an agency under Prime Minister Sheikh Hasina’s office.</p>
+<p>China’s overall investment of U.S. $1.03 billion in 2018 represented a 16-fold increase compared with its 2016 investment of just over $61 million.</p>
+<p>“The Chinese have been the largest investor almost everywhere in the world,” al-Mujahid said. “Bangladesh is no exception.”</p>
+<p>According to the BIDA figures, the Netherlands last year ranked as Bangladesh’s second-largest foreign investor behind China, with $692 million, while Britain took the third spot with $371 million. Britain was Bangladesh’s biggest foreign investor in 2017, with $313 million. In 2018, the United States, traditionally one of Bangladesh’s biggest investors, ranked fourth with $174 million in direct investments, according to the figures.</p>
+<p>FDI has been a major source of foreign capital for Bangladesh since 1980, when the country adopted its Foreign Private Investment Act.</p>
+<p>In 1995, Bangladesh opened up foreign investments in the mobile telecommunications sector mainly because of the absence of ground-telephone infrastructure in the country. It attracted investments from telecoms giants such as Norway’s Telenor and Egypt’s Orascom.</p>
+<p>But Bangladesh also struggled with power outages, with the nation experiencing its worst electricity crisis in 2008 and 2009. Reports said one blackout alone, in 2014, affected as many as 100 million people – more than 60 percent of the population.</p>
+<p>As persistent energy crises plagued Bangladesh, Chinese leader Xi Jinping unveiled the One Belt, One Road (OBOR) plan in 2013, saying that the massive infrastructure initiative would accelerate development in many of the world’s poorest countries by building trade routes that would bring economic benefits.</p>
+<p>OBOR, which critics say is a tool for Beijing to amass geopolitical power, is an ambitious project reaching from China to many points across the globe through investments that could rise above U.S. $1 trillion.</p>
+<p><strong>Heavily invested in power sector</strong></p>
+<p>As part of OBOR, Chinese banks have earmarked $23 billion to build coal-fired power plants in 23 countries, according to the Institute for Energy Economics and Financial Analysis (IEEFA), a U.S.-based think tank.</p>
+<p>Bangladesh is expected to be the biggest recipient with $7 billion, it said. In 2018, China invested more than $800 million in the South Asian nation’s power sector alone.</p>
+<p>Last year, China Huadian Hongkong Company Limited signed a deal with a local partner to build a 1,320-megawatt plant at Moheshkhali island in Bangladesh.</p>
+<p>China’s involvement in Bangladesh’s energy supply has spurred criticisms among Bangladeshi economists and experts who have underscored that the South Asian nation’s power sector is “poorly governed.”</p>
+<p>“There is criticism regarding the business climate in Bangladesh. There is corruption, bureaucratic and legal hassles. But the Chinese businessmen have invested huge in the power sector,” said Hossain Zillur Rahman, an economist and former government adviser.</p>
+<p>“They want to get maximum benefits from the power sector, which practically has no governance and no accountability,” Rahman told BenarNews.</p>
+<p>Khaleda Mahmood, chairman of the Bangladesh Power Development Board (PDB), brushed aside Rahman’s allegations.</p>
+<p>“It is not true that the power sector has no governance,” he told BenarNews, underscoring that his public-sector organization was providing 45 percent of the country’s total electricity demand.</p>
+<p>Last year, Transparency International (TI) gave Bangladesh a score of 26 in its Corruptions Perceptions Index. China received a score of 39.</p>
+<p>The index, which ranks 180 countries and territories based on their perceived levels of public-sector corruption, uses a scale of 0 to 100, where 0 is highly corrupt and 100 is very clean, according to TI, a Berlin-based nonprofit that fights global corruption.</p>
+<p><strong>‘No accountability’</strong></p>
+<p>Allegations of corruptions had been raised in Bangladesh’s energy sector during the past few years, but those claims were revived less than a week after officials said that three Chinese companies had started lobbying Bangladesh for a contract to build the nation’s second nuclear power plant.</p>
+<p>Mahbubul Hoq, chairman of Bangladesh Atomic Energy Commission, told BenarNews that officials of three Chinese companies met with him during the past few months and expressed interest in building the second nuclear plant. It is expected to cost 1.5 trillion taka (U.S. $18 billion).</p>
+<p>In 2009, the Bangladeshi parliament led by the ruling Awami League passed a law that authorized the Power Development Board to procure electricity from the private sectors, bypassing the lengthy bureaucratic process. The law shielded its officials from prosecution on matters related to procurement of electricity, according to its critics.</p>
+<p>The law was initially passed to exist for two years, bringing temporary relief to the public, said Shahiduzzaman Sarker, chairman of the parliamentary standing committee on energy and mineral resources. But it has been extended every two years, he said.</p>
+<p>“The PDB enjoys immunity for its actions," said Rahman, the economist. "So, there is no accountability in the sector."</p>
+<p><i><b>Reported by BenarNews, an RFA-affiliated online news service.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>investmet</dc:subject>
+      <dc:subject>investmet</dc:subject>
+    
+    
+      <dc:subject>energy</dc:subject>
+      <dc:subject>energy</dc:subject>
+    
+    <dc:date>2019-05-16T23:27:59Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/china/activist-redetained-05162019172543.html">
+		<title>Chinese Activist Jailed For Supporting Hong Kong Democracy Protests Redetained</title>
+    <link>https://www.rfa.org/english/news/china/activist-redetained-05162019172543.html</link>
+    <description>Wang Mo is incommunicado, believed detained, after being questioned by state security police.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/china/activist-redetained-05162019172543.html/wangmo.jpg"></img><p><span style="text-align: start; float: none; ">Authorities in the eastern Chinese province of Jiangsu have redetained</span><span style="text-align: start; float: none; "> an activist released at the end of his prison sentence in a move</span><span style="text-align: start; float: none; "> likely linked to the 30th anniversary of the Tiananmen massacre on</span><span class="Object" id="OBJ_PREFIX_DWT4877_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4888_com_zimbra_date"> June 4</span></span><span style="text-align: start; float: none; ">.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Wang Mo was among four mainland Chinese activists jailed for their</span><span style="text-align: start; float: none; "> public support of the 2014 Occupy Central movement for fully</span><span style="text-align: start; float: none; "> democratic elections in Hong Kong in</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4878_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4889_com_zimbra_date">April 2016</span></span><span style="text-align: start; float: none; ">.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Wang and co-defendant Xie Wenfei were handed four-and-a-half-year</span><span style="text-align: start; float: none; "> prison sentences by the Intermediate People's Court in Guangdong's</span><span style="text-align: start; float: none; "> provincial capital, Guangzhou, after being found guilty of "incitement</span><span style="text-align: start; float: none; "> to subvert state power."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Zhang Shengyu was jailed for four years, while Liang Qinhui, also</span><span style="text-align: start; float: none; "> known by his online nickname "Sharp Knife," was handed an 18-month</span><span style="text-align: start; float: none; "> prison sentence on the same charges.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">All four men had expressed public support for the Occupy Central</span><span style="text-align: start; float: none; "> movement, and were detained amid a nationwide roundup of at least 100</span><span style="text-align: start; float: none; "> mainland Chinese supporters of the Hong Kong protests.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Xie, who has also been released, said Wang's family had yet to receive</span><span style="text-align: start; float: none; "> any notification of his redetention.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; "></span></p>
+<p><b>P<span style="text-align: start; float: none; ">olitically</span><span style="text-align: start; float: none; "> sensitive dates</span></b></p>
+<p><span style="text-align: start; float: none; ">He said Wang was likely detained after he tried to travel to Beijing</span><span style="text-align: start; float: none; "> during a time of heightened security ahead of a string of politically</span><span style="text-align: start; float: none; "> sensitive dates.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"Right now, there is the broader context of the 30th anniversary [of</span><span style="text-align: start; float: none; "> the 1989 democracy movement and subsequent massacre], as well as the</span><span style="text-align: start; float: none; "> so-called 70th anniversary of the found of the People's Republic of</span><span style="text-align: start; float: none; "> China," Xie told RFA.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"The people watching him were from the state security police, as well</span><span style="text-align: start; float: none; "> as the local police station and police department, liaising with each</span><span style="text-align: start; float: none; "> other," he said.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"When the state security police had a talk with him on</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4879_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4890_com_zimbra_date">May 9</span></span><span style="text-align: start; float: none; ">, they</span><span style="text-align: start; float: none; "> said ... it was to do with his fund-raising, but I think this has a</span><span style="text-align: start; float: none; "> lot to do with the climate of fear in the run-up to the 30th</span><span style="text-align: start; float: none; "> anniversary of</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4880_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4891_com_zimbra_date">June 4</span></span><span style="text-align: start; float: none; ">, [1989]," he said.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Xie said Wang was last heard from in his home city of Huai'an. Calls</span><span style="text-align: start; float: none; "> to the municipal police department rang unanswered during office hours</span><span style="text-align: start; float: none; "> on</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4881_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4892_com_zimbra_date">Thursday</span></span><span style="text-align: start; float: none; ">.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"His family is reluctant to disclose too much information [and] they</span><span style="text-align: start; float: none; "> haven't told us which detention center he is being held in," he said.</span><span style="text-align: start; float: none; "> "I think the charge in his case is pretty random."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">He said Wang's son would likely be the person to hire a lawyer, as the</span><span style="text-align: start; float: none; "> rest of the family had close ties to the ruling Chinese Communist</span><span style="text-align: start; float: none; "> Party.</span><br style="text-align: start; " /><br style="text-align: start; " /><b><span style="text-align: start; float: none; ">Support for Hong Kong democracy</span></b></p>
+<p><span style="text-align: start; float: none; ">Xie also said Wang is highly unlikely to go along with official</span><span style="text-align: start; float: none; "> requests for cooperation.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"Wang is the last person who is going to play ball," he said. "Based</span><span style="text-align: start; float: none; "> on his personality, I'm not very optimistic."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Guangxi-based rights lawyer Tan Yongpei said he had met with Wang</span><span style="text-align: start; float: none; "> since his release, to discuss democracy and constitutional government.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"We're looking for a lawyer to go visit him near Jiangsu," Tan told</span><span style="text-align: start; float: none; "> RFA. "We may manage to get this in place by</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4882_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4893_com_zimbra_date">tomorrow</span></span><span style="text-align: start; float: none; ">."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">He said Wang's redetention could be linked to the recent detention of</span><span style="text-align: start; float: none; "> prominent human rights lawyer Chen Jiahong.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Authorities in Guangxi recently detained Chen after spoke out about curbs to</span><span style="text-align: start; float: none; "> China's legal profession and the abolition of presidential term limits</span><span style="text-align: start; float: none; "> by President Xi Jinping.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Chen is currently under criminal detention at Guangxi's Yulin</span><span style="text-align: start; float: none; "> Detention Center, on suspicion of "incitement to subvert state power,"</span><span style="text-align: start; float: none; "> RFA has learned.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">His detention came after he posted a video to social media in which he</span><span style="text-align: start; float: none; "> calls for "an assassination commando," and to be "rid of this evil</span><span style="text-align: start; float: none; "> bureaucracy," in an apparent reference to the ruling Chinese Communist</span><span style="text-align: start; float: none; "> Party.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Chen also called for a democratic process to work towards</span><span style="text-align: start; float: none; "> constitutional government in China, Tan said.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Xie, who is also known as Xie Fengxia, was detained in</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4883_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4894_com_zimbra_date">October 2014</span></span><span style="text-align: start; float: none; "> after wearing a black T-shirt and holding a banner on a Guangzhou</span><span style="text-align: start; float: none; "> street in support of the 79-day Hong Kong pro-democracy movement.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">He entered the courtroom for the sentencing hearing on shouting "Build</span><span style="text-align: start; float: none; "> a democratic China!" and "Down with the Communist Party!"</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The Occupy Central, or Umbrella Movement campaigned for Beijing to</span><span style="text-align: start; float: none; "> withdraw an Aug, 31, 2014 electoral reform plan, which it rejected as</span><span style="text-align: start; float: none; "> "fake universal suffrage," and to allow publicly nominated candidates</span><span style="text-align: start; float: none; "> to run for chief executive in 2017.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The plan, which offered a one-person, one-vote in 2017 elections for</span><span style="text-align: start; float: none; "> chief executive, but required candidates to be vetted by Beijing, was</span><span style="text-align: start; float: none; "> voted down on</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT4884_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT4895_com_zimbra_date">June 18</span></span><span style="text-align: start; float: none; ">, 2015 by 28 votes to eight in Hong Kong's</span><span style="text-align: start; float: none; "> Legislative Council, leaving the city with its existing voting</span><span style="text-align: start; float: none; "> arrangements still in place.</span><br style="text-align: start; " /><br style="text-align: start; " /><i><b><span style="text-align: start; float: none; ">Reported by Wong Lok-to for RFA's Cantonese Service, and by Jia Ao for</span><span style="text-align: start; float: none; "> the Mandarin Service. Translated and edited by Luisetta Mudie.</span></b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-05-16T21:55:14Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/cambodia/battambang-cnrp-questioning-05162019174704.html">
+		<title>Cambodian Authorities Question Six Activists For Supporting Banned Opposition Party</title>
+    <link>https://www.rfa.org/english/news/cambodia/battambang-cnrp-questioning-05162019174704.html</link>
+    <description>The six are part of a larger group of 35 summoned for assembling publicly and discussing politics on social media.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/cambodia/battambang-cnrp-questioning-05162019174704.html/battambang-cnrp-supporters.jpg"></img><p><span>Authorities in Cambodia’s Battambang province Thursday questioned six activists connected with the Cambodia National Rescue Party (CNRP), alleging they violated a 2017 Supreme Court order that dissolved the opposition party.</span></p>
+<p><span>The six are part of a group of 35 CNRP activists summoned recently by the Battambang Provincial Court, including five that were questioned last week.</span></p>
+<p><span></span><span>The CNRP director for Battambang province, Chea Chiv, told RFA’s Khmer Service in an interview that the prosecutor questioned him and the other five activists for about an hour, because they were seen in public eating together and because they had in social media posts expressed support for party leaders Sam Rainsy, who lives in self-imposed exile in France, and Kem Sokha, who is under de-facto house arrest.</span></p>
+<p><span>“The court violated [my rights as] a citizen,” said Chea Chiv.</span></p>
+<p><span>“I quit politics already and I was just expressing my political views. I don’t have any faith in the judicial system here in Cambodia because this institution is under the influence of the government,” he said.</span></p>
+<p><span>While the six were being questioned, hundreds of citizens rallied in their support outside Battambang Provincial Courthouse. Many had traveled from neighboring Banteay Meanchy and Pursat provinces.</span></p>
+<p><span>Chhnang Baraing, a supporter from Banteay Meanchy, said that there were 20 in his group and they spent their own money to rent a truck to support the CNRP activists. He said he does not like the way the government is treating the opposition party right now, and believes they should have the right to exist.</span></p>
+<p><span>“I came here because I don’t want [the CNRP activists] to feel that they are alone. I want to encourage them,” he said.</span></p>
+<p><span>Yat Phyrum, also from Banteay Meachey, said that the questioning was an injustice because the activists were robbed of their commune positions and now they have to face the court.</span></p>
+<p><span>“As [I am] a youth, I like justice. I don’t think it is right to dissolve the CNRP,” he said.</span></p>
+<p><span>Several road blocks were set up to prevent the supporters from gaining access to the courthouse.</span></p>
+<p><span>Ying Mengly, a provincial coordinator for the rights group Cambodian Human Rights and Development Association (ADHOC), said he was disappointed that the police prevented supporters from entering the courthouse to show their support. He said the authorities are afraid that the supporters might explode with anger during questioning.</span></p>
+<p><span>The coordinator said he was concerned that the prosecution will try to present the case so that it will lead to the detention for the six activists.</span></p>
+<p><span>“The prosecutor wants to find who the mastermind of their meetings is,” he said.</span></p>
+<p><span>He said the court’s case against the six and the other CNRP activists was an interruption of their lives.</span></p>
+<p><span>Similar legal motions against CNRP activists are taking place in other provinces. In Kampong Thom province another 35 were summoned for questioning regarding their show of support for the return of Sam Rainsy to Cambodia and social media comments supporting the CNRP and its leaders.</span></p>
+<p><strong><i>Reported by RFA’s Khmer Service. Translated by Samean Yun. Written in English by Eugene Whong.</i></strong></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>cnrp</dc:subject>
+      <dc:subject>cnrp</dc:subject>
+    
+    
+      <dc:subject>cpp</dc:subject>
+      <dc:subject>cpp</dc:subject>
+    
+    
+      <dc:subject>hun sen</dc:subject>
+      <dc:subject>hun sen</dc:subject>
+    
+    
+      <dc:subject>sam rainsy</dc:subject>
+      <dc:subject>sam rainsy</dc:subject>
+    
+    
+      <dc:subject>democracy</dc:subject>
+      <dc:subject>democracy</dc:subject>
+    
+    <dc:date>2019-05-16T21:50:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/tibet/downward-05162019164816.html">
+		<title>Human Rights in Tibet Took Downward Turn in 2018: Report</title>
+    <link>https://www.rfa.org/english/news/tibet/downward-05162019164816.html</link>
+    <description>Campaigns against 'evil forces' targeted Tibetan language rights and civil society initiatives, an India-based rights group says.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/tibet/downward-05162019164816.html/tibet-tchrd3-051619.jpg"></img><p>The human rights situation in Tibet took a sharp downward turn last year with tightened restrictions on travel by Tibetans and the introduction by China of a campaign against “organized crime” targeting Tibetan civil society and cultural practices, an India-based rights group said in an annual report released on Thursday.<br /><br />Calling 2018 a “pivotal year” for human rights in the Tibet Autonomous Region (TAR) and other Tibetan areas of China, the Dharamsala-based Tibetan Centre for Human Rights and Democracy said that new policies and regulations have led to “an increased restriction on human rights and lives of the Tibetan people.”<br /><br />A nationwide campaign against “crime” and “black and evil forces” introduced at the beginning of the year resulted in the detention, arrest, and torture of human rights and environmental activists and of ordinary Tibetans promoting the use of the Tibetan language, the rights group said in its report.<br /><br />“Peaceful dissent of any kind and degree was met with harsh penalties,” TCHRD said.<br /><br />The right to freedom of movement was similarly restricted during the year, with Tibetans coming from outside the TAR required to obtain temporary passes when visiting the regional capital Lhasa, and others forced to surrender their passports to prevent travel to India and Nepal on pilgrimage, the rights group said.<br /><b><br />Religious rights restricted</b><br /><br />Tibetan schoolchildren and government workers were meanwhile banned from taking part in public religious observances and from paying visits to monasteries during the year, and young monks were removed from their religious communities and forcibly enrolled in Chinese government schools.<br /><br />Over 200 novice monks were forced in this way from their monasteries in July in Sershul county in Sichuan’s Kardze (in Chinese, Ganzi) Tibetan Autonomous Prefecture, TCHRD said, adding “Many of the evicted monks were students of Buddhist logic and philosophy, and some were exceptional students.”<br /><br />“Tibetan religious institutions were also targeted for their role in promoting Tibetan language education,” TCHRD said, citing local directives forbidding monasteries from conducting language workshops for Tibetan students during their holidays from school.<br /><br /><b>Arbitrary arrests, detentions</b><br /><br />Meanwhile, “the arbitrary arrest and detention of peaceful Tibetan protesters and other human rights activists continued unabated,” TCHRD said, adding that restrictions by China on the peaceful assembly of Tibetans remained “severe.”<br /><br />Especially targeted for harsh suppression were protests, by individuals or by groups, calling for the return from exile of Tibetan spiritual leader the Dalai Lama, TCHRD said.<br /><br />In December, two young Tibetans set themselves ablaze in Ngaba (in Chinese, Aba) county in Sichuan province in opposition to China’s rule, as well as political and religious repression in the TAR and other Tibetan areas. <br /><br />They raised to 157 the number of self-immolations by Tibetans since the wave of fiery protests against nearly 70 years of Chinese rule of their homeland began in 2009.<br /><br />China maintains that it peacefully liberated Tibet from feudal rule, and that Tibetans enjoy the economic development it has brought to the region.</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator>By Richard Finney</dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>human rights</dc:subject>
+      <dc:subject>human rights</dc:subject>
+    
+    
+      <dc:subject>travel restrictions</dc:subject>
+      <dc:subject>travel restrictions</dc:subject>
+    
+    
+      <dc:subject>religion</dc:subject>
+      <dc:subject>religion</dc:subject>
+    
+    <dc:date>2019-05-16T21:23:37Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/uyghur/language-05162019163951.html">
+		<title>China Marginalizing Language in Bid to ‘Eradicate the Ethnic Identity’ of Uyghurs: UHRP</title>
+    <link>https://www.rfa.org/english/news/uyghur/language-05162019163951.html</link>
+    <description>A report urges Uyghurs to ensure a future for the language through intergenerational transmission.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/uyghur/language-05162019163951.html/uyghur-high-school-chinese-banner-aug-2018.jpg"></img><p>China’s government is using a policy of “linguistic imperialism” to marginalize the Uyghur language in the Xinjiang Uyghur Autonomous Region (XUAR) as part of a bid to “eradicate the ethnic identity” of the Uyghur people, according to a new report by a Uyghur rights group.<br /><br />In their attack on Uyghur culture and identity, Chinese officials have portrayed the Uyghur language as “incompatible with modernity” and are removing its relevance from the education system and public life, Washington-based Uyghur Human Rights Project (UHRP) said Thursday in a statement accompanying the release of its report “Resisting Chinese Linguistic Imperialism.”<br /><br />“Following a pattern of broader development policy that has promoted the adoption of [majority] Han [Chinese] civilization as central to modernization, China has moved to diminish the status of the Uyghur language in society,” UHRP said.<br /><br />In the face of such an attack, UHRP said it is imperative for Uyghur families to ensure a future for spoken and written Uyghur by passing the language and culture from parent to child at home.<br /><br />“When a heritage language is maligned as having low status and value, or stigmatized through association with criminality, the family domain would appear to be the final safe space for intergenerational transmission,” the group said.<br /><br />UHRP’s report also includes a section on the struggles of Uyghur scholar and linguist Abduweli Ayup to protect the Uyghur language through grassroots initiatives.<br /><br />Ayup, who had sought to set up “mother tongue-based” schools to promote the Uyghur language, was ordered jailed 18 months for “illegal fundraising” in August 2014 by the Tengritagh (in Chinese, Tianshan) district court in the XUAR capital Urumqi after being detained for a year, but was released three months later when his partners appealed their cases.<br /><br />Uyghurs in exile say that the charges against Ayup and his partners were politically motivated, after the U.S.-educated linguist’s essays and lectures on maintaining the Uyghur language in schools drew widespread support in China’s Uyghur community.<br /><br />Ayup said in Thursday’s statement that the UHRP report “demonstrated how the CCP’s [Chinese Communist Party] campaign to achieve Mandarin language assimilation includes a shift from tolerance to the prohibition of minority languages indigenous to East Turkestan,” using a name preferred by many Uyghurs to refer to their historic homeland.<br /><br />“Although scholars support this mode of education, which builds upon the linguistic repertoire and cultural knowledge of students, the CCP terminated my schools because they conflicted with the Chinese government’s imperative to eradicate markers of ethnic minority identity.”<br /><br />Ayup urged ethnic minority communities in the XUAR to “form a strong family language policy” so that Uyghur and non-Mandarin indigenous languages are maintained.<br /><br />“The CCP is making every effort to erase our culture,” he said.<br /><br />“This report serves as documentation of this effort and provides guidance on resisting the Chinese government's attempt at linguicide.”<br /><br /><b>Language as identity</b><br /><br />Dolkun Isa, president of the Munich-based World Uyghur Congress, told RFA’s Uyghur Service that China has aggressively assaulted the Uyghur language because “language is the most important component of one’s ethnic identity.”<br /><br />“China is doing everything in its power to erase the Uyghur language—beginning in kindergarten—from every aspect of life, which is in violation of the Regional Ethnic Autonomy Law, the constitution and the country’s international obligations,” Isa said.<br /><br />“The Uyghur language is one of the most ancient Turkic languages and has been used to make significant contributions to human civilization,” he added.<br /><br />“If the Uyghur language is erased, an inalienable part of human civilization will be lost. Therefore, it is not only the duty of Uyghurs to save and preserve the Uyghur language, but also the duty of the international community.”<br /><br /><i><b>Reported by RFA’s Uyghur Service. Translated by Alim Seytoff. Written in English by Joshua Lipes.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>language</dc:subject>
+      <dc:subject>language</dc:subject>
+    
+    
+      <dc:subject>ethnic tension</dc:subject>
+      <dc:subject>ethnic tension</dc:subject>
+    
+    
+      <dc:subject>culture</dc:subject>
+      <dc:subject>culture</dc:subject>
+    
+    
+      <dc:subject>education</dc:subject>
+      <dc:subject>education</dc:subject>
+    
+    <dc:date>2019-05-16T20:49:54Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/myanmar/twitter-military-05162019162336.html">
+		<title>Twitter Suspends Account of Top Myanmar General Over Hate Speech</title>
+    <link>https://www.rfa.org/english/news/myanmar/twitter-military-05162019162336.html</link>
+    <description>Military chief Min Aung Hlaing led the ethnic cleansing campaign against Rohingya.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/myanmar/myanmars-aung-san-suu-kyi-military-chief-meet-ethnic-armed-groups-10152018173257.html/myanmar-assk-min-aung-hlaing-ethnic-armies-naypyidaw-oct15-2018.jpg"></img><p>Myanmar’s top military leader, seen by rights groups as the architect of a bloody ethnic cleansing campaign that drove more than 700,000 Muslim Rohingya into Bangladesh in 2017, had had his Twitter account suspended, RFA has learned.</p>
+<p>Senior General Min Aung Hlaing, accused by the United Nations of, among other things, genocide for the Rohingya campaign, had his @sgminaunghlaing account taken offline this week, nine months after his Facebook account was shuttered for hate speech against the ethnic minority.</p>
+<p>The move came after Tun Khin, president of the Burmese Rohingya Organisation UK, raised complaints about hate speech from military accounts with Twitter executives in California.</p>
+<p>“The fact that Twitter has joined Facebook in deleting his account – which he used to sow hatred and spew out his defensive propaganda – is a massive victory for the Rohingya people,” <i>The Guardian</i> newspaper quoted Tun Khin as saying.</p>
+<p>“Min Aung Hlaing was the mastermind of the Rohingya genocide … it is crucial that Twitter now follows through in deleting other accounts used by the regime for the same purpose,” he added.</p>
+<p>Contacted by RFA’s Burmese Service, a Twitter spokesman said “We don’t comment on individual accounts for privacy and security reasons.”</p>
+<p>The removal of 18 Facebook accounts, one Instagram account and 52 pages linked to the Myanmar military in August 2018 came after a fact-finding mission of the U.N.-backed Human Rights Council said Min Aung Hlaing and other Myanmar military leaders should be referred to the International Criminal Court in the Hague for the army campaign that killed thousands and drove some 700,000 of Muslim Rohingya minority into Bangladesh in 2017.</p>
+<p>“Many of these violations undoubtedly amount to the gravest crimes under international law,” said the report to the UN by the Independent International Fact-Finding Mission on Myanmar, which cataloged abuses in Rakhine, home to the Rohingya, as well as Kachin and Shan States in the north where the army has waged war against ethnic armies for decades.</p>
+<p>“They are shocking for the level of denial, normalcy and impunity that is attached to them,” said the 2018 report.</p>
+<p>Last week the same U.N. fact-finding mission said Myanmar had made no progress on resolving the Rohingya crisis and recommended that the international community cease all economic dealings with the powerful military.</p>
+<p>The army, which has dominated the country once known as Burma since a 1962 coup and still controls the nation from behind the scenes despite the election in 2015 of Aung San Suu Kyi, has denied it used excessive force.</p>
+<p>The online Myanmar news outlet The Irrawaddy quoted military spokesman Brigadier-General Zaw Min Tun as denying the commander-in-chief had ever officially used the social media platform.</p>
+<p>The news website, however, reported that Min Aung Hlaing had a “verified” account and had been tweeting in both English and Burmese for several years.</p>
+<p><i><b>Reported by RFA’s Myanmar Service. Written in English by Paul Eckert.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>ethnic cleansing</dc:subject>
+      <dc:subject>ethnic cleansing</dc:subject>
+    
+    
+      <dc:subject>genocide</dc:subject>
+      <dc:subject>genocide</dc:subject>
+    
+    <dc:date>2019-05-16T20:28:07Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/myanmar/sites-05162019151000.html">
+		<title>Buddhist Nationalists Force Closure of Ramadan Prayer Sites For Myanmar Muslims</title>
+    <link>https://www.rfa.org/english/news/myanmar/sites-05162019151000.html</link>
+    <description>The sites were closed amidst mob threats, despite being sanctioned by local officials.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/myanmar/nationalist-monks-refuse-to-dismantle-protest-camp-in-myanmars-mandalay-08032017164342.html/myanmar-monks-protest-yangon-aug2-2017.jpg"></img><p>Three temporary buildings in Myanmar’s Yangon region officially sanctioned for use by Muslims to pray during the holy Islamic month of Ramadan have been shuttered amid threats from Buddhist nationalists, according to sources, who questioned why authorities have failed to hold anyone accountable.<br /><br />Local officials had granted permission to use the residential buildings in South Dagon township’s Wards 26, 106 and 64 as places of worship from May 6 to June 7, but mobs of more than 200 Buddhist nationalists led by activist Michael Kyaw Myint surrounded them on Tuesday and Wednesday, and demanded that local Islamic leaders sign pledges to end religious services.<br /><br />Yan Aung, the caretaker at the building in Ward 106, said the Muslim community had ensured that permission was granted by the Yangon regional government before using the three spaces for prayer.<br /><br />“These groups of people showed up in front of the building and began inspecting our facilities before demanding that we go to the township administration office,” Yan Aung told RFA’s Myanmar Service.<br /><br />“I went with two other senior community members to the office [on Wednesday night], where we were forced to sign a pledge to stop using the house as a prayer hall and remove the temporary infrastructure built for prayer services,” he said.<br /><br />“But this was not a decree from the township administration office, and the police force wasn’t involved in the decision either. This was a one-sided demand by these nationalist activists.”<br /><br />An RFA reporter who was present at the administration office on Wednesday evening said that authorities looked on helplessly as the mob obliged the Islamic leaders to sign the pledge.<br /><br /><i>The Irrawaddy</i> online journal quoted Michael Kyaw Myint as saying that Islamic prayer at the buildings was unacceptable, and questioning who had the authority to grant permission to the Muslim community.<br /><br />“They may accept this but we don’t,” he told the journal, adding that his group plans to “find more in this township and stop them.”<br /><br /><i>The Irrawaddy</i> also cited Ward 106 administration officer Than Htike as saying the incident marked the first time a group that included Buddhist monks had pressured his office, and that the incident proves there is no rule of law.<br /><br />Meanwhile, residents have questioned why local authorities have failed to hold anyone accountable for the mob action.<br /><br />Commander Soe Win of the South Dagon township police station confirmed to RFA that there have been no arrests made, but stressed that the situation in the township is stable.<br /><br />“We want the people to know there is nothing to be concerned about,” he said.<br /><br />“The Myanmar police force is taking care of the security in the area.”<br /><br />A local imam told RFA that police had given permission on Thursday to reopen the sites and pledged to provide protection.<br /><br /><b>Condolences extended</b><br /><br />San Tint, a Buddhist resident of Ward 106, expressed sorrow that the more than 1,000 Muslim members of his community were targeted during Ramadan.<br /><br />“They had just started prayer services recently, and I felt horrible watching them be forced to shut down last night,” he said.<br /><br />“I earn my living as a vendor and I have lived alongside these people for a long time. I watched many of these kids grow up. They helped us during funeral services for two of my family members … I can’t imagine how I would feel if the same thing happened at the place where I pray.”<br /><br />Myat Thu, a young Buddhist resident of South Dagon, also extended condolences to the Muslims of the three wards.<br /><br />“I would like to send my humble apologies to all of our Muslim friends in the neighborhood,” he said.<br /><br />“I want all of them to know that not all [majority] Bamar people or Buddhists are like these people. The most important thing is to live in peace and harmony and respect each other’s religious beliefs.”<br /><br />Tensions between Buddhists and Muslims, who constitute a minority in Myanmar, have been growing in the country since a major outbreak of communal violence in 2012 during which 200 people were killed and tens of thousands of Rohingya Muslims in western Myanmar’s Rakhine state were displaced.<br /><br />In April 2017, two madrasas, or Islamic schools, were closed in Yangon’s Thaketa township after Buddhist nationalists accused Muslim residents of illegally using them for prayer services.<br /><br /><i><b>Reported by Kyaw Zaw Win and Htet Arkar. Translated by Ye Kaung Myint Maung. Written in English by Joshua Lipes.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>monks</dc:subject>
+      <dc:subject>monks</dc:subject>
+    
+    
+      <dc:subject>protest</dc:subject>
+      <dc:subject>protest</dc:subject>
+    
+    
+      <dc:subject>religion</dc:subject>
+      <dc:subject>religion</dc:subject>
+    
+    
+      <dc:subject>nld</dc:subject>
+      <dc:subject>nld</dc:subject>
+    
+    <dc:date>2019-05-16T19:36:38Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/tibet/airport-05162019151427.html">
+		<title>Tibetan Villagers Evicted to Make Room For New Airport</title>
+    <link>https://www.rfa.org/english/news/tibet/airport-05162019151427.html</link>
+    <description>Offered compensation, they have no right to refuse to move, with one source citing 'severe consequences' if they resist.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/tibet/land-10172018140851.html/tibet-chabchamap2-090617.jpg"></img><p>As many as 40 Tibetan families have been thrown off their land in northwestern China’s Qinghai province to make way for airport construction, with those evicted offered compensation described as “inadequate,” Tibetan sources say.<br /><br />The families, residents of Chunga village in the Tsolho (in Chinese, Hainan) Tibetan Autonomous Prefecture’s Chabcha (Gonghe) county, are being moved so that authorities can restore a local airport in the historic region of Tibet known to Tibetans as Amdo, a source living in the area told RFA’s Tibetan Service.<br /><br />“Every family will be relocated,” RFA’s source said, speaking on condition of anonymity. “It’s just a matter of time.”<br /><br />To rebuild and expand the airport, which was closed down in the 1980s, government authorities are seizing the land of local Tibetans, “who will receive little in the name of compensation,” the source said.<br /><br />Amounts being offered vary according to the amount of land being taken, with payments ranging from only 12,000 yuan (U.S. $1,743) to as much as 200,000 yuan (U.S. $29,054), the source said, adding that the villagers losing their homes are being moved to other housing nearby.<br /><br />“It’s better to take the money and relocate oneself, though, as the consequences could be severe if we insist on remaining where we are,” the source said.<br /><br />Chinese development projects in Tibetan areas have led to frequent standoffs with Tibetans who accuse Chinese firms and local officials of improperly seizing land and disrupting the lives of local people.<br /><br />In October 2018, Chinese workers building a solar panel installation in Qinghai’s Tsolho prefecture attacked a group of Tibetans protesting their intrusion into nearby grazing areas.<br /><br />The Oct. 11 assault left one Tibetan injured after he was dragged a short distance by a truck, and several Chinese workers were taken into custody by police.<br /><i><b><br />Reported by Kunsang Tenzin for RFA’s Tibetan Service. Translated by Tenzin Dickyi. Written in English by Richard Finney.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>land grab</dc:subject>
+      <dc:subject>land grab</dc:subject>
+    
+    
+      <dc:subject>eviction</dc:subject>
+      <dc:subject>eviction</dc:subject>
+    
+    <dc:date>2019-05-16T19:21:21Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/china/prison-05162019144537.html">
+		<title>Hong Kong Sends Democracy Protest Leader Joshua Wong Back to Prison</title>
+    <link>https://www.rfa.org/english/news/china/prison-05162019144537.html</link>
+    <description>Wong says his supporters should focus their attention on preventing legal changes allowing the rendition of alleged criminal suspects from Hong Kong to mainland China.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/china/prison-05162019144537.html/china-wongsentence2-051619.jpg"></img><p>Hong Kong activist Joshua Wong was sent back to prison by a Hong Kong court on Thursday to finish serving a sentence for his role in the 2014 Occupy Central protests.<br /><br />The city's Court of Appeal also reduced his sentence to two months from three.<br /><br />Wong, in the dock, shouted to the visitors' gallery on hearing the court's judgment: "Go, everybody! We'll need you all to oppose the China renditions law!"<br /><br />His supporters responded with cheers, some of them in tears. Outside the court, supporters shouted: "Citizens resist! Have no fear!"<br /><br />Earlier, Wong told reporters that he was more concerned about planned changes to Hong Kong's extradition laws than about his own sentence.<br /><br />"I may be facing another spell in a Hong Kong prison at this appeal hearing today, but once the China renditions law, the Fugitive Offenders Ordinance [amendments] pass into law, then Hong Kong people could in future be looking at appeals in the People's Courts [of mainland China], not just the Hong Kong Court of Appeal," he said.<br /><br />"The events of the next few months will decide whether or not this happens, and on the actions taken by the people of Hong Kong to bring down this evil China renditions law," Wong said.<br /><br />Last month, thousands of people took to the streets in protest at the law, which will allow the Hong Kong government to grant extradition requests on a case-by-case basis with no meaningful judicial oversight, to countries with which it lacks an extradition treaty.<br /><br />The most likely jurisdiction to use the proposed provision is mainland China, which currently has no extradition treaty with Hong Kong.<br /><br />Democratic Party founder Martin Lee, who is currently in the U.S. to raise concern over the erosion of Hong Kong's rights and freedoms under Chinese rule, said the changes to the law could affect anyone who lives in or travels to Hong Kong.<br /><br />"All it needs is an affidavit from somebody in China to say that whoever it is they want to punish has committed a criminal offense many years ago ... and then that person can be transferred," Lee told a hearing of the Congressional-Executive Commission on China (CECC) in Washington on Wednesday.<br /><br /><b>Contempt of court</b><br /><br />Wong, now 22, had earlier begun serving a six-month jail term for his part in the storming of police barriers outside government headquarters on Sept. 26, 2014 at the start of the Occupy Central democracy movement.<br /><br /> He was acquitted alongside fellow defendants Nathan Law and Alex Chow by Hong Kong's Court of Final Appeal in February 2018.<br /><br />But he was also handed a three-month sentence for "contempt of court," for trying to block the police clearance of an Occupy protest site in Mong Kok at the tail-end of the Umbrella Movement, which gained its nickname from the use of umbrellas by peaceful protesters to ward off pepper spray and tear-gas attacks by riot police.<br /><br />He was released on bail in January, but his passport was confiscated and the High Court denied his request to ease his bail conditions, subjecting him to an effective travel ban.<br /><br />Wong's lawyer argued that there was scant evidence to show Wong had encouraged others to defy a court injunction ordering protesters to leave.<br /><br />However, the prosecution said Wong had escalated tensions between police and protesters on the day the street was cleared by police.<br /><br />The Court of Appeal judges found that Wong's actions were a direct challenge to the court and must be met with a deterrent sentence, and rejected any defense based on the goals of his activism.<br /><br />However, they took his youth into account—he was just 18 years old at the time of the protests—and reduced his sentence by one month.<br /><br /><b>'Draconian law'</b><br /><br />Demosisto, the political party Wong co-founded with fellow student leaders after the end of the Occupy movement, criticized the ruling as disappointing, but called for supporters to focus on proposed legal changes that will allow the rendition of alleged criminal suspects to mainland China from Hong Kong, with no due legal process.<br /><br />"Joshua's team says there is no need for supporters to go to the Lai Chi Kok prison tonight," the party said on its Facebook page."Instead, he asks that everyone do their best to help him and other prisoners by opposing that draconian law."<br /><br />"Members of Demosisto will be visiting Joshua tomorrow, and they will keep everyone updated on the situation, so please don't worry," it said.<br /><br />Agnes Chow, a Demosisto founding member who was barred from running in elections to Hong Kong's Legislative Council (LegCo), said Wong had made mental preparation for his return to prison, although she was disappointed by the judgment.<br /><br />"We believe that any citizen who takes part in a nonviolent civil disobedience campaign shouldn't be prosecuted," Chow told reporters.<br /><br />She said the administration of chief executive Carrie Lam should do a better job of handling the demands of the ruling Chinese Communist Party, which called on Wednesday for the rendition law to be passed by LegCo as a matter of "urgency."<br /><br />"The Hong Kong government has a responsibility to fix the political tensions behind the scenes, rather than trying to fix the young people and activists calling for social change," Chow said.<br /><br />Demosisto was founded in April 2016 by three former leaders of the 2014 Occupy Central movement for fully democratic elections: Wong, Chow, and ousted lawmaker Nathan Law.<br /><br /><i><b>Reported by Lee Wang-yam for RFA's Cantonese Service. Translated and edited by Luisetta Mudie.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>hong kong</dc:subject>
+      <dc:subject>hong kong</dc:subject>
+    
+    
+      <dc:subject>regional influence</dc:subject>
+      <dc:subject>regional influence</dc:subject>
+    
+    
+      <dc:subject>democracy</dc:subject>
+      <dc:subject>democracy</dc:subject>
+    
+    
+      <dc:subject>justice system</dc:subject>
+      <dc:subject>justice system</dc:subject>
+    
+    <dc:date>2019-05-16T19:05:20Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/china/canada-huawei-05162019140629.html">
+		<title>China Formally Arrests Canadians Kovrig And Spavor on 'Spying' Charges</title>
+    <link>https://www.rfa.org/english/news/china/canada-huawei-05162019140629.html</link>
+    <description>The announcement comes after U.S. President Donald Trump signs an executive order that will likely outlaw the use of Huawei components by U.S. companies.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/china/canada-huawei-05162019140629.html/canada-huawei.jpg"></img><p><span style="text-align: start; float: none; ">China on</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT2093_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT2099_com_zimbra_date">Thursday</span></span><span style="text-align: start; float: none; "><span> </span></span><span style="text-align: start; float: none; ">announced the formal arrest of Canadians Michael</span><span style="text-align: start; float: none; "> Kovrig and Michael Spavor, who have been held on suspicion of "spying"</span><span style="text-align: start; float: none; "> since Canada arrested a top executive at Chinese telecoms giant Huawei</span><span style="text-align: start; float: none; "> on Dec. 1, pending a U.S. extradition request.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Kovrig, a former diplomat, faces charges of "collecting state secrets</span><span style="text-align: start; float: none; "> and intelligence," while Spavor, who owns a tourism company, was</span><span style="text-align: start; float: none; "> arrested on charges of "stealing and illegally offering state secrets</span><span style="text-align: start; float: none; "> abroad," foreign ministry spokesman Lu Kang told a regular news</span><span style="text-align: start; float: none; "> briefing in Beijing.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Lu said the men were formally arrested "recently." Both are being held</span><span style="text-align: start; float: none; "> at an unknown location under "residential surveillance at a designated</span><span style="text-align: start; float: none; "> location," although their formal arrest means they could be</span><span style="text-align: start; float: none; "> transferred elsewhere. Neither has been allowed access to a lawyer;</span><span style="text-align: start; float: none; "> only monthly visits from consular staff.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Lu said: "Chinese judicial authorities are handling the cases</span><span style="text-align: start; float: none; "> according to law ... [Their] legitimate rights and interests are fully</span><span style="text-align: start; float: none; "> guaranteed."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The change in Kovrig and Spavor's status means that state prosecutors</span><span style="text-align: start; float: none; "> have approved their continued detention on the charges listed, but</span><span style="text-align: start; float: none; "> have yet to issue an indictment, which would set in motion the</span><span style="text-align: start; float: none; "> processes leading to a trial.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The Canadian foreign ministry hit out at the announcement, and called</span><span style="text-align: start; float: none; "> for Kovrig and Spavor's immediate release.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"Canada strongly condemns their arbitrary arrest as we condemned their</span><span style="text-align: start; float: none; "> arbitrary detention on</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT2094_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT2100_com_zimbra_date">December 10</span></span><span style="text-align: start; float: none; ">," the ministry said in a statement.</span><span style="text-align: start; float: none; "> "We reiterate our demand that China immediately release Mr. Kovrig and</span><span style="text-align: start; float: none; "> Mr. Spavor."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The announcement came just hours after U.S. President Trump announced</span><span style="text-align: start; float: none; "> an executive ban on the purchase of equipment from foreign providers</span><span style="text-align: start; float: none; "> deemed a national security risk, a move that is widely seen as</span><span style="text-align: start; float: none; "> targeting Chinese tech companies including Huawei.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Authorities in the democratic island of Taiwan said they would follow suit.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"Huawei forms part of the red supply chain, and it's the only</span><span style="text-align: start; float: none; "> [Chinese] supplier of core network infrastructure," Taiwan economics</span><span style="text-align: start; float: none; "> minister Shen Jong-chin told reporters on</span><span style="text-align: start; float: none; "><span> </span></span><span class="Object" id="OBJ_PREFIX_DWT2095_com_zimbra_date" style="text-align: start; "><span class="Object" id="OBJ_PREFIX_DWT2101_com_zimbra_date">Thursday</span></span><span style="text-align: start; float: none; ">. "Taiwan-based</span><span style="text-align: start; float: none; "> factories supplying Ericsson, Alcatel and Nokia will reap the</span><span style="text-align: start; float: none; "> benefits."</span><br style="text-align: start; " /><b><br style="text-align: start; " /><span style="text-align: start; float: none; ">Doing party's bidding</span></b></p>
+<p><span style="text-align: start; float: none; ">At the heart of the ban is growing international concern that Huawei</span><span style="text-align: start; float: none; "> cannot refuse to act on behalf of the Chinese state, which is in turn</span><span style="text-align: start; float: none; "> fully controlled by the Communist Party of China, analysts said.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"Huawei has made significant verbal assurances, such as saying that it</span><span style="text-align: start; float: none; "> is a staff-owned private company, that it will reject any Chinese</span><span style="text-align: start; float: none; "> Government demand to spy on or disrupt the network of its clients, and</span><span style="text-align: start; float: none; "> that it will sign a ’no-spying’ agreement," Steve Tsang, director of</span><span style="text-align: start; float: none; "> the SOAS China Institute, wrote in a recent blog post. "But such</span><span style="text-align: start; float: none; "> assurances need to be tested on the basis of their credibility against</span><span style="text-align: start; float: none; "> what is known of the Chinese political system."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">According to Tsang, Huawei's claims that it is employee-owned do not hold water</span><span style="text-align: start; float: none; ">, given the fact that the staff union is itself controlled by the</span><span style="text-align: start; float: none; "> Communist Party.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">"It is hard for any independent China Studies person to agree that</span><span style="text-align: start; float: none; "> Huawei’s ownership will make it not susceptible to the will of the</span><span style="text-align: start; float: none; "> Party," Tsang said. "Some may see such a structure to imply Huawei is</span><span style="text-align: start; float: none; "> more tightly controlled by the Party than the regular state owned</span><span style="text-align: start; float: none; "> enterprises."</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">Tsang also cited current Chinese legislation requiring all Chinese</span><span style="text-align: start; float: none; "> companies to cooperate with state intelligence agencies when requested</span><span style="text-align: start; float: none; "> to do so.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The arrest of Huawei chief financial officer Meng Wanzhou at Vancouver</span><span style="text-align: start; float: none; "> airport on Dec. 1, 2018 at the request of federal investigators in the</span><span style="text-align: start; float: none; "> U.S. sparked a diplomatic row between Ottawa and Beijing, which has</span><span style="text-align: start; float: none; "> tried to frame her arrest as politically motivated.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">China detained Canadian nationals Michael Kovrig and Michael Spavor on</span><span style="text-align: start; float: none; "> Dec. 10, and has accused them of working together. Their detentions</span><span style="text-align: start; float: none; "> came hard on the heels of an announcement allowing the extradition</span><span style="text-align: start; float: none; "> process for Meng to proceed.</span><br style="text-align: start; " /><br style="text-align: start; " /><span style="text-align: start; float: none; ">The U.S. wants to extradite her to face charges of bank fraud linked</span><span style="text-align: start; float: none; "> to the breach of sanctions against Iran. Meng has also filed a lawsuit</span><span style="text-align: start; float: none; "> against the Canadian government, alleging procedural errors by</span><span style="text-align: start; float: none; "> officers who arrested her.</span><br style="text-align: start; " /><br style="text-align: start; " /><i><b><span style="text-align: start; float: none; ">Reported by Hwang Chun-mei for RFA's Mandarin Service, and by Wong</span><span style="text-align: start; float: none; "> Lok-to for the Cantonese Service. Translated and edited by Luisetta</span><span style="text-align: start; float: none; "> Mudie.</span></b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-05-16T18:19:02Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/myanmar/plant-05152019164405.html">
+		<title>Nearly 20 Injured as Police Fire Rubber Bullets, Tear Gas at Protest of Myanmar Cement Plant</title>
+    <link>https://www.rfa.org/english/news/myanmar/plant-05152019164405.html</link>
+    <description>The crowd was demanding compensation for lost land and a halt to an influx of Chinese workers.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/myanmar/plant-05152019164405.html/Cement_Protest2.jpg"></img><p>Nearly 20 people were injured Wednesday after police in central Myanmar’s Mandalay region fired rubber bullets and tear gas into a crowd protesting construction at a coal-powered cement plant that is operated as part of a joint venture between a local firm and a Chinese partner.<br /><br />Residents of Kyaukse district’s Patheingyi township began their protest against the Alpha Cement Plant near Aungthbyae village on Tuesday evening, demanding compensation for land they say they lost when an 18-foot-wide road was built as part of the project, and urging authorities to address an influx of hundreds of Chinese employees who are working at the site.<br /><br />Moe Lin, the assistant chief of Aungthbyae village, told RFA’s Myanmar Service that protesters had blocked vehicles owned by factory operator Myanmar Conch Cement Co. Ltd. from passing through the village, and early on Wednesday morning, police moved to forcibly disperse the crowd.<br /><br />“They started the crackdown around 4:30 a.m.,” Moe Line said, adding that police fired “rubber bullets and tear gas” at protesters, and he had been shot in the arm.<br /><br />“Seventeen people were injured. One man was shot seven times and left in critical condition.”<br /><br />Injured protesters were being treated at the village clinic, he said.<br /><br />During the confrontation, police arrested a resident of Aungthbyae named Min Naing, Moe Lin said, adding that after villagers demanded authorities release him within one hour, police arrested another villager and a reporter for Channel Mandalay TV named Nanda, who was livestreaming the protest on Facebook.<br /><br />Yan Myo, one of the injured protesters, told RFA that he and others had been shot “because we staged a protest against the company.”<br /><br />“We were retreating [as the police moved forward] and heard them say, ‘Shoot straight at that guy,’ and shortly after, I was hit in the chest,” he said.<br /><br />A resident of Aungthbyae named Myint Khaing said some of the protesters set four vehicles and part of the factory property on fire.<br /><br />“They said they would set things on fire if the police didn’t release Min Naing, but the cars were already torched when we got there,” he said.<br /><br />“Some bad elements exploited the situation,” he added.<br /><br />A heavy police presence had restored calm to the area near the plant by Wednesday evening, but villagers were continuing to demand that the project be scrapped and those facing charges be released.<br /><br />Calls to Nyunt Lin, chief administrator of Patheingyi township, went unanswered on Wednesday.<br /><br />Police Commander Brigadier Win Bo of the No. 3 Police Division, who oversees police in the area, told RFA that an investigation is being made into the protest incident, but suggested that police had followed procedure with their response.<br /><br />“Actions were taken in an orderly manner—police can’t act outside the law, and we follow procedures and orders when we respond to incidents to ensure things don’t get out of hand,” he said.<br /><br />“[The officers] were given proper instructions. We don’t know whether they fired or not—the incident just occurred and negotiations with protesters are ongoing.”<br /><br />“Legal action will be taken” against those in custody and anyone involved in arson, Win Bo added.<br /><br /><b>Controversial project</b><br /><br />The project to upgrade Kyaukse’s No. 33 Cement Plant from 400 tons to 5,000 tons per day of cement production capacity was granted to the Myanmar Conch Cement Co. Ltd.—a joint venture between Myanmar’s Myint Investment Group and China’s Anhui Conch Cement—in 2015, during the administration of former President Thein Sein.<br /><br />Construction began at the site in December 2017 and Myanmar Conch Cement renamed it the Alpha Cement Plant.<br /><br />Three farmers were jailed about 10 months ago following earlier protests over road upgrades for the plant, while a fourth—a farmer in his 70s—is on bail awaiting trial. At least 17 villagers have been charged with violating Myanmar’s Peaceful Assembly Law since the project began, despite having obtained prior permission to hold protests.<br /><br />In addition to frustrations over loss of land, Myint Khaing said, residents are worried about their safety after some 500 Chinese nationals were sent to Aungthbyae village to work at the cement plant site, beginning around four months ago.<br /><br />“The [Burmese] workers initially came from Myint Investment but then were joined by Chinese workers to become Myanmar Conch employees,” he said.<br /><br />“About 500 Chinese now work at the plant near our village. I don’t know if they are here legally or not. Some can’t speak Burmese and we are worried because they are constantly spending time in the village.”<br /><br />Villagers have called on local authorities to meet to discuss the concerns of local stakeholders, but have received no response.<br /><br />RFA was unable to reach plant officials for comment on Wednesday.<br /><br /><i><b>Reported by Nayrein Kyaw and Khemani Wn. Translated by Nandar Chann. Written in English by Joshua Lipes.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>industry</dc:subject>
+      <dc:subject>industry</dc:subject>
+    
+    
+      <dc:subject>labor</dc:subject>
+      <dc:subject>labor</dc:subject>
+    
+    
+      <dc:subject>land disputes</dc:subject>
+      <dc:subject>land disputes</dc:subject>
+    
+    
+      <dc:subject>protests</dc:subject>
+      <dc:subject>protests</dc:subject>
+    
+    
+      <dc:subject>police violence</dc:subject>
+      <dc:subject>police violence</dc:subject>
+    
+    <dc:date>2019-05-15T21:15:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/korea/nk-hrw-seven-repatriation-05152019164656.html">
+		<title>Human Rights Watch Urges China Not to Repatriate Seven North Koreans</title>
+    <link>https://www.rfa.org/english/news/korea/nk-hrw-seven-repatriation-05152019164656.html</link>
+    <description>NGO says Beijing is legally obligated to help the seven because they could be tortured upon return.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/korea/protection-04252017153844.html/nk-border-guard-yalu-river-april-2017-1000.jpg"></img><p><span>Human Rights Watch (HRW) Tuesday urged China not to forcibly deport seven North Koreans currently in detention in Liaoning province, saying that if repatriated, the seven would face threats to their life or freedom.</span></p>
+<p><span>The remarks were made in a statement by the New York-based NGO that said China should grant asylum to the group, which includes a 10-year-old girl, and allow them to travel safely to a third country.</span></p>
+<p><span>“China should not send these seven people back to North Korea where they face torture, sexual violence, forced labor, and other horrors,” said </span><a href="https://www.hrw.org/about/people/phil-robertson" target="_blank">Phil Robertson</a><span>, deputy Asia director at Human Rights Watch.</span></p>
+<p><span>“Beijing should immediately allow them to travel to a third country.”</span></p>
+<p><span>The seven were arrested on April 28 while hiding out just outside Shenyang in Liaoning Province.</span></p>
+<p><span>North Koreans who escape the isolated state typically face harsh punishments if they are sent back. Penalties including incarceration are not reserved for the defectors themselves; often their family members are also punished.</span></p>
+<p><span>According to HRW China is legally bound to help the seven, as it is a party to the 1951 Refugee Convention and its 1967 Protocol, and the 1984 Convention against Torture. Those statutes require that signatories agree not to forcibly repatriate those who would be persecuted or tortured if returned.</span></p>
+<p><span>The statement highlighted previous incidents of forced repatriation from China in which the returnees were sent to prison camps for leaving the country, which is a criminal offense in North Korea.</span></p>
+<p><span>The NGO said that a former senior official in the North Korean state security service who had been assigned to deal with North Koreans who were forcibly returned from China told HRW that every returnee was tortured for information regarding their network of contacts outside of North Korea.</span></p>
+<p><span>The prospect of what awaits forced returnees has even caused some detained North Koreans in China to commit suicide once they learn their fate.</span></p>
+<p><span>“North Koreans who leave their country are caught in a horrendous cycle of physical and psychological violence, and I received information that some take their own lives when they find out that they are scheduled for repatriation,” said Tomás Ojea Quintana, the U.N. special rapporteur on human rights in North Korea in 2017.</span></p>
+<p><span>But according to HRW, Beijing honors a 1986 bilateral border pact with Pyongyang that calls North Korean refugees caught in China “economic migrants” and mandates their repatriation. </span></p>
+<p><span> </span><span>“China should end its complicity with North Korean rights violations by ending the practice of forcing back fleeing North Koreans,” Robertson said in the HRW statement.</span></p>
+<p><span>“China should protect these seven North Koreans, both complying with its international obligations and sending Pyongyang a message that it won’t ignore North Korea’s abuses,” he added.</span></p>
+<p><strong><i> </i></strong></p>
+<p><strong><i>Additional Reporting by RFA’s Korean Service.</i></strong></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>nk refugees</dc:subject>
+      <dc:subject>nk refugees</dc:subject>
+    
+    
+      <dc:subject>refugees</dc:subject>
+      <dc:subject>refugees</dc:subject>
+    
+    
+      <dc:subject>repatriate</dc:subject>
+      <dc:subject>repatriate</dc:subject>
+    
+    <dc:date>2019-05-15T20:55:05Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/china/philippines-southchinasea-05152019163110.html">
+		<title>Philippine, American Coast Guards Hold Joint Drills in South China Sea</title>
+    <link>https://www.rfa.org/english/news/china/philippines-southchinasea-05152019163110.html</link>
+    <description>One of U.S. Coast Guard’s most modern ships takes part in exercises.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/china/philippines-southchinasea-05152019163110.html/phils-china.jpg"></img><p><span style="text-align: left; float: none; ">The U.S. and Philippine coast guards sailed through a waterway claimed by China during a joint drill, officials said Wednesday, in a show of strength that underscored an evolving new role in the Asia Pacific for the American military’s fifth branch.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">The U.S. Coast Guard Cutter Bertholf and the Batangas, a search-and-rescue ship from the Philippine Coast Guard, were among vessels that took part in the just-concluded maritime exercises near Scarborough Shoal in the South China Sea, officials said.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">“This type of engagement gives us a great opportunity to share our experiences and learn from our partners in the Philippine Coast Guard,” said Vice Adm. Linda Fagan, commander of U.S. Coast Guard operations in the Asia-Pacific.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">“The US Coast Guard is proud to operate with our Pacific counterparts, and together we are dedicated to enhancing our capabilities and strengthening maritime governance and security while promoting individual sovereignty,” Fagan said in a statement.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">The joint drills included a mock search-and-rescue scenario, officials said.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Off in the distance, two Chinese Coast Guard vessels seemed to be monitoring the exercises but did not interact with the Philippine ship, said Cmdr. Gary Dale Gimotea, skipper of the BRP Batangas.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Manila refers to Scarborough Shoal, a triangular-shaped chain of reefs and rocks about 198 km (123 miles) off Subic Bay on the west coast of Luzon island, as Panatag Shoal.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">China claims most of the mineral-rich South China Sea, including areas that reach the shores of its smaller neighbors. Brunei, Malaysia, the Philippines, Vietnam and Taiwan also have overlapping claims in the sea.</span><br style="text-align: left; " /><br style="text-align: left; " /><b style="text-align: left; ">‘We’re US warships’</b><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">The participation in the drills of the Bertholf, a 418-foot cutter based in California and one of the American coast guard’s most modern and advanced ships, was likely a preview of the military branch’s bigger role in the South China Sea, which Manila refers to as the West Philippine Sea, according to security analysts. The Coast Guard is the last branch of the U.S. Armed Forces.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">The naval exercise “proved an excellent opportunity to compare techniques, maintain proficiency and build a friendly relationship amongst professional mariners and coast guards,” Capt. John Driscoll, the Bertholf’s commanding officer, said in a statement.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">“Our relationship is critically important as we work together to ensure the ocean remains free and open, with a respect for international law and rules of behavior at sea, and where mariners are safe to carry out their livelihood – whether they’re on a cargo ship or fishing vessel,” he added.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">During its deployment in the Indo-Pacific region, Bertholf serves under the operational control of the U.S. Navy’s 7th Fleet, according to a news release from the U.S. Coast Guard.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Bertholf sailed through the East China Sea in March this year in what security analysts had described as a changing role for the U.S. Coast Guard, which traditionally operates closer to the United States.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Although the Coast Guard falls under the U.S. Department of Homeland Security, the Bertholf has carried out several missions typically assigned to the Pentagon, including a port stop in Hong Kong on April 15 – the first time the Coast Guard had visited the Chinese territory in 17 years – according to the Washington Post.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Bertholf’s deployment was also the first time in years that the Coast Guard had sent a large vessel to the Asia-Pacific region, reports said.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Adm. Karl Schultz, the Coast Guard commandant, told the Post last month that as the Defense Department shifted its focus to competing with Russia and China, the Navy was “oversubscribed.” He cited “realities in the South China Sea,” among other factors in the shift.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">“The Coast Guard brings some authorities below the threshold of war,” he said. “We’re U.S. warships, but we look different, with a white hull and an orange stripe.”</span><br style="text-align: left; " /><br style="text-align: left; " /><b style="text-align: left; ">Disputed shoal</b><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Tensions over Scarborough Shoal erupted some seven years ago, when Chinese vessels prevented the Philippine Navy from arresting Chinese fishermen who had illegally entered the area.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">The stand-off led to a diplomatic brawl, but it was resolved after both sides agreed to pull their forces out of the area. The Philippines did so, but China lingered in the area, which is well-within Manila’s exclusive economic zone and considered a traditional fishing ground by Filipinos.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Then-President Benigno Aquino subsequently took the Chinese to court in a bid to resolve the dispute, and in July 2016, the Permanent Court of Arbitration in The Hague ruled in favor of Manila. China, however, ignored the ruling and asserted its territorial claims in the disputed waterway by building military facilities on islands that it occupies there.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">President Rodrigo Duterte, who entered office a month before the court ruled in the case, quickly moved to appease China and distance his government away from the United States, the Philippines’ traditional ally.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">But Duterte’s pro-China policy appears to have backfired, amid recent reports that more Chinese ships were now clustering in the disputed maritime region. This forced the Philippine president to issue a rare warning to Beijing to stay away from areas controlled by Manila in the South China Sea.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">And last week, in another joint show of force, the Philippine Navy joined the U.S., Japanese and Indian navies in sailing across South China Sea after recent drills in South Korea. The exercise was meant to test freedom of navigation in the region.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">Meanwhile in Singapore on Wednesday, Adm. John Richardson, the chief of U.S. Naval Operations, said the maritime patrols in the sea were not meant to challenge China specifically, but part of maintaining a consistent presence in the disputed waters.</span><br style="text-align: left; " /><br style="text-align: left; " /><span style="text-align: left; float: none; ">“I’ve done the analysis so that I can state with confidence that our level of operations, our presence there, has been consistent over the decades,” Richardson told a security conference, according to press reports. “There’s nothing that has spiked recently.”</span></p>
+<p><span style="text-align: left; float: none; "><i style="text-align: left; "><b>Reported by BenarNews, an RFA-affiliated online news service.</b></i></span></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-05-15T20:37:12Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/laos/collapse-05152019161026.html">
+		<title>Laos Dam Collapse Blamed on Substandard Construction</title>
+    <link>https://www.rfa.org/english/news/laos/collapse-05152019161026.html</link>
+    <description>Soil was used instead of concrete, causing the Xe Pian-Xe Namnoy saddle dam to fail in heavy rain, an official report concludes.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/laos/pnpc-dam-compensation-01292019132457.html/laos_flood.jpg"></img><p>Poor construction methods, with soil used in place of concrete, are now being blamed for a fatal hydropower dam collapse last year in Laos in what has been called the country’s worst flooding in decades.</p>
+<p>The disaster occurred on July 23, 2018 when a saddle dam at the Xe Pian Xe Namnoy (PNPC) hydropower project collapsed following heavy rains, inundating 12 villages and killing at least 40 people in Champassak and Attapeu provinces, leaving many more missing.</p>
+<p>A report sent to the Lao government in March, but still not released to the public, reveals that “construction of the saddle dam was substandard,” a PNPC official told RFA’s Lao Service this week.</p>
+<p>“It was built with soil,” the official said, speaking on condition of anonymity. “That was the cause of the collapse. It couldn’t handle that massive amount of water.”</p>
+<p>A new saddle dam, saddle dam D, is now under construction at a location a little more than a kilometer away from the dam that failed, the official said, adding that the new 400-meter-long structure will be built with concrete and anchored at a depth of at least 10 meters into the ground.</p>
+<p>The team investigating the cause of the July 2018 disaster has recommended that all other saddle dams at the hydropower site also be built with concrete, he said.</p>
+<p><b>Talks with South Korea</b></p>
+<p>Also speaking to RFA, Singphet Bounsavattiphanh—vice chairman of the Lao government inspection agency—confirmed that the government had received the report and its recommendations in March.</p>
+<p>“But they cannot publish it right now because they are in the process of negotiating with the South Korean government about what information should or should not be released to the public,” he said.</p>
+<p>PNPC is a consortium formed by a local Lao company and South Korea’s SK Engineering &amp; Construction, and Korean involvement in the project had earlier prompted Seoul to send relief teams to Laos to help mitigate the effects of the disaster.</p>
+<p>The Lao government is expected to officially publish the investigation’s results when talks with South Korea are concluded, Singphet said.</p>
+<p>All findings of the report should be released as quickly as possible, though, Premredee Daohuang of the Thailand-based NGO Laos Dam Investigation Monitor said, also speaking to RFA.</p>
+<p>“This is so the public can verify the information and raise questions,” he said, adding, “This information shouldn’t be known only to the Lao and South Korean governments.”</p>
+<p>In the wake of the Xe Pian Xe Namnoy disaster, Laos has stepped up scrutiny of an ambitious hydropower dam building program under which it aims to serve as the “battery of Asia” and sell hydropower to its more industrialized neighbors China, Thailand and others.</p>
+<p><i><b>Reported and translated by Max Avary for RFA’s Lao Service. Written in English by Richard Finney.</b></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>hydropower/dams</dc:subject>
+      <dc:subject>hydropower/dams</dc:subject>
+    
+    
+      <dc:subject>manmade disasters</dc:subject>
+      <dc:subject>manmade disasters</dc:subject>
+    
+    <dc:date>2019-05-15T20:27:28Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+
+
+
+</rdf:RDF>
