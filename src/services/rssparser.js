@@ -95,6 +95,12 @@ export default class RSSParser {
         return self.parseData(self, result["rdf:RDF"].channel, result["rdf:RDF"]);
     }
 
+    static getText = function(elt) {
+        if (typeof(elt) === 'string') return elt;
+        if (typeof(elt) === 'object' && elt.hasOwnProperty('_')) return elt._;
+        return null;
+    }
+
     static parseData(self, channelElement, itemParentElement) {
         var items = [];
         var index = 0;
@@ -119,7 +125,11 @@ export default class RSSParser {
             item.feed = feed;
             item.title = i.title;
             item.link = i.link;
-            item.guid = i.guid;
+            item.guid = self.getText(i.guid);
+            if (item.guid == null || item.guid.length == 0) {
+                item.guid = item.title;
+            }
+            console.log(item.guid);
             item.description = sanitizeHTML(i.description);
             item.pubDate = i.pubDate;
             item.author = i.author;
