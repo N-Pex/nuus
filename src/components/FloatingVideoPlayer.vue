@@ -2,7 +2,6 @@
   <div
     v-if="item != null && (item.hasVideoAttachment() || item.hasAudioAttachment())"
     :class="{ 'ma-0': true, 'pa-0': true, 'floatingPlayer': true, docked: isDocked }"
-    :style="cssProps"
     v-resize="onResize"
   >
     <v-container fluid class="ma-0 pa-0">
@@ -12,7 +11,7 @@
             align-start
             ref="video"
             :class="{ 'videoPlayer': true, docked: isDocked }"
-            @click="showHideToolbar"
+            @click="showHideOverlayControls"
             @loadeddata="onVideoLoaded"
             @seeked="onVideoSeeked"
             @pause="onVideoPaused"
@@ -23,7 +22,7 @@
           </video>
 
           <transition name="fade">
-            <div class="toolbar ma-0 pa-0" v-show="showToolbar" :style="overlayStyle">
+            <div class="toolbar ma-0 pa-0" v-show="showOverlayControls" :style="overlayStyle">
               <v-container fluid fill-height class="ma-0 pa-0">
                 <v-layout justify-space-between column fill-height class="ma-0 pa-0">
                   <v-flex>
@@ -171,11 +170,10 @@ import { constants } from "crypto";
 export default {
   data: () => ({
     item: null,
-    show: true,
     isPlaying: false,
     isDocked: false,
     enclosureURL: "",
-    showToolbar: false,
+    showOverlayControls: false,
     videoPlayerHeight: 30,
     currentPlayPercentage: 0
   }),
@@ -194,18 +192,10 @@ export default {
         });
         this.currentPlayPercentage = 0;
         this.isDocked = false;
-        this.show = true;
-      } else {
-        this.show = false;
       }
     }
   },
   computed: {
-    cssProps() {
-      return {
-        visibility: this.show ? "visible" : "hidden"
-      };
-    },
     overlayStyle() {
       return {
         height: this.videoPlayerHeight + "px"
@@ -307,7 +297,7 @@ export default {
     },
 
     minimize() {
-      this.showToolbar = false;
+      this.showOverlayControls = false;
       this.isDocked = true;
       //this.$emit("minimize");
     },
@@ -321,13 +311,13 @@ export default {
       this.$emit("close");
     },
 
-    showHideToolbar() {
+    showHideOverlayControls() {
       if (this.isDocked) {
-        this.showToolbar = false;
+        this.showOverlayControls = false;
       } else {
-        this.showToolbar = !this.showToolbar;
-        if (this.showToolbar) {
-          setTimeout(this.showHideToolbar, 3000);
+        this.showOverlayControls = !this.showOverlayControls;
+        if (this.showOverlayControls) {
+          setTimeout(this.showHideOverlayControls, 3000);
         }
       }
     }
@@ -349,10 +339,11 @@ export default {
   display: table-row;
   position: fixed;
   background-color: #aaa;
-  top: calc(100vh - 72px);
-  left: 2px;
-  width: calc(100vw - 4px);
+  top: calc(100vh - 70px);
+  left: 0px;
+  width: calc(100vw - 0px);
   height: 70px;
+  border: 1px solid gray;
 }
 
 .toolbar {
