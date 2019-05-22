@@ -5,114 +5,160 @@
     :style="cssProps"
     v-resize="onResize"
   >
-    <video
-      align-start
-      ref="video"
-      :class="{ 'videoPlayer': true, docked: isDocked }"
-      @click="showHideToolbar"
-      @loadeddata="onVideoLoaded"
-      @seeked="onVideoSeeked"
-      @pause="onVideoPaused"
-      @play="onVideoPlay"
-      @timeupdate="onVideoTimeUpdate"
-    >
-      <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the video tag.
-    </video>
-
-    <transition name="fade">
-      <div class="toolbar ma-0 pa-0" v-show="showToolbar" :style="overlayStyle">
-        <v-container fluid fill-height class="ma-0 pa-0">
-          <v-layout
-            justify-space-between
-            column
-            fill-height
-            class="ma-0 pa-0"
+    <v-container fluid class="ma-0 pa-0">
+      <v-layout align-center row fill-height class="ma-0 pa-0" xs12>
+        <v-flex grow>
+          <video
+            align-start
+            ref="video"
+            :class="{ 'videoPlayer': true, docked: isDocked }"
+            @click="showHideToolbar"
+            @loadeddata="onVideoLoaded"
+            @seeked="onVideoSeeked"
+            @pause="onVideoPaused"
+            @play="onVideoPlay"
+            @timeupdate="onVideoTimeUpdate"
           >
-            <v-flex>
-              <v-container fluid>
-                <v-layout justify-space-between row>
-                  <v-flex xs1>
-                    <v-btn
-                      flat
-                      icon
-                      color="white"
-                      @click="minimize()"
-                      class="ma-2 pa-2"
-                      style="min-width: 0"
-                    >
-                      <v-icon medium class="ma-0 pa-0">expand_more</v-icon>
-                    </v-btn>
+            <source :src="enclosureURL" :type="item.enclosureType">Your browser does not support the video tag.
+          </video>
+
+          <transition name="fade">
+            <div class="toolbar ma-0 pa-0" v-show="showToolbar" :style="overlayStyle">
+              <v-container fluid fill-height class="ma-0 pa-0">
+                <v-layout justify-space-between column fill-height class="ma-0 pa-0">
+                  <v-flex>
+                    <v-container fluid>
+                      <v-layout justify-space-between row>
+                        <v-flex xs1>
+                          <v-btn
+                            flat
+                            icon
+                            color="white"
+                            @click="minimize()"
+                            class="ma-2 pa-2"
+                            style="min-width: 0"
+                          >
+                            <v-icon medium class="ma-0 pa-0">expand_more</v-icon>
+                          </v-btn>
+                        </v-flex>
+                        <v-flex xs1>
+                          <v-btn
+                            flat
+                            icon
+                            color="white"
+                            @click="close()"
+                            class="ma-2 pa-2"
+                            style="min-width: 0"
+                          >
+                            <v-icon medium>close</v-icon>
+                          </v-btn>
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
                   </v-flex>
-                  <v-flex xs1>
-                    <v-btn
-                      flat
-                      icon
-                      color="white"
-                      @click="close()"
-                      class="ma-2 pa-2"
-                      style="min-width: 0"
-                    >
-                      <v-icon medium>close</v-icon>
-                    </v-btn>
+
+                  <v-flex grow>
+                    <v-container fluid>
+                      <v-layout align-center justify-center row wrap>
+                        <v-flex xs2 class="text-xs-center">
+                          <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-2">
+                            <v-icon medium>replay_10</v-icon>
+                          </v-btn>
+                        </v-flex>
+
+                        <v-flex xs2 class="text-xs-center">
+                          <v-btn
+                            v-show="!isPlaying"
+                            flat
+                            large
+                            icon
+                            color="white"
+                            @click="play()"
+                            class="ma-2 pa-2"
+                          >
+                            <v-icon x-large>play_circle_outline</v-icon>
+                          </v-btn>
+                          <v-btn
+                            v-show="isPlaying"
+                            flat
+                            large
+                            icon
+                            color="white"
+                            @click="pause()"
+                            class="ma-2 pa-2"
+                          >
+                            <v-icon x-large>pause_circle_outline</v-icon>
+                          </v-btn>
+                        </v-flex>
+
+                        <v-flex xs2 class="text-xs-center">
+                          <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-2">
+                            <v-icon medium>forward_10</v-icon>
+                          </v-btn>
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-flex>
+                  <v-flex style="max-height: 7px">
+                    <v-progress-linear
+                      class="ma-0 pa-0"
+                      background-color="gray"
+                      color="green lighten-1"
+                      :value="currentPlayPercentage"
+                    ></v-progress-linear>
                   </v-flex>
                 </v-layout>
               </v-container>
-            </v-flex>
+            </div>
+          </transition>
+        </v-flex>
 
-            <v-flex grow>
-              <v-container fluid>
-                <v-layout align-center justify-center row wrap>
-                  <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-2">
-                      <v-icon medium>replay_10</v-icon>
-                    </v-btn>
-                  </v-flex>
+        <v-flex fill-height v-bind:class="'xs'+ (isDocked ? 5 : 0)" @click="maximize()">
+          <v-btn
+            class="dockedControl ma-0 pa-0"
+            flat
+            small
+            color="black"
+            @click="maximize()"
+            style="min-width: 0;min-height: 0"
+          >
+            <v-icon small>expand_less</v-icon>
+          </v-btn>
+          <div class="dockedTitle dockedControl">{{ item.title }}</div>
+        </v-flex>
 
-                  <v-flex xs2 class="text-xs-center">
-                    <v-btn
-                      v-show="!isPlaying"
-                      flat
-                      large
-                      icon
-                      color="white"
-                      @click="play()"
-                      class="ma-2 pa-2"
-                    >
-                      <v-icon x-large>play_circle_outline</v-icon>
-                    </v-btn>
-                    <v-btn
-                      v-show="isPlaying"
-                      flat
-                      large
-                      icon
-                      color="white"
-                      @click="pause()"
-                      class="ma-2 pa-2"
-                    >
-                      <v-icon x-large>pause_circle_outline</v-icon>
-                    </v-btn>
-                  </v-flex>
+        <v-flex v-bind:class="'xs'+ (isDocked ? 2 : 0) + ' dockedControl text-xs-center'">
+          <v-btn
+            v-show="!isPlaying"
+            flat
+            large
+            icon
+            color="black"
+            @click="play()"
+            class="ma-2 pa-2"
+          >
+            <v-icon x-large>play_circle_outline</v-icon>
+          </v-btn>
+          <v-btn
+            v-show="isPlaying"
+            flat
+            large
+            icon
+            color="black"
+            @click="pause()"
+            class="ma-2 pa-2"
+          >
+            <v-icon x-large>pause_circle_outline</v-icon>
+          </v-btn>
+        </v-flex>
 
-                  <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-2">
-                      <v-icon medium>forward_10</v-icon>
-                    </v-btn>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-flex>
-            <v-flex style="max-height: 7px">
-              <v-progress-linear
-                class="ma-0 pa-0"
-                background-color="gray"
-                color="green lighten-1"
-                :value="currentPlayPercentage"
-              ></v-progress-linear>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </div>
-    </transition>
+        <v-flex v-bind:class="'xs'+ (isDocked ? 2 : 0) + ' dockedControl'">
+          <v-btn flat large color="black" @click="close()">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
@@ -261,8 +307,13 @@ export default {
     },
 
     minimize() {
-      this.isDocked = !this.isDocked;
-      this.$emit("minimize");
+      this.showToolbar = false;
+      this.isDocked = true;
+      //this.$emit("minimize");
+    },
+
+    maximize() {
+      this.isDocked = false;
     },
 
     close() {
@@ -271,9 +322,13 @@ export default {
     },
 
     showHideToolbar() {
-      this.showToolbar = !this.showToolbar;
-      if (this.showToolbar) {
-        setTimeout(this.showHideToolbar, 3000);
+      if (this.isDocked) {
+        this.showToolbar = false;
+      } else {
+        this.showToolbar = !this.showToolbar;
+        if (this.showToolbar) {
+          setTimeout(this.showHideToolbar, 3000);
+        }
       }
     }
   }
@@ -294,10 +349,10 @@ export default {
   display: table-row;
   position: fixed;
   background-color: #aaa;
-  top: calc(100vh - 102px);
+  top: calc(100vh - 72px);
   left: 2px;
   width: calc(100vw - 4px);
-  height: 100px;
+  height: 70px;
 }
 
 .toolbar {
@@ -305,8 +360,28 @@ export default {
   right: 0;
   left: 0;
   position: absolute;
+  overflow: hidden;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+}
+
+.docked .toolbar {
+  visibility: hidden;
+}
+
+.dockedTitle {
+  font-size: 12pt;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dockedControl {
+  visibility: hidden;
+}
+
+.docked .dockedControl {
+  visibility: visible;
 }
 
 .videoPlayer {
@@ -314,13 +389,11 @@ export default {
   height: auto;
   overflow: hidden;
   transition: 0.5s;
-  padding-left: 0px;
 }
 
 .videoPlayer.docked {
   width: auto;
-  height: 60px;
-  padding-left: 10px;
+  height: 70px;
 }
 
 .fade-enter-active,
