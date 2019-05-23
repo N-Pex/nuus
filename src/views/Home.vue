@@ -62,25 +62,21 @@
 
     <v-content>
       <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
-      <ItemList v-bind:items="items" v-on:itemClicked="itemClicked($event)" v-on:playItem="playItem($event)"/>
-      <div class="itemContainer" v-show="showItemFullscreen">
-      <FloatingVideoPlayer ref="videoPlayer" v-on:close="onClose()" v-on:minimize="onMinimize()"/>
-      <div class="test" >
-        asdlaksdjlaksdj
-        </div>
+      <ItemList
+        v-bind:items="items"
+        v-on:itemClicked="itemClicked($event)"
+        v-on:playItem="playItem($event)"
+      />
+      <VideoPlayer
+        ref="videoPlayer"
+        v-on:close="onClose()"
+        v-on:minimize="onMinimize()"
+        v-on:maximize="onMaximize()"
+        v-show="showMediaPlayer"
+      />
+      <div v-if="showItemFullscreen" class="nextUpVideoList">
+        This space for rent.
       </div>
-      <!--<transition
-        v-on:before-enter="beforeEnter"
-        v-on:enter="enter"
-        v-on:leave="leave"
-        v-bind:css="false"
-      >
-        <v-container class="ma-0 pa-0 fullScreenItemDisplay" v-if="showItemFullscreen">
-          <v-layout row wrap>
-            <Item class="ma-3" :item="itemFullscreen" v-on:itemClicked="itemCloseClicked($event)"/>
-          </v-layout>
-        </v-container>
-      </transition>-->
     </v-content>
   </v-app>
 </template>
@@ -89,7 +85,7 @@
 import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
 import Item from "../components/Item";
-import FloatingVideoPlayer from "../components/FloatingVideoPlayer";
+import VideoPlayer from "../components/VideoPlayer";
 
 import axios from "axios";
 import sanitizeHTML from "sanitize-html";
@@ -104,7 +100,7 @@ export default {
     UrlInput,
     ItemList,
     Item,
-    FloatingVideoPlayer
+    VideoPlayer
   },
   methods: {
     beforeEnter: function(el) {
@@ -156,24 +152,29 @@ export default {
       // this.showItemFullscreen = true;
       this.$refs.videoPlayer.item = eventInfo.item;
     },
+
     playItem(eventInfo) {
-      console.log(
-        "Play item " + eventInfo.item.title
-      );
+      console.log("Play item " + eventInfo.item.title);
       this.$refs.videoPlayer.item = eventInfo.item;
-      this.itemFullscreen = eventInfo.item;
       this.showItemFullscreen = true;
+      this.showMediaPlayer = true;
     },
+
     itemCloseClicked(eventInfo) {
       this.showItemFullscreen = false;
     },
 
     onClose() {
       this.showItemFullscreen = false;
+      this.showMediaPlayer = false;
     },
 
     onMinimize() {
       this.showItemFullscreen = false;
+    },
+
+    onMaximize() {
+      this.showItemFullscreen = true;
     }
   },
 
@@ -200,6 +201,7 @@ export default {
       itemRect: new DOMRect(0, 0, 0, 0),
       itemFullscreen: null,
       showItemFullscreen: false,
+      showMediaPlayer: false,
       menuItems: [
         /*
         { title: 'Home', icon: 'dashboard' },
@@ -238,33 +240,13 @@ export default {
   overflow: hidden;
 }
 
-.fullScreenItemDisplay {
+.nextUpVideoList {
+  background-color: lightgray;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #ff0;
-}
-
-.itemContainer {
-  position: absolute;
-  display: table;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  right: 0;
+  top: 33%;
   bottom: 0;
-  background-color: #f0f;
-}
-
-.test {
-  display: table-row;
-  width: 100%;
-  height: 100%;
-  background-color: #f00;
-  z-index: 900;
+  right: 0;
+  left: 0;
 }
 
 </style>
