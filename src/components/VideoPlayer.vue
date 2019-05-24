@@ -1,149 +1,135 @@
 <template>
-<div :class="{ 'videoPlayerRoot': true, docked: isDocked }">
-  <v-container fill-height fluid ma-0 pa-0>
-    <v-layout fill-height align-center row ma-0 pa-0>
-      <v-flex fill-height ma-0 pa-0 :class="'xs'+ (isDocked ? 3 : 12)" style="display: grid">
-        <div style="grid-column: 1; grid-row: 1">
-          <!-- VIDEO PLAYER -->
-          <video
-            class="videoPlayer"
-            ref="video"
-            @click="showHideOverlayControls"
-            @loadeddata="onVideoLoaded"
-            @seeked="onVideoSeeked"
-            @pause="onVideoPaused"
-            @play="onVideoPlay"
-            @timeupdate="onVideoTimeUpdate"
-          >
-            <source :src="enclosureURL" :type="enclosureType">Your browser does not support the video tag.
-          </video>
-        </div>
-        <transition name="fade">
-          <div
-            class="overlayControls"
-            v-show="showOverlayControls"
-            style="grid-column: 1; grid-row: 1"
-          >
-            <!-- CONTROLS OVERLAY -->
-            <v-container ma-0 pa-0 fill-height>
-              <v-layout column ma-0 pa-0 fill-height>
-                <v-flex pa-0 ma-0>
-                  <v-container fluid ma-0 pa-0>
-                    <v-layout justify-space-between row ma-0 pa-0>
-                      <v-flex xs1>
-                        <v-btn
-                          flat
-                          icon
-                          color="white"
-                          @click="minimize()"
-                          class="ma-2 pa-2"
-                          style="min-width: 0"
-                        >
-                          <v-icon medium class="ma-0 pa-0">expand_more</v-icon>
-                        </v-btn>
-                      </v-flex>
-                      <v-flex xs1>
-                        <v-btn
-                          flat
-                          icon
-                          color="white"
-                          @click="close()"
-                          class="ma-2 pa-2"
-                          style="min-width: 0"
-                        >
-                          <v-icon medium>close</v-icon>
-                        </v-btn>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
-                </v-flex>
-
-                <v-flex grow pa-0 ma-0>
-                  <v-container fluid pa-0 ma-0>
-                    <v-layout align-center justify-center row pa-0 ma-0>
-                      <v-flex xs2 class="text-xs-center">
-                        <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-2">
-                          <v-icon medium>replay_10</v-icon>
-                        </v-btn>
-                      </v-flex>
-
-                      <v-flex xs2 class="text-xs-center">
-                        <v-btn
-                          v-show="!isPlaying"
-                          flat
-                          large
-                          icon
-                          color="white"
-                          @click="play()"
-                          class="ma-2 pa-2"
-                        >
-                          <v-icon x-large>play_circle_outline</v-icon>
-                        </v-btn>
-                        <v-btn
-                          v-show="isPlaying"
-                          flat
-                          large
-                          icon
-                          color="white"
-                          @click="pause()"
-                          class="ma-2 pa-2"
-                        >
-                          <v-icon x-large>pause_circle_outline</v-icon>
-                        </v-btn>
-                      </v-flex>
-
-                      <v-flex xs2 class="text-xs-center">
-                        <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-2">
-                          <v-icon medium>forward_10</v-icon>
-                        </v-btn>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
-                </v-flex>
-                <v-flex pa-0 ma-0 style="max-height: 7px">
-                  <v-progress-linear
-                    class="ma-0 pa-0"
-                    background-color="gray"
-                    color="green lighten-1"
-                    :value="currentPlayPercentage"
-                  ></v-progress-linear>
-                </v-flex>
-              </v-layout>
-            </v-container>
+  <div :class="{ 'videoPlayerRoot': true, docked: isDocked }">
+    <v-container fill-height fluid ma-0 pa-0>
+      <v-layout fill-height align-center row ma-0 pa-0>
+        <v-flex fill-height ma-0 pa-0 :class="'xs'+ (isDocked ? 3 : 12)" style="display: grid">
+          <div style="grid-column: 1; grid-row: 1">
+            <!-- VIDEO PLAYER -->
+            <video
+              class="videoPlayer"
+              ref="video"
+              @click="showHideOverlayControls"
+              @loadeddata="onVideoLoaded"
+              @seeked="onVideoSeeked"
+              @pause="onVideoPaused"
+              @play="onVideoPlay"
+              @timeupdate="onVideoTimeUpdate"
+            >
+              <source :src="enclosureURL" :type="enclosureType">Your browser does not support the video tag.
+            </video>
           </div>
-        </transition>
-      </v-flex>
-      <v-flex xs7 v-show="isDocked" @click="maximize()" class="text-xs-center">
-        <v-btn
-          class="ma-0 pa-0"
-          flat
-          small
-          color="black"
-          @click="maximize()"
-          style="min-width: 0;min-height: 0"
-        >
-          <v-icon small>expand_less</v-icon>
-        </v-btn>
-        <div class="dockedTitle">{{ item.title }}</div>
-      </v-flex>
+          <transition name="fade">
+            <div
+              class="overlayControls"
+              style="grid-column: 1; grid-row: 1"
+              v-show="showOverlayControls"
+            >
+              <!-- TOP PART - MINIMIZE AND CLOSE BUTTONS -->
+              <v-btn
+                flat
+                icon
+                color="white"
+                @click="minimize()"
+                class="ma-2 pa-2"
+                style="position: absolute; left: 0; top: 0"
+              >
+                <v-icon medium class="ma-0 pa-0">expand_more</v-icon>
+              </v-btn>
+              <v-btn
+                flat
+                icon
+                color="white"
+                @click="close()"
+                class="ma-2 pa-2"
+                style="position: absolute; right: 0; top: 0"
+              >
+                <v-icon medium>close</v-icon>
+              </v-btn>
 
-      <v-flex xs1 v-show="isDocked" class="text-xs-center">
-        <v-btn  v-show="!isPlaying" flat medium color="black" @click="play()">
-          <v-icon>play_circle_outline</v-icon>
-        </v-btn>
-        <v-btn v-show="isPlaying" flat medium color="black" @click="pause()">
-          <v-icon>pause_circle_outline</v-icon>
-        </v-btn>
-      </v-flex>
+              <!-- MIDDLE PART - REPLAY, PLAY AND SKIP -->
+              <v-container fluid fill-height pa-0 ma-0>
+                <v-layout align-center justify-center row pa-0 ma-0>
+                  <v-flex xs2 class="text-xs-center">
+                    <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-2">
+                      <v-icon medium>replay_10</v-icon>
+                    </v-btn>
+                  </v-flex>
 
-      <v-flex xs1 v-show="isDocked" class="text-xs-center">
-        <v-btn flat medium color="black" @click="close()">
-          <v-icon>close</v-icon>
-        </v-btn>
-      </v-flex>
-    </v-layout>
-  </v-container>
-</div>
+                  <v-flex xs2 class="text-xs-center">
+                    <v-btn
+                      v-show="!isPlaying"
+                      flat
+                      large
+                      icon
+                      color="white"
+                      @click="play()"
+                      class="ma-2 pa-2"
+                    >
+                      <v-icon x-large>play_circle_outline</v-icon>
+                    </v-btn>
+                    <v-btn
+                      v-show="isPlaying"
+                      flat
+                      large
+                      icon
+                      color="white"
+                      @click="pause()"
+                      class="ma-2 pa-2"
+                    >
+                      <v-icon x-large>pause_circle_outline</v-icon>
+                    </v-btn>
+                  </v-flex>
+
+                  <v-flex xs2 class="text-xs-center">
+                    <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-2">
+                      <v-icon medium>forward_10</v-icon>
+                    </v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+
+              <!-- BOTTOM PART - PROGRESS -->
+              <v-progress-linear
+                style="max-height: 7px; position: absolute; bottom: 0; left: 0; right: 0"
+                class="ma-0 pa-0"
+                background-color="gray"
+                color="green lighten-1"
+                :value="currentPlayPercentage"
+              ></v-progress-linear>
+            </div>
+          </transition>
+        </v-flex>
+        <v-flex xs7 v-show="isDocked" @click="maximize()" class="text-xs-center">
+          <v-btn
+            class="ma-0 pa-0"
+            flat
+            small
+            color="black"
+            @click="maximize()"
+            style="min-width: 0;min-height: 0"
+          >
+            <v-icon small>expand_less</v-icon>
+          </v-btn>
+          <div class="dockedTitle">{{ item.title }}</div>
+        </v-flex>
+
+        <v-flex xs1 v-show="isDocked" class="text-xs-center">
+          <v-btn v-show="!isPlaying" flat medium color="black" @click="play()">
+            <v-icon>play_circle_outline</v-icon>
+          </v-btn>
+          <v-btn v-show="isPlaying" flat medium color="black" @click="pause()">
+            <v-icon>pause_circle_outline</v-icon>
+          </v-btn>
+        </v-flex>
+
+        <v-flex xs1 v-show="isDocked" class="text-xs-center">
+          <v-btn flat medium color="black" @click="close()">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 
@@ -296,7 +282,6 @@ export default {
 </script>
 
 <style scoped>
-
 .videoPlayerRoot {
   position: fixed;
   left: 0;
