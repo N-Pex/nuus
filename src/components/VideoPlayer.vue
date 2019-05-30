@@ -289,7 +289,8 @@ export default {
   right: 0;
   bottom: 66%;
   background-color: #000;
-  z-index: 10;
+  z-index: 2;
+  transition: 0.3s;
 }
 
 .docked {

@@ -61,7 +61,7 @@
               <v-icon small class="ma-0 pa-0">videocam</v-icon>
             </v-btn>
             <v-btn
-              v-if="item.hasAudioAttachment()"
+              v-else-if="item.hasAudioAttachment()"
               flat
               icon
               color="secondary"
@@ -69,6 +69,16 @@
               style="min-width: 0"
             >
               <v-icon small class="ma-0 pa-0">volume_up</v-icon>
+            </v-btn>
+            <v-btn
+              v-else
+              flat
+              icon
+              color="secondary"
+              class="ma-0 pa-0"
+              style="min-width: 0"
+            >
+              <v-icon small class="ma-0 pa-0">library_books</v-icon>
             </v-btn>
           </span>
         </div>

@@ -57,11 +57,23 @@
             <v-slider v-model="textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
           </v-list-tile-content>
         </v-list-tile>
+
+        <v-list-tile>
+          <v-list-tile-content>
+              <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-btn @click="showOnboarding()">Show onboarding</v-btn>
+          </v-list-tile-content>
+        </v-list-tile>
+
       </v-list>
     </v-navigation-drawer>
 
     <v-content>
-      <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
       <ItemList
         v-bind:items="items"
         v-on:itemClicked="itemClicked($event)"
@@ -75,7 +87,12 @@
         v-show="showMediaPlayer"
       />
       <div v-if="showItemFullscreen" class="nextUpVideoList">
+        <Share style="width: 100%; height: 60px" />
         This space for rent.
+      </div>
+
+      <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
+        <FullScreenItem v-on:close="onCloseFullscreen()"/>
       </div>
     </v-content>
   </v-app>
@@ -86,6 +103,8 @@ import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
 import Item from "../components/Item";
 import VideoPlayer from "../components/VideoPlayer";
+import Share from "../components/Share";
+import FullScreenItem from "../components/FullScreenItem";
 
 import axios from "axios";
 import sanitizeHTML from "sanitize-html";
@@ -93,6 +112,7 @@ import db from "../database";
 import rssparser from "../services/rssparser";
 import velocity from "velocity-animate";
 import flavors from "../config";
+import router from '../router'
 
 export default {
   name: "Home",
@@ -100,7 +120,9 @@ export default {
     UrlInput,
     ItemList,
     Item,
-    VideoPlayer
+    VideoPlayer,
+    Share,
+    FullScreenItem
   },
   methods: {
     beforeEnter: function(el) {
@@ -164,6 +186,11 @@ export default {
       this.showItemFullscreen = false;
     },
 
+    onCloseFullscreen() {
+      this.showItemFullscreen = false;
+      this.showMediaPlayer = false;
+    },
+
     onClose() {
       this.showItemFullscreen = false;
       this.showMediaPlayer = false;
@@ -175,11 +202,18 @@ export default {
 
     onMaximize() {
       this.showItemFullscreen = true;
+    },
+
+    showOnboarding() {
+      router.push({ name: "onboarding" });
     }
   },
 
   mounted() {
     let flavor = flavors[this.$store.state.flavor];
+
+    // Set RTL from config
+    this.$vuetify.rtl = flavor.isRTL;
 
     // Insert link to font style sheet so the web font loader will find the fonts.
     let file = document.createElement("link");
@@ -191,6 +225,8 @@ export default {
     console.log("Loading web font " + flavor.themeBodyFont);
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
+
+    this.urlUpdated("./assets/nasa.xml");
   },
 
   data() {
@@ -248,5 +284,19 @@ export default {
   right: 0;
   left: 0;
 }
+
+.fullScreenItem {
+  background-color: yellowgreen;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
 
 </style>

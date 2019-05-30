@@ -22,8 +22,10 @@ export default {
         },
         feeds: [
             "./assets/uyghur.xml",
+            "./assets/english.xml",
             "https://www.rfa.org/uyghur/RSS"
-        ]
+        ],
+        isRTL: true
     },
     english: {
         themeBodyFont: "Indie Flower",
@@ -37,6 +39,7 @@ export default {
         feeds: [
             "https://www.nasa.gov/rss/dyn/mission_pages/kepler/news/kepler-newsandfeatures-RSS.rss",
             "https://www.rfa.org/english/RSS"
-        ]
+        ],
+        isRTL: false
     }
 };
