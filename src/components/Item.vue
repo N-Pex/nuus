@@ -6,7 +6,7 @@
         ma-0
         pa-0
         v-if="playable"
-        style="min-width: 50px"
+        style="min-width: 70px"
         v-bind:class="{ 'order-lg3': odd, 'order-md3': odd, 'order-sm3': odd, 'order-xs3': odd, 'text-xs-center': true
         , 'ma-0': true, 'pa-0': true }"
       >
@@ -14,8 +14,9 @@
           large
           flat
           icon
+          ma-0
+          pa-0
           color="black"
-          class="ma-0 pa-0"
           style="min-width: 0"
           @click="playItem()"
         >
@@ -34,6 +35,7 @@
         </div>
       </v-flex>
       <v-flex
+      @click="itemClicked()"
         v-bind:class="'xs'+ (((imageUrl != null) ? 9 : 12) - (playable ? 1 : 0))"
         ml-2
         mr-2

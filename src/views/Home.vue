@@ -86,13 +86,12 @@
         v-on:maximize="onMaximize()"
         v-show="showMediaPlayer"
       />
-      <div v-if="showItemFullscreen" class="nextUpVideoList">
-        <Share style="width: 100%; height: 60px" />
-        This space for rent.
+      <div v-if="showMediaList" class="nextUpVideoList">
+        NEXT UP: Not yet implemented
       </div>
 
       <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
-        <FullScreenItem v-on:close="onCloseFullscreen()"/>
+        <FullScreenItem v-on:close="onCloseFullscreen()" :item="itemFullscreen"/>
       </div>
     </v-content>
   </v-app>
@@ -125,39 +124,6 @@ export default {
     FullScreenItem
   },
   methods: {
-    beforeEnter: function(el) {
-      el.style.opacity = 0;
-      el.style.left = this.itemRect.x + "px";
-      el.style.top = this.itemRect.y + "px";
-      el.style.width = this.itemRect.width + "px";
-      el.style.height = this.itemRect.height + "px";
-    },
-    enter: function(el, done) {
-      Velocity(
-        el,
-        {
-          opacity: 1,
-          left: "0px",
-          top: "0px",
-          width: "100%",
-          height: "100%"
-        },
-        { duration: 600, complete: done }
-      );
-    },
-    leave: function(el, done) {
-      Velocity(
-        el,
-        {
-          opacity: 0,
-          left: this.itemRect.x + "px",
-          top: this.itemRect.y + "px",
-          width: this.itemRect.width + "px",
-          height: this.itemRect.height + "px"
-        },
-        { duration: 600, complete: done }
-      );
-    },
     urlUpdated(url) {
       this.url = url;
       const self = this;
@@ -171,15 +137,15 @@ export default {
       );
       this.itemFullscreen = eventInfo.item;
       this.itemRect = eventInfo.rect;
-      // this.showItemFullscreen = true;
+      this.showItemFullscreen = true;
       this.$refs.videoPlayer.item = eventInfo.item;
     },
 
     playItem(eventInfo) {
       console.log("Play item " + eventInfo.item.title);
       this.$refs.videoPlayer.item = eventInfo.item;
-      this.showItemFullscreen = true;
       this.showMediaPlayer = true;
+      this.showMediaList = true;
     },
 
     itemCloseClicked(eventInfo) {
@@ -192,16 +158,16 @@ export default {
     },
 
     onClose() {
-      this.showItemFullscreen = false;
+      this.showMediaList = false;
       this.showMediaPlayer = false;
     },
 
     onMinimize() {
-      this.showItemFullscreen = false;
+      this.showMediaList = false;
     },
 
     onMaximize() {
-      this.showItemFullscreen = true;
+      this.showMediaList = true;
     },
 
     showOnboarding() {
@@ -226,7 +192,7 @@ export default {
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
 
-    this.urlUpdated("./assets/nasa.xml");
+    this.urlUpdated("./assets/english.xml");
   },
 
   data() {
@@ -238,6 +204,7 @@ export default {
       itemFullscreen: null,
       showItemFullscreen: false,
       showMediaPlayer: false,
+      showMediaList: false,
       menuItems: [
         /*
         { title: 'Home', icon: 'dashboard' },
@@ -251,8 +218,14 @@ export default {
     showItemFullscreen: function(isOpen) {
       document
         .querySelector("html")
-        .classList.toggle("application--dialog-opened", isOpen);
+        .classList.toggle("application--dialog-opened", this.showItemFullscreen || this.showMediaList);
+    },
+    showMediaList: function(isOpen) {
+      document
+        .querySelector("html")
+        .classList.toggle("application--dialog-opened", this.showItemFullscreen || this.showMediaList);
     }
+
   },
   computed: {
     textSizeAdjustment: {
@@ -286,7 +259,7 @@ export default {
 }
 
 .fullScreenItem {
-  background-color: yellowgreen;
+  background-color: rgb(245, 248, 239);
   z-index: 3;
   position: fixed;
   top: 0;

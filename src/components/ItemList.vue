@@ -1,5 +1,5 @@
 <template>
-  <v-container class="ma-0 pa-0">
+  <v-container class="ma-0 pa-0 pt-3">
     <v-layout row wrap>
       <v-list>
         <Item v-for="(item, index) in items" :key="item.guid" class="ma-0" :item="item" :odd="index % 2 != 0" 

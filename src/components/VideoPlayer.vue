@@ -140,7 +140,7 @@ import { constants } from "crypto";
 
 export default {
   data: () => ({
-    item: null,
+    item: new ItemModel(),
     isPlaying: false,
     isDocked: true,
     enclosureURL: "",
@@ -188,7 +188,7 @@ export default {
         this.$refs.video.currentTime = time;
       }
 
-      if ("mediaSession" in navigator) {
+      if ("mediaSession" in navigator && this.item != null) {
         let meta = {
           title: this.item.title,
           artist: this.item.feed.title

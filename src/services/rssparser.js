@@ -132,8 +132,11 @@ export default class RSSParser {
             console.log(item.guid);
             item.description = sanitizeHTML(i.description);
             item.pubDate = i.pubDate;
+            if (item.pubDate == null) {
+                item.pubDate = self.getText(i["dc:date"]);
+            }
             item.author = i.author;
-            item.content = i["content:encoded"];
+            item.content = self.getText(i["content:encoded"]);
             var mediaContent = i["media:content"];
             if (Array.isArray(mediaContent) && mediaContent.length > 0) {
                 item.imageSrc = mediaContent[0].$.url;

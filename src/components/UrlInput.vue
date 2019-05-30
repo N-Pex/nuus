@@ -43,6 +43,7 @@ export default {
   },
   data: () => ({
     menuItems: [
+      { title: "English", url: "./assets/english.xml" },
       { title: "NASA", url: "./assets/nasa.xml" },
       { title: "The Guardian", url: "./assets/test.xml" },
       { title: "Zipped bundle", url: "./assets/bundle.zip" }
