@@ -13,6 +13,12 @@
 
 <script>
 export default {
-  name: "IconExpand"
+  name: "expand"
 };
 </script>
+
+<style scoped>
+g {
+    fill: currentColor !important;
+}
+</style>

@@ -85,8 +85,17 @@
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
-        v-show="showMediaPlayer"
+        v-show="showVideoPlayer"
       />
+      <AudioPlayer
+        ref="audioPlayer"
+        :item="playingMediaItem"
+        v-on:close="onClose()"
+        v-on:minimize="onMinimize()"
+        v-on:maximize="onMaximize()"
+        v-show="showAudioPlayer"
+      />
+
       <ItemList ref="mediaList" isMediaList :items="mediaItems" v-show="showMediaList" :selectedItem="playingMediaItem" 
         v-on:itemClicked="playItem($event)"
         class="nextUpVideoList" />
@@ -104,6 +113,7 @@ import ItemList from "../components/ItemList";
 import Item from "../components/Item";
 import ItemModel from "../models/itemmodel";
 import VideoPlayer from "../components/VideoPlayer";
+import AudioPlayer from "../components/AudioPlayer";
 import Share from "../components/Share";
 import FullScreenItem from "../components/FullScreenItem";
 
@@ -122,6 +132,7 @@ export default {
     ItemList,
     Item,
     VideoPlayer,
+    AudioPlayer,
     Share,
     FullScreenItem
   },
@@ -146,9 +157,15 @@ export default {
     playItem(eventInfo) {
       console.log("Play item " + eventInfo.item.title);
       this.itemFullscreen = eventInfo.item;
-      this.showMediaPlayer = true;
-      this.showMediaList = true;
+      if (eventInfo.item.hasVideoAttachment()) {
+        this.showVideoPlayer = true;
+        this.showAudioPlayer = false;
+      } else {
+        this.showVideoPlayer = false;
+        this.showAudioPlayer = true;
+      }
       this.playingMediaItem = eventInfo.item;
+      this.showMediaList = true;
     },
 
     itemCloseClicked(eventInfo) {
@@ -157,12 +174,14 @@ export default {
 
     onCloseFullscreen() {
       this.showItemFullscreen = false;
-      this.showMediaPlayer = false;
+      this.showAudioPlayer = false;
+      this.showVideoPlayer = false;
     },
 
     onClose() {
       this.showMediaList = false;
-      this.showMediaPlayer = false;
+      this.showAudioPlayer = false;
+      this.showVideoPlayer = false;
     },
 
     onMinimize() {
@@ -195,7 +214,7 @@ export default {
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
 
-    this.urlUpdated("./assets/nasa.xml");
+    this.urlUpdated("./assets/nasa2.xml");
   },
 
   data() {
@@ -206,7 +225,8 @@ export default {
       itemRect: new DOMRect(0, 0, 0, 0),
       itemFullscreen: null,
       showItemFullscreen: false,
-      showMediaPlayer: false,
+      showVideoPlayer: false,
+      showAudioPlayer: false,
       showMediaList: false,
       playingMediaItem: null,
       menuItems: [
@@ -262,6 +282,7 @@ export default {
 
 <style scoped>
 @import url("../assets/item-style.css");
+@import url("../assets/shared-styles.css");
 </style>
 
 <style>
@@ -270,7 +291,7 @@ export default {
 }
 
 .nextUpVideoList {
-  background-color: yellow;
+  background-color: #fff;
   position: fixed;
   top: 33%;
   bottom: 0;

@@ -16,6 +16,12 @@
 
 <script>
 export default {
-  name: "IconPause"
+  name: "pause"
 };
 </script>
+
+<style scoped>
+g {
+    fill: currentColor !important;
+}
+</style>

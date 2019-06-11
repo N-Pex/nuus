@@ -2,13 +2,14 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
-import IconPlay from '../icons/IconPlay.vue'
-import IconPause from '../icons/IconPause.vue'
-import IconClose from '../icons/IconClose.vue'
-import IconTypeText from '../icons/IconTypeText.vue'
-import IconTypeAudio from '../icons/IconTypeAudio.vue'
-import IconTypeVideo from '../icons/IconTypeVideo.vue'
-import IconExpand from '../icons/IconExpand.vue'
+var icons = {};
+
+// Load ALL icons as components and add to the icons array, that is registered below.
+const ComponentContext = require.context('../icons/', true, /\.vue$/i);
+ComponentContext.keys().forEach((componentFilePath) => {
+    let comp = ComponentContext(componentFilePath).default;
+    icons[comp.name] = { component: comp };
+});
 
 Vue.use(Vuetify, {
   iconfont: 'md',
@@ -21,27 +22,5 @@ Vue.use(Vuetify, {
     accent: '#1b9739',
     cardBackground: '#ffffff'
   },
-  icons: {
-    play: {
-      component: IconPlay
-    },
-    pause: {
-      component: IconPause
-    },
-    close: {
-      component: IconClose
-    },
-    typeText: {
-      component: IconTypeText
-    },
-    typeAudio: {
-      component: IconTypeAudio
-    },
-    typeVideo: {
-      component: IconTypeVideo
-    },
-    expand: {
-      component: IconExpand
-    }
-  }
+  icons: icons
 })

@@ -28,6 +28,12 @@
 
 <script>
 export default {
-  name: "IconTypeVideo"
+  name: "typeVideo"
 };
 </script>
+
+<style scoped>
+g {
+    fill: currentColor !important;
+}
+</style>

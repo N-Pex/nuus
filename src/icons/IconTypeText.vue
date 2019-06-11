@@ -31,6 +31,12 @@
 
 <script>
 export default {
-  name: "IconTypeText"
+  name: "typeText"
 };
 </script>
+
+<style scoped>
+g {
+    fill: currentColor !important;
+}
+</style>

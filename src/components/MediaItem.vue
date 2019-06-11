@@ -1,7 +1,7 @@
 <template>
   <v-container fluid grid-list-lg pb-2 pt-0 pl-0 pr-0 mb-3>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
-      <v-flex xs4 mt-0 pt-0 v-if="!isAudio">
+      <v-flex xs4 mt-0 pt-0 v-if="!isAudio && imageUrl != null">
         <v-img height="65px" max-height="65px" :src="imageUrl" ma-0 pa-0/>
       </v-flex>
       <v-flex @click="itemClicked()" v-bind:class="'xs'+ (isAudio ? 10 : 7)" ml-2 mr-2 mt-0 pt-0>

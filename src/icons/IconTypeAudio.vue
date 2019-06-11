@@ -36,6 +36,12 @@
 
 <script>
 export default {
-  name: "IconTypeAudio"
+  name: "typeAudio"
 };
 </script>
+
+<style scoped>
+g {
+    fill: currentColor !important;
+}
+</style>

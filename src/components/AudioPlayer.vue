@@ -2,7 +2,7 @@
   <div :class="{ 'videoPlayerRoot': true, docked: isDocked }">
     <v-container fill-height fluid ma-0 pa-0>
       <v-layout fill-height align-center row ma-0 pa-0>
-        <v-flex fill-height ma-0 pa-0 :class="'xs'+ (isDocked ? 3 : 12)" style="display: grid">
+        <v-flex fill-height ma-0 pa-0 xs12 v-show="!isDocked" style="display: grid">
           <div style="grid-column: 1; grid-row: 1">
             <!-- VIDEO PLAYER -->
             <video
@@ -22,13 +22,13 @@
             <div
               class="overlayControls"
               style="grid-column: 1; grid-row: 1"
-              v-show="showOverlayControls"
+              v-show="!isDocked"
             >
               <!-- TOP PART - MINIMIZE AND CLOSE BUTTONS -->
               <v-btn
                 flat
                 icon
-                color="white"
+                color="black"
                 @click="minimize()"
                 class="ma-2 pa-0"
                 style="position: absolute; left: 0; top: 0"
@@ -38,7 +38,7 @@
               <v-btn
                 flat
                 icon
-                color="white"
+                color="black"
                 @click="close()"
                 class="ma-2 pa-0"
                 style="position: absolute; right: 0; top: 0"
@@ -50,7 +50,7 @@
               <v-container fluid fill-height pa-0 ma-0>
                 <v-layout align-center justify-center row pa-0 ma-0>
                   <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-0 medium-button">
+                    <v-btn flat icon color="black" @click="replay10()" class="ma-2 pa-0 medium-button">
                       <v-icon>$vuetify.icons.replay10</v-icon>
                     </v-btn>
                   </v-flex>
@@ -60,7 +60,7 @@
                       v-show="!isPlaying"
                       flat
                       icon
-                      color="white"
+                      color="black"
                       @click="play()"
                       class="ma-2 pa-0 large-button"
                     >
@@ -70,7 +70,7 @@
                       v-show="isPlaying"
                       flat
                       icon
-                      color="white"
+                      color="black"
                       @click="pause()"
                       class="ma-2 pa-0 large-button"
                     >
@@ -79,7 +79,7 @@
                   </v-flex>
 
                   <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-0 medium-button">
+                    <v-btn flat icon color="black" @click="forward10()" class="ma-2 pa-0 medium-button">
                       <v-icon>$vuetify.icons.forward10</v-icon>
                     </v-btn>
                   </v-flex>
@@ -97,7 +97,7 @@
             </div>
           </transition>
         </v-flex>
-        <v-flex xs7 v-show="isDocked" fill-height @click="maximize()" class="text-xs-center">
+        <v-flex xs10 v-show="isDocked" fill-height @click="maximize()" class="ml-3 text-xs-center">
           <v-btn
             class="ma-0 pa-0"
             flat
@@ -175,7 +175,7 @@ export default {
 }
 
 .overlayControls {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
   z-index: 100;
 }
 
@@ -191,4 +191,7 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
 </style>
+
+
