@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?> <rss version="2.0" xml:base="http://www.nasa.gov/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/"> <channel> <title>NASACast Audio</title>
+ <description>NASACast combines the content of all the NASACast subject area podcasts into a single omnibus podcast. Here you&#039;ll find the latest news and features on NASA&#039;s missions as well as the popular &quot;This Week @NASA&quot; newsreel.</description>
+ <link>http://www.nasa.gov/</link>
+ <atom:link rel="self" href="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss" />
+ <language>en-us</language>
+ <image> <url>http://www.nasa.gov/sites/default/files/files/nasacast_itunes_1400.jpg</url>
+ <title>NASACast Audio</title>
+ <link>http://www.nasa.gov/</link>
+</image>
+ <copyright>en-us</copyright>
+ <managingEditor>jim.wilson@nasa.gov</managingEditor>
+ <webMaster>jim.wilson@nasa.gov</webMaster>
+ <itunes:subtitle>NASACast combines the content of all the NASACast subject area podcasts into a single omnibus podcast. Here you&#039;ll find the late</itunes:subtitle>
+ <itunes:summary>NASACast combines the content of all the NASACast subject area podcasts into a single omnibus podcast. Here you&#039;ll find the latest news and features on NASA&#039;s missions as well as the popular &quot;This Week @NASA&quot; newsreel.</itunes:summary>
+ <itunes:category text="Science &amp; Medicine" />
+ <itunes:keywords>NASA, Portal, audio, MP3s, NASATV, shuttle, Discovery, This Week at NASA, news, space, Mars, Earth, shuttle, Moon, station, nati</itunes:keywords>
+ <itunes:image href="https://www.nasa.gov/sites/default/files/thumbnails/image/nasacast-logo.png" />
+ <itunes:author>National Aeronautics and Space Administration (NASA)</itunes:author>
+ <itunes:explicit>no</itunes:explicit>
+ <item> <title>This Week @NASA, June 7, 2019</title>
+ <link>http://www.nasa.gov/mediacast/this-week-nasa-june-7-2019</link>
+ <description>NASA Opens International Space Station to Commercial Opportunities, SpaceX Dragon Cargo Spacecraft Returns from Space Station and more ...</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/nhq_2019_0607_this_week_nasa.mp3" length="5047266" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/this-week-nasa-june-7-2019</guid>
+ <pubDate>Fri, 07 Jun 2019 14:33 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>Spaceship Crash Testing</title>
+ <link>http://www.nasa.gov/johnson/HWHAP/spaceship-crash-testing</link>
+ <description>Mark Baldwin, Orion Occupant Protection Specialist, talks about crash testing of the Orion spacecraft and why it is important to keep the crew safe during some of the most critical moments of their mission. HWHAP Episode 95.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/ep_95_spaceship_crash_testing.mp3" length="68031488" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/johnson/HWHAP/spaceship-crash-testing</guid>
+ <pubDate>Fri, 07 Jun 2019 09:30 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>Gravity Assist Podcast: Why So Many Craters on the Moon? With David Kring</title>
+ <link>http://www.nasa.gov/mediacast/gravity-assist-podcast-why-so-many-craters-on-the-moon-with-david-kring</link>
+ <description>NASA&#039;s Artemis program will send astronauts to the lunar south pole by 2024, where there is a giant impact crater. Learn how craters teach us about the history of both the Moon and Earth.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/ga_david_kring_mixrevised.mp3" length="41163627" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/gravity-assist-podcast-why-so-many-craters-on-the-moon-with-david-kring</guid>
+ <pubDate>Thu, 06 Jun 2019 10:13 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>This Week @NASA, May 31, 2019</title>
+ <link>http://www.nasa.gov/mediacast/this-week-nasa-may-31-2019</link>
+ <description>First Robotic Commercial Moon Landers Selected for Artemis Program, Bridenstine Speaks at NASA Advisory Council Meeting and more ...</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/nhq_2019_0531_this_week_nasa.mp3" length="4413666" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/this-week-nasa-may-31-2019</guid>
+ <pubDate>Fri, 31 May 2019 13:52 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>Mental Health with Shinedown</title>
+ <link>http://www.nasa.gov/johnson/HWHAP/mental-health-with-shinedown</link>
+ <description>In honor of Mental Health Awareness Month, NASA chats with the rock band Shinedown about the similarities and importance of mental health for orbiting astronauts, touring band members… and everyone! HWHAP Episode 94.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/ep94_mental_health.mp3" length="74280228" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/johnson/HWHAP/mental-health-with-shinedown</guid>
+ <pubDate>Fri, 31 May 2019 09:46 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>Gravity Assist Podcast: Where&#039;s the Water on the Moon? With Jen Heldmann</title>
+ <link>http://www.nasa.gov/mediacast/gravity-assist-podcast-wheres-the-water-on-the-moon-with-jen-heldmann</link>
+ <description>The Moon has a large supply of water that could be useful in future human exploration, says NASA scientist Jennifer Heldmann.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/gravity_assist_jg_jen_heldmann_mix_music_final.mp3" length="31358955" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/gravity-assist-podcast-wheres-the-water-on-the-moon-with-jen-heldmann</guid>
+ <pubDate>Thu, 30 May 2019 07:20 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>Small Steps, Giant Leaps: Episode 11, Commercial Crew</title>
+ <link>http://www.nasa.gov/mediacast/giant-leaps/episode-11-commercial-crew</link>
+ <description>Jon Cowart, a veteran space engineer, discusses NASA’s Commercial Crew Program and progress toward launching astronauts from American soil.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/episode-11-commercial-crew.mp3" length="16248690" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/giant-leaps/episode-11-commercial-crew</guid>
+ <pubDate>Tue, 28 May 2019 10:44 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>This Week @NASA, May 24, 2019</title>
+ <link>http://www.nasa.gov/mediacast/this-week-nasa-may-24-2019</link>
+ <description>Company Named to Provide Lunar Gateway Power and Propulsion Element, Orion’s Ascent Abort-2 Flight Test Article Rolls Out to the Pad and more ...</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/nhq_2019_0524_this_week_nasa.mp3" length="5711394" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/this-week-nasa-may-24-2019</guid>
+ <pubDate>Fri, 24 May 2019 14:24 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>Space Medicine at Comicpalooza</title>
+ <link>http://www.nasa.gov/johnson/HWHAP/space-medicine-at-comicpalooza</link>
+ <description>Science fiction meets science fact during a live panel discussion at Comicpalooza in Houston about current medical innovations in space with NASA medical scientists and Star Trek: The Next Generation star Gates McFadden. HWHAP Episode 93.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/ep93_space_medicine.mp3" length="78200768" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/johnson/HWHAP/space-medicine-at-comicpalooza</guid>
+ <pubDate>Fri, 24 May 2019 09:55 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+ <item> <title>This Week @NASA, May 17, 2019</title>
+ <link>http://www.nasa.gov/mediacast/this-week-nasa-may-17-2019</link>
+ <description>Budget Amendment Supporting Humans on Moon in 2024, Shrinking Moon May Be Generating Moonquakes and more ...</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/atoms/audio/nhq_2019_0517_this_week_nasa.mp3" length="6054690" type="audio/mpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/mediacast/this-week-nasa-may-17-2019</guid>
+ <pubDate>Fri, 17 May 2019 11:10 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/NASAcast_podcast.rss">NASACast Audio</source>
+</item>
+</channel>
+</rss>

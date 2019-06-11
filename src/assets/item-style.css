@@ -1,6 +1,8 @@
 h1 {
     color: var(--v-primary-base);
-    font-size: 28pt;
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 17px;
 }
 
 h1.white {
@@ -16,8 +18,9 @@ h2 {
 
 h3 {
     color: var(--v-primary-base);
-    font-size: 13pt;
-    line-height: 1.2em;
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 17px;
 }
 
 h4 {
@@ -37,11 +40,15 @@ h4 {
 }
 
 .mediaDescription {
-    color: var(--v-primary-base);
-    font-size: 11pt;
+    /*font-family: Roboto-Regular;*/
+    font-size: 9px;
+    color: #000000;
+    line-height: 9px;
 }
 
 .date {
     color: var(--v-secondary-base);
-    font-size: 8pt;
+    /*font-family: Roboto-Regular;*/
+    font-size: 9px;
+    line-height: 15px;
 }

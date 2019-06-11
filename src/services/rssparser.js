@@ -129,7 +129,7 @@ export default class RSSParser {
             if (item.guid == null || item.guid.length == 0) {
                 item.guid = item.title;
             }
-            console.log(item.guid);
+            //console.log(item.guid);
             item.description = sanitizeHTML(i.description);
             item.pubDate = i.pubDate;
             if (item.pubDate == null) {

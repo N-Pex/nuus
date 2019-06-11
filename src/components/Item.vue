@@ -20,7 +20,7 @@
           style="min-width: 0"
           @click="playItem()"
         >
-          <v-icon large class="ma-0 pa-0">play_circle_outline</v-icon>
+          <v-icon large class="ma-0 pa-0">$vuetify.icons.play</v-icon>
         </v-btn>
       </v-flex>
       <v-flex

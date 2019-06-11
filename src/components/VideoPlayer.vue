@@ -139,8 +139,15 @@ import ItemModel from "../models/itemmodel";
 import { constants } from "crypto";
 
 export default {
+  props: {
+    item: {
+      type: ItemModel,
+      default: function() {
+        return new ItemModel();
+      }
+    }
+  },
   data: () => ({
-    item: new ItemModel(),
     isPlaying: false,
     isDocked: true,
     enclosureURL: "",

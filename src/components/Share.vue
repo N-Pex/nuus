@@ -37,8 +37,10 @@
           flat
           icon
           color="black"
+          @click="toggleFavorite()"
         >
-          <v-icon>bookmark_border</v-icon>
+          <v-icon v-if="isFavorite">bookmark</v-icon>
+          <v-icon v-else>bookmark_border</v-icon>
         </v-btn>
       </v-flex>
     </v-layout>
@@ -48,15 +50,34 @@
 <script>
 
 import flavors from "../config";
+import ItemModel from "../models/itemmodel";
+import db from "../database";
 
 export default {
   props: {
+    item: {
+      type: ItemModel,
+      default: function() {
+        return new ItemModel();
+      }
+    }
   },
   mounted: function() {
+    var self = this;
+    db.items.get(this.item.guid).then(item => this.isFavorite = item.favorite).catch(function() {});
   },
   data: () => ({
+    isFavorite: false
   }),
   methods: {
+        toggleFavorite() {
+      const self = this;
+      db.items.put({"id": this.item.guid, "favorite": !this.isFavorite})
+      .then(item => {
+        self.isFavorite = !self.isFavorite;
+        })
+        .catch(function() {});
+    }
   }
 };
 </script>

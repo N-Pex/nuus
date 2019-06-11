@@ -18,7 +18,7 @@
               </v-layout>
             </v-container>
           </v-img>
-          <Share class="share"/>
+          <Share class="share" :item="item"/>
           <v-container :class="{'noImage': this.imageUrl == null}">
             <div v-html="item.description" class="body" />
             <div v-html="item.content" class="content" />

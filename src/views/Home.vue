@@ -81,14 +81,15 @@
       />
       <VideoPlayer
         ref="videoPlayer"
+        :item="playingMediaItem"
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
         v-show="showMediaPlayer"
       />
-      <div v-if="showMediaList" class="nextUpVideoList">
-        NEXT UP: Not yet implemented
-      </div>
+      <ItemList ref="mediaList" isMediaList :items="mediaItems" v-show="showMediaList" :selectedItem="playingMediaItem" 
+        v-on:itemClicked="playItem($event)"
+        class="nextUpVideoList" />
 
       <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
         <FullScreenItem v-on:close="onCloseFullscreen()" :item="itemFullscreen"/>
@@ -101,6 +102,7 @@
 import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
 import Item from "../components/Item";
+import ItemModel from "../models/itemmodel";
 import VideoPlayer from "../components/VideoPlayer";
 import Share from "../components/Share";
 import FullScreenItem from "../components/FullScreenItem";
@@ -138,14 +140,15 @@ export default {
       this.itemFullscreen = eventInfo.item;
       this.itemRect = eventInfo.rect;
       this.showItemFullscreen = true;
-      this.$refs.videoPlayer.item = eventInfo.item;
+      //this.$refs.videoPlayer.item = eventInfo.item;
     },
 
     playItem(eventInfo) {
       console.log("Play item " + eventInfo.item.title);
-      this.$refs.videoPlayer.item = eventInfo.item;
+      this.itemFullscreen = eventInfo.item;
       this.showMediaPlayer = true;
       this.showMediaList = true;
+      this.playingMediaItem = eventInfo.item;
     },
 
     itemCloseClicked(eventInfo) {
@@ -192,7 +195,7 @@ export default {
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
 
-    this.urlUpdated("./assets/english.xml");
+    this.urlUpdated("./assets/nasa.xml");
   },
 
   data() {
@@ -205,6 +208,7 @@ export default {
       showItemFullscreen: false,
       showMediaPlayer: false,
       showMediaList: false,
+      playingMediaItem: null,
       menuItems: [
         /*
         { title: 'Home', icon: 'dashboard' },
@@ -235,7 +239,23 @@ export default {
       set: function(val) {
         this.$store.commit("setTextSizeAdjustment", val);
       }
-    }
+    },
+    mediaItems: function() {
+      const self = this;
+      //console.log("ITEM is " + this.itemFullscreen);
+       return this.items.filter(function(i) {
+         if (self.itemFullscreen != null) {
+            //console.log("Has item");
+           if (self.itemFullscreen.hasVideoAttachment()) {
+             // Current item is a video. Only show video items in the media list!
+             return i.hasVideoAttachment();
+           } else if (self.itemFullscreen.hasAudioAttachment()) {
+             return i.hasAudioAttachment();
+           }
+         }
+         return false
+     })
+   }
   }
 };
 </script>
@@ -250,12 +270,14 @@ export default {
 }
 
 .nextUpVideoList {
-  background-color: lightgray;
+  background-color: yellow;
   position: fixed;
   top: 33%;
   bottom: 0;
   right: 0;
   left: 0;
+  overflow-y:scroll;
+  overflow-x:hidden;
 }
 
 .fullScreenItem {

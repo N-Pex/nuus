@@ -1,10 +1,27 @@
 <template>
   <v-container class="ma-0 pa-0 pt-3">
     <v-layout row wrap>
-      <v-list>
-        <Item v-for="(item, index) in items" :key="item.guid" class="ma-0" :item="item" :odd="index % 2 != 0" 
-        v-on:itemClicked="itemClicked($event)"
-        v-on:playItem="playItem($event)"
+      <v-list v-if="isMediaList">
+        <MediaItem
+          v-for="(item, index) in items"
+          :key="item.guid"
+          class="ma-0"
+          :item="item"
+          :isSelected="item == selectedItem"
+          :odd="index % 2 != 0"
+          v-on:itemClicked="itemClicked($event)"
+          v-on:playItem="playItem($event)"
+        />
+      </v-list>
+      <v-list v-else>
+        <Item
+          v-for="(item, index) in items"
+          :key="item.guid"
+          class="ma-0"
+          :item="item"
+          :odd="index % 2 != 0"
+          v-on:itemClicked="itemClicked($event)"
+          v-on:playItem="playItem($event)"
         />
       </v-list>
     </v-layout>
@@ -14,12 +31,22 @@
 
 <script>
 import Item from "./Item";
+import MediaItem from "./MediaItem";
+import ItemModel from "../models/itemmodel";
 
 export default {
   components: {
-    Item
+    Item,
+    MediaItem,
+    ItemModel
   },
   props: {
+    isMediaList: {
+      type: Boolean,
+      default: function() {
+        return false;
+      }
+    },
     items: {
       type: Array,
       // Object or array defaults must be returned from
@@ -27,6 +54,17 @@ export default {
       default: function() {
         return [];
       }
+    },
+    selectedItem: {
+      type: ItemModel,
+      default: function() {
+        return new ItemModel();
+      }
+    }
+  },
+  watch: {
+    selectedItem: function() {
+      console.log("Changed selected item");
     }
   },
   methods: {
