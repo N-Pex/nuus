@@ -99,32 +99,31 @@
             </div>
           </transition>
         </v-flex>
-        <v-flex xs7 v-show="isDocked" @click="maximize()" class="text-xs-center">
+        <v-flex xs7 v-show="isDocked" fill-height @click="maximize()" class="text-xs-center">
           <v-btn
             class="ma-0 pa-0"
             flat
             small
             color="black"
             @click="maximize()"
-            style="min-width: 0;min-height: 0"
-          >
-            <v-icon small>expand_less</v-icon>
+            style="min-width: 0;min-height: 0; position:relative;top:0px">
+            <v-icon small>$vuetify.icons.expand</v-icon>
           </v-btn>
           <div class="dockedTitle">{{ item.title }}</div>
         </v-flex>
 
         <v-flex xs1 v-show="isDocked" class="text-xs-center">
           <v-btn v-show="!isPlaying" flat medium color="black" @click="play()">
-            <v-icon>play_circle_outline</v-icon>
+            <v-icon>$vuetify.icons.play</v-icon>
           </v-btn>
           <v-btn v-show="isPlaying" flat medium color="black" @click="pause()">
-            <v-icon>pause_circle_outline</v-icon>
+            <v-icon>$vuetify.icons.pause</v-icon>
           </v-btn>
         </v-flex>
 
         <v-flex xs1 v-show="isDocked" class="text-xs-center">
           <v-btn flat medium color="black" @click="close()">
-            <v-icon>close</v-icon>
+            <v-icon>$vuetify.icons.close</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>

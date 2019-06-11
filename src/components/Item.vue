@@ -60,7 +60,7 @@
               class="ma-0 pa-0"
               style="min-width: 0"
             >
-              <v-icon small class="ma-0 pa-0">videocam</v-icon>
+              <v-icon small class="ma-0 pa-0">$vuetify.icons.typeVideo</v-icon>
             </v-btn>
             <v-btn
               v-else-if="item.hasAudioAttachment()"
@@ -70,7 +70,7 @@
               class="ma-0 pa-0"
               style="min-width: 0"
             >
-              <v-icon small class="ma-0 pa-0">volume_up</v-icon>
+              <v-icon small class="ma-0 pa-0">$vuetify.icons.typeAudio</v-icon>
             </v-btn>
             <v-btn
               v-else
@@ -80,7 +80,7 @@
               class="ma-0 pa-0"
               style="min-width: 0"
             >
-              <v-icon small class="ma-0 pa-0">library_books</v-icon>
+              <v-icon small class="ma-0 pa-0">$vuetify.icons.typeText</v-icon>
             </v-btn>
           </span>
         </div>

@@ -2,7 +2,7 @@
   <v-container fluid grid-list-lg pb-2 pt-0 pl-0 pr-0 mb-3>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
       <v-flex xs4 mt-0 pt-0 v-if="!isAudio">
-        <v-img max-height="65px" :src="imageUrl" ma-0 pa-0/>
+        <v-img height="65px" max-height="65px" :src="imageUrl" ma-0 pa-0/>
       </v-flex>
       <v-flex @click="itemClicked()" v-bind:class="'xs'+ (isAudio ? 10 : 7)" ml-2 mr-2 mt-0 pt-0>
         <div style="max-height:34px;overflow:hidden">
@@ -16,19 +16,8 @@
           <span class="date">{{ item.pubDate }}</span>
           &nbsp;
           <span>
-            <v-btn
-              v-if="isAudio"
-              flat
-              icon
-              color="secondary"
-              class="ma-0 pa-0"
-              style="min-width: 0"
-            >
-              <v-icon small class="ma-0 pa-0">volume_up</v-icon>
-            </v-btn>
-            <v-btn v-else flat icon color="secondary" class="ma-0 pa-0" style="min-width: 0">
-              <v-icon small class="ma-0 pa-0">videocam</v-icon>
-            </v-btn>
+              <v-icon v-if="isAudio" small class="ma-0 pa-0">$vuetify.icons.typeAudio</v-icon>
+              <v-icon v-else small class="ma-0 pa-0">$vuetify.icons.typeVideo</v-icon>
           </span>
         </div>
       </v-flex>
