@@ -1,14 +1,15 @@
 <template>
-  <div :class="{ 'videoPlayerRoot': true, docked: isDocked }">
+  <div :class="{ 'playerRoot': true, docked: isDocked }">
     <v-container fill-height fluid ma-0 pa-0>
       <v-layout fill-height align-center row ma-0 pa-0>
         <v-flex fill-height ma-0 pa-0 :class="'xs'+ (isDocked ? 3 : 12)" style="display: grid">
           <div style="grid-column: 1; grid-row: 1">
             <!-- VIDEO PLAYER -->
             <video
-              class="videoPlayer"
+              class="player"
               ref="player"
               @click="showHideOverlayControls"
+              @canplay="onCanPlay"
               @loadeddata="onLoaded"
               @seeked="onSeeked"
               @pause="onPaused"
@@ -140,10 +141,10 @@ export default {
 </script>
 
 <style scoped>
-.videoPlayerRoot {
+.playerRoot {
   position: fixed;
   left: 0;
-  top: 56px;
+  top: 0px;
   right: 0;
   bottom: 66%;
   background-color: #000;
@@ -161,7 +162,7 @@ export default {
   border: 1px solid gray;
 }
 
-.videoPlayer {
+.player {
   min-height: 0;
   min-width: 0;
   width: 100%;
@@ -169,7 +170,7 @@ export default {
   max-height: 100%;
 }
 
-.docked .videoPlayer {
+.docked .player {
   height: 100%;
   width: auto;
 }

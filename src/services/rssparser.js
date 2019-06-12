@@ -14,7 +14,7 @@ export default class RSSParser {
                     console.log("Loading ZIP file");
                     JSZip.loadAsync(response.data).then(function (zip) {
                         console.log("Loaded ZIP file");
-                        var items = [];
+                        var result = null;
                         var promises = [];
 
                         zip.forEach(function (relativePath, file) {
@@ -22,7 +22,7 @@ export default class RSSParser {
                             if (relativePath == "index.rss") {
                                 promises.push(file.async("string")
                                     .then(function (text) {
-                                        items = self.parseFeed(self, text);
+                                        result = self.parseFeed(self, text);
                                     }));
                             } else if (relativePath.startsWith("enc/") && !file.dir) {
                                 let url = "file://" + relativePath;
@@ -43,7 +43,7 @@ export default class RSSParser {
 
                         // Wait until all promises are fulfilled
                         Promise.all(promises).then(function () {
-                            callback(items);
+                            callback(feed, items);
                         });
                     });
                 })
@@ -58,8 +58,8 @@ export default class RSSParser {
             console.log("Ask axios to get: " + url);
             axios.get(url)
                 .then(function (response) {
-                    let items = self.parseFeed(self, response.data);
-                    callback(items);
+                    let result = self.parseFeed(self, response.data);
+                    callback(result.feed, result.items);
                 })
                 .catch(function (error) {
                     // handle error
@@ -75,16 +75,17 @@ export default class RSSParser {
         // Get the parseString function
         var parseString = require('xml2js').parseString;
 
-        var items = [];
+        var parseResult = null;
         parseString(data, { explicitArray: false }, function (err, result) {
             //console.log(result);
             if (result["rdf:RDF"] != null) {
-                items = self.parseRDF(self, result);
+                parseResult = self.parseRDF(self, result);
             } else if (result.rss != null) {
-                items = self.parseRSS(self, result);
+                parseResult = self.parseRSS(self, result);
             }
         });
-        return items;
+        console.log(parseResult);
+        return parseResult;
     }
 
     static parseRSS(self, result) {
@@ -184,6 +185,6 @@ export default class RSSParser {
                 });
             }
         });
-        return items;
+        return {feed: feed, items: items};
     }
 }

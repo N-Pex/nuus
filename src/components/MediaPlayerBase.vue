@@ -14,11 +14,11 @@ export default {
       default: function() {
         return new ItemModel();
       }
-    }
+    },
+    isDocked: false
   },
   data: () => ({
     isPlaying: false,
-    isDocked: true,
     enclosureURL: "",
     enclosureType: null,
     currentPlayPercentage: 0,
@@ -38,7 +38,6 @@ export default {
           self.$refs.player.load();
         });
         this.currentPlayPercentage = 0;
-        this.isDocked = false;
       }
     }
   },
@@ -54,7 +53,15 @@ export default {
       return this.item.enclosure;
     },
 
+    onCanPlay() {
+      console.log("Can play called");
+      if (this.item != null) {
+        this.play();
+      }
+    },
+
     onLoaded() {
+      console.log("On loaded called");
       // Check if we have stored a playhead position for this video
       //
       var url = this.item.enclosure;
@@ -128,12 +135,10 @@ export default {
 
     minimize() {
       this.showOverlayControls = false;
-      this.isDocked = true;
       this.$emit("minimize");
     },
 
     maximize() {
-      this.isDocked = false;
       this.$emit("maximize");
     },
 

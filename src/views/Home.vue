@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <v-toolbar app>
+    <v-toolbar app flat color="rgba(0,0,0,0.05)">
       <v-toolbar-side-icon @click.stop="drawer = !drawer">
-        <v-icon>menu</v-icon>
+        <v-icon>$vuetify.icons.logo</v-icon>
       </v-toolbar-side-icon>
+      <v-spacer />
       <v-toolbar-title class="headline text-uppercase">
-        <span>NUUS</span>
-        <span class="font-weight-light">RSS READER</span>
+        {{ title }}
       </v-toolbar-title>
     </v-toolbar>
 
@@ -58,11 +58,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile>
-          <v-list-tile-content>
               <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
-          </v-list-tile-content>
-        </v-list-tile>
 
         <v-list-tile>
           <v-list-tile-content>
@@ -78,10 +74,11 @@
         v-bind:items="items"
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
+        class="pt-3"
       />
       <VideoPlayer
         ref="videoPlayer"
-        :item="playingMediaItem"
+        :isDocked="mediaPlayerDocked"
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
@@ -89,7 +86,7 @@
       />
       <AudioPlayer
         ref="audioPlayer"
-        :item="playingMediaItem"
+        :isDocked="mediaPlayerDocked"
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
@@ -140,7 +137,8 @@ export default {
     urlUpdated(url) {
       this.url = url;
       const self = this;
-      rssparser.fetchUrl(url, function(items) {
+      rssparser.fetchUrl(url, function(feed, items) {
+        self.title = feed.title;
         self.items = items;
       });
     },
@@ -158,14 +156,26 @@ export default {
       console.log("Play item " + eventInfo.item.title);
       this.itemFullscreen = eventInfo.item;
       if (eventInfo.item.hasVideoAttachment()) {
+        this.mediaPlayerDocked = false;
+        this.$refs.videoPlayer.item = eventInfo.item;
         this.showVideoPlayer = true;
+        this.$refs.audioPlayer.item = null;
         this.showAudioPlayer = false;
+        this.showMediaList = true;
       } else {
+        // Audio player. Start docked (so dont show the media list).
+        this.mediaPlayerDocked = true;
+        this.$refs.videoPlayer.item = null;
         this.showVideoPlayer = false;
+        this.$refs.audioPlayer.item = eventInfo.item;
         this.showAudioPlayer = true;
+        this.showMediaList = false;
       }
       this.playingMediaItem = eventInfo.item;
-      this.showMediaList = true;
+      // let element = this.$refs.mediaList.$refs['item-' + this.playingMediaItem.guid];
+      // console.log("--------------");
+      // console.log(element);
+      // element.scrollIntoView(true);
     },
 
     itemCloseClicked(eventInfo) {
@@ -185,10 +195,12 @@ export default {
     },
 
     onMinimize() {
+      this.mediaPlayerDocked = true;
       this.showMediaList = false;
     },
 
     onMaximize() {
+      this.mediaPlayerDocked = false;
       this.showMediaList = true;
     },
 
@@ -214,7 +226,7 @@ export default {
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
 
-    this.urlUpdated("./assets/nasa2.xml");
+    this.urlUpdated("./assets/nasa.xml");
   },
 
   data() {
@@ -228,7 +240,9 @@ export default {
       showVideoPlayer: false,
       showAudioPlayer: false,
       showMediaList: false,
+      mediaPlayerDocked: false,
       playingMediaItem: null,
+      title: "",
       menuItems: [
         /*
         { title: 'Home', icon: 'dashboard' },
