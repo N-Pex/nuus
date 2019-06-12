@@ -1,10 +1,11 @@
 <template>
-  <v-container class="ma-0 pa-0 pt-3">
+  <v-container class="ma-0 pa-0" ref="container">
     <v-layout row wrap>
-      <v-list v-if="isMediaList">
+      <v-list v-if="isMediaList" ref="list">
         <MediaItem
           v-for="(item, index) in items"
           :key="item.guid"
+          :ref="item.guid"
           class="ma-0"
           :item="item"
           :isSelected="item == selectedItem"
@@ -13,10 +14,11 @@
           v-on:playItem="playItem($event)"
         />
       </v-list>
-      <v-list v-else>
+      <v-list v-else ref="list">
         <Item
           v-for="(item, index) in items"
           :key="item.guid"
+          :ref="item.guid"
           class="ma-0"
           :item="item"
           :odd="index % 2 != 0"
@@ -63,10 +65,25 @@ export default {
     }
   },
   watch: {
+    items: function() {
+      // Items changed, scroll to top!
+      this.$refs.container.scrollTop = 0;
+    },
     selectedItem: function() {
-      console.log("Changed selected item");
+      const self = this;
+      if (this.selectedItem != null) {
+        this.$nextTick(function() {
+          let list = self.$refs.list;
+          let element =
+            list.$children[self.items.indexOf(self.selectedItem)].$el;
+          if (element != null) {
+            element.scrollIntoView(true);
+          }
+        });
+      }
     }
   },
+  mounted() {},
   methods: {
     itemClicked(eventInfo) {
       this.$emit("itemClicked", eventInfo);
