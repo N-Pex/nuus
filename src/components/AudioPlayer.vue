@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'playerRoot': true, docked: isDocked }">
+  <div :class="{ 'playerRoot': true, docked: isDocked }" v-on="isDocked ? { click: maximize } : {}">
     <v-container fill-height fluid ma-0 pa-0>
       <v-layout fill-height align-center row ma-0 pa-0>
         <v-flex fill-height ma-0 pa-0 xs12 v-show="!isDocked" style="display: grid">
