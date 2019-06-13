@@ -1,52 +1,19 @@
-h1 {
+
+.itemTitle {
     color: var(--v-primary-base);
-    font-family: Helvetica;
-    font-size: 16px;
-    line-height: 17px;
+    font-family: var(--v-theme-title-font);
+    font-size: var(--v-theme-title-font-size-scaled);
+    line-height: var(--v-theme-title-line-height-scaled);
 }
 
-h1.white {
-    color: #fff;
-    background-color: var(--v-primary-base);
-    font-size: 23pt;
-}
-
-h2 {
+.itemBody {
     color: var(--v-primary-base);
-    font-size: 17pt;
+    font-family: var(--v-theme-body-font);
+    font-size: var(--v-theme-body-font-size-scaled);
+    line-height: var(--v-theme-body-line-height-scaled);
 }
 
-h3 {
-    color: var(--v-primary-base);
-    font-family: Helvetica;
-    font-size: 16px;
-    line-height: 17px;
-}
-
-h4 {
-    color: var(--v-secondary-base);
-    font-size: 11pt;
-}
-
-.pullQuote {
-    color: var(--v-secondary-base);
-    font-size: 14pt;
-}
-
-.body {
-    color: var(--v-primary-base);
-    font: var(--v-theme-body-font);
-    line-height: 1.1em;
-}
-
-.mediaDescription {
-    /*font-family: Roboto-Regular;*/
-    font-size: 9px;
-    color: #000000;
-    line-height: 9px;
-}
-
-.date {
+.itemDate {
     color: var(--v-secondary-base);
     /*font-family: Roboto-Regular;*/
     font-size: 9px;

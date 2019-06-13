@@ -5,15 +5,15 @@
         <v-img height="65px" max-height="65px" :src="imageUrl" ma-0 pa-0/>
       </v-flex>
       <v-flex @click="itemClicked()" v-bind:class="'xs'+ (isAudio ? 10 : 7)" ml-2 mr-2 mt-0 pt-0>
-        <div style="max-height:34px;overflow:hidden">
-          <h3 :class="{selected: isSelected}">{{ item.title }}</h3>
+        <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{itemTitle: true, selected: isSelected}">
+          {{ item.title }}
         </div>
-        <div v-if="isAudio" style="max-height:9px;overflow:hidden" class="mediaDescription">
+        <div v-if="isAudio" style="max-height:var(--v-theme-body-line-height-scaled);overflow:hidden" class="itemBody">
           <div v-html="item.description"/>
         </div>
 
         <div>
-          <span class="date">{{ item.pubDate }}</span>
+          <span class="itemDate">{{ item.pubDate }}</span>
           &nbsp;
           <span>
               <v-icon v-if="isAudio" small class="ma-0 pa-0">$vuetify.icons.typeAudio</v-icon>

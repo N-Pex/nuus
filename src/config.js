@@ -1,7 +1,6 @@
 export default {
     uyghur: {
-        themeBodyFont: "AlpidaUnicodeSystem",
-        themeBodySize: 14,
+        themeCSSVariables: require("!css-loader!@/assets/css/uyghur.css").toString(),
         webFontCssFile: "./assets/fonts/uyghur.css",
         webFontConfig: {
             custom: {
@@ -28,8 +27,7 @@ export default {
         isRTL: true
     },
     english: {
-        themeBodyFont: "Indie Flower",
-        themeBodySize: 14,
+        themeCSSVariables: require("!css-loader!@/assets/css/english.css").toString(),
         webFontCssFile: "./assets/fonts/english.css",
         webFontConfig: {
             custom: {

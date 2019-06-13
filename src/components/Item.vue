@@ -42,14 +42,12 @@
         mt-0
         pt-0
       >
-        <div class="headline">
-          <h3>{{ item.title }}</h3>
-        </div>
+        <div class="itemTitle">{{ item.title }}</div>
         <div class="contentBlock mt-2">
-          <div v-html="item.description" class="body" style="max-height:4.4em;overflow:hidden"/>
+          <div v-html="item.description" class="itemBody" style="max-height:var(--v-theme-body-line-height-scaled-x4);overflow:hidden"/>
         </div>
         <div>
-          <span class="date">{{ item.pubDate }}</span>
+          <span class="itemDate">{{ item.pubDate }}</span>
           &nbsp;
           <span>
             <v-btn

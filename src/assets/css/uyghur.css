@@ -1,0 +1,8 @@
+:root {
+    --v-theme-title-font: 'AlpidaUnicodeSystem';
+    --v-theme-title-font-size: 24px;
+    --v-theme-title-line-height: 26px;
+    --v-theme-body-font: 'AlpidaUnicodeSystem';
+    --v-theme-body-font-size: 16px;
+    --v-theme-body-line-height: 19px;
+}
