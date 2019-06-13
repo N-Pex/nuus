@@ -109,7 +109,7 @@
             style="min-width: 0;min-height: 0; position:relative;top:0px">
             <v-icon>$vuetify.icons.expand</v-icon>
           </v-btn>
-          <div class="text-xs-left dockedTitle">{{ item.title }}</div>
+          <div class="text-xs-left dockedTitle">{{ itemTitle }}</div>
         </v-flex>
 
         <v-flex xs1 v-show="isDocked" class="text-xs-center">

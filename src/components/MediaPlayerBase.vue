@@ -18,6 +18,7 @@ export default {
     isDocked: false
   },
   data: () => ({
+    itemTitle: "",
     isPlaying: false,
     enclosureURL: "",
     enclosureType: null,
@@ -30,6 +31,7 @@ export default {
         this.item != null &&
         (this.item.hasVideoAttachment() || this.item.hasAudioAttachment())
       ) {
+        this.itemTitle = this.item.title;
         const self = this;
         this.enclosure().then(function(res) {
           self.enclosureURL = res;
@@ -38,6 +40,9 @@ export default {
           self.$refs.player.load();
         });
         this.currentPlayPercentage = 0;
+      } else {
+        this.itemTitle = "";
+        this.pause();
       }
     }
   },

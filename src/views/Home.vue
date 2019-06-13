@@ -201,7 +201,9 @@ export default {
 
     onMaximize() {
       this.mediaPlayerDocked = false;
-      this.showMediaList = true;
+      if (this.showAudioPlayer || this.showVideoPlayer) {
+        this.showMediaList = true;
+      }
     },
 
     showOnboarding() {
@@ -222,7 +224,6 @@ export default {
     file.href = flavor.webFontCssFile;
     document.head.appendChild(file);
 
-    console.log("Loading web font " + flavor.themeBodyFont);
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
 
