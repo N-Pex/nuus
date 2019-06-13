@@ -1,5 +1,4 @@
-<template>
-</template>
+<template></template>
 
 
 <script>
@@ -19,14 +18,25 @@ export default {
   },
   data: () => ({
     itemTitle: "",
+    autoPlay: true,
     isPlaying: false,
     enclosureURL: "",
     enclosureType: null,
     currentPlayPercentage: 0,
     showOverlayControls: false
   }),
+  mounted: function() {
+    this.update();
+  },
   watch: {
     item: function() {
+      this.autoPlay = true;
+      this.update();
+    }
+  },
+  computed: {},
+  methods: {
+    update() {
       if (
         this.item != null &&
         (this.item.hasVideoAttachment() || this.item.hasAudioAttachment())
@@ -44,10 +54,8 @@ export default {
         this.itemTitle = "";
         this.pause();
       }
-    }
-  },
-  computed: {},
-  methods: {
+    },
+
     async enclosure() {
       if (this.item.enclosure.startsWith("file://")) {
         let blob = await db.getMediaFile(this.item.enclosure);
@@ -59,8 +67,9 @@ export default {
     },
 
     onCanPlay() {
-      console.log("Can play called");
-      if (this.item != null) {
+      if (this.item != null && this.autoPlay) {
+        this.autoPlay = false;
+        console.log("Can play called");
         this.play();
       }
     },
@@ -118,6 +127,10 @@ export default {
       this.$refs.player.pause();
     },
 
+    seekToPercentage(percentage) {
+      this.$refs.player.currentTime = this.$refs.player.duration * percentage / 100;
+    },
+
     replay10() {
       this.$refs.player.currentTime = Math.max(
         0,
@@ -136,6 +149,9 @@ export default {
       let duration = this.$refs.player.duration;
       let current = this.$refs.player.currentTime;
       this.currentPlayPercentage = (100 * current) / duration;
+      this.$emit("timeUpdate", {
+        currentPlayPercentage: this.currentPlayPercentage
+      });
     },
 
     minimize() {

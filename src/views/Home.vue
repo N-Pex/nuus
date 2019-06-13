@@ -330,7 +330,7 @@ export default {
 
 .fullScreenItem {
   background-color: rgb(245, 248, 239);
-  z-index: 3;
+  z-index: 2;
   position: fixed;
   top: 0;
   bottom: 0;

@@ -148,7 +148,7 @@ export default {
   right: 0;
   bottom: 66%;
   background-color: #000;
-  z-index: 2;
+  z-index: 3;
   transition: 0.3s;
 }
 
