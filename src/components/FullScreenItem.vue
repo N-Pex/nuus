@@ -87,6 +87,12 @@ export default {
   }),
 
   mounted: function() {
+    // If we are playing this item, hide the docked media player since we already
+    // show the play/pause button next to the title.
+    if (this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == this.item) {
+      this.$root.mediaPlayerInvisible = true;
+    }
+
     this.imageUrl = this.item.imageSrc;
     if (this.imageUrl == null) {
       this.moveFraction = 0;
@@ -216,6 +222,7 @@ export default {
 }
 
 .share {
+  background-color: white;
   width: 100%;
   height: 50px;
   position: sticky;

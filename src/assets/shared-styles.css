@@ -12,8 +12,13 @@
     width: 32px !important;
     height: 32px !important;
 }
-  
-.v-btn.large-button .v-icon, .v-btn.medium-button .v-icon, .v-btn.small-button .v-icon {
+
+.v-btn.tiny-button {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.v-btn.large-button .v-icon, .v-btn.medium-button .v-icon, .v-btn.tiny-button .v-icon {
     width: 80% !important;
     height: 80% !important;
 }
@@ -24,4 +29,9 @@ span.verticalCenter {
     vertical-align:middle;
 }
   
-  
+.listDivider {
+    height: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-bottom: 1px solid #d8d8d8;
+}

@@ -16,11 +16,13 @@ export default {
     itemTitle: "",
     autoPlay: false,
     isPlaying: false,
+    imageURL: null,
     enclosureURL: "",
     enclosureType: null,
+    duration: 0,
     currentPlaySeconds: 0,
     currentPlayPercentage: 0,
-    showOverlayControls: false
+    showOverlayControls: false,
   }),
   mounted: function() {
     this.update();
@@ -32,6 +34,21 @@ export default {
     }
   },
   computed: {},
+  filters: {
+    timeInColonFormat: function(value) {
+    let hours =  parseInt(Math.floor(value / 3600)); 
+    let minutes = parseInt(Math.floor((value - (hours * 3600)) / 60)); 
+    let seconds= parseInt((value - ((hours * 3600) + (minutes * 60))) % 60); 
+
+    let dHours = (hours > 9 ? hours : '0' + hours);
+    let dMins = (minutes > 9 ? minutes : '0' + minutes);
+    let dSecs = (seconds > 9 ? seconds : '0' + seconds);
+    if (hours > 0) {
+      return dHours + ":" + dMins + ":" + dSecs;
+    }
+    return dMins + ":" + dSecs;
+    }
+  },
   methods: {
     load(item, autoplay) {
       this.item = item;
@@ -53,8 +70,20 @@ export default {
         });
         this.currentPlaySeconds = 0;
         this.currentPlayPercentage = 0;
+        this.duration = 0;
+              
+        this.imageUrl = this.item.imageSrc;
+
+        // If no thumbnail, try generic feed image
+        if (this.imageUrl == null) {
+          this.imageUrl = this.item.feed.imageUrl;
+        }
       } else {
         this.itemTitle = "";
+        this.currentPlaySeconds = 0;
+        this.currentPlayPercentage = 0;
+        this.duration = 0;
+        this.imageURL = null;
         this.pause();
       }
     },
@@ -79,6 +108,9 @@ export default {
 
     onLoaded() {
       console.log("On loaded called");
+
+      this.duration = this.$refs.player.duration;
+
       // Check if we have stored a playhead position for this video
       //
       var url = this.item.enclosure;

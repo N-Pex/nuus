@@ -15,17 +15,19 @@
         />
       </v-list>
       <v-list v-if="listType == 'audio'" ref="list">
-        <AudioItem
-          v-for="(item, index) in items"
-          :key="item.guid"
-          :ref="item.guid"
-          class="ma-0"
-          :item="item"
-          :isSelected="item == selectedItem"
-          :odd="index % 2 != 0"
-          v-on:itemClicked="playItem($event)"
-          v-on:playItem="playItem($event)"
-        />
+        <div v-for="(item, index) in items" :key="item.guid" style="background-color: var(--v-audioCardBackground-base)">
+          <AudioItem
+            :ref="item.guid"
+            class="ma-0"
+            :item="item"
+            :isSelected="item == selectedItem"
+            :odd="index % 2 != 0"
+            v-on:itemClicked="playItem($event)"
+            v-on:playItem="playItem($event)"
+          />
+          <!-- If not last item, add a divider between items -->
+          <div v-if="index < items.length - 1" class="listDivider"/>
+        </div>
       </v-list>
       <v-list v-else ref="list">
         <Item

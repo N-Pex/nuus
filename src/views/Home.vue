@@ -87,6 +87,7 @@
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
+        v-on:openFullscreen="itemClicked($event)"
         v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.audioPlayer && !this.$root.mediaPlayerInvisible"
       />
 
@@ -98,7 +99,7 @@
         :selectedItem="playingMediaItem"
         v-on:playItem="playItemFromMediaList($event)"
         v-on:itemClicked="playItemFromMediaList($event)"
-        class="nextUpVideoList"
+        class="mediaList"
       />
 
       <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
@@ -218,6 +219,10 @@ export default {
 
     showOnboarding() {
       router.push({ name: "onboarding" });
+    },
+
+    openFullscreen(item) {
+      console.log("Open full screen");
     }
   },
 
@@ -345,8 +350,8 @@ export default {
   padding-top: 100px !important;
 }
 
-.nextUpVideoList {
-  background-color: #fff;
+.mediaList {
+  background-color: #00ffff;
   position: fixed;
   top: 33%;
   bottom: 0;

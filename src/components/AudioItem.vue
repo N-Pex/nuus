@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid grid-list-lg pb-1 pt-3 pl-0 pr-0 ma-0>
-    <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
+  <v-container fluid grid-list-lg pb-1 pt-3 pl-0 pr-0 ma-0 style="background-color: var(--v-audioCardBackground-base)">
+    <v-layout ref="card" xs12>
       <v-flex @click="itemClicked()" xs11 ml-2 mr-2 mt-0 pt-0>
         <div>
             <span class="verticalCenter">

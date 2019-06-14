@@ -20,7 +20,8 @@ Vue.use(Vuetify, {
     primary: '#232323',
     secondary: '#949494',
     accent: '#1b9739',
-    cardBackground: '#ffffff'
+    cardBackground: '#ffffff',
+    audioCardBackground: '#fafafa'
   },
   icons: icons
 })

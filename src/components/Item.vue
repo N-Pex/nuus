@@ -1,26 +1,23 @@
 <template>
-  <v-container fluid grid-list-lg pb-2 pt-0 pl-0 pr-0 mb-5>
+  <v-container fluid grid-list-sm pb-2 pt-0 pl-0 pr-0 mb-5>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
       <v-flex
         xs1
         ma-0
         pa-0
         v-if="playable"
-        style="min-width: 70px"
-        v-bind:class="{ 'order-lg3': odd, 'order-md3': odd, 'order-sm3': odd, 'order-xs3': odd, 'text-xs-center': true
-        , 'ma-0': true, 'pa-0': true }"
+        v-bind:class="{ 'order-xs3': odd, 'mr-2': odd, 'ml-2': !odd }"
       >
         <v-btn
-          large
           flat
           icon
           ma-0
           pa-0
+          class="small-button ma-0 pa-0"
           color="black"
-          style="min-width: 0"
           @click="playItem()"
         >
-          <v-icon large class="ma-0 pa-0">$vuetify.icons.play</v-icon>
+          <v-icon>$vuetify.icons.play</v-icon>
         </v-btn>
       </v-flex>
       <v-flex
@@ -28,7 +25,7 @@
         mt-0
         pt-0
         v-if="imageUrl != null"
-        v-bind:class="{ 'order-lg2': odd, 'order-md2': odd, 'order-sm2': odd, 'order-xs2': odd, 'pl-0': odd, 'pr-0': !odd, 'ml-0': odd, 'mr-0': !odd }"
+        v-bind:class="{ 'order-xs2': odd, 'pl-0': odd, 'pr-0': !odd, 'ml-0': odd, 'mr-0': !odd }"
       >
         <div class="imageContainer">
           <v-img aspect-radio="1" :src="imageUrl" class="ma-0 pa-0 image"/>
