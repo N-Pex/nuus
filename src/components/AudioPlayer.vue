@@ -1,11 +1,7 @@
 <template>
   <div :class="{ 'playerRoot': true, docked: isDocked }" v-on="isDocked ? { click: maximize } : {}">
-    <v-container fill-height fluid ma-0 pa-0>
-      <v-layout fill-height align-center row ma-0 pa-0>
-        <v-flex fill-height ma-0 pa-0 xs12 v-show="!isDocked" style="display: grid">
-          <div style="grid-column: 1; grid-row: 1">
-            <!-- VIDEO PLAYER -->
             <audio
+              v-show="false"
               class="player"
               ref="player"
               @click="showHideOverlayControls"
@@ -18,13 +14,10 @@
             >
               <source :src="enclosureURL" :type="enclosureType">Your browser does not support the audio tag.
             </audio>
-          </div>
-          <transition name="fade">
-            <div
-              class="overlayControls"
-              style="grid-column: 1; grid-row: 1"
-              v-show="!isDocked"
-            >
+                <v-container fill-height fluid ma-0 pa-0>
+      <v-layout fill-height align-center row ma-0 pa-0>
+        <v-flex fill-height ma-0 pa-0 xs12 v-show="!isDocked" class="overlayControls">
+
               <!-- TOP PART - MINIMIZE AND CLOSE BUTTONS -->
               <v-btn
                 flat
@@ -95,8 +88,9 @@
                 color="green lighten-1"
                 :value="currentPlayPercentage"
               ></v-progress-linear>
-            </div>
-          </transition>
+
+              <!-- SHARE -->
+              <Share style="position:absolute; bottom: 0; left: 0; right: 0" :item="item" />
         </v-flex>
         <v-flex xs10 v-show="isDocked" fill-height @click="maximize()" class="ml-3 text-xs-center">
           <v-btn
@@ -134,9 +128,13 @@
 
 <script>
 import MediaPlayerBase from './MediaPlayerBase.vue';
+import Share from './Share.vue';
 
 export default {
-  extends: MediaPlayerBase
+  extends: MediaPlayerBase,
+  components: {
+    Share
+  }
 };
 </script>
 
@@ -183,14 +181,6 @@ export default {
 .v-btn {
   min-width: 0;
   padding: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
 
 </style>
