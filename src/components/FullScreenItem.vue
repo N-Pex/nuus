@@ -64,13 +64,11 @@
 import Share from "../components/Share";
 import Vuetify from "vuetify";
 import ItemModel from "../models/itemmodel";
-import OneButtonAudioPlayer from "../components/OneButtonAudioPlayer";
 
 export default {
   name: "FullScreenItem",
   components: {
-    Share,
-    OneButtonAudioPlayer
+    Share
   },
   props: {
     item: {

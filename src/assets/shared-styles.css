@@ -17,3 +17,11 @@
     width: 80% !important;
     height: 80% !important;
 }
+
+/* Used for vertically centering spans */
+span.verticalCenter {
+    display:inline-block; 
+    vertical-align:middle;
+}
+  
+  

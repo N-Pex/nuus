@@ -71,6 +71,9 @@ export default {
       return style;
     },
     cssProps() {
+      // For text scaling to work correctly, we take all the unscaled theme sizes and scale them here, so that
+      // the CSS code can either use the "unscaled" --v-theme-xyz-font-size values or the scaled ones
+      // (--v-theme-xyz-font-size-scaled).
       let flavor = flavors[this.flavorName];
       let factor = 1 + 0.3 * (this.$store.state.textSizeAdjustment) / 6;
       return {
@@ -79,7 +82,16 @@ export default {
         "--v-theme-title-line-height-scaled-x2": "calc(var(--v-theme-title-line-height) * 2 * " + factor + ")",
         "--v-theme-body-font-size-scaled": "calc(var(--v-theme-body-font-size) * " + factor + ")",
         "--v-theme-body-line-height-scaled": "calc(var(--v-theme-body-line-height) * " + factor + ")",
-        "--v-theme-body-line-height-scaled-x4": "calc(var(--v-theme-body-line-height) * 4 * " + factor + ")"
+        "--v-theme-body-line-height-scaled-x4": "calc(var(--v-theme-body-line-height) * 4 * " + factor + ")",
+        "--v-theme-date-font-size-scaled": "calc(var(--v-theme-date-font-size) * " + factor + ")",
+        "--v-theme-date-line-height-scaled": "calc(var(--v-theme-date-line-height) * " + factor + ")",
+
+        /* Media sizes */
+        "--v-theme-media-title-font-size-scaled": "calc(var(--v-theme-media-title-font-size) * " + factor + ")",
+        "--v-theme-media-title-line-height-scaled": "calc(var(--v-theme-media-title-line-height) * " + factor + ")",
+        "--v-theme-media-title-line-height-scaled-x2": "calc(var(--v-theme-media-title-line-height) * 2 * " + factor + ")",
+        "--v-theme-media-body-font-size-scaled": "calc(var(--v-theme-media-body-font-size) * " + factor + ")",
+        "--v-theme-media-body-line-height-scaled": "calc(var(--v-theme-media-body-line-height) * " + factor + ")"
       };
     }
   }

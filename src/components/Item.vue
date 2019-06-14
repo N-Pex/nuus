@@ -47,40 +47,13 @@
           <div v-html="item.description" class="itemBody" style="max-height:var(--v-theme-body-line-height-scaled-x4);overflow:hidden"/>
         </div>
         <div>
-          <span class="itemDate">{{ item.pubDate }}</span>
-          &nbsp;
-          <span>
-            <v-btn
-              v-if="item.hasVideoAttachment()"
-              flat
-              icon
-              color="secondary"
-              class="ma-0 pa-0"
-              style="min-width: 0"
-            >
-              <v-icon small class="ma-0 pa-0">$vuetify.icons.typeVideo</v-icon>
-            </v-btn>
-            <v-btn
-              v-else-if="item.hasAudioAttachment()"
-              flat
-              icon
-              color="secondary"
-              class="ma-0 pa-0"
-              style="min-width: 0"
-            >
-              <v-icon small class="ma-0 pa-0">$vuetify.icons.typeAudio</v-icon>
-            </v-btn>
-            <v-btn
-              v-else
-              flat
-              icon
-              color="secondary"
-              class="ma-0 pa-0"
-              style="min-width: 0"
-            >
-              <v-icon small class="ma-0 pa-0">$vuetify.icons.typeText</v-icon>
-            </v-btn>
-          </span>
+            <span class="itemDate verticalCenter">{{ item.pubDate }}</span>
+            &nbsp;
+            <span class="verticalCenter">
+              <v-icon v-if="item.hasVideoAttachment()" class="ma-0 pa-0" small>$vuetify.icons.typeVideo</v-icon>
+              <v-icon v-else-if="item.hasAudioAttachment()" class="ma-0 pa-0" small>$vuetify.icons.typeAudio</v-icon>
+              <v-icon v-else class="ma-0 pa-0" small>$vuetify.icons.typeText</v-icon>
+            </span>
         </div>
       </v-flex>
     </v-layout>
@@ -140,23 +113,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .contentBlock {
   display: block;
-}
-
-.contentBlock::after {
-  display: block;
-  position: relative;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    var(--v-cardBackground-base)
-  );
-  margin-top: -0.3em;
-  height: 0.3em;
-  width: 100%;
-  content: "";
 }
 
 .imageContainer {

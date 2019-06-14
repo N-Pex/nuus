@@ -1,8 +1,8 @@
 <template>
   <v-container class="ma-0 pa-0" ref="container">
     <v-layout row wrap>
-      <v-list v-if="isMediaList" ref="list">
-        <MediaItem
+      <v-list v-if="listType == 'video'" ref="list">
+        <VideoItem
           v-for="(item, index) in items"
           :key="item.guid"
           :ref="item.guid"
@@ -10,7 +10,20 @@
           :item="item"
           :isSelected="item == selectedItem"
           :odd="index % 2 != 0"
-          v-on:itemClicked="itemClicked($event)"
+          v-on:itemClicked="playItem($event)"
+          v-on:playItem="playItem($event)"
+        />
+      </v-list>
+      <v-list v-if="listType == 'audio'" ref="list">
+        <AudioItem
+          v-for="(item, index) in items"
+          :key="item.guid"
+          :ref="item.guid"
+          class="ma-0"
+          :item="item"
+          :isSelected="item == selectedItem"
+          :odd="index % 2 != 0"
+          v-on:itemClicked="playItem($event)"
           v-on:playItem="playItem($event)"
         />
       </v-list>
@@ -33,20 +46,22 @@
 
 <script>
 import Item from "./Item";
-import MediaItem from "./MediaItem";
+import AudioItem from "./AudioItem";
+import VideoItem from "./VideoItem";
 import ItemModel from "../models/itemmodel";
 
 export default {
   components: {
     Item,
-    MediaItem,
+    AudioItem,
+    VideoItem,
     ItemModel
   },
   props: {
-    isMediaList: {
-      type: Boolean,
+    listType: {
+      type: String,
       default: function() {
-        return false;
+        return "none";
       }
     },
     items: {

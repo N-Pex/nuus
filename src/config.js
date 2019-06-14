@@ -30,8 +30,8 @@ export default {
         themeCSSVariables: require("!css-loader!@/assets/css/english.css").toString(),
         webFontCssFile: "./assets/fonts/english.css",
         webFontConfig: {
-            custom: {
-                families: ["Indie Flower"]
+            google: {
+                families: ['Roboto']
             }
         },
         feeds: [

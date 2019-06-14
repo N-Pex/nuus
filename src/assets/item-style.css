@@ -3,6 +3,7 @@
     color: var(--v-primary-base);
     font-family: var(--v-theme-title-font);
     font-size: var(--v-theme-title-font-size-scaled);
+    font-weight: 700;
     line-height: var(--v-theme-title-line-height-scaled);
 }
 
@@ -15,7 +16,22 @@
 
 .itemDate {
     color: var(--v-secondary-base);
-    /*font-family: Roboto-Regular;*/
-    font-size: 9px;
-    line-height: 15px;
+    font-family: var(--v-theme-date-font);
+    font-size: var(--v-theme-date-font-size-scaled);
+    line-height: var(--v-theme-date-line-height-scaled);
+}
+
+.mediaItemTitle {
+    color: var(--v-primary-base);
+    font-family: var(--v-theme-media-title-font);
+    font-size: var(--v-theme-media-title-font-size-scaled);
+    font-weight: 700;
+    line-height: var(--v-theme-media-title-line-height-scaled);
+}
+
+.mediaItemBody {
+    color: var(--v-primary-base);
+    font-family: var(--v-theme-media-body-font);
+    font-size: var(--v-theme-media-body-font-size-scaled);
+    line-height: var(--v-theme-media-body-line-height-scaled);
 }

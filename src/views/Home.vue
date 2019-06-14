@@ -4,10 +4,8 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer">
         <v-icon>$vuetify.icons.logo</v-icon>
       </v-toolbar-side-icon>
-      <v-spacer />
-      <v-toolbar-title class="headline text-uppercase">
-        {{ title }}
-      </v-toolbar-title>
+      <v-spacer/>
+      <v-toolbar-title class="headline text-uppercase">{{ title }}</v-toolbar-title>
     </v-toolbar>
 
     <v-navigation-drawer
@@ -58,14 +56,13 @@
           </v-list-tile-content>
         </v-list-tile>
 
-              <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
+        <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
 
         <v-list-tile>
           <v-list-tile-content>
             <v-btn @click="showOnboarding()">Show onboarding</v-btn>
           </v-list-tile-content>
         </v-list-tile>
-
       </v-list>
     </v-navigation-drawer>
 
@@ -93,9 +90,16 @@
         v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.audioPlayer && !this.$root.mediaPlayerInvisible"
       />
 
-      <ItemList ref="mediaList" isMediaList :items="mediaItems" v-show="showMediaList" :selectedItem="playingMediaItem" 
-        v-on:itemClicked="playItem($event)"
-        class="nextUpVideoList" />
+      <ItemList
+        ref="mediaList"
+        :listType="mediaItemsType"
+        :items="mediaItems"
+        v-show="showMediaList"
+        :selectedItem="playingMediaItem"
+        v-on:playItem="playItemFromMediaList($event)"
+        v-on:itemClicked="playItemFromMediaList($event)"
+        class="nextUpVideoList"
+      />
 
       <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
         <FullScreenItem v-on:close="onCloseFullscreen()" :item="itemFullscreen"/>
@@ -120,7 +124,7 @@ import db from "../database";
 import rssparser from "../services/rssparser";
 import velocity from "velocity-animate";
 import flavors from "../config";
-import router from '../router'
+import router from "../router";
 
 export default {
   name: "Home",
@@ -153,12 +157,12 @@ export default {
     },
 
     setMediaPlayer(mediaPlayer) {
-        if (this.$root.mediaPlayer != null) {
-          this.$root.mediaPlayer.item = null;
-        }
-        console.log(mediaPlayer);
-        this.$root.mediaPlayer = mediaPlayer;
-        this.$root.mediaPlayerInvisible = false;
+      if (this.$root.mediaPlayer != null) {
+        this.$root.mediaPlayer.item = null;
+      }
+      console.log(mediaPlayer);
+      this.$root.mediaPlayer = mediaPlayer;
+      this.$root.mediaPlayerInvisible = false;
     },
 
     playItem(eventInfo) {
@@ -175,6 +179,12 @@ export default {
         this.showMediaList = false;
       }
       this.$root.mediaPlayerHidden = false;
+      this.$root.mediaPlayer.load(eventInfo.item, true);
+      this.playingMediaItem = eventInfo.item;
+    },
+
+    playItemFromMediaList(eventInfo) {
+      this.itemFullscreen = eventInfo.item;
       this.$root.mediaPlayer.load(eventInfo.item, true);
       this.playingMediaItem = eventInfo.item;
     },
@@ -221,12 +231,13 @@ export default {
     this.$vuetify.rtl = flavor.isRTL;
 
     // Insert link to font style sheet so the web font loader will find the fonts.
-    let file = document.createElement("link");
-    file.rel = "stylesheet";
-    file.type = "text/css";
-    file.href = flavor.webFontCssFile;
-    document.head.appendChild(file);
-
+    if (flavor.webFontCssFile != "") {
+      let file = document.createElement("link");
+      file.rel = "stylesheet";
+      file.type = "text/css";
+      file.href = flavor.webFontCssFile;
+      document.head.appendChild(file);
+    }
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
 
@@ -257,14 +268,19 @@ export default {
     showItemFullscreen: function(isOpen) {
       document
         .querySelector("html")
-        .classList.toggle("application--dialog-opened", this.showItemFullscreen || this.showMediaList);
+        .classList.toggle(
+          "application--dialog-opened",
+          this.showItemFullscreen || this.showMediaList
+        );
     },
     showMediaList: function(isOpen) {
       document
         .querySelector("html")
-        .classList.toggle("application--dialog-opened", this.showItemFullscreen || this.showMediaList);
+        .classList.toggle(
+          "application--dialog-opened",
+          this.showItemFullscreen || this.showMediaList
+        );
     }
-
   },
   computed: {
     textSizeAdjustment: {
@@ -278,19 +294,31 @@ export default {
     mediaItems: function() {
       const self = this;
       //console.log("ITEM is " + this.itemFullscreen);
-       return this.items.filter(function(i) {
-         if (self.itemFullscreen != null) {
-            //console.log("Has item");
-           if (self.itemFullscreen.hasVideoAttachment()) {
-             // Current item is a video. Only show video items in the media list!
-             return i.hasVideoAttachment();
-           } else if (self.itemFullscreen.hasAudioAttachment()) {
-             return i.hasAudioAttachment();
-           }
-         }
-         return false
-     })
-   }
+      return this.items.filter(function(i) {
+        if (self.itemFullscreen != null) {
+          //console.log("Has item");
+          if (self.itemFullscreen.hasVideoAttachment()) {
+            // Current item is a video. Only show video items in the media list!
+            return i.hasVideoAttachment();
+          } else if (self.itemFullscreen.hasAudioAttachment()) {
+            return i.hasAudioAttachment();
+          }
+        }
+        return false;
+      });
+    },
+    mediaItemsType: function() {
+      const self = this;
+      if (self.itemFullscreen != null) {
+        if (self.itemFullscreen.hasVideoAttachment()) {
+          // Current item is a video. Only show video items in the media list!
+          return "video";
+        } else if (self.itemFullscreen.hasAudioAttachment()) {
+          return "audio";
+        }
+      }
+      return "none";
+    }
   }
 };
 </script>
@@ -324,8 +352,8 @@ export default {
   bottom: 0;
   right: 0;
   left: 0;
-  overflow-y:scroll;
-  overflow-x:hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .fullScreenItem {
@@ -340,6 +368,4 @@ export default {
   height: 100%;
   overflow-y: auto;
 }
-
-
 </style>

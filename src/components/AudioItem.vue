@@ -1,24 +1,20 @@
 <template>
   <v-container fluid grid-list-lg pb-1 pt-3 pl-0 pr-0 ma-0>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
-      <v-flex xs4 mt-0 pt-0 v-if="!isAudio && imageUrl != null">
-        <v-img height="65px" max-height="65px" :src="imageUrl" ma-0 pa-0/>
-      </v-flex>
-      <v-flex @click="itemClicked()" v-bind:class="'xs'+ (isAudio ? 10 : 7)" ml-2 mr-2 mt-0 pt-0>
-        <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{itemTitle: true, selected: isSelected}">
+      <v-flex @click="itemClicked()" xs11 ml-2 mr-2 mt-0 pt-0>
+        <div>
+            <span class="verticalCenter">
+              <v-icon v-if="isSelected" class="selected ma-0 pa-0" small>$vuetify.icons.typeAudioPlaying</v-icon>
+              <v-icon v-else class="ma-0 pa-0" small>$vuetify.icons.typeAudio</v-icon>
+            </span>
+            &nbsp;
+            <span class="itemDate verticalCenter">{{ item.pubDate }}</span>
+        </div>
+        <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
           {{ item.title }}
         </div>
-        <div v-if="isAudio" style="max-height:var(--v-theme-body-line-height-scaled);overflow:hidden" class="itemBody">
+        <div style="margin-top:8px;max-height:var(--v-theme-media-body-line-height-scaled);overflow:hidden" class="mediaItemBody">
           <div v-html="item.description"/>
-        </div>
-
-        <div>
-          <span class="itemDate">{{ item.pubDate }}</span>
-          &nbsp;
-          <span>
-              <v-icon v-if="isAudio" small class="ma-0 pa-0">$vuetify.icons.typeAudio</v-icon>
-              <v-icon v-else small class="ma-0 pa-0">$vuetify.icons.typeVideo</v-icon>
-          </span>
         </div>
       </v-flex>
       <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-xs-center ma-0 pa-0">
@@ -65,9 +61,7 @@ export default {
     this.updateItem();
   },
   data: () => ({
-    imageUrl: null,
-    isFavorite: false,
-    isAudio: false
+    isFavorite: false
   }),
   methods: {
     // Toggle favorite status of item.
@@ -88,18 +82,6 @@ export default {
     },
 
     updateItem() {
-      console.log("Item has been set!");
-      this.imageUrl = this.item.imageSrc;
-
-      // If no thumbnail, try generic feed image
-      if (this.imageUrl == null) {
-        this.imageUrl = this.item.feed.imageUrl;
-      }
-      if (this.item.hasAudioAttachment()) {
-        this.isAudio = true;
-      } else {
-        this.isAudio = false;
-      }
       db.items
         .get(this.item.guid)
         .then(item => (this.isFavorite = item.favorite))
