@@ -2,24 +2,24 @@
   <v-container fluid ma-0 pa-1>
     <v-layout text-xs-center wrap>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon color="black">
-          <v-icon>share</v-icon>
+        <v-btn class="tiny-button" flat icon medium color="black">
+          <v-icon>$vuetify.icons.share</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon color="black">
-          <v-icon>play_circle_outline</v-icon>
+        <v-btn class="tiny-button" flat icon medium color="black">
+          <v-icon>$vuetify.icons.facebook</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon color="black">
-          <v-icon>cloud_download</v-icon>
+        <v-btn class="tiny-button" flat icon medium color="black">
+          <v-icon>$vuetify.icons.download</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon color="black" @click="toggleFavorite()">
-          <v-icon v-if="isFavorite">bookmark</v-icon>
-          <v-icon v-else>bookmark_border</v-icon>
+        <v-btn class="tiny-button" flat icon medium color="black" @click="toggleFavorite()">
+          <v-icon v-if="isFavorite" color="green">$vuetify.icons.favorite</v-icon>
+          <v-icon v-else color="black">$vuetify.icons.favoriteNot</v-icon>
         </v-btn>
       </v-flex>
     </v-layout>
