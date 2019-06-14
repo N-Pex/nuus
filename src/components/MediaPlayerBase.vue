@@ -23,6 +23,7 @@ export default {
     currentPlaySeconds: 0,
     currentPlayPercentage: 0,
     showOverlayControls: false,
+    overlayTimeoutObject: null
   }),
   mounted: function() {
     this.update();
@@ -209,15 +210,27 @@ export default {
     },
 
     showHideOverlayControls() {
+      this.overlayTimeoutObject = null;
       if (this.isDocked) {
         this.showOverlayControls = false;
       } else {
         this.showOverlayControls = !this.showOverlayControls;
         if (this.showOverlayControls) {
-          setTimeout(this.showHideOverlayControls, 3000);
+          this.overlayTimeoutObject = setTimeout(this.showHideOverlayControls, 3000);
         }
       }
+    },
+
+    enableOverlayControlsTimeout(enable) {
+      if (this.overlayTimeoutObject != null) {
+        clearTimeout(this.overlayTimeoutObject);
+        this.overlayTimeoutObject = null;
+      }
+      if (enable) {
+          this.overlayTimeoutObject = setTimeout(this.showHideOverlayControls, 3000);
+      }
     }
+
   }
 };
 </script>

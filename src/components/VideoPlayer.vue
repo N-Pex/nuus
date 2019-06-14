@@ -51,7 +51,7 @@
               <v-container fluid fill-height pa-0 ma-0>
                 <v-layout align-center justify-center row pa-0 ma-0>
                   <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-0 medium-button">
+                    <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-0 small-button">
                       <v-icon>$vuetify.icons.replay10</v-icon>
                     </v-btn>
                   </v-flex>
@@ -80,7 +80,7 @@
                   </v-flex>
 
                   <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-0 medium-button">
+                    <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-0 small-button">
                       <v-icon>$vuetify.icons.forward10</v-icon>
                     </v-btn>
                   </v-flex>
@@ -88,13 +88,18 @@
               </v-container>
 
               <!-- BOTTOM PART - PROGRESS -->
-              <v-progress-linear
-                style="max-height: 7px; position: absolute; bottom: 0; left: 0; right: 0"
-                class="ma-0 pa-0"
-                background-color="gray"
-                color="green lighten-1"
-                :value="currentPlayPercentage"
-              ></v-progress-linear>
+              <v-slider
+                  height="4px"
+                  hide-details
+                  color="green lighten-1"
+                  class="progress ma-0 pa-0"
+                  background-color="green lighten-5"
+                  style="background-color:transparent;position: absolute; bottom: 0; left: 0; right: 0"
+                  :value="currentPlayPercentage"
+                  v-on:change="seekToPercentage($event)"
+                  v-on:start="draggingSlider = true; enableOverlayControlsTimeout(false)"
+                  v-on:end="draggingSlider = false; enableOverlayControlsTimeout(true)"
+                />
             </div>
           </transition>
         </v-flex>
@@ -136,7 +141,10 @@
 import MediaPlayerBase from './MediaPlayerBase.vue';
 
 export default {
-  extends: MediaPlayerBase
+  extends: MediaPlayerBase,
+  data: () => ({
+    draggingSlider: false
+  }),
 };
 </script>
 
