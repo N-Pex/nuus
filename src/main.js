@@ -34,6 +34,14 @@ Vue.instance = new Vue({
   router,
   store,
   render: h => h(App),
+  data() {
+    return {
+      mediaPlayer: null,
+      audioPlayer: null,
+      mediaPlayerDocked: false,
+      mediaPlayerInvisible: false
+    }
+  },
   computed: {
     onboarded: {
       get: function () {

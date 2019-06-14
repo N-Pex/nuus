@@ -78,19 +78,19 @@
       />
       <VideoPlayer
         ref="videoPlayer"
-        :isDocked="mediaPlayerDocked"
+        :isDocked="this.$root.mediaPlayerDocked"
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
-        v-show="showVideoPlayer"
+        v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.videoPlayer && !this.$root.mediaPlayerInvisible"
       />
       <AudioPlayer
         ref="audioPlayer"
-        :isDocked="mediaPlayerDocked"
+        :isDocked="this.$root.mediaPlayerDocked"
         v-on:close="onClose()"
         v-on:minimize="onMinimize()"
         v-on:maximize="onMaximize()"
-        v-show="showAudioPlayer"
+        v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.audioPlayer && !this.$root.mediaPlayerInvisible"
       />
 
       <ItemList ref="mediaList" isMediaList :items="mediaItems" v-show="showMediaList" :selectedItem="playingMediaItem" 
@@ -152,30 +152,31 @@ export default {
       //this.$refs.videoPlayer.item = eventInfo.item;
     },
 
+    setMediaPlayer(mediaPlayer) {
+        if (this.$root.mediaPlayer != null) {
+          this.$root.mediaPlayer.item = null;
+        }
+        console.log(mediaPlayer);
+        this.$root.mediaPlayer = mediaPlayer;
+        this.$root.mediaPlayerInvisible = false;
+    },
+
     playItem(eventInfo) {
       console.log("Play item " + eventInfo.item.title);
       this.itemFullscreen = eventInfo.item;
       if (eventInfo.item.hasVideoAttachment()) {
-        this.mediaPlayerDocked = false;
-        this.$refs.videoPlayer.item = eventInfo.item;
-        this.showVideoPlayer = true;
-        this.$refs.audioPlayer.item = null;
-        this.showAudioPlayer = false;
+        this.$root.mediaPlayerDocked = false;
+        this.setMediaPlayer(this.$refs.videoPlayer);
         this.showMediaList = true;
       } else {
         // Audio player. Start docked (so dont show the media list).
-        this.mediaPlayerDocked = true;
-        this.$refs.videoPlayer.item = null;
-        this.showVideoPlayer = false;
-        this.$refs.audioPlayer.item = eventInfo.item;
-        this.showAudioPlayer = true;
+        this.$root.mediaPlayerDocked = true;
+        this.setMediaPlayer(this.$refs.audioPlayer);
         this.showMediaList = false;
       }
+      this.$root.mediaPlayerHidden = false;
+      this.$root.mediaPlayer.load(eventInfo.item, true);
       this.playingMediaItem = eventInfo.item;
-      // let element = this.$refs.mediaList.$refs['item-' + this.playingMediaItem.guid];
-      // console.log("--------------");
-      // console.log(element);
-      // element.scrollIntoView(true);
     },
 
     itemCloseClicked(eventInfo) {
@@ -184,24 +185,23 @@ export default {
 
     onCloseFullscreen() {
       this.showItemFullscreen = false;
-      this.showAudioPlayer = false;
-      this.showVideoPlayer = false;
+      this.$root.mediaPlayerDocked = true;
+      this.$root.mediaPlayerInvisible = false;
     },
 
     onClose() {
       this.showMediaList = false;
-      this.showAudioPlayer = false;
-      this.showVideoPlayer = false;
+      this.setMediaPlayer(null);
     },
 
     onMinimize() {
-      this.mediaPlayerDocked = true;
+      this.$root.mediaPlayerDocked = true;
       this.showMediaList = false;
     },
 
     onMaximize() {
-      this.mediaPlayerDocked = false;
-      if (this.showAudioPlayer || this.showVideoPlayer) {
+      this.$root.mediaPlayerDocked = false;
+      if (this.$root.mediaPlayer != null) {
         this.showMediaList = true;
       }
     },
@@ -212,6 +212,9 @@ export default {
   },
 
   mounted() {
+    // Store the audio player instance.
+    this.$root.audioPlayer = this.$refs.audioPlayer;
+
     let flavor = flavors[this.$store.state.flavor];
 
     // Set RTL from config
@@ -238,10 +241,7 @@ export default {
       itemRect: new DOMRect(0, 0, 0, 0),
       itemFullscreen: null,
       showItemFullscreen: false,
-      showVideoPlayer: false,
-      showAudioPlayer: false,
       showMediaList: false,
-      mediaPlayerDocked: false,
       playingMediaItem: null,
       title: "",
       menuItems: [

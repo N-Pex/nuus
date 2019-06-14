@@ -8,20 +8,17 @@ import { constants } from "crypto";
 
 export default {
   props: {
-    item: {
-      type: ItemModel,
-      default: function() {
-        return new ItemModel();
-      }
-    },
-    isDocked: false
+    isDocked: false,
+    isInvisible: false
   },
   data: () => ({
+    item: null,
     itemTitle: "",
-    autoPlay: true,
+    autoPlay: false,
     isPlaying: false,
     enclosureURL: "",
     enclosureType: null,
+    currentPlaySeconds: 0,
     currentPlayPercentage: 0,
     showOverlayControls: false
   }),
@@ -36,6 +33,11 @@ export default {
   },
   computed: {},
   methods: {
+    load(item, autoplay) {
+      this.item = item;
+      this.autoplay = autoplay;
+    },
+
     update() {
       if (
         this.item != null &&
@@ -49,6 +51,7 @@ export default {
           self.$refs.player.pause();
           self.$refs.player.load();
         });
+        this.currentPlaySeconds = 0;
         this.currentPlayPercentage = 0;
       } else {
         this.itemTitle = "";
@@ -147,11 +150,16 @@ export default {
     onTimeUpdate() {
       // Update progress bar of current playback. TODO - allow click on progress bar to seek.
       let duration = this.$refs.player.duration;
-      let current = this.$refs.player.currentTime;
-      this.currentPlayPercentage = (100 * current) / duration;
-      this.$emit("timeUpdate", {
-        currentPlayPercentage: this.currentPlayPercentage
-      });
+      let current = Math.round(this.$refs.player.currentTime);
+      if (current != this.currentPlaySeconds) {
+        this.currentPlaySeconds = current;
+        this.currentPlayPercentage = Math.round((100 * current) / duration);
+        this.$root.$emit("currentPlayPercentage", {
+          item: this.item,
+          currentPlaySeconds: this.currentPlaySeconds,
+          currentPlayPercentage: this.currentPlayPercentage
+        });
+      }
     },
 
     minimize() {

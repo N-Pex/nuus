@@ -6,23 +6,47 @@
           <v-toolbar-side-icon @click="onClose()" class="toolbarIcon" :style="cssProps">
             <v-icon>arrow_back</v-icon>
           </v-toolbar-side-icon>
-          <OneButtonAudioPlayer v-if="item != null && item.hasAudioAttachment()" ref="audioPlayer" class="toolbarObject" :color="playerColor" :item="item" v-on:timeUpdate="onTimeUpdate($event)"/>
+
+          <div v-if="item != null && item.hasAudioAttachment()" class="toolbarObject">
+            <v-btn
+              v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == item && this.$root.mediaPlayer.isPlaying"
+              flat
+              icon
+              :color="playerColor"
+              @click="pause()"
+              class="ma-2 pa-0 small-button"
+            >
+              <v-icon>$vuetify.icons.pause</v-icon>
+            </v-btn>
+            <v-btn
+              v-show="this.$root.mediaPlayer == null || this.$root.mediaPlayer.item != item || !this.$root.mediaPlayer.isPlaying"
+              flat
+              icon
+              :color="playerColor"
+              @click="play()"
+              class="ma-2 pa-0 small-button"
+            >
+              <v-icon>$vuetify.icons.play</v-icon>
+            </v-btn>
+          </div>
+
           <v-toolbar-title class="toolbarObject">{{ item.title }}</v-toolbar-title>
         </v-toolbar>
         <v-card color="white" flat :style="cssProps">
           <v-img v-if="imageUrl != null" class="white--text" height="200px" :src="imageUrl"/>
           <Share class="share" :item="item"/>
-          
+
           <v-slider
-            v-if="item != null && item.hasAudioAttachment()" 
+            v-if="item != null && item.hasAudioAttachment()"
+            v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == item"
             height="4px"
-                color="green lighten-1"
-                class="progress ma-0 pa-0"
-                background-color="gray"
-                :value="currentPlayPercentage"
-                v-on:change="onSeek($event)"
-                v-on:start="draggingSlider = true"
-                v-on:end="draggingSlider = false"
+            color="green lighten-1"
+            class="progress ma-0 pa-0"
+            background-color="gray"
+            :value="currentPlayPercentage"
+            v-on:change="onSeek($event)"
+            v-on:start="draggingSlider = true"
+            v-on:end="draggingSlider = false"
           />
 
           <v-container :class="{'noImage': this.imageUrl == null}">
@@ -73,6 +97,15 @@ export default {
       this.moveFraction = 1;
       this.fadeFraction = 1;
     }
+    this.$root.$on(
+      "currentPlayPercentage",
+      function(event) {
+        // Called when audio player playback percentage changes. Use this to update our progress bar.
+        if (!this.draggingSlider) {
+          this.currentPlayPercentage = event.currentPlayPercentage;
+        }
+      }.bind(this)
+    );
   },
   computed: {
     cssProps() {
@@ -83,10 +116,10 @@ export default {
     },
     playerColor() {
       return this.fullColorHex(
-          255 * this.moveFraction,
-          255 * this.moveFraction,
-          255 * this.moveFraction
-        );
+        255 * this.moveFraction,
+        255 * this.moveFraction,
+        255 * this.moveFraction
+      );
     }
   },
   methods: {
@@ -105,15 +138,11 @@ export default {
       }
     },
 
-    // Called when audio player playback percentage changes. Use this to update our progress bar.
-    onTimeUpdate(eventInfo) {
-      if (!this.draggingSlider) {
-        this.currentPlayPercentage = eventInfo.currentPlayPercentage;
-      }
-    },
-
     onSeek(percentage) {
-      this.$refs.audioPlayer.seekToPercentage(percentage);
+      let audioPlayer = this.$root.mediaPlayer;
+      if (audioPlayer != null) {
+        audioPlayer.seekToPercentage(percentage);
+      }
     },
 
     // From https://campushippo.com/lessons/how-to-convert-rgb-colors-to-hexadecimal-with-javascript-78219fdb
@@ -131,6 +160,31 @@ export default {
       var green = this.rgbToHex(g);
       var blue = this.rgbToHex(b);
       return "#" + red + green + blue;
+    },
+
+    pause() {
+      this.$root.mediaPlayer.pause();
+    },
+
+    play() {
+      if (
+        this.$root.mediaPlayer == null ||
+        this.$root.mediaPlayer.item != this.item
+      ) {
+        // Open audio player in minimized mode
+        if (this.$root.mediaPlayer != null) {
+          this.$root.mediaPlayer.item = null;
+        }
+      }
+      this.$root.mediaPlayer = this.$root.audioPlayer;
+      this.$root.mediaPlayerDocked = true;
+      this.$root.mediaPlayerInvisible = true;
+      let mediaPlayer = this.$root.mediaPlayer;
+      if (mediaPlayer.item == this.item) {
+        mediaPlayer.play();
+      } else {
+        mediaPlayer.load(this.item, true);
+      }
     }
   }
 };
