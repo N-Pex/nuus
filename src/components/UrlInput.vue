@@ -43,11 +43,12 @@ export default {
   },
   data: () => ({
     menuItems: [
-      { title: "English", url: "./assets/english.xml" },
-      { title: "NASA", url: "./assets/nasa.xml" },
-      { title: "The Guardian", url: "./assets/test.xml" },
+      { title: "English (cached)", url: "./assets/english.xml" },
+      { title: "Uyghur (cached)", url: "./assets/uyghur.xml" },
+      { title: "NASA", url: "./assets/nasa.xml" }
+/*      { title: "The Guardian", url: "./assets/test.xml" },
       { title: "Zipped bundle", url: "./assets/bundle.zip" },
-      { title: "NASA Audio", url: "./assets/nasa2.xml" }
+      { title: "NASA Audio", url: "./assets/nasa2.xml" }*/
     ],
     dataUrl: ""
   }),

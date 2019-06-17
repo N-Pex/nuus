@@ -50,8 +50,8 @@
           />
 
           <v-container :class="{'noImage': this.imageUrl == null}">
-            <div v-html="item.description" class="body"/>
-            <div v-html="item.content" class="content"/>
+            <div v-html="item.description" class="itemTitle"/>
+            <div v-html="item.content" class="itemBody"/>
           </v-container>
         </v-card>
       </v-flex>
