@@ -1,6 +1,6 @@
 <template>
   <v-container class="ma-0 pa-0" ref="container">
-    <v-layout row wrap>
+    <v-layout column>
       <v-list v-if="listType == 'video'" ref="list">
         <VideoItem
           v-for="(item, index) in items"
