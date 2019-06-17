@@ -8,7 +8,7 @@
               <v-icon v-else class="ma-0 pa-0" small>$vuetify.icons.typeAudio</v-icon>
             </span>
             &nbsp;
-            <span class="itemDate verticalCenter">{{ item.pubDate }}</span>
+            <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
         </div>
         <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
           {{ item.title }}
@@ -40,8 +40,12 @@
 <script>
 import db from "../database";
 import ItemModel from "../models/itemmodel";
+import Date from "./Date";
 
 export default {
+      components: {
+    Date
+  },
   props: {
     item: {
       type: ItemModel,

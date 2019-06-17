@@ -9,7 +9,7 @@
           {{ item.title }}
         </div>
         <div>
-            <span class="itemDate verticalCenter">{{ item.pubDate }}</span>
+            <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
             &nbsp;
             <span class="verticalCenter">
               <v-icon class="ma-0 pa-0" small>$vuetify.icons.typeVideo</v-icon>
@@ -39,8 +39,12 @@
 <script>
 import db from "../database";
 import ItemModel from "../models/itemmodel";
+import Date from "./Date";
 
 export default {
+  components: {
+    Date
+  },
   props: {
     item: {
       type: ItemModel,

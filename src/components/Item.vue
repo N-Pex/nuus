@@ -44,7 +44,7 @@
           <div v-html="item.description" class="itemBody" style="max-height:var(--v-theme-body-line-height-scaled-x4);overflow:hidden"/>
         </div>
         <div>
-            <Date class="itemDate verticalCenter" :date="item.pubDate" />
+            <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
             &nbsp;
             <span class="verticalCenter">
               <v-icon v-if="item.hasVideoAttachment()" class="ma-0 pa-0" small>$vuetify.icons.typeVideo</v-icon>

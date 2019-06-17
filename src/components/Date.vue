@@ -3,9 +3,8 @@
 </template>
 
 <script>
-
-import VueI18n from 'vue-i18n';
-import moment from 'moment';
+import VueI18n from "vue-i18n";
+import moment from "moment";
 
 export default {
   props: {
@@ -14,7 +13,13 @@ export default {
       default: function() {
         return new Date().toUTCString();
       }
-    }
+    },
+    ago: {
+      type: Boolean,
+      default: function() {
+        return false;
+      }
+    },
   },
   data: function() {
     return {
@@ -22,57 +27,61 @@ export default {
       timer: null
     };
   },
-  created: function() {
+  mounted: function() {
     this.updateDateString();
-    this.timer = setInterval(this.updateDateString, 6000);
+    if (this.ago) {
+      this.timer = setInterval(this.updateDateString, 6000);
+    }
   },
   methods: {
     updateDateString() {
-      this.dateString = this.getDateString();
+      var m = moment(this.date);
+      if (this.ago) {
+        this.dateString = this.getDateString(m.toDate());
+      } else {
+        this.dateString = m.format("D MMMM YYYY");
+      }
     },
 
-    getDateString() {
-      var date = moment(this.date).toDate();
+    getDateString(date) {
       var ti = Math.abs(new Date().getTime() - date.getTime());
       ti = ti / 1000; // Convert to seconds
-  		if (ti < 1)
-	  	{
-		  	return this.$t("time.never");
-		  }
-		else if (ti < 60)
-		{
-			return this.$t("time.recently");
-		}
-		else if (ti < 3600 && Math.round(ti / 60) < 60)
-		{
-			var diff = Math.round(ti / 60);
-      if (diff == 1) {
-        return this.$t("time.minute", { time: diff });
-      }
-      return this.$t("time.minutes", { time: diff });
-		}
-		else if (ti < 86400 && Math.round(ti / 60 / 60) < 24)
-		{
-			var diff = Math.round(ti / 60 / 60);
-			if (diff == 1) {
-        return this.$t("time.hour", { time: diff });
-      }
+      if (ti < 1) {
+        return this.$t("time.never");
+      } else if (ti < 60) {
+        return this.$t("time.recently");
+      } else if (ti < 3600 && Math.round(ti / 60) < 60) {
+        var diff = Math.round(ti / 60);
+        if (diff == 1) {
+          return this.$t("time.minute", { time: diff });
+        }
+        return this.$t("time.minutes", { time: diff });
+      } else if (ti < 86400 && Math.round(ti / 60 / 60) < 24) {
+        var diff = Math.round(ti / 60 / 60);
+        if (diff == 1) {
+          return this.$t("time.hour", { time: diff });
+        }
         return this.$t("time.hours", { time: diff });
-		}
-		else {
-			var diff = Math.round(ti / 60 / 60 / 24);
-			if (diff == 1) {
-        return this.$t('time.day', { time: diff });
+      } else {
+        var diff = Math.round(ti / 60 / 60 / 24);
+        if (diff == 1) {
+          return this.$t("time.day", { time: diff });
+        }
+        return this.$t("time.days", { time: diff });
       }
-        return this.$t('time.days', { time: diff });
-		}
     },
     cancelAutoUpdate: function() {
-      clearInterval(this.timer);
+      if (this.timer != null) {
+        clearInterval(this.timer);
+      }
+      this.timer = null;
     }
   },
   beforeDestroy() {
-    clearInterval(this.timer);
+    if (this.timer != null) {
+      clearInterval(this.timer);
+    }
+    this.timer = null;
   }
 };
 </script>
