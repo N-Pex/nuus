@@ -1,11 +1,13 @@
 import '@babel/polyfill'
 import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 import './plugins/axios'
 import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+import i18n from './lang'
 
 Vue.config.productionTip = false
 
@@ -33,6 +35,7 @@ router.beforeEach((to, from, next) => {
 Vue.instance = new Vue({
   router,
   store,
+  i18n,
   render: h => h(App),
   data() {
     return {

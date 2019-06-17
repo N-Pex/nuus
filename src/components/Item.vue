@@ -44,7 +44,7 @@
           <div v-html="item.description" class="itemBody" style="max-height:var(--v-theme-body-line-height-scaled-x4);overflow:hidden"/>
         </div>
         <div>
-            <span class="itemDate verticalCenter">{{ item.pubDate }}</span>
+            <Date class="itemDate verticalCenter" :date="item.pubDate" />
             &nbsp;
             <span class="verticalCenter">
               <v-icon v-if="item.hasVideoAttachment()" class="ma-0 pa-0" small>$vuetify.icons.typeVideo</v-icon>
@@ -61,8 +61,12 @@
 <script>
 import db from "../database";
 import ItemModel from "../models/itemmodel";
+import Date from "./Date";
 
 export default {
+    components: {
+    Date
+  },
   props: {
     item: {
       type: ItemModel,
