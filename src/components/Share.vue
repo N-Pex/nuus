@@ -41,16 +41,26 @@ export default {
     }
   },
   mounted: function() {
-    var self = this;
-    db.items
-      .get(this.item.guid)
-      .then(item => (this.isFavorite = item.favorite))
-      .catch(function() {});
+    this.updateItem();
   },
   data: () => ({
     isFavorite: false
   }),
+  watch: {
+    item: function() {
+      console.log("SHARE item change " + this.item.title);
+      this.updateItem();      
+    }
+  },
   methods: {
+    updateItem() {
+      db.items
+        .get(this.item.guid)
+        .then(item => (this.isFavorite = (item == null) ? false : item.favorite))
+        .catch(function() {
+          this.isFavorite = false;
+        });
+    },
     toggleFavorite() {
       const self = this;
       db.items

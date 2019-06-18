@@ -73,6 +73,8 @@
         v-on:playItem="playItem($event)"
         class="pt-3 mainItemList"
       />
+
+      <!-- Video player, current item info (including share) and a list of videos -->
       <VideoPlayer
         ref="videoPlayer"
         :isDocked="this.$root.mediaPlayerDocked"
@@ -81,6 +83,56 @@
         v-on:maximize="onMaximize()"
         v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.videoPlayer && !this.$root.mediaPlayerInvisible"
       />
+
+      <v-container
+        class="videoListCurrentItem"
+        fluid
+        grid-list-sm
+        pa-0
+        ma-0
+        v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasVideoAttachment()"
+      >
+        <v-layout xs12>
+          <v-flex xs3 ml-2 pt-0 v-if="imageUrl != null">
+            <div class="imageContainer">
+              <v-img aspect-radio="1" :src="imageUrl" class="ma-0 pa-0 image"/>
+            </div>
+          </v-flex>
+          <v-flex
+            xs12
+            ml-2
+            mr-2
+            mt-0
+            pt-0
+          >
+            <div>
+              <Date class="itemDate verticalCenter" :date="playingMediaItem.pubDate"/>
+            </div>
+            <div
+              class="mediaItemTitle"
+              style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden"
+            >{{ playingMediaItem.title }}</div>
+            <div class="contentBlock mt-2">
+              <div
+                v-html="playingMediaItem.description"
+                class="mediaItemBody"
+                style="max-height:var(--v-theme-media-body-line-height-scaled-x2);overflow:hidden"
+              />
+            </div>
+            <Share :item="playingMediaItem" />
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <ItemList
+        listType="video"
+        :items="items | videoItems"
+        v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasVideoAttachment()"
+        :selectedItem="playingMediaItem"
+        v-on:playItem="playItemFromMediaList($event)"
+        v-on:itemClicked="playItemFromMediaList($event)"
+        class="videoList"
+      />
+
       <AudioPlayer
         ref="audioPlayer"
         :isDocked="this.$root.mediaPlayerDocked"
@@ -92,14 +144,13 @@
       />
 
       <ItemList
-        ref="mediaList"
-        :listType="mediaItemsType"
-        :items="mediaItems"
-        v-show="showMediaList"
+        listType="audio"
+        :items="items | audioItems"
+        v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasAudioAttachment()"
         :selectedItem="playingMediaItem"
         v-on:playItem="playItemFromMediaList($event)"
         v-on:itemClicked="playItemFromMediaList($event)"
-        class="mediaList"
+        class="audioList"
       />
 
       <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
@@ -118,6 +169,7 @@ import VideoPlayer from "../components/VideoPlayer";
 import AudioPlayer from "../components/AudioPlayer";
 import Share from "../components/Share";
 import FullScreenItem from "../components/FullScreenItem";
+import Date from "../components/Date";
 
 import axios from "axios";
 import sanitizeHTML from "sanitize-html";
@@ -136,7 +188,8 @@ export default {
     VideoPlayer,
     AudioPlayer,
     Share,
-    FullScreenItem
+    FullScreenItem,
+    Date
   },
   methods: {
     urlUpdated(url) {
@@ -226,6 +279,19 @@ export default {
     }
   },
 
+  filters: {
+    videoItems(items) {
+      return items.filter(function(i) {
+        return i.hasVideoAttachment();
+      });
+    },
+    audioItems(items) {
+      return items.filter(function(i) {
+        return i.hasAudioAttachment();
+      });
+    }
+  },
+
   mounted() {
     // Store the audio player instance.
     this.$root.audioPlayer = this.$refs.audioPlayer;
@@ -295,34 +361,6 @@ export default {
       set: function(val) {
         this.$store.commit("setTextSizeAdjustment", val);
       }
-    },
-    mediaItems: function() {
-      const self = this;
-      //console.log("ITEM is " + this.itemFullscreen);
-      return this.items.filter(function(i) {
-        if (self.itemFullscreen != null) {
-          //console.log("Has item");
-          if (self.itemFullscreen.hasVideoAttachment()) {
-            // Current item is a video. Only show video items in the media list!
-            return i.hasVideoAttachment();
-          } else if (self.itemFullscreen.hasAudioAttachment()) {
-            return i.hasAudioAttachment();
-          }
-        }
-        return false;
-      });
-    },
-    mediaItemsType: function() {
-      const self = this;
-      if (self.itemFullscreen != null) {
-        if (self.itemFullscreen.hasVideoAttachment()) {
-          // Current item is a video. Only show video items in the media list!
-          return "video";
-        } else if (self.itemFullscreen.hasAudioAttachment()) {
-          return "audio";
-        }
-      }
-      return "none";
     }
   }
 };
@@ -350,10 +388,32 @@ export default {
   padding-top: 100px !important;
 }
 
-.mediaList {
-  background-color: #00ffff;
+.videoListCurrentItem {
+  background-color: #ffffff;
   position: fixed;
-  top: 33%;
+  top: 25%;
+  bottom: 60%;
+  right: 0;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.videoList {
+  background-color: #ffffff;
+  position: fixed;
+  top: 40%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.audioList {
+  background-color: #ffffff;
+  position: fixed;
+  top: 34%;
   bottom: 0;
   right: 0;
   left: 0;

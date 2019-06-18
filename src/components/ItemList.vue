@@ -14,7 +14,7 @@
           v-on:playItem="playItem($event)"
         />
       </v-list>
-      <v-list v-if="listType == 'audio'" ref="list">
+      <v-list v-else-if="listType == 'audio'" ref="list">
         <div v-for="(item, index) in items" :key="item.guid" style="background-color: var(--v-audioCardBackground-base)">
           <AudioItem
             :ref="item.guid"

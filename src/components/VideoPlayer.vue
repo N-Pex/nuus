@@ -154,7 +154,7 @@ export default {
   left: 0;
   top: 0px;
   right: 0;
-  bottom: 66%;
+  bottom: 75%;
   background-color: #000;
   z-index: 2;
   transition: 0.3s;
