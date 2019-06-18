@@ -4,14 +4,12 @@
       <h3>Onboarding</h3>
     </div>
     <div>Your language is {{ language }}</div>
-    <div>
-      <v-btn color="orange" @click="useConfig('uyghur')">Use Uyghur</v-btn>
+    <div>Note: this page is under contruction.</div>
+    <div class="ma-3">
+      <v-btn block color="orange" @click="useConfig('uyghur')">Use Uyghur</v-btn>
     </div>
-    <div>
-      <v-btn color="orange" @click="useConfig('english')">Use English</v-btn>
-    </div>
-    <div style="margin-top: 150px">
-      <v-btn color="success" @click="done();">Done</v-btn>
+    <div class="ma-3">
+      <v-btn block color="orange" @click="useConfig('english')">Use English</v-btn>
     </div>
   </v-content>
 </template>
@@ -36,6 +34,7 @@ export default {
   methods: {
     useConfig(config) {
       this.$store.commit("setFlavor", config);
+      this.done();
     },
 
     done() {
