@@ -8,22 +8,61 @@ export default {
                 testStrings: {
                     "AlpidaUnicodeSystem": "\u067E"
                 }
-            }/*,
-            loading: function() {
-                console.log("Loading font");
-            },
-            active: function() {
-                console.log("Loading font done");
-            },
-            inactive: function() {
-                console.log("Font invalid");
-            }*/
+            }
         },
         feeds: [
             {title: "Main service", url: "https://www.rfa.org/uyghur/RSS"},
             {title: "Main service (cached)", url: "./assets/uyghur.xml"}
         ],
         isRTL: true
+    },
+    mandarin: {
+        themeCSSVariables: require("!css-loader!@/assets/css/mandarin.css").toString(),
+        webFontCssFile: "./assets/fonts/mandarin.css",
+        webFontConfig: {
+            custom: {
+                families: ["AlpidaUnicodeSystem"],
+                testStrings: {
+                    "AlpidaUnicodeSystem": "\u067E"
+                }
+            }
+        },
+        feeds: [
+            {title: "Main service", url: "https://www.rfa.org/mandarin/RSS"}
+        ],
+        isRTL: false
+    },
+    cantonese: {
+        themeCSSVariables: require("!css-loader!@/assets/css/cantonese.css").toString(),
+        webFontCssFile: "./assets/fonts/cantonese.css",
+        webFontConfig: {
+            custom: {
+                families: ["AlpidaUnicodeSystem"],
+                testStrings: {
+                    "AlpidaUnicodeSystem": "\u067E"
+                }
+            }
+        },
+        feeds: [
+            {title: "Main service", url: "https://www.rfa.org/cantonese/RSS"}
+        ],
+        isRTL: false
+    },
+    burmese: {
+        themeCSSVariables: require("!css-loader!@/assets/css/burmese.css").toString(),
+        webFontCssFile: "./assets/fonts/burmese.css",
+        webFontConfig: {
+            custom: {
+                families: ["Zawgyi-One"],
+                testStrings: {
+                    "Zawgyi-One": "\u1000"
+                }
+            }
+        },
+        feeds: [
+            {title: "Main service", url: "https://www.rfa.org/burmese/RSS"}
+        ],
+        isRTL: false
     },
     english: {
         themeCSSVariables: require("!css-loader!@/assets/css/english.css").toString(),
