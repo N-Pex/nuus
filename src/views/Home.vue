@@ -29,7 +29,8 @@
       <v-list class="pt-0" dense>
         <v-divider></v-divider>
 
-        <v-list-tile v-for="item in menuItems" :key="item.title" @click>
+        <!--
+        <v-list-tile v-for="item in menuItems" :key="item.title">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -38,8 +39,9 @@
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-
-        <v-list-tile @click>
+        -->
+        <!--
+        <v-list-tile>
           <v-list-tile-action>
             <v-checkbox v-model="$root.showMedia"></v-checkbox>
           </v-list-tile-action>
@@ -49,19 +51,16 @@
             <v-list-tile-sub-title>Show images, video and audio</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
+        -->
 
         <v-list-tile>
-          <v-list-tile-content>
-            <v-slider v-model="textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
-          </v-list-tile-content>
+           <v-slider v-model="textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
         </v-list-tile>
 
         <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
 
         <v-list-tile>
-          <v-list-tile-content>
-            <v-btn @click="showOnboarding()">Show onboarding</v-btn>
-          </v-list-tile-content>
+            <v-btn block @click="showOnboarding()">Show onboarding</v-btn>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -93,11 +92,6 @@
         v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasVideoAttachment()"
       >
         <v-layout xs12>
-          <v-flex xs3 ml-2 pt-0 v-if="imageUrl != null">
-            <div class="imageContainer">
-              <v-img aspect-radio="1" :src="imageUrl" class="ma-0 pa-0 image"/>
-            </div>
-          </v-flex>
           <v-flex
             xs12
             ml-2
@@ -311,8 +305,12 @@ export default {
     }
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
-
-    this.urlUpdated("./assets/nasa.xml");
+    if (process.env.NODE_ENV === 'production') {
+      // For production builds, default to first url in config.
+      this.urlUpdated(flavor.feeds[0]);
+    } else {
+      this.urlUpdated("./assets/nasa.xml");
+    }
   },
 
   data() {

@@ -20,7 +20,8 @@ export default {
             }*/
         },
         feeds: [
-            "https://www.rfa.org/uyghur/RSS"
+            {title: "Main service", url: "https://www.rfa.org/uyghur/RSS"},
+            {title: "Main service (cached)", url: "./assets/uyghur.xml"}
         ],
         isRTL: true
     },
@@ -33,7 +34,8 @@ export default {
             }
         },
         feeds: [
-            "https://www.rfa.org/english/RSS"
+            {title: "Main service", url: "https://www.rfa.org/english/RSS"},
+            {title: "Main service (cached)", url: "./assets/english.xml"}
         ],
         isRTL: false
     }

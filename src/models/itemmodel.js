@@ -8,7 +8,7 @@ export default class ItemModel extends Object {
     link = "";
     guid = "";
     description = "";
-    pubDate = 0;
+    pubDate = null;
     author = "";
     content = "";
     imageSrc = null;

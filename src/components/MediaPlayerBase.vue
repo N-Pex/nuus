@@ -12,11 +12,11 @@ export default {
     isInvisible: false
   },
   data: () => ({
-    item: null,
+    item: new ItemModel(),
     itemTitle: "",
     autoPlay: false,
     isPlaying: false,
-    imageURL: null,
+    imageUrl: null,
     enclosureURL: "",
     enclosureType: null,
     duration: 0,
@@ -84,7 +84,7 @@ export default {
         this.currentPlaySeconds = 0;
         this.currentPlayPercentage = 0;
         this.duration = 0;
-        this.imageURL = null;
+        this.imageUrl = null;
         this.pause();
       }
     },
@@ -160,7 +160,9 @@ export default {
     },
 
     pause() {
-      this.$refs.player.pause();
+      if (this.$refs.player != null) {
+        this.$refs.player.pause();
+      }
     },
 
     seekToPercentage(percentage) {

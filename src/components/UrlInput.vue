@@ -38,14 +38,12 @@ export default {
     let feeds = flavors[this.$store.state.flavor].feeds;
     for (var i = 0; i < feeds.length; ++i) {
       let feed = feeds[i];
-      this.menuItems.push({title: "Built in " + (i+1), url: feed});
+      this.menuItems.splice(i, 0, {title: feed.title, url: feed.url});
     }
   },
   data: () => ({
     menuItems: [
-      { title: "English (cached)", url: "./assets/english.xml" },
-      { title: "Uyghur (cached)", url: "./assets/uyghur.xml" },
-      { title: "NASA", url: "./assets/nasa.xml" }
+      { title: "NASA Audio/Video test feed", url: "./assets/nasa.xml" }
 /*      { title: "The Guardian", url: "./assets/test.xml" },
       { title: "Zipped bundle", url: "./assets/bundle.zip" },
       { title: "NASA Audio", url: "./assets/nasa2.xml" }*/
