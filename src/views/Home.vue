@@ -305,12 +305,10 @@ export default {
     }
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
-    if (process.env.NODE_ENV === 'production') {
-      // For production builds, default to first url in config.
-      this.urlUpdated(flavor.feeds[0]);
-    } else {
-      this.urlUpdated("./assets/nasa.xml");
-    }
+
+    // For production builds, default to first url in config.
+    this.urlUpdated(flavor.feeds[0]);
+    //this.urlUpdated("./assets/nasa.xml");
   },
 
   data() {
