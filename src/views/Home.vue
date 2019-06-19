@@ -21,7 +21,7 @@
           </v-list-tile-avatar>
 
           <v-list-tile-content>
-            <v-list-tile-title>NUUS</v-list-tile-title>
+            <v-list-tile-title>RFA</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
