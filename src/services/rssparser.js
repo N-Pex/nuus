@@ -168,18 +168,22 @@ export default class RSSParser {
 
             items.push(item);
 
-            if (item.imageSrc == null && i["content:encoded"] != null) {
+            if (item.imageSrc == null && item.content != null) {
                 //Try to find an image in the content
                 var parseString = require('xml2js').parseString;
-                parseString("<root>" + i["content:encoded"]._ + "</root>", {
+                parseString("<root>" + item.content + "</root>", {
                     explicitRoot: true,
                     explicitArray: true,
                     strict: true
                 }, function (err, result) {
+                    console.log("Parsed");
                     if (err == null && result != null) {
                         var image = (result.root.img == null) ? null : result.root.img[0];
                         if (image != null) {
                             item.imageSrc = image.$.src;
+
+                            // Now that we use the first image as "header image", remove that one from the content!
+                            item.content = item.content.replace(/<img.*\/>/i, "<span>HHHHH</span>");
                         }
                     }
                 });

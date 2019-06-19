@@ -239,3 +239,22 @@ export default {
   padding-top: 100px;
 }
 </style>
+
+<style>
+div.image-inline, div.image-inline div {
+  display: inline;
+}
+div.itemBody img  {
+  width: 120px !important;
+  height: 120px !important;
+}
+.image-inline:nth-of-type(odd) img  {
+  float: left !important;
+  margin-right: 10px;
+}
+.image-inline:nth-of-type(even) img {
+  float: right !important;
+  margin-left: 10px;
+}
+
+</style>

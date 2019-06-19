@@ -28,7 +28,8 @@ export default {
             }
         },
         feeds: [
-            {title: "Main service", url: "https://www.rfa.org/mandarin/RSS"}
+            {title: "Main service", url: "https://www.rfa.org/mandarin/RSS"},
+            {title: "Main service (cached)", url: "./assets/mandarin.xml"}
         ],
         isRTL: false
     },

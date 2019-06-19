@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns="http://purl.org/rss/1.0/" xmlns:enc="http://purl.oclc.org/net/rss_2.0/enc#">
+
+
+
+
+    
+
+
+
+
+<channel rdf:about="https://www.rfa.org/mandarin/RSS">
+  <title>普通话主页</title>
+  <link>https://www.rfa.org</link>
+
+  <description>
+    
+      
+    
+  </description>
+  
+
+  
+            <syn:updatePeriod>daily</syn:updatePeriod>
+            <syn:updateFrequency>1</syn:updateFrequency>
+            <syn:updateBase>2012-05-21T17:45:22Z</syn:updateBase>
+        
+
+  <image rdf:resource="/english/images/rfa-logo-400.jpg"/>
+
+  <items>
+    <rdf:Seq>
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/zhuanlan/wangluoboyi/iwar-06192019153218.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/huanjing/ac-06192019113705.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/zhuanlan/yehuazhongnanhai/gx-06192019144436.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/Xinwen/d-06192019115906.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/Xinwen/f-06192019113601.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/pinglun/weijingsheng/wjs-06192019113159.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/zhuanlan/minzhushalong/salon-06192019101605.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06192019071211.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/Xinwen/wul0619a-06192019073230.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/mandarin/Xinwen/WUL0619A-06192019065458.html"/>
+          
+      
+    </rdf:Seq>
+  </items>
+
+</channel>
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/zhuanlan/wangluoboyi/iwar-06192019153218.html">
+		<title>专栏 | 网络博弈：香港，原谅我不敢挺你--墙内网友</title>
+    <link>https://www.rfa.org/mandarin/zhuanlan/wangluoboyi/iwar-06192019153218.html</link>
+    <description>请原谅我不敢拍着良心说，香港，我挺你，微信被封，短信被警告。这是自称是“墙内”网友的推文。本期《网络博弈》节目关注香港反送中游行消息被中国封锁的情况。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="1804416" rdf:resource="https://www.rfa.org/mandarin/zhuanlan/wangluoboyi/iwar-06192019153218.html/m0619iwar.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/000_1HG1BC.jpg"></img><p>请原谅我不敢拍着良心说，香港，我挺你，微信被封，短信被警告。这是自称是“墙内”网友的推文。本期《网络博弈》节目关注香港反送中游行消息被中国封锁的情况。<br /><br />六四三十周年刚刚过去，香港6月9号和16号连续爆发超前规模的百万人反送中大游行.中国网络和社交媒体的信息封锁可以说是空前的严厉.<br /><br />网友抱怨，微信上如果上传香港反送中游行图片，微信号就会被封。美国监测中国网络审查的《中国数字时代》报道，中国宣传部门下令各网站查删香港反送终相关游行视频，查删《海阔天空》、《真的爱你》、《皇后大道东》等香港歌曲下面的不良评论。<br /><br />在遭到中国封禁的美国推特网上，1989年北京天安门学生民主运动参与者赵昕先生6月17号的推文引起了我的注意。<br /><br />“一周以来，每天醒来，心系香港，几乎无法做其他事。 今终于知悉以死殉道的义烈英雄名字：梁凌杰，占中勇士，三十五岁。 念及八九民运时，我等也曾想一头撞死在天安门纪念碑，我以我血荐轩辕，却苟活至今。为公义死，重于泰山！壮哉梁生。 代他走下去，也殊为不易。香港如此美丽，美得令我心碎。”<br /><br />2016年流亡美国的赵昕这个推文反映出一个八九学运人士对今日香港民间人权运动的特别关注。<br /><br />推文中提到的梁凌杰在6月15号香港行政长官林郑月娥宣布暂缓修订《逃犯条例》之后，继续抗争，爬上金钟太古广场平台打横幅示威，要求林郑月娥下台。警方调节阻止抢救无效，梁凌杰坠楼自杀身亡。第二天，香港爆发更大规模的反送中游行。<br /><br /><b>墙内网友不敢直接挺香港</b><br /><br />“我关注香港，一个是个人原因，89年天安门学生运动时，我在天安门广场呆了15天，在香港人捐助的帐篷里，那是香港对大陆民主运动的声援。”<br /><br />1989年北京天安门学生民主运动爆发时，当时是吉林长春一师范学院学生的赵昕担任天安门学生运动外地高校学生自治联合会纠察队负责人。今天的他关注香港反送中游行有这样特别的原因。<br /><br />“香港是上帝赐予的逃城，很多受大陆迫害的人逃到香港。”<br /><br />香港百万人反送中大游行引起全世界的关注。但是，在中国，由于信息封锁，很多大陆人根本无法跟踪香港反送中游行的即时新闻。<br /><br />“反送中”是指香港民间社会反对香港特区政府提出的《逃犯条例》修订草案，即反对将在香港的犯罪嫌疑人引渡送回到中国大陆、澳门和台湾。<br /><br />“中国确实很多人都不知道香港发生了什么……我的微信刚告诉大家9号上街, 9号早晨就被封了.然后6月9号发来一些香港的图片，10号封了QQ。”<br /><br />“微信群里有人问香港发生了什么事，我解释了两句，就有人提醒我不要说香港，会被封群，继而我就被踢出群了！”</p>
+<p><br /><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+  <img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/000_1HG0K6.jpg/image" alt="000_1HG0K6.jpg" title="000_1HG0K6.jpg" height="998" width="1500" />
+ </div>
+ <div class="image-caption">
+    <span style="width:1500px;">2019年6月12日，香港市民反《逃犯条例》的示威活动中，警察向示威者发射催泪弹。（法新社）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>这次在美国推特网上，中文网友在议论微信因香港“反送中”游行而被封的情况。<br /><br />其实，很多大陆人对香港都有特别的感情，希望了解香港这些天发生了什么。赵昕说，大陆人关注香港，因为香港为中国改革开放作出很大贡献。<br /><br />从6月9号的香港反送中黑衣游行，到6月12号香港立法会外警方与示威者发生冲突、逮捕数十位示威者，到6月16号香港再次爆发的反送中大游行，自由亚洲电台新闻节目做了详细跟踪报道。<br /><br />游行组织者民间人权阵线说，6月16号反送中游行参与者为200万零1人，那一人就是指头一天为抗争而死的梁凌杰。示威者方面的详细情况中国媒体没有真实全面报道。<br /><br />官方《人民日报》下属的《环球时报》文章称香港修订《逃犯条例》的目的是正当的，说香港反对派和支持者不讲道理，还指责华盛顿更为活跃地插手香港事务。<br /><br /> “我是墙内的，我尽量代表墙内的，请原谅我不敢拍着良心说一句，香港，我挺你，微信被封，短信被警告。”<br /><br /> “30年后的今天，香港发生上百万人抵抗暴政这样震惊全球、惊天动地的大事，在中国绝大多数人却一无所知。被封锁在一个密封罐里而不自知，天天刷着抖音微信QQ等等流氓监控软件，还以为自己很自由，这是大陆14亿人的深深悲哀。”<br /><br />“香港加油，看到泪目的感觉。理解一下墙内的人吧，共党新闻封锁，普通民众接触不到任何相关信息。并且，在微信朋友圈公开发，会被封号和抓。我们真的不是冷漠，身不由己的苦楚，连中国大商人都没办法改变，不得不服从。”<br /><br />这是推特网上的中文推文，显示大陆民众信息被封锁的苦闷。<br /><br />赵昕说，中国通过网络封锁，把中国变成一个奥威尔式的极权国家。<br /><br /><b>网友赞香港反送中游行干净</b><br /><br />完全撤回《逃犯条例》修订草案，追究警察开枪镇压责任，不检控和释放反送中示威者，撤销把6月12日示威定性为暴动的说法，香港行政长官林郑月娥下台，这是6月16号香港反送中大游行的组织者民间人权阵线提出的5个诉求。<br /> <br />香港6.16游行参与者在推特上的推文和视频突出这次游行的和平文明，说他们不是暴徒。<br /><br />这是推特网友发送的香港6.16反送中大游行视频，其中一群女生游行举着标语，口喊和标语内容一致的口号：“我们不是暴徒。”</p>
+<p><br /><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+  <img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/000_1HG1B6.jpg/image" alt="000_1HG1B6.jpg" title="000_1HG1B6.jpg" height="1000" width="1500" />
+ </div>
+ <div class="image-caption">
+    <span style="width:1500px;">2019年6月12日，香港市民反《逃犯条例》示威活动中，警察向示威者发射催泪弹，部分市民受伤。（法新社）</span>
+    
+            <span class="copyright">      </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>香港民众和全球华人在美国推特脸书等社交媒体上力挺香港示威民众，为他们点赞，包括悼念6月15号坠楼牺牲的反送中人士、35岁的梁凌杰。<br /><br />有在游行现场的人在推特中惊叹表示上，香港6月16号反送中大游行之和平文明干净，无垃圾。<br /><br />这是一个推特网友发的视频片断。<br /><br />“七百万人的社会！二百万人游行！没砸一辆车，没毁一棵树，没骚扰一家店铺，结束时带走垃圾，救护车来了人流自动分开，这样的文明程度，举世罕见！某组织说他们是暴徒……”  <br /><br />这是另一个推特网友的留言。<br /><br /><b>解放军少将香港三种人论暴露大陆对香港看法</b><br /><br />香港反送中运动爆发之后，中国国防大学解放军少将徐焰的一个演讲视频在微信、推特上广泛流传。<br /><br />据网友介绍，这是徐焰2018年11月在成都的一个教师工作论坛上做的报告。香港社情最坏，比台湾还坏，这是这位解放军少将的观点。他把香港人分为三种。下面来看看这段来自优酷网的视频片断。<br /><br />“香港1997年咱们接管时，当时分析居民成份三个三分之一: 三分之一是原住民和他们的后代，受港民教育，有点傲气，但是来讲，对大陆还沒什么怨恨。三分之一是最坏的， 1949年、1950年被共产党清算、斗争， 扫地出门跑去的， 对你刻骨仇恨，很多人。再有三分之一，三年困难挨饿、难民偷渡的，对你印象好得了?”<br /><br />这位解放军少将认为，香港回归之后，一个大失误就是一切不变，没有去香港的殖民化，没有把香港学校里的英国教材，改为中国教材。<br /><br />解放军少将徐焰如此这般地把香港人分为三类，让网友咋舌。有微信网友说，怪不得香港人要反送中，按照徐焰的说法，不反送中，新的《逃犯条例》通过的话，香港人都得被送回大陆。<br /><br />“就是一法西斯主义者！通过他就知道人权，自由，民主，平等与共产党没有交集，他们要的是回到奴隶社会！”<br /><br /> “因为背景不好，就要被戴上坏人的帽子吗？什么是坏人啊，三分之二的香港人没偷没抢，过自己的日子就突然变成坏人了？某些二代们嫖妓吸毒混黑社会因为背景好就是好人了？你这样给人戴帽子休怪得别人害怕你，和你不亲。就从来没有把人家当自己人。”<br /><br />这是美国推特网和油管网上网友的留言。赵昕也看到了徐焰的视频。<br /><br />他说，这个视频让香港人看到，自己在中共眼中是什么位置，好像仇敌。<br />听众朋友，今天自由亚洲电台《网络博弈》节目关注了香港最近发生的反送中大游行，前八九学运参与者、现在美国的赵昕谈到对香港反送中游行的特别关注。相信这些都是您在中国网络和媒体上看不到的内容。面对示威压力，林郑月娥6月18号在记者会上向香港市民道歉。<br /><br />主持人小安的社交媒体：<br />推特账号：https://twitter.com/XIAOAN000<br />脸书账号：https://www.facebook.com/pei.an.58<br /><br />欢迎大家在网上转推《网络博弈》节目，并留言。<br /><br />欢迎大家点击自由亚洲电台《网络博弈》节目链接，收听详细内容。<br /><br /><br /></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>香港;</dc:subject>
+      <dc:subject>香港;</dc:subject>
+    
+    <dc:date>2019-06-19T19:32:57Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/huanjing/ac-06192019113705.html">
+		<title>世行呼吁中国改革“一带一路”政策 </title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/huanjing/ac-06192019113705.html</link>
+    <description>本周三，世界银行发布独立研究报告，量化评估“一带一路”建设项目的风险和机遇。报告呼吁中国对 “一带一路”政策实施改革，当务之急是提高透明度，建立国际信任。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="297088" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/huanjing/ac-06192019113705.html/m0619-ac.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/pinglun/wangdan/wangdan-06012017103854.html/XJP-AFP.jpg"></img><p>本周三，世界银行发布独立研究报告，量化评估“一带一路”建设项目的风险和机遇。报告呼吁中国对 “一带一路”政策实施改革，当务之急是提高透明度，建立国际信任。<br /><br />“一带一路”倡议实施6年来，一直遭到外界批评，认为这是中国对外输出“新霸权主义”，并为沿途国家带来了债务陷阱和环境污染等问题。近年来，已有多个国家取消了上百亿美元的“一带一路”建设项目。尽管中国内部也有声音认为“一带一路”已经受挫，但中国政府仍然坚称该倡议是“高举和平发展旗帜”。</p>
+<p> </p>
+<ul>
+<li><b><a class="external-link" href="https://www.rfa.org/mandarin/yataibaodao/junshiwaijiao/yl-06122019213355.html">美学者：美国能切断“一带一路”资金来源</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="https://www.rfa.org/mandarin/yataibaodao/junshiwaijiao/hj-06182019111846.html">美议员吁国际社会联手应对中国挑战</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="https://www.rfa.org/mandarin/yataibaodao/junshiwaijiao/lxy-06102019083632.html">哈萨克轻轨中国贷款停摆 “一带一路”再受挫</a></b></li>
+</ul>
+<p> </p>
+<p>本周三世界银行发布的报告称，“一带一路”有助参与国家提高贸易量，并吸引更多外资、提高当地民众的生活条件，但前提是中国必须对“一带一路”项目中的贸易不公、环境污染、债务陷阱和严重腐败等问题采取改革措施。世行指出，不少参与国家在最近一个季度已经债台高筑，当务之急是中国提升项目的建设透明度。<br /><br />这份独立研究报告采用经济学模型和实证研究，用量化方式评估“一带一路”项目的风险和机遇，并旨在为当下的“一带一路”讨论提供具有参考价值的数据和分析。</p>
+<p><br /><div style="width:640px;" class="image-inline captioned">
+ <div style="width:640px;">
+  <img src="https://www.rfa.org/mandarin/zhuanlan/daguogonglue/dip-05102019134256.html/675c82077fd2AFP.jpeg/image" alt="1" title="1" height="360" width="640" />
+ </div>
+ <div class="image-caption">
+    <span style="width:640px;">第二届“一带一路”国际合作高峰论坛，中国国家主席习近平承诺投资菲律宾10亿人民币。图为菲律宾总统杜特尔特（左）和中国国家主席习近平。（法新社）</span>
+    
+            <span class="copyright"> </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>世行的报告还显示，参与“一带一路”项目的建设者中60%是中国公司。这些公司基本没有公开的信息，投标流程也不透明。因此，报告呼吁“一带一路”借鉴国际上的优秀案例，改善过度倚重中资企业，加强项目的公开透明，以此激发当地社群的参与积极性，提高公众信任度。<br /><br />中国外交部发言人陆慷回应称，中国将认真研究世行的报告，以谦虚的姿态吸取世行的建议。<br /><br />上周二，总部位于纽约的国际非营利组织“亚洲社协会”发布调查报告，建议“一带一路”建设项目提高流程透明度，并使得建设项目的投资形式更加多元化，让项目更具商业可行性。<br /><br />自由亚洲电台实习记者 艾石报道 责编：吴晶 网编：郭度<br /><br /><br /><br /></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>环境生态;</dc:subject>
+      <dc:subject>环境生态;</dc:subject>
+    
+    <dc:date>2019-06-19T19:05:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/zhuanlan/yehuazhongnanhai/gx-06192019144436.html">
+		<title>专栏 | 夜话中南海：王军和邓家女婿们谁更富有？</title>
+    <link>https://www.rfa.org/mandarin/zhuanlan/yehuazhongnanhai/gx-06192019144436.html</link>
+    <description>前中共左王王震的次公子王军去世的消息传出后，海外大小华文媒体几乎都关注过，英国BBC中文网以《“最富有红二代”中共太子党核心人物王军去世》为题，将王军同志的生平事迹做了非常详细的报道。</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/zhuanlan/yehuazhongnanhai/gx-06192019144436.html/a5183713a0f2b5ff1e59b1012be7a654_w.jpg"></img><p>前中共左王王震的次公子王军去世的消息传出后，海外大小华文媒体几乎都关注过，英国BBC中文网以《“最富有红二代”中共太子党核心人物王军去世》为题，将王军同志的生平事迹做了非常详细的报道。文中介绍 说六月十一日去世的王军是中信集团原董事长，前中共八大元老之一王震的次子，属于太子党的核心人物。据中国媒体报道，2007年王军从中信集团退休后，出任中国天然集团董事长。中国天然投资控股有限公司注册于英属维尔京群岛，并以香港为核心开展业务。公司主要股东为中国大型国企保利集团属下的保利投资有限公司以及美国的投资基金。一些海外媒体将王军称为最富有的红二代。<br /><br />王军到底有多富，当成没有局外人能够说得清，也许他本人生前自己都说不出一个准确 的数字来，毕竟太过庞大了。一篇2007年上传的网文《从中信集团到中国天然：王军华丽变身的背后 》，现在在中国大陆的公开网站上仍然还能够查得出来 。文中说：最近《财经时报》一则报道《中信原董事长王军复出 建新公司50亿投入新疆》吸引了笔者的注意力。报道称，　近日，一家名为中国天然投资控股有限公司（以下简称“中国天然”）的企业，在新疆大展身手，据当地媒体报道，这家公司近期宣布在新疆大举投资，计划投入高达约50亿元人民币。这个“大买家”背后，正是一年前从中信集团董事长任上退休的王军。此番再次出现在资本市场上。眼下，他的投资目标，瞄准内地煤化工、煤电、银行、房地产等项目。中国天然投资控股有限公司注册于英属维尔京群岛，并以香港为核心开展业务。公司主要股东为中国保利集团（国资直属中央大型企业）属下的保利投资有限公司以及美国投资基金PEM.GROUP。<br /> <br /> 我们知道，王军在06年退休之前，一直是国家干部，按他正常的收入匡算，我们可以推算出他的个人财富。在2006年时，王军宣布退休，并对媒体称“退休后将做草坪师”，但仅仅一年时间，他就以掌控数十亿巨资的豪富身份现身，变身之速，令人惊叹。这家所谓的外资企业，到底王占有多少股份，它真是外资企业还是中国大陆资本出口转内销？反正我相信它是纯粹的外商投资企业。我认为它的身上还是有权贵背景。他的投资目标是内地煤化工、煤电、银行、房地产等项目，这些行业都是内地普通企业所极难染指的。在新疆时，他受到当地政府高官的接见。</p>
+<p><br /> <div style="width:622px;" class="image-inline captioned">
+ <div style="width:622px;">
+  <img src="https://www.rfa.org/mandarin/zhuanlan/yehuazhongnanhai/gx-06192019144436.html/1906111333381528-600x400.jpg/image" alt="1" title="1" height="350" width="622" />
+ </div>
+ <div class="image-caption">
+    <span style="width:622px;">王震之子王军。（Public Domain）</span>
+    
+            <span class="copyright"> </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>需要推测的是，什么是王军官场和商界通吃的秘诀？答案仍然是背景。作为王震长子和荣毅仁接班人中信集团第三任董事长，王军在中国官场人脉之深，非他人可比，难怪在退休后他再度闪电般现身，不过这次他代表的是西方垄断资本和国内权贵资本的利益，他理所当然要为它们谋利奔走。《财经时报》报道还称，“中国天然身为港资，却能控股乌鲁木齐市商业银行，这是中国天然拓展计划中的悬疑之一。另外，该银行向新疆广汇集团出售近10％股份，后又向巴基斯坦哈比卜银行转让近20％股份，中国天然如若控股，股份从何而来，也耐人寻味。”<br /> <br />按我个人的理解，从上个世纪九十年代末以后，中国渐渐走上权贵资本主义不归路，当年叶利钦在颠覆苏联后推行的私有化模式，在中国得到原版重演，继一切向钱看国企私有化工人下岗分流后，除了少数垄断巨头得到熊猫般保护外，大批国有企业一夜间被廉价私有化。而那些得到特别保护的垄断巨头，我更愿意称其为特权垄断企业，是部级厅级权贵企业，显然地，说它们是国企非常勉强——它们的业绩经营是和国内民众无关的，真正能支配它们的，还是某些权贵集团……。象中信集团，人们习惯于称为“红色资本家”，但在我看来，它其实是权钱通吃的权贵企业。　　<br /><br />不过，就算如上中国大陆内地网站上披露出来的远只是王军及整个王震家族已经化公为私的巨额财产的一部分，说王军是中国最富有的红二代仍然不太贴切，后缀“之一”两个字应该就准确了。众多中共太子党成员，特别是“老一辈无产阶级革命家”的后代们，无论是邓家还是叶家，无论是薄家还是王家……，全部都是在二三十年前即已经步入了“先富起来”的那“一部分人”的行列，“富可敌国”的程度不分伯仲，很难说谁是“首富”，谁是“二富”“三富”……。比如笔者多年前即多有文章介绍过的，整个中国的黄金白银贵金属，铜铝镍钴加稀土的出口进口，曾全部掌控在邓小平长女婿和二女婿手中，再加上邓三女婿当年保利公司的军火生意，所以说邓家和王家谁比谁更富，我都信。<br /><br />1993年王震去世的当月，被当时江泽民身边人员讽刺为“毛远新第二”的邓小平三公主邓榕以毛毛笔名撰写的《缅怀胡子叔叔》一文,当时是以整版篇幅醒目剌眼地刊登在一九九三年四月四日的人民日报上。她在文章里将王家三兄弟恨不能形容成西方文学史上著名的“三剑客”,说王兵、王军、王之三人“个个有胆有识,在朋友中口碑甚佳”。王军在邓小平二次复出前夜,曾对邓榕开玩笑说:“我们这么样冒著风险为你爸爸通风报信,等你爸爸出来後,我们也得要个一官半职的呀。”邓榕回家向父亲转述,邓小平笑著说:“可以,可以,现在要什么都可以。”<br />再强调一下，如上内容当年都是白纸黑字刊登在人民日报上的。<br /><br /> 後来,王震果然进了中央政治局,日後又捞上了中央顾问委员会副主任、国家副主席等职务,赖在党、政高位上一直到死。而他的三个儿子则成为包括邓小平子女在内的全部“红二代”中暴富最早者。上个世纪七十年代末邓小平请荣毅仁出面组建日后被称之为“十大官倒公司之首”的中信公司时即同时让邓榕让此信息通报给王震，于是王震的二儿子王军被委以中信总公司副总经理兼中信公司深圳公司董事长，王兵则出任中信深圳公司副董事长。需要特别说明的是，当时的王家两个公子分别是从军队总参和海军系统进入商界，而且日后仍然还都保留着军籍，甚至过份到一九八八年恢复军衔制时双双都抗上了一副大校肩章，中共政权当时的军商合一、军商不分，王震的两个儿子是始作俑者。</p>
+<p><br /><div style="width:960px;" class="image-inline captioned">
+ <div style="width:960px;">
+  <img src="https://www.rfa.org/mandarin/yataibaodao/shaoshuminzu/xql-10022018105014.html/xql102.jpg/image" alt="xql102.jpg" title="xql102.jpg" height="540" width="960" />
+ </div>
+ <div class="image-caption">
+    <span style="width:960px;">资料图片：王震（左）1982年在海军东海舰队视察（Public Domain）</span>
+    
+            <span class="copyright">  </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>一九八三年三月,中信公司等六大股东合股成立了一个中国海洋直升飞机专业公司(简称中海直)，王兵任公司董事长兼总经理。不过该公司自成立之后一直都是“不务正业”，当时中国大陆曾有一句话形容皮包公司，“除了飞机大炮，样样都作”。而王兵的公司是“飞机大炮，样样都作”，什么都敢买，什么都敢卖，诸多业务的重头就是走私军火。因为王兵当时的行为实在是太过招眼，王震在世时的深圳有关部门也曾想摸摸“老虎屁股”，但当时尚未下手王震便到了深圳，把当地政要骂得狗血淋头，清查王兵的打算也就再不敢有了。<br /><br />在前述邓榕纪念她“胡子叔叔”的文章中，为使王家三兄弟在他们的父亲死去後仍能势力不减,邓榕不惜把把邓家,特别是她本人与王家的关系之“铁”,赤裸裸地跃然纸上。文章中的原话是:“我和王家三兄弟,便成了无话不谈,无事不商,困难之时甚至可以两肋插刀的莫逆之交。”<br /><br />正是因为有邓榕的“两肋插刀”作保，此后的王家兄弟特别是这个刚刚去世的王兵为人处事比自己父亲在世时更加无所顾忌，在深圳公然持枪绑架，而被绑架者居然还是中共“官二代”之一，中共前国家副主席乌兰夫的孙女婿，时任深圳东辉实业股份有限公司董事长陈显旋。<br /><br />一九九二年中共十四大召开之前,在讨论王震即将交出的国家副主席位置的继任人选时，邓小平向江泽民转达王震的提议：应该在“党外人士”中安排，江泽民征求各方意见后，向 邓小平报告当时担任民盟中央主席的费孝通在党外人士里德高望重，邓小平的回复是他已经接受了王震的要求,抬出了荣毅仁。其中幕后的交换条件，就是荣老板把整个中信公司拱手让出，王军升任中信总经理，还有另外一项，那就是王军捞得中信公司实际一把手职位后，即把对保利公司的控制权全部交给贺平……</p>
+<p><br /><div style="width:622px;" class="image-inline captioned">
+ <div style="width:622px;">
+  <img src="https://www.rfa.org/mandarin/zhuanlan/yehuazhongnanhai/gx-03032016144723.html/dbxl-622.jpg/image" alt="dbxl-622.jpg" title="dbxl-622.jpg" height="369" width="622" />
+ </div>
+ <div class="image-caption">
+    <span style="width:622px;">左图：邓榕；右图：薄熙来（资料图/Public Domain）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>笔者本专栏数年 前的《“八仙过海、各显神通”的邓家驸马爷们 》一文中介绍过无论日后的邓林和妹妹邓榕之间是否仍然长期存在“政治分歧”，她们各自的丈夫在身体力行她们父亲“让一部分人先富起来”的伟大号召问题上绝对是步调一致！<br /><br />邓榕的丈夫贺平说起来是邓家后代第一个涉足商界的。上个世纪八、九十年代在海外知名度最高的中共专门对外从事军火生意的保利公司正式以中信公司子公司名义对外挂牌之初,才从美国回国不久的贺平即开始以解放军总参谋部装备部副部长身份兼任该公司副职,王震的二公子王军则以中国投资信托总公司副总经理名义兼任该公司总经理。当时邓、王、杨三家的长辈还没有在政治上闹分裂,所以杨尚昆的女婿王小朝也被延揽进去,与贺平同任副总经理。先后在该公司担任要职的太子党成员还有姬鹏飞儿子姬军、叶剑英儿子叶选廉等。<br /><br />邓小平的孙女婿吴小晖被习近平下令打入天牢后，本专栏刊登播发过《不是习仲勋的儿女太好，而是因为邓小平的后代太坏》一文。文中告诉读者和听众，习近平在福建工作是提到对高干子女们的评价时说，“龙生九子，各有不同”，中共高干子弟中有两种倾向，一种是认为生活中失去的太多，要尽情享乐来弥补；一种是认为时间耽误得太多，要加把劲学习、工作，不断完善、充实自我。<br /><br />其实，持所谓弥补态度的中共高干子女们在他们的父辈重新得势之后的一贯表面岂止是尽情享乐，完全是在向国家，向社会大众疯狂无度地索取。邓小平活着的时候，他们不但在经济上进行疯狂索取，政治上也贪得无厌，王震的几个儿子和邓小平的几个女婿就是最典型的例子………<br /><br />近日，多家外界媒体均都注意到了生前是正部级干部的王军去世后，不但没能象过去叶剑英的公子叶选宁那样哀荣备至，也还远逊于生前只享受正师级待遇，而且还因为追随赵紫阳犯有政治错误的陈毅之子陈小鲁的治丧规格。何以至此，将是我们下篇文章的分析和介绍内容。<br /><br />（文章只代表特约评论员个人的立场和观点）</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>政治;</dc:subject>
+      <dc:subject>政治;</dc:subject>
+    
+    <dc:date>2019-06-19T18:53:07Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html">
+		<title>加拿大团体呼吁立法  反对器官移植走私活动</title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html</link>
+    <description>继英国独立法庭调查裁定，中国当局仍在进行强制摘取人体器官活动后，加拿大人权团体发出呼吁，敦促国会尽快通过反对人体器官走私法案。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="325760" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html/m0619-lfe.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html/000_Was356306.jpg"></img><p>继英国独立法庭调查裁定，中国当局仍在进行强制摘取人体器官活动后，加拿大人权团体发出呼吁，敦促国会尽快通过反对人体器官走私法案。</p>
+<p>“加拿大终止器官移植滥用联盟委员会”主席丶同时也是曼尼托巴大学的人权研究中心教授张玛莉(Maria Cheung，音译)长期研究器官强制摘取的问题，她最近积极撰文发声，呼吁加拿大参议院能尽速批准反器官走私丶不当移植的S-240法案。</p>
+<p>此法案早在2008年就建立雏形，曾有加拿大国会议员和司法部长都推动过，但未能成功。直到2017年，由参议员索玛·阿塔拉珍(Salma Ataullahjan)再次引入私人法案，终获各党支持。法案过去近两年时间中一路闯关加拿大参众两院，去年底经过众议院修正并三读后，如今回到参议院等待投票批准。</p>
+<p> </p>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/zhengzhi/nu-07262017110713.html">非政府组织：中国仍在强制摘取人体器官</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/zhengzhi/nu-07262017110713.html">中国2020年将在器官移植数量上领先世界</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/renquanfazhi/hx-10302017101954.html">维族医师揭露器官移植黑幕 吁关注新疆人权</a></b></li>
+</ul>
+<div></div>
+<div></div>
+<p> </p>
+<p>张玛莉说，这个法案若能成功，将有效遏止加拿大助长中国强制摘取并移植器官的不当行径。她举例说，加拿大有不少仲介者介绍病人到中国进行器官移植手术，这种问题一直无法可管。S-240将使器官仲介成为非法，警方才可逮捕起诉他们：</p>
+<p>“现在他们(仲介者)是天网恢恢，他们随时可以在多伦多的移植中心内就去找这些病人，告诉他们可以怎么 到中国，进行器官移植的套装旅游行程。”</p>
+<p>同时S-240法案中的精神也仿效马格尼茨基人权问责法(Magnitsky Human Rights Accountability Act)，会对国际上参与违法器官移植者，包括医护人员和病人等进行制裁：</p>
+<p><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html/000_Was356339.jpg" alt="图为华盛顿法轮功学员用模拟表演的形式展示摘取人体器官。（法新社）" title="图为华盛顿法轮功学员用模拟表演的形式展示摘取人体器官。（法新社）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1500px;">图为华盛顿法轮功学员用模拟表演的形式展示摘取人体器官。（法新社）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/renquanfazhi/lf-06192019124632.html/000_Was356339.jpg" title="图为华盛顿法轮功学员用模拟表演的形式展示摘取人体器官。（法新社）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>“如果有一些参与活摘器官的医生，他们来加拿大开会的话，在这个法案成为法令后，加拿大政府是可以拒绝他们入境的。”</p>
+<p>记者联系引入这个法案的加拿大参议员索玛·阿塔拉珍(Salma Ataullahjan)和在众议院大力推广法案的议员加奈特·吉纽斯(Garnett Genuis)，但截稿前未获两人回应。</p>
+<p>不过两人曾在社交媒体上共同说明该法案的重要性。索玛·阿塔拉珍说：“这是人权问题。当我研究之后，简直不敢相信器官摘取移植的数量之庞大。问题越来越严重，整个国会都非常支持这个法案，因为没有人可以相信加拿大竟然也成了帮凶。”</p>
+<p>张玛莉说，这个法案只差临门一脚，希望参议院在本会期结束前能尽快排出时间投票通过，勿让加拿大继续成为共谋者。</p>
+<p> </p>
+<p>记者： 柳飞    责编：何平     网编：瑞哲</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-06-19T17:16:30Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html">
+		<title>专访前台湾驻所罗门大使：台所断交可能性低</title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html</link>
+    <description>所罗门媒体报道称，所罗门群岛外长将在100天内作出是否和台湾断交、与中国大陆建交的决定。前“中华民国”驻所罗门大使于德胜，19号接受自由亚洲电台专访认为，所罗门打破外交机密惯例，宁可把跟台湾和中国的关系摊在阳光下，这是好事。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="522368" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/m0619-hxe.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e00.jpeg"></img><p>所罗门媒体报道称，所罗门群岛外长将在100天内作出是否和台湾断交、与中国大陆建交的决定。前“中华民国”驻所罗门大使于德胜，19号接受自由亚洲电台专访认为，所罗门打破外交机密惯例，宁可把跟台湾和中国的关系摊在阳光下，这是好事。<br /> <br /> 国民党马英九政府时期，2014年1月至2017年1月，被派驻所罗门担任大使3年的于德胜19号接受自由亚洲电台专访指出，南太平洋友邦所罗门公开预告100天内将决定是否转换外交承认，作法非常罕见。<br /> <br /></p>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/hx1-06182019085657.html">所罗门部长访中 台所关系生变？</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/hcm1-05022019093133.html">台湾友邦所罗门 传将改投中国怀抱</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/Xinwen/2-06162018085726.html">所罗门群岛官员私下访华 引发友邦台湾关注</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/hx1-10312017101327.html">所罗门爆倒阁危机 蔡英文访问照走</a></b></li>
+</ul>
+<p> </p>
+<p><div style="width:1280px;" class="image-inline captioned">
+ <div style="width:1280px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/Untitled-1.jpg" alt="前台湾驻所罗门大使于德胜。（记者夏小华摄）" title="前台湾驻所罗门大使于德胜。（记者夏小华摄）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1280px;">前台湾驻所罗门大使于德胜。（记者夏小华摄）</span>
+    
+    
+            <span class="copyright">Photo: RFA</span>
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/Untitled-1.jpg" title="前台湾驻所罗门大使于德胜。（记者夏小华摄）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>“一般我们过去被断交的经验是，地主国直到最后一分钟他才讲，对不起，我决定断交，请你们一个月内关馆、降旗、打包回家，那他（所罗门）愿意这样子公开来检讨，我觉得真的是一件好事，我们有左右的余地，可以发挥一些影响力。”<br /> <br /> 所罗门上周已经派亲中部长和商务代表团访问中国。如何评估所罗门与北京建交、与台湾断交的可能性？<br /> <br /> 于德胜：“我很大胆地评估认为可能性不大，就是说跟我们断交的可能性不大，他们应该会适时跟我们谈检讨两国的邦交，那将是我们设法着力的一个时机。”</p>
+<p><br /><div style="width:1280px;" class="image-inline captioned">
+ <div style="width:1280px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e8c.jpeg" alt="台湾资助友邦所罗门的外岛卫生水源计划。（于德胜提供）" title="台湾资助友邦所罗门的外岛卫生水源计划。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1280px;">台湾资助友邦所罗门的外岛卫生水源计划。（于德胜提供）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e8c.jpeg" title="台湾资助友邦所罗门的外岛卫生水源计划。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> 于德胜进一步分析：“所罗门群岛跟我们有36年的友谊以及共同的价值，他们也知道中国大陆的制度跟他们不一样。再来就是中国大陆在太平洋地区一些负面、正面的影响都有，他们都要做通盘的考虑，他们跟台湾往来没有这些顾虑。如果所罗门期望台湾多给一点，台湾也要考虑自身的能力，总不能接受狮子大开口，双方都有国家预算限制。”<br /> <br /> 于德胜提到，所罗门拥有深水港可停靠军舰，这是中国和美国都有兴趣的主要原因，包括美国、新西兰、澳大利亚极力巩固区域稳定，期待所罗门在印太战略上与他们站在同一阵线。但所罗门终归是主权国家，会作出自己的决定。目前中国大陆在南太平洋国家中有8个友邦，台湾有6个友邦，中国大陆将南太平洋也划入他“一带一路”计划。如果中国大陆非常强势提供优渥的条件，台湾失去所罗门这个友邦，也不是毫无可能。</p>
+<p><br /><div style="width:1280px;" class="image-inline captioned">
+ <div style="width:1280px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e09.jpeg" alt="前台湾驻所罗门大使于德胜（后排右一）与所罗门总理索加瓦雷（后排右二）一同出席“卫生水源计划”完工移交仪式。（于德胜提供）" title="前台湾驻所罗门大使于德胜（后排右一）与所罗门总理索加瓦雷（后排右二）一同出席“卫生水源计划”完工移交仪式。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1280px;">前台湾驻所罗门大使于德胜（后排右一）与所罗门总理索加瓦雷（后排右二）一同出席“卫生水源计划”完工移交仪式。（于德胜提供）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e09.jpeg" title="前台湾驻所罗门大使于德胜（后排右一）与所罗门总理索加瓦雷（后排右二）一同出席“卫生水源计划”完工移交仪式。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> 回顾1983年所罗门选择与台湾建交，于德胜谈到，主要在于双方有共同的价值观，且当时台湾的经济比中国大陆好。<br /> <b><br /> </b><b>相较极权中国 多数所罗门人更认同台湾自由民主价值观</b><br /> <br /> 于德胜说，所罗门曾受到英国殖民统治约一百年，承袭英国的内阁制，包括文官体系、司法体系，和传承社会公平、人权等价值，都是跟着英国制度，完全是一个民主国家，50位国会议员由人民直接选举，国会议员再推举总理。而现任总理梅纳西·索加瓦雷（Manasseh Sogavare）相当强势，已是第四次就任，足见其影响力，但毕竟所罗门是内阁制，阁员又属多党派，关于是否转换外交承认也不是他一人说了算。</p>
+<p><br /><div style="width:1280px;" class="image-inline captioned">
+ <div style="width:1280px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/56db.jpeg" alt="台湾海军敦睦舰队曾访问所罗门。（于德胜提供）" title="台湾海军敦睦舰队曾访问所罗门。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1280px;">台湾海军敦睦舰队曾访问所罗门。（于德胜提供）</span>
+    
+    
+            <span class="copyright">Photo: RFA</span>
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/56db.jpeg" title="台湾海军敦睦舰队曾访问所罗门。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> “他们（所罗门）对于中国大陆威权体制相较不能接受。”<br /> <br /> 而对所罗门传出正考虑转换外交承认，于德胜说，从网路媒体可以看到当地老百姓大声疾呼，不可以放弃现有跟台湾的关系，而去追寻跟中国这种极权专制的国家往来。</p>
+<p><br /><div style="width:1280px;" class="image-inline captioned">
+ <div style="width:1280px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e94.jpeg" alt="所罗门部落文化，排笛 (Panpipes)舞蹈表演。（于德胜提供）" title="所罗门部落文化，排笛 (Panpipes)舞蹈表演。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1280px;">所罗门部落文化，排笛 (Panpipes)舞蹈表演。（于德胜提供）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e94.jpeg" title="所罗门部落文化，排笛 (Panpipes)舞蹈表演。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> <b>南太获中国援助国家 无法偿还巨额贷款形成负面效应</b><br /> <br /> 于德胜说，一些反对跟北京建交的有识之士所忧虑的是，看到中国“一带一路”把南太平洋都计划进去，对当地国家虽有一定正面影响，但也导致负面冲击。虽然中国协助了很多当地建设，提供低利贷款，但是像瓦努阿图、汤加等好几个国家，已经发生无法偿还巨额贷款、要求中共免除债务或延缓偿债的情况。<br /> <br /> “民间有识之士反对的声音也很大，说不能把未来交到中共手里。台湾在那边30多年的援助没有任何隐藏的目的，台湾纯粹是帮助他们，彼此是兄弟姐妹的关系。台湾在国际很多地方没办法参与，希望所罗门在国际上主持正义，为台湾讲一些话。”</p>
+<p><br /><div style="width:960px;" class="image-inline captioned">
+ <div style="width:960px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/516d.jpeg" alt="Red Beach, Guadalcanal二战美军登陆与日军激战地点。（于德胜提供）" title="Red Beach, Guadalcanal二战美军登陆与日军激战地点。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:960px;">Red Beach, Guadalcanal二战美军登陆与日军激战地点。（于德胜提供）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/516d.jpeg" title="Red Beach, Guadalcanal二战美军登陆与日军激战地点。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> 于德胜说，虽当地人贫穷，但物价却很高，不输北欧，比台湾高很多，令他震撼，很多生意成为特许事业，都让澳大利亚、新西兰和中国公司经营。另因为中国人很能吃苦，两千多名中国人在所罗门开零售业和餐馆。<br /> <br /> <b>所罗门人民抱怨在自己国家替中国人当奴隶</b><br /> <br /> 于德胜形容，大陆人开的杂货店，门口摆着非常高的台子，店员坐在上面，透过监视器看每个角落，顾客付帐要把手伸的很高给店员，这样的作法是防止抢劫。所罗门当地很多人抱怨，到处是中国零售商在那剥削他们， 给他们很低的工资，讲白一点，就是“在自己国家替中国人当奴隶”。</p>
+<p><br /><div style="width:960px;" class="image-inline captioned">
+ <div style="width:960px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e03.jpeg" alt="沉没在海边的登陆舰。（于德胜提供）" title="沉没在海边的登陆舰。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:960px;">沉没在海边的登陆舰。（于德胜提供）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e03.jpeg" title="沉没在海边的登陆舰。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> 台湾为所罗门建医院、国会议员办公室、提升农业技术、资助政府预算、发放奖学金等。于德胜任大使期间，见当地有小岛没厕所，男生直接将排泄物排到海里，女生则在破烂铁皮屋上厕所；饮用水则靠引水，若不下雨，必须到对面另一个大岛取水，当时他就协助该岛修建六间厕所还有淋浴间，设有抽水马桶并贴上磁砖。<br /> <br /> “他们说这是岛上最先进的建筑，屋顶有太阳能板，晚上有灯，他们说是岛上唯一亮的地方，晚上乘凉很好，中间有栈道，没有蚊子。”</p>
+<p><br /><div style="width:1280px;" class="image-inline captioned">
+ <div style="width:1280px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/516b.jpeg" alt="所罗门过去简陋的女厕。（于德胜提供）" title="所罗门过去简陋的女厕。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1280px;">所罗门过去简陋的女厕。（于德胜提供）</span>
+    
+    
+            <span class="copyright">Photo: RFA</span>
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/516b.jpeg" title="所罗门过去简陋的女厕。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> <b>19</b><b>年前所罗门内战 台湾唯一未撤馆并协助重建 令当地感念</b><br /> <br /> 于德胜说，值得一提的是，2000年所罗门两大省瓜达卡纳尔（Guadalcanal）和马来塔（Malaita）爆发严重冲突，导致政府、经济体系都崩溃，连警察的枪弹都被双方利用互相攻击。当时各国外馆纷纷撤馆，唯独“中华民国”没有撤馆，而且提供贷款协助重建，很多所罗门老百姓至今仍对台湾伸出援手印象深刻。<br /> <br /> “尤其他们的总理，只要感触的时候，想起来就会跟我讲，我们永远不会忘记中华民国，在所罗门群岛内战崩溃的时候，中华民国是唯一在原地没有撤馆而且协助他们重建的国家。”</p>
+<p><br /><div style="width:720px;" class="image-inline captioned">
+ <div style="width:720px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e5d.jpg" alt="台湾资助所罗门女厕完工。（于德胜提供）" title="台湾资助所罗门女厕完工。（于德胜提供）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:720px;">台湾资助所罗门女厕完工。（于德胜提供）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hx-06192019113529.html/4e5d.jpg" title="台湾资助所罗门女厕完工。（于德胜提供）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div> <br /> 于德胜表示，台湾和所罗门邦谊30多年，但每次所罗门选举结束，就会有国会议员突发奇想，考虑跟中国大陆建交，但是多数国会议员还是希望跟台湾维持外交关系。于德胜相信中华民国和所罗门两国有长久情谊，尤其价值观相同是基石。<br /> <br /> <br /> 自由亚洲电台记者夏小华 台北报道 责编: 陈美华 / 吴晶     网编：瑞哲<br /> <br /></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>台湾;</dc:subject>
+      <dc:subject>台湾;</dc:subject>
+    
+    <dc:date>2019-06-19T17:12:40Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html">
+		<title>多家央企急抛地产  风向有变？</title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html</link>
+    <description>近期，中国十多家大型国有房地产企业密集转让项目股权的举动引发关注。中国经济长期依赖的房地产开发被国企看空，究竟预示着什么？
+ 
+</description>
+         
+            <enc:enclosure type="audio/mpeg" length="530560" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/m0619-ql2e.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/ac4bd11373f0820232c8d9ca41fbfbedaa641be8.jpg"></img><p>近期，中国十多家大型国有房地产企业密集转让项目股权的举动引发关注。中国经济长期依赖的房地产开发被国企看空，究竟预示着什么？</p>
+<p>中国财经媒体《证券时报》记者根据北京产权交易所公开信息梳理统计，5月1日至6月14日，全市共有20个房地产项目进行股权转让（包括正式披露和预披露项目），而今年前4个月只有2个，去年4月至12月，9个月时间里总共仅有10个。</p>
+<p>报道称，在这20个房地产项目中，有15个项目转让方的出资人为央企，包括保利集团、中化集团、华侨城集团、中航工业、中国电建、中国通用技术集团、中国电子、国机集团、中国有色集团等11家。值得注意的是，除了保利集团、中化集团、华侨城集团外，其余多家央企并不在国资委确定的16家房地产主业央企名单之列。</p>
+<p> </p>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/Xinwen/d-06182019120358.html">中国投资者从世界房产市场撤退</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/jingmao/gf-05232019071136.html">贸易战阴影笼罩 学者警告大陆楼市面临崩盘风险</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-05212019083936.html">省级财政部门发文“过紧日子”</a></b></li>
+</ul>
+<div></div>
+<div></div>
+<p> </p>
+<p>有业内人士对《证券时报》记者称，央企转让房地产项目股权可能更多的是企业自身的投资行为，对房地产不太看好，包括负债压力、资金流收紧、自身产业发展环境不好等原因。5月以来，在11家央企旗下公司共转让的15个房地产项目中，中化集团旗下有4个，保利集团旗下有2个。</p>
+<p><div style="width:800px;" class="image-inline captioned">
+ <div style="width:800px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/cb8065380cd79123c221b484ad345982b3b78078.jpg" alt="央企中国中化集团公司。（图源：百度百科）" title="央企中国中化集团公司。（图源：百度百科）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:800px;">央企中国中化集团公司。（图源：百度百科）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/cb8065380cd79123c221b484ad345982b3b78078.jpg" title="央企中国中化集团公司。（图源：百度百科）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p><b>学者：市况不明皆因重要决策全靠一个</b><b> </b></p>
+<p><b> </b><b> </b></p>
+<p>北京一家大学房地产研究学者董教授接受本台采访时表示，央企持有的部分房地产项目处于“限购限贷”区域，普通消费者很难承受：</p>
+<p>“他们有些地，在限购限贷比较严的区域。如果你（政府）不放松，他们是没有机会（出手）的，开发不开发已经没有什么意思了。现在整个国家的决策都取决于一个人的想法，别人的想法很难跟他沟通也不敢沟通，这是中国下一步发展面临的最大的一个问题。”</p>
+<p><div style="width:622px;" class="image-inline captioned">
+ <div style="width:622px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/48540923dd54564e39da2949b3de9c82d1584f07.jpg" alt="央企中国航空工业集团（简称中航工业）。（图源：百度百科）" title="央企中国航空工业集团（简称中航工业）。（图源：百度百科）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:622px;">央企中国航空工业集团（简称中航工业）。（图源：百度百科）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/48540923dd54564e39da2949b3de9c82d1584f07.jpg" title="央企中国航空工业集团（简称中航工业）。（图源：百度百科）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>报道称，6月12日，中化集团旗下中国金茂挂牌转让北京茂丰置业有限公司28.56%股权；保利集团旗下保利地产转让北京金丰置业有限公司10%股权，即北京市丰台区总部基地北项目10%股权；17日，华侨城集团旗下公司挂牌转让盈江县大盈江玉石城有限公司100%股权。除了几家房地产为主业的央企旗下公司转让项目股权外，中航工业、中国电子、中国有色集团等多家非房地产主业的央企旗下也有房地产项目股权挂牌转让，其中多数处于亏损状态，有的项目甚至资不抵债。</p>
+<p>对于目前中国进出口规模萎缩、房地产市场疲弱，董教授认为，所有有利于中国长期发展的因素均已消失：</p>
+<p>“现在的决策已经远离科学发展观，如果他（国家领导人）讲的是对的，将造福于全社会；如果错了，那么全社会只有共同来承担这个代价，没有办法去矫正这样一个错误导向。所有有利于中国长期发展的因素都消失了，环境的问题、人口的问题、劳动力供应问题、国际合作问题等等，所以‘看空’是正常的。”</p>
+<p>董教授说，面对未来，人们应该考虑如何守住已经赚到的财富。</p>
+<p><div style="width:622px;" class="image-inline captioned">
+ <div style="width:622px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/9825bc315c6034a8af392776ca1349540823766a.jpg" alt="央企华侨城集团总部大厦。（图源：百度百科）" title="央企华侨城集团总部大厦。（图源：百度百科）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:622px;">央企华侨城集团总部大厦。（图源：百度百科）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/jingmao/ql2-06192019084220.html/9825bc315c6034a8af392776ca1349540823766a.jpg" title="央企华侨城集团总部大厦。（图源：百度百科）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p><b>转让地产项目或跟房产税有关</b><b> </b></p>
+<p>中国金融学者贺江兵分析，央企近期转让房地产项目的股权也许是在做某些防范。</p>
+<p>他说，央企对房地产市场不看好：“这说明他们提前知道了上层的意图，第二，6月13日央行的书记兼银保监会主席郭树清，他在上海陆家嘴有一个发言，他说住房不炒，然后说房地产的量过大，空置率过高这种危害性。他发出严重警告。”</p>
+<p>贺江兵说，郭树清的讲话预示着争论已久的房地产税可能于近期落地。央企作为中国房地产市场的风向标，其动态对民众而言，大有参考价值。</p>
+<p> </p>
+<p>记者：乔龙  责编：胡力汉、何平   网编：瑞哲</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>经贸;</dc:subject>
+      <dc:subject>经贸;</dc:subject>
+    
+    <dc:date>2019-06-19T16:31:12Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html">
+		<title>锋锐律所合伙人刘晓原  执业证终遭注销</title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html</link>
+    <description>6月19日，曾经历“709大抓捕案”的原北京锋锐律师事务所合伙人刘晓原律师获当局告知，其执业证将被注销。刘晓原当天接受本台采访表示，虽会就此提出上诉，但他已对中国司法环境彻底绝望。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="417920" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html/m0619-gfe.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html/M0619GF.jpg"></img><p>6月19日，曾经历“709大抓捕案”的原北京锋锐律师事务所合伙人刘晓原律师获当局告知，其执业证将被注销。刘晓原当天接受本台采访表示，虽会就此提出上诉，但他已对中国司法环境彻底绝望。</p>
+<p>北京朝阳区司法局周三（19日）中午，致电通知前北京锋锐律师事务所合伙人刘晓原，当局决定注销他的执业证。</p>
+<p>刘晓原：“律师工作科一个工作人员给我打电话说，北京司法局有一份文件给我，说是要注销我刘晓原的执业证。我问注销了几个人？他说就注销我一个。但是，去年像我这样不能转所执业的有几个律师。”</p>
+<p> </p>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/renquanfazhi/hc-06182019111732.html">维权律师摆地摊、看风水：荒唐吗？</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/renquanfazhi/yf2-03292018104316.html">北京锋锐所被吊销执业证 合伙律师转所遥遥无期</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf2-11132018102802.html">吊销执照成定局 锋锐律所瓦解</a></b></li>
+</ul>
+<p> </p>
+<p>锋锐数十名律师在2015的“709事件”中被捕，曾代理毒奶粉案和首都机场爆炸案等维权案件的刘晓原其后获释。</p>
+<p><div style="width:1024px;" class="image-inline captioned">
+ <div style="width:1024px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/hc-07052018103505.html/zhou_shi_feng_.jpg" alt="北京锋锐律师事务所主任周世锋“煽颠罪”被判囚7年。（视频截图）" title="北京锋锐律师事务所主任周世锋“煽颠罪”被判囚7年。（视频截图）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1024px;">北京锋锐律师事务所主任周世锋“煽颠罪”被判囚7年。（视频截图）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/renquanfazhi/hc-07052018103505.html/zhou_shi_feng_.jpg" title="北京锋锐律师事务所主任周世锋“煽颠罪”被判囚7年。（视频截图）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>但北京司法局以他是锋锐合伙人为由，不让他申请调职到其他律所。直到去年，锋锐律所的牌照被注销，刘晓原发现，当局把他从申请调职的系统名单除名。</p>
+<p>他说，过去4年曾多次去信司法当局要求处理，但各个部门互相推卸。</p>
+<p>无法调职之下，刘晓原近年要靠家人接济生活。他周二上载自己卖老鼠药谋生的照片到社交平台，希望以行为艺术的方法 唤起社会关注律师执业权被侵犯的问题。</p>
+<p>刘晓原：“锋锐所还有数名律师也是转业卡住了，唯独先把我注销了。我想还是因为昨天（周二）的照片，让他们马上先把我开刀，注销我的执业证。一个律师被失业4年，不能执业，竟然要卖老鼠药谋生存，它（当局）不是感到很难受吗？”</p>
+<p><div style="width:768px;" class="image-inline captioned">
+ <div style="width:768px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html/D9QAOfDW4AACH3n.jpg" alt="2015年大规模抓捕维权律师的“709事件”发生后，北京律师刘晓原的职业生涯从此改变。6月19日在推特上发布了一张照片，他正在路边摆摊出售杀虫剂。（刘晓原@liu_xiaoyuan）" title="2015年大规模抓捕维权律师的“709事件”发生后，北京律师刘晓原的职业生涯从此改变。6月19日在推特上发布了一张照片，他正在路边摆摊出售杀虫剂。（刘晓原@liu_xiaoyuan）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:768px;">2015年大规模抓捕维权律师的“709事件”发生后，北京律师刘晓原的职业生涯从此改变。6月19日在推特上发布了一张照片，他正在路边摆摊出售杀虫剂。（刘晓原@liu_xiaoyuan）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html/D9QAOfDW4AACH3n.jpg" title="2015年大规模抓捕维权律师的“709事件”发生后，北京律师刘晓原的职业生涯从此改变。6月19日在推特上发布了一张照片，他正在路边摆摊出售杀虫剂。（刘晓原@liu_xiaoyuan）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p><b>刘晓原：对中国司法制度绝望</b><b> </b></p>
+<p>按照当局规定，律师在6个月内未被律师事务所聘用或者邀请当合伙人，就会被注销律师执业许可证。</p>
+<p>原籍江西的刘晓原形容，当局把律师视为敌对势力，中国的司法环境让他感到绝望。他说，虽然理论上只要重新获得律所聘用就可以恢复律师执照，但以北京为例，在当地被注销的律师等同被吊销，永远无法再度在当地执业。</p>
+<p>刘晓原：“不做了，不做了。在这样的时代，在这样的司法环境下，你还做什么律师？你连自己的权力都维护不了，你怎么帮别人维护权利？我再做律师干嘛？我对这个社会、这种司法环境彻底失望，说是绝望也可以。”</p>
+<p><div style="width:940px;" class="image-inline captioned">
+ <div style="width:940px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html/bd4285c1-df27-47de-9617-8f26638ce653.jpeg" alt="北京锋锐律师事务所（美联社）" title="北京锋锐律师事务所（美联社）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:940px;">北京锋锐律师事务所（美联社）</span>
+    
+            <span class="copyright">    </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/renquanfazhi/gf-06192019091641.html/bd4285c1-df27-47de-9617-8f26638ce653.jpeg" title="北京锋锐律师事务所（美联社）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>“中国律师后俱乐部”发起人覃永沛也相信，刘晓原的律师生涯已提前结束。</p>
+<p>覃永沛：“只要共产党存在一天，就不可能让刘晓原和覃永沛这类人再做律师。共产党认为，我们帮公民和访民维权就是反党、反社会主义，把我们这帮律师列为黑名单。”</p>
+<p>他认为，在中国司法部、中共中央政法委员会和地方司法部门互相配合下，维权律师的生存空间肯定还将进一步缩窄。</p>
+<p> </p>
+<p>记者：高锋  责编：胡力汉、何平  网编：瑞哲</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>异议人士;</dc:subject>
+      <dc:subject>异议人士;</dc:subject>
+    
+    
+      <dc:subject>709</dc:subject>
+      <dc:subject>709</dc:subject>
+    
+    <dc:date>2019-06-19T16:04:27Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/Xinwen/d-06192019115906.html">
+		<title>中朝官媒登习近平署名文章 力挺金正恩</title>
+    <link>https://www.rfa.org/mandarin/Xinwen/d-06192019115906.html</link>
+    <description></description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/zhuanlan/zhongguotoushi/panel-03302018111148.html/100616291_hi045811947.jpg"></img><p>中国国家主席习近平对朝鲜进行国事访问前夕，罕见发表署名文章，指中国支持朝鲜“坚持政治解决半岛问题的正确方向”，希望双方“携手努力”，实现东亚地区“长治久安的大计”。<br /><br />这篇刊登在朝鲜“劳动新闻”（Rodong Sinmun）及新华社的文章还说，中国愿和朝方及有关方“加强沟通和协调，支持通过对话解决朝方的合理关切，共同推动半岛问题对话协商”。<br /><br />与此同时，文章还重申支持朝鲜领导人金正恩“带领朝鲜党和人民贯彻落实新战略路线”、“推动朝鲜社会主义建设取得新的更大成就”。<br /><br />香港南华早报的相关报道引述专家分析指，中国意在通过与朝鲜加强关系，以向美国暗示 中国在美中战略竞争中手握筹码。<br />（责编：韩洁）<br /><br /></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-06-19T15:59:25Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/Xinwen/f-06192019113601.html">
+		<title>王毅为《逃犯条例》辩护  德经济部长访华提香港问题</title>
+    <link>https://www.rfa.org/mandarin/Xinwen/f-06192019113601.html</link>
+    <description></description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>香港市民的“反送中”示威活动引发国际社会的关注。中国国务委员、外交部长王毅星期三强硬为香港政府修订《逃犯条例》辩护。<br /><br />王毅说，一些西方势力企图破坏香港和平稳定和“一国两制”。他强调，香港事务是中国内政，不是外部势力横行的地方，要求西方势力“收回黑手”。<br /><br />另外，正在中国进行访问的德国经济部长阿尔特迈尔（Peter Altmaier）19日表示，他与中国官员会面时提及中国的人权状况，特别是香港的问题，并会持续留意有关情况。<br />（责编：韩洁）<br /><br /></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-06-19T15:36:08Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/pinglun/weijingsheng/wjs-06192019113159.html">
+		<title>评论 | 魏京生：日本峰会有什么诡异之处</title>
+    <link>https://www.rfa.org/mandarin/pinglun/weijingsheng/wjs-06192019113159.html</link>
+    <description>香港人民的胜利，使得全世界人民回味无穷：共产党不像它声称的那么强大，只要众志成城团结一致坚持下去，就会看到共产党的真面目：你硬它就软，你软它就硬。如今的中美贸易战也是这种形势。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="1995288" rdf:resource="https://www.rfa.org/mandarin/pinglun/weijingsheng/wjs-06192019113159.html/M0619-1WJSE.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/2019-06-12T093704Z_127270424_RC1EA66324A0_RTRMADP_3_HONGKONG-EXTRADITION.JPG"></img><p>香港人民的胜利，使得全世界人民回味无穷：共产党不像它声称的那么强大，只要众志成城团结一致坚持下去，就会看到共产党的真面目：你硬它就软，你软它就硬。如今的中美贸易战也是这种形势。<br /> <br />造成这种性格的原因，是中共内部的派系斗争。一般人总以为中共是一个整体，媒体更是习惯于这种简单的假设，这对分析人员来说比较方便。有的时候这并不错，特别是他们内部利益达成了一致，需要对外表现出一致的时候，假设他们是一个整体就是正确的。<br /> <br />在小事上比较容易达成一致，在大事上就很难达成一致了。即使毛泽东那样有能力的独裁者，也是在文革打倒和制服大多数官员后，才做到了表面上的一致。只有民主制度的国家才比较容易达成真正的一致。<br /> <br />民主制度通过政治家的充分争论，相互协调和妥协，最终投票达成一致。中国古代的皇帝制，也是通过政治家们充分争论，最终由皇帝做裁判来达成一致。苏俄的专政则是直接由皇帝做出决定，所以中国人总是不习惯这种独裁的模式，内乱不止，以至于毛泽东要打倒大部分官员。小习就是企图用这种毛泽东的方式，恢复斯大林式的独裁。<br /> <br />遗憾的是，这种企图不会得到大部分政治精英的认同。王岐山的下台就是内部矛盾的结果。香港人民的胜利第一是香港人民的坚持，第二是美国态度的明确，第三也是最后的关键，就是党内不同派系的反对，促成了最终对香港人民的妥协。<br /> <br />中美贸易战的日本回合，情况有些类似。小习联俄联朝鲜联伊朗，企图以他的个人外交对抗川普。当然他也企图利用川普急于达成协议的心理，再次忽悠川普一把。但是小习现在已经是腹背受敌，内乱不止，很难用联俄联朝联伊朗这三张小牌击败川普。<br /> <br />小习的腹背受敌不仅仅是国际国内的腹背受敌，而且是内部进退两难的腹背受敌。小习也知道联俄联朝联伊朗的臭棋不一定管用，所以迟迟不敢和川普见面。他知道见面后不妥协，川普不得不加大税收导致中国经济崩溃。否则川普无法向美国国内两党和人民交待。</p>
+<p><br /> <div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+  <img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/000_1HG0YI.jpg/image" alt="000_1HG0YI.jpg" title="000_1HG0YI.jpg" height="1000" width="1500" />
+ </div>
+ <div class="image-caption">
+    <span style="width:1500px;">2019年6月12日，香港市民反《逃犯条例》示威活动中，警察向示威者发射催泪弹。（法新社）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+ </div>
+</div>
+
+</p>
+<p>经济崩溃的罪魁祸首这顶帽子，只能落在他习近平的头上。届时各种形式的政变都是合理合法，他小习不会有什么好下场。就像香港的反送中运动一样，一旦精英阶层和民众达成了一致，你无法反抗。<br /> <br />如果见面后回到了曾经反悔的协议，川普可能满意了，中共内部促成反悔的强大势力必然不会放过小习。已经在舆论上渲染多时的辛丑条约及卖国贼的帽子，也就扎扎实实地落在了小习和他的马仔们的头上。届时各种形式的政变，也就必然是合理合法，民心所向。小习还是没有什么好下场，也许更坏。<br /> <br />香港模式的妥协之所以能够勉强过关，是因为国内的人民和精英阶层能够接受，而且香港人民和精英阶层都不会对内地经济政治带来坏结果。所以这个大家都能接受的妥协，就是好结果。<br /> <br />但是贸易战就不同了。对双方都有利的协议，国内的官僚资产阶级不能接受，已经热火朝天的卖国贼舆论不能接受。官场政治也就不能接受。而中国的政治不是民主政治，官场倾向决定一切，所以打倒小习就合理合法了。<br /> <br />可能导致经济崩溃的结果，是官民双方都不能接受的结果，而且美国也不会妥协。现在唯一的出路就是习近平辞职，换人改弦更张，也许中国能躲过这一劫。</p>
+<p>（文章只代表特约评论员个人的立场和观点）</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>国际;</dc:subject>
+      <dc:subject>国际;</dc:subject>
+    
+    
+      <dc:subject>经贸;</dc:subject>
+      <dc:subject>经贸;</dc:subject>
+    
+    
+      <dc:subject>中美;</dc:subject>
+      <dc:subject>中美;</dc:subject>
+    
+    <dc:date>2019-06-19T15:35:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html">
+		<title>蔡英文获党内提名 喊胜选要维护台湾民主自由</title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html</link>
+    <description>台湾的总统蔡英文赢得党内初选，19号正式获得民进党中央执行委员会任命竞选连任。蔡英文致词表示，不只要赢得胜选，还要维护台湾的民主自由。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="389248" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/m0619-hcme.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/4e2d57f76703.jpeg"></img><p>台湾的总统蔡英文赢得党内初选，19号正式获得民进党中央执行委员会任命竞选连任。蔡英文致词表示，不只要赢得胜选，还要维护台湾的民主自由。经济学人资讯社(EIU)18日预测，蔡英文将险胜国民党的高雄市长韩国瑜赢得明年总统大选。</p>
+<p>蔡英文尽管在寻求连任路上遭遇前行政院长赖清德强力挑战，最终还是以较高民调胜出，蔡英文周三(19日)赴民进党中央党部向党部同仁及中执委握手致意，并发表谈话。</p>
+<p> </p>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/hx-06132019104604.html">蔡英文赢得党内初选 正式角逐连任</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06082019171201.html">民进党唯一初选政见会 蔡英文赖清德交锋</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/hcm1-04092019100113.html">蔡英文赖清德同日表态竞逐总统</a></b></li>
+</ul>
+<div></div>
+<div></div>
+<p> </p>
+<p>蔡英文说，感谢赖清德与她一起走完整个初选过程，在这个过程中激励了党的士气，也让他们有机会将执政的价值与成绩向全国人民说明，感谢赖清德的毅力与民主风范。</p>
+<p>蔡英文：“初选已经结束，下个阶段挑战会更大，责任也会更艰辛，必须要集全党之力完成任务。2020的挑战不只是对民进党前所未有的挑战，也是对台湾前所未有的挑战。”</p>
+<p>蔡英文表示，2020目标很清楚，总统要胜选，立委一定要过半。</p>
+<p>蔡英文：“我们的任务不只在选战中，而是选战成功之后要维护台湾的民主自由，必须捍卫执政的价值与改革的成果。更重要的是，一定要巩固主权，这是我们必须要承担、一定要承担、也一定会成功承担的任务。”</p>
+<p><div style="width:640px;" class="image-inline captioned">
+ <div style="width:640px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/852182f165877b11.jpeg" alt="蔡英文在民进党中执会发表谈话。(民进党提供)" title="蔡英文在民进党中执会发表谈话。(民进党提供)" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:640px;">蔡英文在民进党中执会发表谈话。(民进党提供)</span>
+    
+    
+            <span class="copyright">Photo: RFA</span>
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/852182f165877b11.jpeg" title="蔡英文在民进党中执会发表谈话。(民进党提供)">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>蔡英文最后提到，这次初选过程中，大家必须认知一件事情，民进党一定要回应年轻世代的需求与要求。关键中的关键，就是年轻世代的力量能争取更多年轻力量来支持民进党，与民进党一起打造这个国家。</p>
+<p><b>经济学人智库：蔡英文2020</b><b>将险胜</b></p>
+<p>英国经济学人资讯社(EIU)预测，在蔡英文和高雄市长韩国瑜对决的情况下，蔡英文将以些微票数差距取胜，成功争取连任。另一方面，EIU也预测，台北市长柯文哲不会参选，因此加大民进党的胜算。</p>
+<p>柯文哲19日上午出席一场里长座谈被问及EIU的预测时表示，所谓预测是以当时的资料，这一刻这一秒，但还有个“最大变数”没有出现。有媒体追问，所谓“最大变数”是不是就是指柯文哲是否参选？</p>
+<p>柯文哲：“其实气候上有极端气候，政治上也有极端政治，就像香港的事情，短短一个月内，台湾民调就有大幅震荡；目前才6月，距离总统大选投票还有7个月，7个月可以发生7次香港事件，所以深呼吸、放轻松。”</p>
+<p><div style="width:640px;" class="image-inline captioned">
+ <div style="width:640px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/852182f165879ee85de5.jpeg" alt="蔡英文受到民进党工热烈欢迎。(民进党提供)" title="蔡英文受到民进党工热烈欢迎。(民进党提供)" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:640px;">蔡英文受到民进党工热烈欢迎。(民进党提供)</span>
+    
+    
+            <span class="copyright">Photo: RFA</span>
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/852182f165879ee85de5.jpeg" title="蔡英文受到民进党工热烈欢迎。(民进党提供)">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>世新大学新闻系教授彭怀恩周三接受本台访问时认为，距离大选还有七个月的时间，言之过早。可能要等到国民党七月中旬初选人选出炉之后才能判断。根据台湾苹果日报18日公布的最新民调，蔡英文在初选后，鸿海董事长郭台铭的民调逆转胜，蔡英文落后郭台铭6.8个百分点，民调中也显示赖清德的支持者未回流至蔡英文。彭怀恩认为，目前国民党还在“内战”，赖清德支持者不会那么快转向蔡英文。</p>
+<p>彭怀恩：“蔡英文对决郭台铭在经济问题上不一定占便宜；对阵韩国瑜在庶民经济方面也未必占便宜。蔡英文现在唯一的优势就是她是执政者，她要争取连任，她有很多行政资源可以分配。”</p>
+<p>蔡英文在中执会谈话里特别提及，争取年轻人的支持是关键之关键。民调专家戴立安受访时指出，目前在20到29岁年轻族群中，蔡英文与柯文哲呈现“五五波”，而年轻人又容易受外部事件影响。以“反送中”议题为例，虽然其他候选人都表态，但是蔡英文说话代表政府与国家立场，自然受到更多的关注。</p>
+<p><div style="width:640px;" class="image-inline captioned">
+ <div style="width:640px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/5305570d4e00.jpeg" alt="蔡英文受到民进党工热烈欢迎。(民进党提供)" title="蔡英文受到民进党工热烈欢迎。(民进党提供)" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:640px;">蔡英文受到民进党工热烈欢迎。(民进党提供)</span>
+    
+    
+            <span class="copyright">Photo: RFA</span>
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/hcm-06192019094900.html/5305570d4e00.jpeg" title="蔡英文受到民进党工热烈欢迎。(民进党提供)">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>戴立安：“比方说现在“反送中”这块，年轻人就比较激烈一点；可是在下半年来看，不管柯文哲参不参选，现在外部因素包括两岸、美国要做球给蔡英文，就不是其他候选人的主场，这块对蔡英文比较有利。”</p>
+<p>根据台媒联合报19日报导，高雄市长韩国瑜出席毕业生及模范生合影时，被一名模范生当面呛，“觉得韩市长选总统很可笑，(市长)选前做了承诺，现在去选总统对他名誉不太好。”韩国瑜肯定这名模范生勇气可嘉，未来大有出息，他非常尊重。</p>
+<p> </p>
+<p>自由亚洲电台记者黄春梅 台北报道  责编: 陈美华 /吴晶       网编：瑞哲</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>台湾;</dc:subject>
+      <dc:subject>台湾;</dc:subject>
+    
+    <dc:date>2019-06-19T14:50:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/zhuanlan/minzhushalong/salon-06192019101605.html">
+		<title>专栏 |民主沙龙（2019-06-18）</title>
+    <link>https://www.rfa.org/mandarin/zhuanlan/minzhushalong/salon-06192019101605.html</link>
+    <description>1.江苏听众：对香港司法独立前途悲观，暂缓推动《逃犯条例》修订草案是缓兵之计。 </description>
+         
+            <enc:enclosure type="audio/mpeg" length="3608704" rdf:resource="https://www.rfa.org/mandarin/zhuanlan/minzhushalong/salon-06192019101605.html/m0618salon.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/AP_19163326717172.jpg"></img><p>1.江苏听众：对香港司法独立前途悲观，暂缓推动《逃犯条例》修订草案是缓兵之计。 <br /><br />2.广东听众 香港是中国共产党政府的缓冲地带，对他们也有利。<br /><br />3.广西听众：中国最严重的问题是官员腐败，当地的官员用老百姓土地做抵押去贷款，然后不还。现在当地有好几个乡镇的民众面临失去土地的威胁。<br /><br />4.湖北听众：中国政府无力同美国对抗，现在大陆都没有人种田，同世界强国美国较量，可能威胁到社会稳定。<br /><br />5. 福建听众：中央虽然说依法治国，但是官员不守法，社会不公正。<br /><br /></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>香港;</dc:subject>
+      <dc:subject>香港;</dc:subject>
+    
+    <dc:date>2019-06-19T14:25:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06192019071211.html">
+		<title>“送中恶法”暂缓    民间开始追究警方滥权行为</title>
+    <link>https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06192019071211.html</link>
+    <description>香港的“送中恶法”扰攘多时，特首林郑月娥终于亲自向公众致歉，但仍未能平息民怨，其中一个引起民愤的，是警方过往一段时间涉嫌滥用警权及武力的行为，差点造成灾难，对此社会各界声言要“追究到底”。</description>
+         
+            <enc:enclosure type="audio/mpeg" length="546944" rdf:resource="https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06192019071211.html/m0619-ale.mp3"/>
+        
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06192019071211.html/AP_19169849783667.jpg"></img><p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>香港的“送中恶法”扰攘多时，特首林郑月娥终于亲自向公众致歉，但仍未能平息民怨，其中一个引起民愤的，是警方过往一段时间涉嫌滥用警权及武力的行为，差点造成灾难，对此社会各界声言要“追究到底”。</p>
+<p>香港特首林郑月娥就硬推“逃犯条例”修订引起的社会矛盾，向香港市民道歉，但却未明确表示会撤回条例，对于上周三（6月12日）金钟一带的冲突事件被定性为“暴动”，她亦未明言收回。市民对此纷纷表示“不卖帐”，继续坚持“撤回送中条例，释放被捕人士，平反612暴动定性，林郑下台”等诉求，而社会各界亦开始追究警方近日涉及的滥权行为。</p>
+<p> </p>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/gf-06182019071754.html">林郑公开致歉仍拒撤回修例及下台</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/gf-06162019080938.html">不满政府拒撤恶法   近200万港人再度上街创造历史</a></b></li>
+</ul>
+<ul>
+<li><b><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/al-06132019080826.html">香港警方武力清场备受国际批评 对准头部开枪违国际法</a></b></li>
+</ul>
+<ul>
+<li><a class="external-link" href="http://www.rfa.org/mandarin/yataibaodao/gangtai/ql2-06122019091254.html"><b>万人包围立法会促撤回条例 警察发射催泪弹及橡胶子弹清场</b></a></li>
+</ul>
+<div></div>
+<div></div>
+<p> </p>
+<p><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06192019071211.html/AP_19169392327992.jpg" alt="左起：周庭，黄之锋和罗冠聪，2019年6月18日在香港政府办公室外，手持图片特首林郑月娥及警察局局长罗志强，要求平反612暴动定性，林郑下台等诉求。（美联社）" title="左起：周庭，黄之锋和罗冠聪，2019年6月18日在香港政府办公室外，手持图片特首林郑月娥及警察局局长罗志强，要求平反612暴动定性，林郑下台等诉求。（美联社）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1500px;">左起：周庭，黄之锋和罗冠聪，2019年6月18日在香港政府办公室外，手持图片特首林郑月娥及警察局局长罗志强，要求平反612暴动定性，林郑下台等诉求。（美联社）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/al-06192019071211.html/AP_19169392327992.jpg" title="左起：周庭，黄之锋和罗冠聪，2019年6月18日在香港政府办公室外，手持图片特首林郑月娥及警察局局长罗志强，要求平反612暴动定性，林郑下台等诉求。（美联社）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>其中一个近日引起广泛讨论的，是上周三的“中信围困事件”，有网民整合由传媒及市民拍摄的片段，指当日下午近四时，亦即警方在立法会一带大举清场时，把大批示威者围困在中信大厦外。示威者在无路可退的情况下，警方更突然往人群中央发射多枚催泪弹，令数以百计示威者涌进中信大厦。而当时由于大厦一边玻璃门被锁上，示威者只能透过另一边玻璃门及中间的旋转门进入大厦逃生，期间险象横生，几乎造成大型灾难。片段在网上疯传后，网民纷纷质疑警察“蓄意谋杀”、“试图制造人踩人惨剧”。</p>
+<p>而在上周三整个清场行动中，按香港警方目前公布的数字，至少共施放了150枚催泪弹，数发橡胶子弹，20发布袋弹，并使用了胡椒喷剂，催泪水剂等武器，以驱散示威者，造成近80人受伤，部分伤者更被击中眼睛及头部，被人权组织乃至国际社会炮轰使用不对等武力。而俗称“速龙小队”的警方特别战术小队，也多次被拍到群殴示威者，被质疑清场手法凶残，制服上亦无警员编号，令公众投诉无门。</p>
+<p><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/000_1HG0K2.jpg" alt="2019年6月12日，香港市民反《逃犯条例》示威活动中，警察向示威者发射催泪弹。（法新社）" title="2019年6月12日，香港市民反《逃犯条例》示威活动中，警察向示威者发射催泪弹。（法新社）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1500px;">2019年6月12日，香港市民反《逃犯条例》示威活动中，警察向示威者发射催泪弹。（法新社）</span>
+    
+            <span class="copyright">     </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/tebiebaodao/612-06122019083956.html/61299996e2f5e026c11530556f47acb6cd54f1a53cd300a900372af67614f8b300b4fee8ba2-793a5a0173b0573a51b27a818b6665b953d15c0450ac6cea5f39/000_1HG0K2.jpg" title="2019年6月12日，香港市民反《逃犯条例》示威活动中，警察向示威者发射催泪弹。（法新社）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p><b>保安局局长：警方已使用最低武力</b></p>
+<p>在一片针对警方的质疑声中，民主派立法会议员在周三（6月19日）立法会大会上，就警方是否使用过分武力的问题，提出紧急质询。保安局局长李家超指，在反修例冲突中，警方所使用的已经是最低限度武力。</p>
+<p>李家超说：“当时在前方部分示威者，不理会警方多次劝喻及警告，多次有组织以暴力冲击警方防线在别无选择的情况下，警方使用了适当及必要的武力驱散人群，控制场面，保护其他人及自身的安全。”</p>
+<p>他又指警队有机制处理投诉，而在前一天，特首林郑月娥亦多次被问到会否就警队对示威者使用过份武力道歉，她的回应同样是“香港有既定，行之有效的机制处理针对警方的投诉”。</p>
+<p><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/al-06132019080826.html/2019-06-12T084345Z_104679892_RC1B46B4DFA0_RTRMADP_3_HONGKONG-EXTRADITION.JPG" alt="2019年6月12日，香港市民反《逃犯条例》的示威活动中，抗议者被防暴警察袭击。（路透社）" title="2019年6月12日，香港市民反《逃犯条例》的示威活动中，抗议者被防暴警察袭击。（路透社）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1500px;">2019年6月12日，香港市民反《逃犯条例》的示威活动中，抗议者被防暴警察袭击。（路透社）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/al-06132019080826.html/2019-06-12T084345Z_104679892_RC1B46B4DFA0_RTRMADP_3_HONGKONG-EXTRADITION.JPG" title="2019年6月12日，香港市民反《逃犯条例》的示威活动中，抗议者被防暴警察袭击。（路透社）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p><b>关注团体：现行投诉机制</b><b>“</b><b>自己人查自己人</b><b>”</b></p>
+<p>对于林郑月娥这个说法，一直关注警察滥权行为的香港民间组织“民权观察”，成员沈伟男批评是荒谬。</p>
+<p>沈伟男说：“监警会成立十年，过往整个监警制度都被人诟病，第一就是它是自己人查自己人。投诉警察课本身就是警队的一部分，是他们才有调查权，监警会是没有调查权，这绝非行之有效的制度。近几年监警会的表现都是乏善足陈，由你看到这次如此大规模的示威，居然没有监警会的成员去现场做观察员，我完全觉得监警会是失职。”</p>
+<p>监警会全名是“独立监察警方处理投诉委员会”，由行政长官委任，负责监察警方就投诉进行的调查。根据现行制度，所有投诉警察的个案会先交由直属警务处的“投诉警察课”跟进，完成调查后将结果交给监警会覆核，但监警会本身并没有调查投诉和决定惩处的实权，只能被动地审核投诉警察课提交的报告，因此为批评是“无牙老虎”。</p>
+<p><div style="width:1500px;" class="image-inline captioned">
+ <div style="width:1500px;">
+
+   
+        <img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/ql1-06132019064545.html/000_1HG07R.jpg" alt="2019年6月12日，香港立法会外防暴警察对示威者发射催泪弹。（法新社）" title="2019年6月12日，香港立法会外防暴警察对示威者发射催泪弹。（法新社）" />
+   
+  </div>
+
+  <div class="image-caption">
+    <span style="width:1500px;">2019年6月12日，香港立法会外防暴警察对示威者发射催泪弹。（法新社）</span>
+    
+            <span class="copyright">   </span>
+    
+    
+  </div>
+  
+        
+  <div id="zoomattribute">
+     <a class="single_image" href="/mandarin/yataibaodao/gangtai/ql1-06132019064545.html/000_1HG07R.jpg" title="2019年6月12日，香港立法会外防暴警察对示威者发射催泪弹。（法新社）">
+            <img src="/rfa_resources/graphics/icon-zoom.png" />
+     </a>
+  </div> 
+  
+</div></p>
+<p>沈伟男举例，若市民遭受“速龙小队”或无法识别身份的警员暴力对待而作出投诉，投诉警察课如果不合作的话，举证的责任可能就落在市民身上，因此投诉往往石沉大海。香港“苹果日报”整理过往九年的数字，发现在现行机制下，每年只得3％至4％的针对警察的投诉最终成立，约九成受罚警员只是被警告或训谕。而观乎目前的监警会架构，基本上完全被亲政府人士把持。</p>
+<p><b>促成立独立调查委员会彻查事件</b></p>
+<p>沈伟男认为，政府应委任独立调查委员会，由法官主持，彻查警队在处理反修例示威上的部署，以及警员涉嫌滥权的行为。</p>
+<p>沈伟男说：“真相到底是如何？有没有人需要承担责任？将来如何改善？如果政府想从这方面回应市民诉求，甚至修补社会的撕裂，这一方面一定要做。”</p>
+<p>目前多名民主派议员、运输及房屋局前局长张炳良、公务员事务局前局长王永平、天主教香港教区宗座署理汤汉枢机、香港基督教协进会主席苏成溢牧师，以及中学校长会主席邓振强等，都支持成立独立委员会彻查事件。</p>
+<p> </p>
+<p>记者：吕熙    责编：胡力汉 陈美华    网编：瑞哲</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>香港;</dc:subject>
+      <dc:subject>香港;</dc:subject>
+    
+    <dc:date>2019-06-19T11:55:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/Xinwen/wul0619a-06192019073230.html">
+		<title>宣传部极速变调 播亲美电影释善意</title>
+    <link>https://www.rfa.org/mandarin/Xinwen/wul0619a-06192019073230.html</link>
+    <description></description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/Xinwen/WUL0619A-06192019065458.html/film.jpg"></img><p><span>美</span><span>中</span><span>关系因习近平和美国总统特朗普互通电话出现转机，中共宣传部门随即变调。央视其电影频道近期不断播放抗美援朝主题的电影，在19日上午突然临时改播二战时期有关中美爱情故事的电影《黄河绝恋》。</span></p>
+<p>根据影视资料，该片曾获得金鸡奖最佳女主角、百花奖最佳故事片、华表奖优秀故事片等众多奖项，讲述发生在二战后期的故事，盟军飞行员欧文因飞机被日军军舰炮击击中，懂英文的女军医安洁奉命护送他前往根据地。欧文通过与安洁的交流，对中国有了更深了解，并渐渐爱上美丽、聪慧、坚强的安洁。</p>
+<p><span>今年5月，中国央视六套（CCTV6）曾连续播放《英雄儿女》等多部抗美援朝题材的电影。据CCTV6今早发布的节目单显示，《黄河绝恋》在10时21分播出，而上周纸媒刊发的《电视节目表》则显示，CCTV6原计划在19日早上10时播出影片《我为相亲狂》，《黄河绝恋》是临时改播。</span></p>
+<p>习近平和美国总统特朗普互通电话，双方同意在下周日本大阪举行的20国集团（G20）峰会上会晤，双方的团队将启动谈判，<span>美</span><span>中紧张关系稍现缓和。</span></p>
+<p> </p>
+<p>责编 胡力汉</p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-06-19T11:35:00Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/mandarin/Xinwen/WUL0619A-06192019065458.html">
+		<title>民进党通过正式提名蔡英文总统参加明年的大选</title>
+    <link>https://www.rfa.org/mandarin/Xinwen/WUL0619A-06192019065458.html</link>
+    <description></description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/mandarin/yataibaodao/gangtai/hcm1-05202019082153.html/852182f165870520.jpg"></img><p><span>台湾的民进党19日召开第十八届第十三次中执会，会中通过2020年第15任总统提名候选人案，正式公告由蔡英文代表民进党参选2020年第15任台湾总统。</span></p>
+<p><br /> 蔡英文表示，明年大选的目标是“总统要胜选，立委一定要过半”。<br /> <br /> 她说，党内初选已经结束，下一个阶段挑战会更大，责任也会更艰辛，要集全党之力完成。明年大选的挑战不仅是民进党前所未有，也是台湾前所未有，必须集结党内最大战斗力量，争取最大的社会支持。</p>
+<p>民进党主席卓荣泰表示，未来以总统胜选为主轴，形成以继续维护国会优势为优先的大战略，同时跟社会各界的对话，而这大战略大对话，是未来两支利箭，用这两支利箭来争取未来人民最大的信任。</p>
+<p>卓荣泰说，此后中央党部与各级党部、蔡总统的竞选团队、所有立委区域及不分区提名人的竞选团队，三位一体组成黄金三角；他强调，“未来在守护台湾的行列中，赖院长一样任重道远，会跟我们并肩同行”。<br /> <br /> 蔡英文上星期四在党内总统初选民调，击败前行政院长赖清德。</p>
+<p> </p>
+<p>责编 胡力汉</p>
+<p> </p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-06-19T10:55:05Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+
+
+
+</rdf:RDF>
