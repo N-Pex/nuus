@@ -2,15 +2,15 @@
   <v-container fluid ma-0 pa-0 v-scroll:#scroll-target="onScroll">
     <v-layout>
       <v-flex xs12>
-        <v-toolbar flat fixed class="black--text toolbar" :style="cssProps">
-          <v-toolbar-side-icon @click="onClose()" class="toolbarIcon" :style="cssProps">
+        <v-app-bar flat fixed class="black--text toolbar" :style="cssProps">
+          <v-app-bar-nav-icon @click="onClose()" class="toolbarIcon" :style="cssProps">
             <v-icon>arrow_back</v-icon>
-          </v-toolbar-side-icon>
+          </v-app-bar-nav-icon>
 
           <div v-if="item != null && item.hasAudioAttachment()" class="toolbarObject">
             <v-btn
               v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == item && this.$root.mediaPlayer.isPlaying"
-              flat
+              text
               icon
               :color="playerColor"
               @click="pause()"
@@ -20,7 +20,7 @@
             </v-btn>
             <v-btn
               v-show="this.$root.mediaPlayer == null || this.$root.mediaPlayer.item != item || !this.$root.mediaPlayer.isPlaying"
-              flat
+              text
               icon
               :color="playerColor"
               @click="play()"
@@ -31,7 +31,7 @@
           </div>
 
           <v-toolbar-title class="toolbarObject">{{ item.title }}</v-toolbar-title>
-        </v-toolbar>
+        </v-app-bar>
         <v-card color="white" flat :style="cssProps">
           <v-img v-if="imageUrl != null" class="white--text" height="200px" :src="imageUrl"/>
           <Share class="share" :item="item"/>
@@ -133,9 +133,9 @@ export default {
     onScroll(e) {
       if (this.imageUrl != null) {
         let offsetTop = e.target.scrollTop;
-        this.moveFraction = Math.min(1, Math.max(0, 1 - offsetTop / 150));
+        this.moveFraction = Math.min(1, Math.max(0, 1 - offsetTop / 150)).toFixed(2);
         if (this.moveFraction < 0.2) {
-          this.fadeFraction = this.moveFraction / 0.2;
+          this.fadeFraction = (this.moveFraction / 0.2).toFixed(2);
         } else {
           this.fadeFraction = 1;
         }

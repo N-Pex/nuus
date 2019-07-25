@@ -1,11 +1,11 @@
 <template>
-  <v-container fluid grid-list-lg pb-1 pt-3 pl-0 pr-0 ma-0 style="background-color: var(--v-audioCardBackground-base)">
+  <v-container fluid grid-list-lg pb-1 pt-4 pl-0 pr-0 ma-0 style="background-color: var(--v-audioCardBackground-base)">
     <v-layout ref="card" xs12>
       <v-flex @click="itemClicked()" xs11 ml-2 mr-2 mt-0 pt-0>
         <div>
             <span class="verticalCenter">
-              <v-icon v-if="isSelected" class="selected ma-0 pa-0" small>$vuetify.icons.typeAudioPlaying</v-icon>
-              <v-icon v-else class="ma-0 pa-0" small>$vuetify.icons.typeAudio</v-icon>
+              <v-icon v-if="isSelected" class="selected ma-0 pa-0 tiny" small>$vuetify.icons.typeAudioPlaying</v-icon>
+              <v-icon v-else class="ma-0 pa-0 tiny" small>$vuetify.icons.typeAudio</v-icon>
             </span>
             &nbsp;
             <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
@@ -17,10 +17,10 @@
           <div v-html="item.description"/>
         </div>
       </v-flex>
-      <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-xs-center ma-0 pa-0">
+      <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-center ma-0 pa-0">
         <v-btn
           medium
-          flat
+          text
           icon
           ma-0
           pa-0

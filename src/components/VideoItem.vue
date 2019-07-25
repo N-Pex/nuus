@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-lg pb-1 pt-3 pl-0 pr-0 ma-0>
+  <v-container fluid grid-list-lg pb-1 pt-4 pl-0 pr-0 ma-0>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
       <v-flex xs4 mt-0 pt-0 v-if="imageUrl != null">
         <v-img height="65px" max-height="65px" :src="imageUrl" ma-0 pa-0/>
@@ -16,10 +16,10 @@
             </span>
         </div>
       </v-flex>
-      <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-xs-center ma-0 pa-0">
+      <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-center ma-0 pa-0">
         <v-btn
           medium
-          flat
+          text
           icon
           ma-0
           pa-0

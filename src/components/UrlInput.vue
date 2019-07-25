@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout text-xs-center wrap>
+    <v-layout text-center wrap>
       <v-menu offset-y data-app>
         <template v-slot:activator="{ on }">
           <v-icon v-on="on">home</v-icon>

@@ -43,7 +43,7 @@ export default class RSSParser {
 
                         // Wait until all promises are fulfilled
                         Promise.all(promises).then(function () {
-                            callback(feed, items);
+                            callback(result.feed, result.items);
                         });
                     });
                 })
@@ -98,13 +98,12 @@ export default class RSSParser {
 
     static getText = function(elt) {
         if (typeof(elt) === 'string') return elt;
-        if (typeof(elt) === 'object' && elt.hasOwnProperty('_')) return elt._;
+        if (typeof(elt) === 'object' && Object.prototype.hasOwnProperty.call(elt, '_')) return elt._;
         return null;
     }
 
     static parseData(self, channelElement, itemParentElement) {
         var items = [];
-        var index = 0;
 
         var feed = new FeedModel();
         feed.title = channelElement.title;
@@ -156,7 +155,7 @@ export default class RSSParser {
 
             // Try RDF enclosure
             if (item.enclosure == null || item.enclosure.length == 0) {
-                var enclosure = i["enc:enclosure"];
+                enclosure = i["enc:enclosure"];
                 if (Array.isArray(enclosure) && enclosure.length > 0) {
                     item.enclosure = enclosure[0].$["rdf:resource"];
                     item.enclosureType = enclosure[0].$.type;

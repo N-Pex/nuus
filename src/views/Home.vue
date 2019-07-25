@@ -1,11 +1,23 @@
 <template>
   <v-app>
-    <v-toolbar app flat color="rgba(0,0,0,0.05)">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer">
+    <v-app-bar app flat color="rgba(0,0,0,0.05)">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
         <v-icon>$vuetify.icons.logo</v-icon>
-      </v-toolbar-side-icon>
+      </v-app-bar-nav-icon>
       <v-spacer/>
       <v-toolbar-title class="headline text-uppercase">{{ title }}</v-toolbar-title>
+    </v-app-bar>
+
+    <!-- BOTTOM TOOLBAR -->
+    <v-toolbar flat absolute bottom color="#fafafa"
+      style="position:fixed; top:calc(100vh - 60px); left:0; height: 60px">
+      <v-layout row wrap align-center justify-space-between fill-height>
+        <v-btn icon><v-icon>$vuetify.icons.logo</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.categories</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.radio</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.favorites</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.more</v-icon></v-btn>
+      </v-layout>
     </v-toolbar>
 
     <v-navigation-drawer
@@ -15,15 +27,14 @@
       style="position:fixed; top:0; left:0; overflow-y:scroll;"
     >
       <v-list class="pa-1">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
+        <v-list-item>
+          <v-list-item-avatar>
             <img src="img/icons/apple-touch-icon-60x60.png">
-          </v-list-tile-avatar>
-
-          <v-list-tile-content>
-            <v-list-tile-title>RFA</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>RFA</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
 
       <v-list class="pt-0" dense>
@@ -53,15 +64,15 @@
         </v-list-tile>
         -->
 
-        <v-list-tile>
+        <v-list-item>
            <v-slider v-model="textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
-        </v-list-tile>
+        </v-list-item>
 
         <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
 
-        <v-list-tile>
+        <v-list-item>
             <v-btn block @click="showOnboarding()">Show onboarding</v-btn>
-        </v-list-tile>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -70,7 +81,7 @@
         v-bind:items="items"
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
-        class="pt-3 mainItemList"
+        class="pt-4 mainItemList"
       />
 
       <!-- Video player, current item info (including share) and a list of videos -->
@@ -421,7 +432,7 @@ export default {
 
 .fullScreenItem {
   background-color: rgb(245, 248, 239);
-  z-index: 2;
+  z-index: 20;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -431,4 +442,5 @@ export default {
   height: 100%;
   overflow-y: auto;
 }
+
 </style>

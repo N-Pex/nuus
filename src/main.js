@@ -2,7 +2,7 @@ import '@babel/polyfill'
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import './plugins/axios'
-import './plugins/vuetify'
+import vuetify from './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -37,6 +37,7 @@ Vue.instance = new Vue({
   store,
   i18n,
   render: h => h(App),
+  vuetify,
   data() {
     return {
       mediaPlayer: null,

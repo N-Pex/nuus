@@ -17,9 +17,9 @@
     <v-container fluid fill-height ma-0 pa-0>
       <v-layout column ma-0 pa-0 xs12>
         <!-- MINIMIZE AND CLOSE BUTTONS -->
-        <v-flex ma-0 pa-0 pt-3 pb-3 xs2 v-show="!isDocked" class="overlayControls">
+        <v-flex ma-0 pa-0 pt-4 pb-4 xs2 v-show="!isDocked" class="overlayControls">
           <v-btn
-            flat
+            text
             icon
             color="black"
             @click="minimize()"
@@ -31,7 +31,7 @@
             <v-icon>$vuetify.icons.collapse</v-icon>
           </v-btn>
           <v-btn
-            flat
+            text
             icon
             color="black"
             @click="close()"
@@ -81,16 +81,16 @@
         <v-flex ma-0 pa-0 pl-2 pr-2 xs3 v-show="!isDocked" shrink class="overlayControls">
           <v-container fluid fill-height pa-0 ma-0>
             <v-layout align-center justify-center row pa-0 ma-0>
-              <v-flex xs2 class="text-xs-center">
-                <v-btn flat icon color="black" @click="replay10()" class="ma-2 pa-0 small-button">
+              <v-flex xs2 class="text-center">
+                <v-btn text icon color="black" @click="replay10()" class="ma-2 pa-0 small-button">
                   <v-icon>$vuetify.icons.replay10</v-icon>
                 </v-btn>
               </v-flex>
 
-              <v-flex xs2 class="text-xs-center">
+              <v-flex xs2 class="text-center">
                 <v-btn
                   v-show="!isPlaying"
-                  flat
+                  text
                   icon
                   color="black"
                   @click="play()"
@@ -100,7 +100,7 @@
                 </v-btn>
                 <v-btn
                   v-show="isPlaying"
-                  flat
+                  text
                   icon
                   color="black"
                   @click="pause()"
@@ -110,8 +110,8 @@
                 </v-btn>
               </v-flex>
 
-              <v-flex xs2 class="text-xs-center">
-                <v-btn flat icon color="black" @click="forward10()" class="ma-2 pa-0 small-button">
+              <v-flex xs2 class="text-center">
+                <v-btn text icon color="black" @click="forward10()" class="ma-2 pa-0 small-button">
                   <v-icon>$vuetify.icons.forward10</v-icon>
                 </v-btn>
               </v-flex>
@@ -123,10 +123,10 @@
         <v-flex ma-0 pa-0 pl-2 pr-2 xs2 v-show="!isDocked" shrink class="overlayControls">
           <v-container fluid fill-height pa-0 ma-0>
             <v-layout align-center justify-center row pa-0 ma-0>
-              <v-flex xs2 class="text-xs-center">
+              <v-flex xs2 class="text-center">
                 <div class="durationText">{{ currentPlaySeconds | timeInColonFormat }}</div>
               </v-flex>
-              <v-flex xs8 class="text-xs-center">
+              <v-flex xs8 class="text-center">
                 <v-slider
                   height="4px"
                   hide-details
@@ -139,7 +139,7 @@
                   v-on:end="draggingSlider = false"
                 />
               </v-flex>
-              <v-flex xs2 class="text-xs-center">
+              <v-flex xs2 class="text-center">
                 <div class="durationText">{{ duration | timeInColonFormat }}</div>
               </v-flex>
             </v-layout>
@@ -151,41 +151,41 @@
           <Share :item="item" style="background-color:white"/>
         </v-flex>
 
-        <v-flex ma-0 pa-0 xs12 v-show="isDocked" class="overlayControls">
+        <v-flex ma-0 pa-0 xs12 v-show="isDocked" class="overlayControls" style="height: 70px">
           <v-container fluid fill-height pa-0 ma-0>
-            <v-layout align-center justify-center row pa-0 ma-0>
+            <v-layout align-center justify-center pa-0 ma-0 xs12>
               <v-flex
                 xs10
                 v-show="isDocked"
                 fill-height
-                @click="maximize()"
-                class="ml-3 text-xs-center"
+                class="ml-4 text-center"
+                @click.stop="maximize()"
               >
                 <v-btn
                   class="ma-0 pa-0"
-                  flat
+                  text
                   small
                   icon
                   color="black"
                   @click="maximize()"
                   style="min-width: 0;min-height: 0; position:relative;top:0px"
                 >
-                  <v-icon>$vuetify.icons.expand</v-icon>
+                  <v-icon class="tiny">$vuetify.icons.expand</v-icon>
                 </v-btn>
-                <div class="text-xs-left dockedTitle">{{ itemTitle }}</div>
+                <div class="text-left mediaItemBody" style="max-height:var(--v-theme-media-body-line-height-scaled);overflow:hidden">{{ itemTitle }}</div>
               </v-flex>
 
-              <v-flex xs1 v-show="isDocked" class="text-xs-center">
-                <v-btn v-show="!isPlaying" flat medium icon color="black" @click="play()">
+              <v-flex xs1 v-show="isDocked" class="text-center">
+                <v-btn v-show="!isPlaying" text medium icon color="black" @click.stop="play()">
                   <v-icon>$vuetify.icons.play</v-icon>
                 </v-btn>
-                <v-btn v-show="isPlaying" flat medium icon color="black" @click="pause()">
+                <v-btn v-show="isPlaying" text medium icon color="black" @click.stop="pause()">
                   <v-icon>$vuetify.icons.pause</v-icon>
                 </v-btn>
               </v-flex>
 
-              <v-flex xs1 v-show="isDocked" class="text-xs-center mr-3">
-                <v-btn flat medium icon color="black" @click="close()">
+              <v-flex xs1 v-show="isDocked" class="text-center mr-4">
+                <v-btn text medium icon color="black" @click.stop="close()">
                   <v-icon>$vuetify.icons.close</v-icon>
                 </v-btn>
               </v-flex>
@@ -226,14 +226,14 @@ export default {
   top: 0px;
   right: 0;
   bottom: 66%;
-  z-index: 3;
+  z-index: 30;
   transition: 0.3s;
 }
 
 .docked {
   position: fixed;
-  background-color: #fafafa;
-  top: calc(100vh - 70px);
+  background-color: #fa00fa;
+  top: calc(100vh - 130px);
   left: 0px;
   width: calc(100vw - 0px);
   height: 70px;
@@ -275,6 +275,7 @@ export default {
   font-size: var(--v-theme-body-font-size);
   line-height: var(--v-theme-body-line-height);
 }
+
 </style>
 
 

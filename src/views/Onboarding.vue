@@ -5,19 +5,19 @@
     </div>
     <div>Your language is {{ language }}</div>
     <div>Note: this page is under contruction.</div>
-    <div class="ma-3">
+    <div class="ma-4">
       <v-btn block color="orange" @click="useConfig('uyghur')">Use Uyghur</v-btn>
     </div>
-    <div class="ma-3">
+    <div class="ma-4">
       <v-btn block color="orange" @click="useConfig('burmese')">Use Burmese</v-btn>
     </div>
-    <div class="ma-3">
+    <div class="ma-4">
       <v-btn block color="orange" @click="useConfig('mandarin')">Use Mandarin</v-btn>
     </div>
-    <div class="ma-3">
+    <div class="ma-4">
       <v-btn block color="orange" @click="useConfig('cantonese')">Use Cantonese</v-btn>
     </div>
-    <div class="ma-3">
+    <div class="ma-4">
       <v-btn block color="orange" @click="useConfig('english')">Use English</v-btn>
     </div>
   </v-content>

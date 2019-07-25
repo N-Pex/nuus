@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-sm pb-2 pt-0 pl-0 pr-0 mb-5>
+  <v-container fluid grid-list-sm pb-2 pt-0 pl-0 pr-0 mb-12>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
       <v-flex
         xs1
@@ -9,7 +9,7 @@
         v-bind:class="{ 'order-xs3': odd, 'mr-2': odd, 'ml-2': !odd }"
       >
         <v-btn
-          flat
+          text
           icon
           ma-0
           pa-0
@@ -47,9 +47,9 @@
             <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
             &nbsp;
             <span class="verticalCenter">
-              <v-icon v-if="item.hasVideoAttachment()" class="ma-0 pa-0" small>$vuetify.icons.typeVideo</v-icon>
-              <v-icon v-else-if="item.hasAudioAttachment()" class="ma-0 pa-0" small>$vuetify.icons.typeAudio</v-icon>
-              <v-icon v-else class="ma-0 pa-0" small>$vuetify.icons.typeText</v-icon>
+              <v-icon v-if="item.hasVideoAttachment()" class="ma-0 pa-0 tiny" small>$vuetify.icons.typeVideo</v-icon>
+              <v-icon v-else-if="item.hasAudioAttachment()" class="ma-0 pa-0 tiny" small>$vuetify.icons.typeAudio</v-icon>
+              <v-icon v-else class="ma-0 pa-0 tiny" small>$vuetify.icons.typeText</v-icon>
             </span>
         </div>
       </v-flex>

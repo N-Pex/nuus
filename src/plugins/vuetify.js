@@ -11,17 +11,28 @@ ComponentContext.keys().forEach((componentFilePath) => {
     icons[comp.name] = { component: comp };
 });
 
-Vue.use(Vuetify, {
-  iconfont: 'md',
-  options: {
-    customProperties: true
-  },
-  theme: {
-    primary: '#232323',
-    secondary: '#949494',
-    accent: '#1b9739',
-    cardBackground: '#ffffff',
-    audioCardBackground: '#fafafa'
-  },
-  icons: icons
-})
+Vue.use(Vuetify);
+
+export default new Vuetify(
+  {
+    icons: {
+      iconfont: 'md',
+      values: icons
+    },
+    options: {
+      customProperties: true
+    },
+    theme: {
+      dark: false,
+      themes: {
+        light: {
+          primary: '#232323',
+          secondary: '#949494',
+          accent: '#1b9739',
+          cardBackground: '#ffffff',
+          audioCardBackground: '#fafafa'
+        }
+      }
+    }
+  }
+)

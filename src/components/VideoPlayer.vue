@@ -27,7 +27,7 @@
             >
               <!-- TOP PART - MINIMIZE AND CLOSE BUTTONS -->
               <v-btn
-                flat
+                text
                 icon
                 color="white"
                 @click="minimize()"
@@ -37,7 +37,7 @@
                 <v-icon medium>$vuetify.icons.collapse</v-icon>
               </v-btn>
               <v-btn
-                flat
+                text
                 icon
                 color="white"
                 @click="close()"
@@ -50,16 +50,16 @@
               <!-- MIDDLE PART - REPLAY, PLAY AND SKIP -->
               <v-container fluid fill-height pa-0 ma-0>
                 <v-layout align-center justify-center row pa-0 ma-0>
-                  <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="replay10()" class="ma-2 pa-0 small-button">
+                  <v-flex xs2 class="text-center">
+                    <v-btn text icon color="white" @click="replay10()" class="ma-2 pa-0 small-button">
                       <v-icon>$vuetify.icons.replay10</v-icon>
                     </v-btn>
                   </v-flex>
 
-                  <v-flex xs2 class="text-xs-center">
+                  <v-flex xs2 class="text-center">
                     <v-btn
                       v-show="!isPlaying"
-                      flat
+                      text
                       icon
                       color="white"
                       @click="play()"
@@ -69,7 +69,7 @@
                     </v-btn>
                     <v-btn
                       v-show="isPlaying"
-                      flat
+                      text
                       icon
                       color="white"
                       @click="pause()"
@@ -79,8 +79,8 @@
                     </v-btn>
                   </v-flex>
 
-                  <v-flex xs2 class="text-xs-center">
-                    <v-btn flat icon color="white" @click="forward10()" class="ma-2 pa-0 small-button">
+                  <v-flex xs2 class="text-center">
+                    <v-btn text icon color="white" @click="forward10()" class="ma-2 pa-0 small-button">
                       <v-icon>$vuetify.icons.forward10</v-icon>
                     </v-btn>
                   </v-flex>
@@ -103,10 +103,10 @@
             </div>
           </transition>
         </v-flex>
-        <v-flex xs7 v-show="isDocked" fill-height @click="maximize()" class="text-xs-center">
+        <v-flex xs7 v-show="isDocked" fill-height @click="maximize()" class="text-center">
           <v-btn
             class="ma-0 pa-0"
-            flat
+            text
             small
             icon
             color="black"
@@ -114,20 +114,20 @@
             style="min-width: 0;min-height: 0; position:relative;top:0px">
             <v-icon>$vuetify.icons.expand</v-icon>
           </v-btn>
-          <div class="text-xs-left dockedTitle">{{ itemTitle }}</div>
+          <div class="text-left dockedTitle">{{ itemTitle }}</div>
         </v-flex>
 
-        <v-flex xs1 v-show="isDocked" class="text-xs-center">
-          <v-btn v-show="!isPlaying" flat medium icon color="black" @click="play()">
+        <v-flex xs1 v-show="isDocked" class="text-center">
+          <v-btn v-show="!isPlaying" text medium icon color="black" @click="play()">
             <v-icon>$vuetify.icons.play</v-icon>
           </v-btn>
-          <v-btn v-show="isPlaying" flat medium icon color="black" @click="pause()">
+          <v-btn v-show="isPlaying" text medium icon color="black" @click="pause()">
             <v-icon>$vuetify.icons.pause</v-icon>
           </v-btn>
         </v-flex>
 
-        <v-flex xs1 v-show="isDocked" class="text-xs-center mr-3">
-          <v-btn flat medium icon color="black" @click="close()">
+        <v-flex xs1 v-show="isDocked" class="text-center mr-4">
+          <v-btn text medium icon color="black" @click="close()">
             <v-icon>$vuetify.icons.close</v-icon>
           </v-btn>
         </v-flex>
@@ -156,7 +156,7 @@ export default {
   right: 0;
   bottom: 75%;
   background-color: #000;
-  z-index: 2;
+  z-index: 20;
   transition: 0.3s;
 }
 

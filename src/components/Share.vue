@@ -1,23 +1,23 @@
 <template>
   <v-container fluid ma-0 pa-1>
-    <v-layout text-xs-center wrap>
+    <v-layout text-center wrap>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon medium color="black">
+        <v-btn class="tiny-button" text icon medium color="black">
           <v-icon>$vuetify.icons.share</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon medium color="black">
+        <v-btn class="tiny-button" text icon medium color="black">
           <v-icon>$vuetify.icons.facebook</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon medium color="black">
+        <v-btn class="tiny-button" text icon medium color="black">
           <v-icon>$vuetify.icons.download</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" flat icon medium color="black" @click="toggleFavorite()">
+        <v-btn class="tiny-button" text icon medium color="black" @click="toggleFavorite()">
           <v-icon v-if="isFavorite" color="green">$vuetify.icons.favorite</v-icon>
           <v-icon v-else color="black">$vuetify.icons.favoriteNot</v-icon>
         </v-btn>
