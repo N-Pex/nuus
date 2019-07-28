@@ -140,7 +140,7 @@ export default {
     onSeeked() {
       // Save the current playhead position for this video (identified by url)
       //
-      if (this.item != null && this.item.enclosure != null) {
+      if (this.item != null && this.item.enclosure != null && this.$refs.player != null) {
         var url = this.item.enclosure;
         var time = this.$refs.player.currentTime;
         localStorage.setItem("playhead:" + url, time);

@@ -24,23 +24,23 @@
             color="black"
             @click="minimize()"
             ma-2
-            pa-0
+            pa-2
             class="tiny-button"
-            style="position: absolute; left: 0; top: 0"
+            style="position: absolute; left: 10px; top: 10px"
           >
-            <v-icon>$vuetify.icons.collapse</v-icon>
+            <v-icon class="small">$vuetify.icons.collapse</v-icon>
           </v-btn>
           <v-btn
             text
             icon
             color="black"
             @click="close()"
-            ma2-
-            pa-0
+            ma-2
+            pa-2
             class="tiny-button"
-            style="position: absolute; right: 0; top: 0"
+            style="position: absolute; right: 10px; top: 10px"
           >
-            <v-icon>$vuetify.icons.close</v-icon>
+            <v-icon class="small">$vuetify.icons.close</v-icon>
           </v-btn>
         </v-flex>
 
@@ -133,6 +133,8 @@
                   color="green lighten-1"
                   class="progress ma-2 pa-0"
                   background-color="green lighten-5"
+                 track-color="green lighten-5"
+                  track-fill-color="green lighten-1"
                   :value="currentPlayPercentage"
                   v-on:change="seekToPercentage($event)"
                   v-on:start="draggingSlider = true"
@@ -177,16 +179,16 @@
 
               <v-flex xs1 v-show="isDocked" class="text-center">
                 <v-btn v-show="!isPlaying" text medium icon color="black" @click.stop="play()">
-                  <v-icon>$vuetify.icons.play</v-icon>
+                  <v-icon class="small">$vuetify.icons.play</v-icon>
                 </v-btn>
                 <v-btn v-show="isPlaying" text medium icon color="black" @click.stop="pause()">
-                  <v-icon>$vuetify.icons.pause</v-icon>
+                  <v-icon class="small">$vuetify.icons.pause</v-icon>
                 </v-btn>
               </v-flex>
 
               <v-flex xs1 v-show="isDocked" class="text-center mr-4">
                 <v-btn text medium icon color="black" @click.stop="close()">
-                  <v-icon>$vuetify.icons.close</v-icon>
+                  <v-icon class="small">$vuetify.icons.close</v-icon>
                 </v-btn>
               </v-flex>
             </v-layout>
@@ -221,7 +223,7 @@ export default {
 
 <style scoped>
 .playerRoot {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0px;
   right: 0;
@@ -231,11 +233,11 @@ export default {
 }
 
 .docked {
-  position: fixed;
-  background-color: #fa00fa;
-  top: calc(100vh - 130px);
+  position: absolute;
+  background-color: #fafafa;
+  top: calc(100% - 70px);
   left: 0px;
-  width: calc(100vw - 0px);
+  width: 100%;
   height: 70px;
   border: 1px solid gray;
 }

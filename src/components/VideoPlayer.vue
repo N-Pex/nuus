@@ -94,6 +94,8 @@
                   color="green lighten-1"
                   class="progress ma-0 pa-0"
                   background-color="green lighten-5"
+                  track-color="green lighten-5"
+                  track-fill-color="green lighten-1"
                   style="background-color:transparent;position: absolute; bottom: 0; left: 0; right: 0"
                   :value="currentPlayPercentage"
                   v-on:change="seekToPercentage($event)"
@@ -112,23 +114,23 @@
             color="black"
             @click="maximize()"
             style="min-width: 0;min-height: 0; position:relative;top:0px">
-            <v-icon>$vuetify.icons.expand</v-icon>
+            <v-icon class="tiny">$vuetify.icons.expand</v-icon>
           </v-btn>
-          <div class="text-left dockedTitle">{{ itemTitle }}</div>
+                <div class="text-left mediaItemBody" style="max-height:var(--v-theme-media-body-line-height-scaled);overflow:hidden">{{ itemTitle }}</div>
         </v-flex>
 
         <v-flex xs1 v-show="isDocked" class="text-center">
-          <v-btn v-show="!isPlaying" text medium icon color="black" @click="play()">
-            <v-icon>$vuetify.icons.play</v-icon>
+          <v-btn v-show="!isPlaying" text medium icon color="black" @click.stop="play()">
+            <v-icon class="small">$vuetify.icons.play</v-icon>
           </v-btn>
-          <v-btn v-show="isPlaying" text medium icon color="black" @click="pause()">
-            <v-icon>$vuetify.icons.pause</v-icon>
+          <v-btn v-show="isPlaying" text medium icon color="black" @click.stop="pause()">
+            <v-icon class="small">$vuetify.icons.pause</v-icon>
           </v-btn>
         </v-flex>
 
-        <v-flex xs1 v-show="isDocked" class="text-center mr-4">
+        <v-flex xs1 v-show="isDocked" class="text-center">
           <v-btn text medium icon color="black" @click="close()">
-            <v-icon>$vuetify.icons.close</v-icon>
+            <v-icon class="small">$vuetify.icons.close</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
@@ -163,9 +165,9 @@ export default {
 .docked {
   position: absolute;
   background-color: #fafafa;
-  top: calc(100vh - 70px);
+  top: calc(100% - 70px);
   left: 0px;
-  width: calc(100vw - 0px);
+  width: 100%;
   height: 70px;
   border: 1px solid gray;
 }

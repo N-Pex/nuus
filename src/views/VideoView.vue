@@ -1,22 +1,4 @@
 <template>
-  <v-card class="mainRoot" elevation="10">
-    <v-app-bar flat color="rgba(0,255,0,0.55)">
-      <v-app-bar-nav-icon>
-        <v-icon>$vuetify.icons.logo</v-icon>
-      </v-app-bar-nav-icon>
-      <v-spacer/>
-      <v-toolbar-title class="headline text-uppercase">{{ title }}</v-toolbar-title>
-    </v-app-bar>
-    
-    <div class="mainItemList">
-      <ItemList
-        v-bind:items="items"
-        v-on:itemClicked="itemClicked($event)"
-        v-on:playItem="playItem($event)"
-        class="pt-4"
-      />
-    </div>
-
     <div class="videoItemList">
       <!-- Video player, current item info (including share) and a list of videos -->
       <VideoPlayer
@@ -72,43 +54,17 @@
         class="videoList"
       />
     </div>
-
-    <div class="audioItemList">
-      <AudioPlayer
-        ref="audioPlayer"
-        :isDocked="this.$root.mediaPlayerDocked"
-        v-on:close="onClose()"
-        v-on:minimize="onMinimize()"
-        v-on:maximize="onMaximize()"
-        v-on:openFullscreen="itemClicked($event)"
-        v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.audioPlayer && !this.$root.mediaPlayerInvisible"
-      />
-
-      <ItemList
-        listType="audio"
-        :items="items | audioItems"
-        v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasAudioAttachment()"
-        :selectedItem="playingMediaItem"
-        v-on:playItem="playItemFromMediaList($event)"
-        v-on:itemClicked="playItemFromMediaList($event)"
-        class="audioList"
-      />
-    </div>
   </v-card>
 </template>
 
 <script>
-import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
 import Item from "../components/Item";
 import ItemModel from "../models/itemmodel";
 import VideoPlayer from "../components/VideoPlayer";
-import AudioPlayer from "../components/AudioPlayer";
 import Share from "../components/Share";
-import FullScreenItem from "../components/FullScreenItem";
 import Date from "../components/Date";
-import VideoView from "../views/VideoView";
-
+/*
 import axios from "axios";
 import sanitizeHTML from "sanitize-html";
 import db from "../database";
@@ -116,29 +72,29 @@ import rssparser from "../services/rssparser";
 import velocity from "velocity-animate";
 import flavors from "../config";
 import router from "../router";
+*/
 
 export default {
-  name: "Home",
+  name: "VideoView",
   components: {
-    UrlInput,
+//    UrlInput,
     ItemList,
     Item,
     VideoPlayer,
-    AudioPlayer,
+//    AudioPlayer,
     Share,
-    FullScreenItem,
-    Date,
-    VideoView
+//    FullScreenItem,
+    Date
+  },
+  props: {
+    items: {
+      type: Array,
+      default: function() {
+        return [];
+      }
+    },
   },
   methods: {
-    urlUpdated(url) {
-      this.url = url;
-      const self = this;
-      rssparser.fetchUrl(url, function(feed, items) {
-        self.title = feed.title;
-        self.items = items;
-      });
-    },
     itemClicked(eventInfo) {
       console.log(
         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
@@ -193,74 +149,13 @@ export default {
         this.showMediaList = true;
       }
     },
-
-    showOnboarding() {
-      router.push({ name: "onboarding" });
-    },
-
-    openFullscreen(item) {
-      console.log("Open full screen");
-    }
-  },
-
-  filters: {
-    videoItems(items) {
-      return items.filter(function(i) {
-        return i.hasVideoAttachment();
-      });
-    },
-    audioItems(items) {
-      return items.filter(function(i) {
-        return i.hasAudioAttachment();
-      });
-    }
-  },
-
-  mounted() {
-    // Store the audio player instance.
-    this.$root.audioPlayer = this.$refs.audioPlayer;
-
-    let flavor = flavors[this.$store.state.flavor];
-
-    // Set RTL from config
-    this.$vuetify.rtl = flavor.isRTL;
-
-    // Insert link to font style sheet so the web font loader will find the fonts.
-    if (flavor.webFontCssFile != "") {
-      let file = document.createElement("link");
-      file.rel = "stylesheet";
-      file.type = "text/css";
-      file.href = flavor.webFontCssFile;
-      document.head.appendChild(file);
-    }
-    var WebFont = require("webfontloader");
-    WebFont.load(flavor.webFontConfig);
-    if (process.env.NODE_ENV === 'production') {
-      // For production builds, default to first url in config.
-      this.urlUpdated(flavor.feeds[0].url);
-    } else {
-      this.urlUpdated("./assets/nasa.xml");
-    }
   },
 
   data() {
     return {
-      url: "Please enter a URL",
-      items: [],
       showMediaList: false,
-      playingMediaItem: null,
-      title: "",
+      playingMediaItem: null
     };
-  },
-  computed: {
-    textSizeAdjustment: {
-      get: function() {
-        return this.$store.state.textSizeAdjustment;
-      },
-      set: function(val) {
-        this.$store.commit("setTextSizeAdjustment", val);
-      }
-    }
   }
 };
 </script>
@@ -271,50 +166,22 @@ export default {
 </style>
 
 <style>
-.mainRoot {
-  width: 100%;
-  height: 100%;
-  overflow-y: none;
-}
-
-.mainItemList {
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-}
-
-.audioItemList {
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden;
-}
 
 .videoListCurrentItem {
   background-color: #ffffff;
   position: absolute;
   top: 25%;
-  bottom: 57%;
-  right: 0;
-  left: 0;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-.videoList {
-  background-color: #ffffff;
-  position: absolute;
-  top: 43%;
-  bottom: 0;
+  bottom: 60%;
   right: 0;
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.audioList {
+.videoList {
   background-color: #ffffff;
   position: absolute;
-  top: 34%;
+  top: 40%;
   bottom: 0;
   right: 0;
   left: 0;

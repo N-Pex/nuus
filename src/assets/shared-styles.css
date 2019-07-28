@@ -28,6 +28,12 @@
     height: 12px !important;
 }
 
+.v-icon.small {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+
 /* Used for vertically centering spans */
 span.verticalCenter {
     display:inline-block; 

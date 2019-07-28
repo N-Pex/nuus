@@ -28,8 +28,8 @@
           style="min-width: 0"
           @click="toggleFavorite()"
         >
-          <v-icon v-if="isFavorite" class="ma-0 pa-0" color="green">$vuetify.icons.favorite</v-icon>
-          <v-icon v-else class="ma-0 pa-0" color="black">$vuetify.icons.favoriteNot</v-icon>
+          <v-icon v-if="isFavorite" class="ma-0 pa-0 small" color="green">$vuetify.icons.favorite</v-icon>
+          <v-icon v-else class="ma-0 pa-0 small" color="black">$vuetify.icons.favoriteNot</v-icon>
         </v-btn>
       </v-flex>
     </v-layout>

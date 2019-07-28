@@ -1,8 +1,8 @@
 <template>
   <v-container fluid grid-list-lg pb-1 pt-4 pl-0 pr-0 ma-0>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
-      <v-flex xs4 mt-0 pt-0 v-if="imageUrl != null">
-        <v-img height="65px" max-height="65px" :src="imageUrl" ma-0 pa-0/>
+      <v-flex xs4 mt-0 pt-0>
+        <v-img aspect-ratio="1.77" max-height="70px" :src="imageUrl" ma-0 pa-0 v-if="imageUrl != null" />
       </v-flex>
       <v-flex @click="itemClicked()" xs7 ml-2 mr-2 mt-0 pt-0>
         <div style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
@@ -12,7 +12,7 @@
             <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
             &nbsp;
             <span class="verticalCenter">
-              <v-icon class="ma-0 pa-0" small>$vuetify.icons.typeVideo</v-icon>
+              <v-icon class="ma-0 pa-0 tiny" small>$vuetify.icons.typeVideo</v-icon>
             </span>
         </div>
       </v-flex>
@@ -27,8 +27,8 @@
           style="min-width: 0"
           @click="toggleFavorite()"
         >
-          <v-icon v-if="isFavorite" class="ma-0 pa-0" color="green">$vuetify.icons.favorite</v-icon>
-          <v-icon v-else class="ma-0 pa-0" color="black">$vuetify.icons.favoriteNot</v-icon>
+          <v-icon v-if="isFavorite" class="ma-0 pa-0 small" color="green">$vuetify.icons.favorite</v-icon>
+          <v-icon v-else class="ma-0 pa-0 small" color="black">$vuetify.icons.favoriteNot</v-icon>
         </v-btn>
       </v-flex>
     </v-layout>
