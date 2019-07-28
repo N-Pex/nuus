@@ -1,23 +1,89 @@
 <template>
-  <v-card class="mainRoot" elevation="10">
-    <v-app-bar flat color="rgba(0,255,0,0.55)">
-      <v-app-bar-nav-icon>
+  <v-app>
+    <v-app-bar app flat color="rgba(0,0,0,0.05)">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
         <v-icon>$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
       <v-spacer/>
       <v-toolbar-title class="headline text-uppercase">{{ title }}</v-toolbar-title>
     </v-app-bar>
-    
-    <div class="mainItemList">
+
+    <!-- BOTTOM TOOLBAR -->
+    <v-toolbar flat absolute bottom color="#fafafa"
+      style="position:fixed; top:calc(100vh - 60px); left:0; height: 60px">
+      <v-layout row wrap align-center justify-space-between fill-height>
+        <v-btn icon><v-icon>$vuetify.icons.logo</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.categories</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.radio</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.favorites</v-icon></v-btn>
+        <v-btn icon><v-icon>$vuetify.icons.more</v-icon></v-btn>
+      </v-layout>
+    </v-toolbar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      style="position:fixed; top:0; left:0; overflow-y:scroll;"
+    >
+      <v-list class="pa-1">
+        <v-list-item>
+          <v-list-item-avatar>
+            <img src="img/icons/apple-touch-icon-60x60.png">
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>RFA</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-list class="pt-0" dense>
+        <v-divider></v-divider>
+
+        <!--
+        <v-list-tile v-for="item in menuItems" :key="item.title">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        -->
+        <!--
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-checkbox v-model="$root.showMedia"></v-checkbox>
+          </v-list-tile-action>
+
+          <v-list-tile-content @click="$root.showMedia = !$root.showMedia">
+            <v-list-tile-title>Show media</v-list-tile-title>
+            <v-list-tile-sub-title>Show images, video and audio</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        -->
+
+        <v-list-item>
+           <v-slider v-model="textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
+        </v-list-item>
+
+        <UrlInput v-on:update:url="urlUpdated($event)" v-bind:url="url"/>
+
+        <v-list-item>
+            <v-btn block @click="showOnboarding()">Show onboarding</v-btn>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-content>
       <ItemList
         v-bind:items="items"
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
-        class="pt-4"
+        class="pt-4 mainItemList"
       />
-    </div>
 
-    <div class="videoItemList">
       <!-- Video player, current item info (including share) and a list of videos -->
       <VideoPlayer
         ref="videoPlayer"
@@ -71,8 +137,7 @@
         v-on:itemClicked="playItemFromMediaList($event)"
         class="videoList"
       />
-    </div>
-    <div class="audioItemList">
+
       <AudioPlayer
         ref="audioPlayer"
         :isDocked="this.$root.mediaPlayerDocked"
@@ -92,8 +157,12 @@
         v-on:itemClicked="playItemFromMediaList($event)"
         class="audioList"
       />
-    </div>
-  </v-card>
+
+      <div v-if="showItemFullscreen" class="fullScreenItem" id="scroll-target">
+        <FullScreenItem v-on:close="onCloseFullscreen()" :item="itemFullscreen"/>
+      </div>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -140,7 +209,10 @@ export default {
       console.log(
         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
       );
-      this.$router.push("/item/1");
+      this.itemFullscreen = eventInfo.item;
+      this.itemRect = eventInfo.rect;
+      this.showItemFullscreen = true;
+      //this.$refs.videoPlayer.item = eventInfo.item;
     },
 
     setMediaPlayer(mediaPlayer) {
@@ -154,6 +226,7 @@ export default {
 
     playItem(eventInfo) {
       console.log("Play item " + eventInfo.item.title);
+      this.itemFullscreen = eventInfo.item;
       if (eventInfo.item.hasVideoAttachment()) {
         this.$root.mediaPlayerDocked = false;
         this.setMediaPlayer(this.$refs.videoPlayer);
@@ -170,8 +243,19 @@ export default {
     },
 
     playItemFromMediaList(eventInfo) {
+      this.itemFullscreen = eventInfo.item;
       this.$root.mediaPlayer.load(eventInfo.item, true);
       this.playingMediaItem = eventInfo.item;
+    },
+
+    itemCloseClicked(eventInfo) {
+      this.showItemFullscreen = false;
+    },
+
+    onCloseFullscreen() {
+      this.showItemFullscreen = false;
+      this.$root.mediaPlayerDocked = true;
+      this.$root.mediaPlayerInvisible = false;
     },
 
     onClose() {
@@ -244,10 +328,39 @@ export default {
     return {
       url: "Please enter a URL",
       items: [],
+      drawer: null,
+      itemRect: new DOMRect(0, 0, 0, 0),
+      itemFullscreen: null,
+      showItemFullscreen: false,
       showMediaList: false,
       playingMediaItem: null,
       title: "",
+      menuItems: [
+        /*
+        { title: 'Home', icon: 'dashboard' },
+        { title: 'About', icon: 'question_answer' }
+        */
+      ]
+      //
     };
+  },
+  watch: {
+    showItemFullscreen: function(isOpen) {
+      document
+        .querySelector("html")
+        .classList.toggle(
+          "application--dialog-opened",
+          this.showItemFullscreen || this.showMediaList
+        );
+    },
+    showMediaList: function(isOpen) {
+      document
+        .querySelector("html")
+        .classList.toggle(
+          "application--dialog-opened",
+          this.showItemFullscreen || this.showMediaList
+        );
+    }
   },
   computed: {
     textSizeAdjustment: {
@@ -268,21 +381,25 @@ export default {
 </style>
 
 <style>
-.mainRoot {
-  width: 100%;
-  height: 100%;
-  overflow-y: none;
+.application--dialog-opened {
+  overflow: hidden;
 }
 
-.mainItemList, .videoxxItemList, .audioxItemList {
+.mainItemList {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  padding-top: 100px !important;
 }
 
 .videoListCurrentItem {
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   top: 25%;
   bottom: 60%;
   right: 0;
@@ -293,7 +410,7 @@ export default {
 
 .videoList {
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   top: 40%;
   bottom: 0;
   right: 0;
@@ -304,13 +421,26 @@ export default {
 
 .audioList {
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   top: 34%;
   bottom: 0;
   right: 0;
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.fullScreenItem {
+  background-color: rgb(245, 248, 239);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 
 </style>

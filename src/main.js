@@ -18,19 +18,19 @@ if (!Array.isArray) {
   };
 }
 
-router.beforeEach((to, from, next) => {
-  console.log("Before router redir " + store.state.onboarded);
-  if (to.path.startsWith("/onboarding") || store.state.onboarded) {
-    next();
-  } else {
-    // Not onboarded, redirect!
-    console.log("Redirect to onboarding");
-    next({
-      path: '/onboarding',
-      params: { nextUrl: to.fullPath }
-    })
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   console.log("Before router redir " + store.state.onboarded);
+//   if (to.path.startsWith("/onboarding") || store.state.onboarded) {
+//     next();
+//   } else {
+//     // Not onboarded, redirect!
+//     console.log("Redirect to onboarding");
+//     next({
+//       path: '/onboarding',
+//       params: { nextUrl: to.fullPath }
+//     })
+//   }
+// })
 
 Vue.instance = new Vue({
   router,

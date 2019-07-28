@@ -150,7 +150,7 @@ export default {
 
 <style scoped>
 .playerRoot {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0px;
   right: 0;
@@ -161,7 +161,7 @@ export default {
 }
 
 .docked {
-  position: fixed;
+  position: absolute;
   background-color: #fafafa;
   top: calc(100vh - 70px);
   left: 0px;
