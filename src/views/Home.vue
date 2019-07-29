@@ -4,13 +4,27 @@
       <v-app-bar-nav-icon>
         <v-icon>$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
-      <v-spacer/>
+      <v-spacer />
       <v-toolbar-title class="headline text-uppercase">{{ title }}</v-toolbar-title>
     </v-app-bar>
-    
-    <div class="mainItemList">
+
+    <div class="mainItemList" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
+      <!-- IF headerTags prop is set, show a header -->
+      <div v-if="headerType != null" class="mainListHeader mainItemListHeaderTop pa-5">{{ headerTitle }}</div>
+      <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 20">
+        <v-chip-group v-if="headerType == 'saved'">
+          <v-chip :color="tag == currentHeaderTag ? 'green' : 'transparent'" :text-color="tag == currentHeaderTag ? 'white' : 'green'" label v-for="tag in headerTagsSaved" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+        </v-chip-group>
+        <v-chip-group v-else-if="headerType == 'categories'">
+          <v-chip :color="tag == currentHeaderTag ? 'green' : 'transparent'" :text-color="tag == currentHeaderTag ? 'white' : 'green'" label v-for="tag in headerTagsCategories" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+        </v-chip-group>
+      </div>
+      <div v-if="headerType != null" class="mainListHeader mainItemListHeaderBottom" />
+      <!-- End of header -->
+
+
       <ItemList
-        v-bind:items="items"
+        v-bind:items="filteredItems"
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
         class="pt-4"
@@ -37,15 +51,9 @@
         v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasVideoAttachment()"
       >
         <v-layout xs12>
-          <v-flex
-            xs12
-            ml-2
-            mr-2
-            mt-0
-            pt-0
-          >
+          <v-flex xs12 ml-2 mr-2 mt-0 pt-0>
             <div>
-              <Date class="itemDate verticalCenter" :date="playingMediaItem.pubDate"/>
+              <Date class="itemDate verticalCenter" :date="playingMediaItem.pubDate" />
             </div>
             <div
               class="mediaItemTitle"
@@ -64,7 +72,7 @@
       </v-container>
       <ItemList
         listType="video"
-        :items="items | videoItems"
+        :items="filteredItems | videoItems"
         v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasVideoAttachment()"
         :selectedItem="playingMediaItem"
         v-on:playItem="playItemFromMediaList($event)"
@@ -86,7 +94,7 @@
 
       <ItemList
         listType="audio"
-        :items="items | audioItems"
+        :items="filteredItems | audioItems"
         v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasAudioAttachment()"
         :selectedItem="playingMediaItem"
         v-on:playItem="playItemFromMediaList($event)"
@@ -130,8 +138,13 @@ export default {
     Date,
     VideoView
   },
+  props: {
+    headerTitle: null,
+    headerType: null
+  },
   methods: {
     urlUpdated(url) {
+      console.log("PARSE URL!!!!!!!!!!");
       this.url = url;
       const self = this;
       rssparser.fetchUrl(url, function(feed, items) {
@@ -200,6 +213,32 @@ export default {
 
     openFullscreen(item) {
       console.log("Open full screen");
+    },
+
+    onHeaderScroll(e) {
+      let offsetTop = e.target.scrollTop;
+      this.headerScrollFraction = Math.min(
+        1,
+        Math.max(0, 1 - offsetTop / 120)
+      ).toFixed(2);
+    },
+
+    onHeaderTag(tag) {
+      console.log("Tag selected: " + tag);
+      this.currentHeaderTag = tag;
+    },
+
+    filterItems() {
+      console.log("Filter items");
+      this.filteredItems = this.items.filter(function(i) {
+        return Math.random() > 0.5;
+      });
+    },
+
+    scrollToTop() {
+      //TODO - call this onShow or similar, when tab is changed
+      console.log("Updated, scroll to top");
+      this.$refs.mainItemList.scrollTop = 0;
     }
   },
 
@@ -213,6 +252,26 @@ export default {
       return items.filter(function(i) {
         return i.hasAudioAttachment();
       });
+    }
+  },
+
+  watch: {
+    items: function() {
+      this.filterItems();
+    },
+    headerType: function() {
+      console.log("Header type changed to " + this.headerType);
+      if (this.headerType == 'saved') {
+        this.currentHeaderTag = this.headerTagsSaved[0];
+      } else if (this.headerType == 'categories') {
+        this.currentHeaderTag = this.headerTagsCategories[0];
+      } else {
+        this.currentHeaderTag = null;
+      }
+    },
+    currentHeaderTag: function() {
+      console.log("Header tag changed to " + this.currentHeaderTag);
+      this.filterItems();
     }
   },
 
@@ -235,7 +294,7 @@ export default {
     }
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === "production") {
       // For production builds, default to first url in config.
       this.urlUpdated(flavor.feeds[0].url);
     } else {
@@ -247,12 +306,22 @@ export default {
     return {
       url: "Please enter a URL",
       items: [],
+      filteredItems: [],
       showMediaList: false,
       playingMediaItem: null,
       title: "",
+      headerTagsSaved: ['Saved 1','Saved 2'],
+      headerTagsCategories: ['Cat1','Cat2','Cat3'],
+      headerScrollFraction: 1,
+      currentHeaderTag: null
     };
   },
   computed: {
+    cssProps() {
+      return {
+        "--v-header-scroll-fraction": this.headerScrollFraction
+      };
+    },
     textSizeAdjustment: {
       get: function() {
         return this.$store.state.textSizeAdjustment;
@@ -320,6 +389,33 @@ export default {
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.mainListHeader {
+  /* ADDAB8 */
+  background-color: rgba(173, 218, 184, var(--v-header-scroll-fraction));
+  background-color: rgba(
+    calc(255 - 82 * var(--v-header-scroll-fraction)),
+    calc(255 - 38 * var(--v-header-scroll-fraction)),
+    calc(255 - 71 * var(--v-header-scroll-fraction)),
+    1
+  );
+}
+
+.mainItemListHeaderTop {
+  height: 120px;
+}
+
+.mainItemListHeaderBottom {
+  position: sticky;
+  top: 0px;
+  height: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.activeChip {
+  background-color: green;
+  color: white;
 }
 
 </style>

@@ -26,8 +26,14 @@ export default new Router({
         {
           path: '/categories',
           name: 'categories',
-          component: () => import('./views/Categories.vue'),
-          props: true
+          component: () => import('./views/Home.vue'),
+          props: { headerType: 'categories', headerTitle: 'SECTIONS' }
+        },
+        {
+          path: '/saved',
+          name: 'saved',
+          component: () => import('./views/Home.vue'),
+          props: { headerType: 'saved', headerTitle: 'SAVED' }
         }
       ]
     },

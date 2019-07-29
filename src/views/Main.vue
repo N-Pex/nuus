@@ -6,9 +6,12 @@
     </transition>
     </div>
 
-    <v-bottom-navigation fixed height="80px" v-model="activeTab" color="red" class="navigationBar">
-      <v-btn to="/home" replace>Home</v-btn>
-      <v-btn to="/categories" replace>Categories</v-btn>
+    <v-bottom-navigation fixed height="60px" v-model="activeTab" color="red" class="navigationBar">
+      <v-btn to="/home" replace><v-icon class="small">$vuetify.icons.logo</v-icon></v-btn>
+      <v-btn to="/categories" replace><v-icon class="small">$vuetify.icons.categories</v-icon></v-btn>
+      <v-btn to="/radio" replace><v-icon class="small">$vuetify.icons.radio</v-icon></v-btn>
+      <v-btn to="/saved" replace><v-icon class="small">$vuetify.icons.favorites</v-icon></v-btn>
+      <v-btn><v-icon class="small">$vuetify.icons.more</v-icon></v-btn>
     </v-bottom-navigation>
   </div>
 </template>
@@ -42,7 +45,7 @@ export default {
   position: fixed;
   top: 0px;
   left: 0px;
-  bottom: 80px;
+  bottom: 60px;
   right: 0px;
   overflow-y: hidden;
 }

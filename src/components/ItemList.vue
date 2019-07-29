@@ -1,6 +1,5 @@
 <template>
-  <v-container class="ma-0 pa-0" ref="container">
-    <v-layout column>
+  <div class="ma-0 pa-0" ref="container">
       <v-list v-if="listType == 'video'" ref="list">
         <VideoItem
           v-for="(item, index) in items"
@@ -41,8 +40,7 @@
           v-on:playItem="playItem($event)"
         />
       </v-list>
-    </v-layout>
-  </v-container>
+      </div>
 </template>
 
 
@@ -94,7 +92,7 @@ export default {
           let element =
             list.$children[self.items.indexOf(self.selectedItem)].$el;
           if (element != null) {
-            element.scrollIntoView(true);
+            self.$el.scrollTop = Math.floor (element.offsetTop);
           }
         });
       }
