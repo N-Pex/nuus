@@ -15,7 +15,7 @@ export default class ItemModel extends Object {
     enclosure = "";
     enclosureType = "";
 
-    hasVideoAttachment = function() {
+    /*hasVideoAttachment = function() {
         return (
             this.enclosureType != null &&
             this.enclosureType.indexOf("video") === 0
@@ -26,5 +26,5 @@ export default class ItemModel extends Object {
             this.enclosureType != null &&
             this.enclosureType.indexOf("audio") === 0
         );
-    }
+    }*/
 }

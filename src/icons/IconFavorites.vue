@@ -16,7 +16,11 @@ export default {
 </script>
 
 <style scoped>
-g {
+g, #Shape {
     fill: currentColor !important;
+}
+
+path {
+    stroke: currentColor !important;
 }
 </style>

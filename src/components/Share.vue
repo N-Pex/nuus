@@ -64,7 +64,7 @@ export default {
     toggleFavorite() {
       const self = this;
       db.items
-        .put({ id: this.item.guid, favorite: !this.isFavorite })
+        .put({ id: this.item.guid, favorite: !this.isFavorite, item: this.item })
         .then(item => {
           self.isFavorite = !self.isFavorite;
         })

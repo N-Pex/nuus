@@ -6,6 +6,7 @@
 
 <script>
 import flavors from "./config";
+import ItemModel from "./models/itemmodel";
 
 // Make sure Array.isArray is defined
 if (!Array.isArray) {
@@ -13,6 +14,26 @@ if (!Array.isArray) {
     return Object.prototype.toString.call(arg) === "[object Array]";
   };
 }
+
+var temp = new ItemModel();
+Object.defineProperty(ItemModel.prototype, 'hasVideoAttachment', {
+     enumerable: false,
+     value: function () {
+        return (
+            this.enclosureType != null &&
+            this.enclosureType.indexOf("video") === 0
+        );
+       }
+});
+Object.defineProperty(ItemModel.prototype, 'hasAudioAttachment', {
+     enumerable: false,
+     value: function () {
+        return (
+            this.enclosureType != null &&
+            this.enclosureType.indexOf("audio") === 0
+        );
+       }
+});
 
 export default {
   name: "App",

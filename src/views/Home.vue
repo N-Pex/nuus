@@ -1,22 +1,22 @@
 <template>
   <v-card class="mainRoot" elevation="10">
-    <v-app-bar flat color="rgba(0,255,0,0.55)">
+    <v-app-bar flat color="#fafafa">
       <v-app-bar-nav-icon>
-        <v-icon>$vuetify.icons.logo</v-icon>
+        <v-icon color="#1B9739">$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
       <v-spacer />
-      <v-toolbar-title class="headline text-uppercase">{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="feedTitle text-uppercase">{{ title }}</v-toolbar-title>
     </v-app-bar>
 
     <div class="mainItemList" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
       <!-- IF headerTags prop is set, show a header -->
-      <div v-if="headerType != null" class="mainListHeader mainItemListHeaderTop pa-5">{{ headerTitle }}</div>
-      <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 20">
+      <div v-if="headerType != null" class="mainListHeader mainItemListHeaderTop pa-5 pt-8 headerTitle">{{ headerTitle }}</div>
+      <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 5">
         <v-chip-group v-if="headerType == 'saved'">
-          <v-chip :color="tag == currentHeaderTag ? 'green' : 'transparent'" :text-color="tag == currentHeaderTag ? 'white' : 'green'" label v-for="tag in headerTagsSaved" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+          <v-chip class="text-uppercase" :color="currentHeaderTag == tag ? 'green' : 'transparent'" :text-color="currentHeaderTag == tag ? 'white' : 'green'" label v-for="tag in headerTagsSaved" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
         </v-chip-group>
         <v-chip-group v-else-if="headerType == 'categories'">
-          <v-chip :color="tag == currentHeaderTag ? 'green' : 'transparent'" :text-color="tag == currentHeaderTag ? 'white' : 'green'" label v-for="tag in headerTagsCategories" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+          <v-chip class="text-uppercase" :color="currentHeaderTag == tag ? 'green' : 'transparent'" :text-color="currentHeaderTag == tag ? 'white' : 'green'" label v-for="tag in headerTagsCategories" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
         </v-chip-group>
       </div>
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderBottom" />
@@ -235,6 +235,16 @@ export default {
       });
     },
 
+    updateHeader() {
+      if (this.headerType == 'saved') {
+        this.currentHeaderTag = this.headerTagsSaved[0];
+      } else if (this.headerType == 'categories') {
+        this.currentHeaderTag = this.headerTagsCategories[0];
+      } else {
+        this.currentHeaderTag = null;
+      }
+    },
+
     scrollToTop() {
       //TODO - call this onShow or similar, when tab is changed
       console.log("Updated, scroll to top");
@@ -261,13 +271,7 @@ export default {
     },
     headerType: function() {
       console.log("Header type changed to " + this.headerType);
-      if (this.headerType == 'saved') {
-        this.currentHeaderTag = this.headerTagsSaved[0];
-      } else if (this.headerType == 'categories') {
-        this.currentHeaderTag = this.headerTagsCategories[0];
-      } else {
-        this.currentHeaderTag = null;
-      }
+      this.updateHeader();
     },
     currentHeaderTag: function() {
       console.log("Header tag changed to " + this.currentHeaderTag);
@@ -300,6 +304,8 @@ export default {
     } else {
       this.urlUpdated("./assets/nasa.xml");
     }
+
+    this.updateHeader();
   },
 
   data() {
@@ -310,8 +316,8 @@ export default {
       showMediaList: false,
       playingMediaItem: null,
       title: "",
-      headerTagsSaved: ['Saved 1','Saved 2'],
-      headerTagsCategories: ['Cat1','Cat2','Cat3'],
+      headerTagsSaved: ['All','This week','This month'],
+      headerTagsCategories: ['Politics','Analysis','Human rights'],
       headerScrollFraction: 1,
       currentHeaderTag: null
     };
@@ -356,6 +362,11 @@ export default {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
+  z-index: 15;
+}
+
+.videoItemList {
+  z-index: 15;
 }
 
 .videoListCurrentItem {
@@ -367,6 +378,7 @@ export default {
   left: 0;
   overflow-y: hidden;
   overflow-x: hidden;
+  z-index: 15;
 }
 
 .videoList {
@@ -403,7 +415,7 @@ export default {
 }
 
 .mainItemListHeaderTop {
-  height: 120px;
+  height: 80px;
 }
 
 .mainItemListHeaderBottom {

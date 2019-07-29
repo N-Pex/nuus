@@ -2,16 +2,16 @@
   <div>
     <div class="contentView">
     <transition name="fade" mode="out-in">
-      <router-view />
+      <router-view :key="$route.fullPath" />
     </transition>
     </div>
 
     <v-bottom-navigation fixed height="60px" v-model="activeTab" color="red" class="navigationBar">
-      <v-btn to="/home" replace><v-icon class="small">$vuetify.icons.logo</v-icon></v-btn>
-      <v-btn to="/categories" replace><v-icon class="small">$vuetify.icons.categories</v-icon></v-btn>
-      <v-btn to="/radio" replace><v-icon class="small">$vuetify.icons.radio</v-icon></v-btn>
-      <v-btn to="/saved" replace><v-icon class="small">$vuetify.icons.favorites</v-icon></v-btn>
-      <v-btn><v-icon class="small">$vuetify.icons.more</v-icon></v-btn>
+      <v-btn @click="showHome"><v-icon class="small">$vuetify.icons.logo</v-icon></v-btn>
+      <v-btn @click="showCategories"><v-icon class="small">$vuetify.icons.categories</v-icon></v-btn>
+      <v-btn @click="showRadio"><v-icon class="small">$vuetify.icons.radio</v-icon></v-btn>
+      <v-btn @click="showSaved"><v-icon class="small">$vuetify.icons.favorites</v-icon></v-btn>
+      <v-btn @click="showMore"><v-icon class="small">$vuetify.icons.more</v-icon></v-btn>
     </v-bottom-navigation>
   </div>
 </template>
@@ -33,6 +33,39 @@ export default {
     this.transitionName = toDepth < fromDepth ? 'fade' : 'fade'
     console.log("Transition now: " + this.transitionName);
   }
+  },
+
+  methods: {
+    showHome() {
+      this.closeMediaPlayer();
+      this.$router.replace("/home");
+    },
+
+    showCategories() {
+      this.closeMediaPlayer();
+      this.$router.replace("/categories");
+    },
+
+    showSaved() {
+      this.closeMediaPlayer();
+      this.$router.replace("/saved");
+    },
+
+    showRadio() {
+      console.log("Show radio - TODO");
+    },
+
+    showMore() {
+      console.log("Show more - TODO");
+    },
+
+    closeMediaPlayer() {
+      if (this.$root.mediaPlayer != null) {
+        this.$root.mediaPlayer.item = null;
+      }
+      this.$root.mediaPlayer = null;
+      this.$root.mediaPlayerInvisible = false;
+    }
   }
 };
 </script>
@@ -52,7 +85,7 @@ export default {
 
 .navigationBar {
   position: fixed;
-  background-color: rgba(123,0,255,0.6);
+  background-color: #fafafa;
 }
 
 </style>

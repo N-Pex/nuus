@@ -72,11 +72,14 @@ export default {
     toggleFavorite() {
       const self = this;
       db.items
-        .put({ id: this.item.guid, favorite: !this.isFavorite })
+        .put({ id: this.item.guid, favorite: !this.isFavorite, item: this.item })
         .then(item => {
           self.isFavorite = !self.isFavorite;
         })
-        .catch(function() {});
+        .catch(function(e) {
+          console.log("Error");
+          console.log(e);
+        });
     },
     itemClicked() {
       this.$emit("itemClicked", {
