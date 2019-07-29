@@ -11,12 +11,12 @@
     <div class="mainItemList" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
       <!-- IF headerTags prop is set, show a header -->
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderTop pa-5 pt-8 headerTitle">{{ headerTitle }}</div>
-      <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 5">
-        <v-chip-group v-if="headerType == 'saved'">
-          <v-chip class="text-uppercase" :color="currentHeaderTag == tag ? 'green' : 'transparent'" :text-color="currentHeaderTag == tag ? 'white' : 'green'" label v-for="tag in headerTagsSaved" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+      <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 5;">
+        <v-chip-group v-if="headerType == 'saved'" active-class="selectedTag" mandatory>
+          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsSaved" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
         </v-chip-group>
-        <v-chip-group v-else-if="headerType == 'categories'">
-          <v-chip class="text-uppercase" :color="currentHeaderTag == tag ? 'green' : 'transparent'" :text-color="currentHeaderTag == tag ? 'white' : 'green'" label v-for="tag in headerTagsCategories" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+        <v-chip-group v-else-if="headerType == 'categories'" active-class="selectedTag" mandatory show-arrows>
+          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsCategories" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
         </v-chip-group>
       </div>
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderBottom" />
@@ -317,7 +317,7 @@ export default {
       playingMediaItem: null,
       title: "",
       headerTagsSaved: ['All','This week','This month'],
-      headerTagsCategories: ['Politics','Analysis','Human rights'],
+      headerTagsCategories: ['Politics','Analysis','Human rights', 'Economics', 'Sports', 'Foreign politics'],
       headerScrollFraction: 1,
       currentHeaderTag: null
     };
@@ -425,9 +425,9 @@ export default {
   border-bottom-left-radius: 20px;
 }
 
-.activeChip {
-  background-color: green;
-  color: white;
+.v-chip.selectedTag {
+  background-color: green !important;
+  color: white !important;
 }
 
 </style>

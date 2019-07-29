@@ -6,7 +6,7 @@
     </transition>
     </div>
 
-    <v-bottom-navigation fixed height="60px" v-model="activeTab" color="red" class="navigationBar">
+    <v-bottom-navigation fixed height="60px" v-model="activeTab" color="green" class="navigationBar">
       <v-btn @click="showHome"><v-icon class="small">$vuetify.icons.logo</v-icon></v-btn>
       <v-btn @click="showCategories"><v-icon class="small">$vuetify.icons.categories</v-icon></v-btn>
       <v-btn @click="showRadio"><v-icon class="small">$vuetify.icons.radio</v-icon></v-btn>
