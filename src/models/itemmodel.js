@@ -1,6 +1,24 @@
 import db from '../database';
+import FeedModel from './feedmodel';
 
 export default class ItemModel extends Object {
+    constructor(o) {
+        super();
+        if (typeof (o) === 'object') {
+            this.feed = new FeedModel(o.feed);
+            this.title = o.title;
+            this.link = o.link;
+            this.guid = o.guid;
+            this.description = o.description;
+            this.pubDate = o.pubDate;
+            this.author = o.author;
+            this.content = o.content;
+            this.imageSrc = o.imageSrc;
+            this.enclosure = o.enclosure;
+            this.enclosureType = o.enclosureType;
+        }
+    }
+
     // The feed this item is part of
     feed = null;
 
@@ -14,17 +32,4 @@ export default class ItemModel extends Object {
     imageSrc = null;
     enclosure = "";
     enclosureType = "";
-
-    /*hasVideoAttachment = function() {
-        return (
-            this.enclosureType != null &&
-            this.enclosureType.indexOf("video") === 0
-        );
-    }
-    hasAudioAttachment = function() {
-        return (
-            this.enclosureType != null &&
-            this.enclosureType.indexOf("audio") === 0
-        );
-    }*/
 }

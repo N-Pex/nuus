@@ -6,7 +6,13 @@ Vue.use(Vuex)
 
 const vuexPersist = new VuexPersist({
   key: 'settings',
-  storage: localStorage
+  storage: localStorage,
+  reducer: state => ({
+    onboarded: state.onboarded,
+    showMedia: state.showMedia,
+    flavor: state.flavor,
+    textSizeAdjustment: state.textSizeAdjustment
+  })
 })
 
 export default new Vuex.Store({
@@ -14,7 +20,9 @@ export default new Vuex.Store({
     onboarded: false,
     showMedia: false,
     flavor: "english",
-    textSizeAdjustment: 0
+    textSizeAdjustment: 0,
+    currentFeedTitle: "",
+    currentFeedItems: []
   },
   mutations: {
     onboarded (state, onboarded) {
@@ -28,6 +36,12 @@ export default new Vuex.Store({
     },
     setTextSizeAdjustment(state, adjustment) {
       state.textSizeAdjustment = adjustment;
+    },
+    setCurrentFeedTitle(state, title) {
+      state.currentFeedTitle = title;
+    },
+    setCurrentFeedItems(state, items) {
+      state.currentFeedItems = items;
     }
  },
   plugins: [vuexPersist.plugin]

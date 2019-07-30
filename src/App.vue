@@ -7,6 +7,7 @@
 <script>
 import flavors from "./config";
 import ItemModel from "./models/itemmodel";
+import rssparser from "./services/rssparser";
 
 // Make sure Array.isArray is defined
 if (!Array.isArray) {
@@ -41,7 +42,29 @@ export default {
     console.log("App mounted");
   },
 
+  updated() {
+    console.log("App updated");
+    let flavor = flavors[this.$store.state.flavor];
+    if (process.env.NODE_ENV === "production") {
+      // For production builds, default to first url in config.
+      this.urlUpdated(flavor.feeds[0].url);
+    } else {
+      this.urlUpdated("./assets/nasa.xml");
+    }
+  },
+
   methods: {
+    urlUpdated(url) {
+      this.url = url;
+      const self = this;
+      rssparser.fetchUrl(url, function(feed, items) {
+        self.$store.commit("setCurrentFeedTitle", feed.title);
+        self.$store.commit("setCurrentFeedItems", items);
+      });
+    },
+
+
+
     // Convert a css text string to a javascript object.
     // Taken from https://stackoverflow.com/questions/8987550/convert-css-text-to-javascript-object
     // Note: modified to not apply cssToJs on property names.

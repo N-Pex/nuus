@@ -5,7 +5,7 @@
         <v-icon color="#1B9739">$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
       <v-spacer />
-      <v-toolbar-title class="feedTitle text-uppercase">{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="feedTitle text-uppercase">{{ $store.state.currentFeedTitle }}</v-toolbar-title>
     </v-app-bar>
 
     <div class="mainItemList" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
@@ -13,10 +13,10 @@
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderTop pa-5 pt-8 headerTitle">{{ headerTitle }}</div>
       <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 5;">
         <v-chip-group v-if="headerType == 'saved'" active-class="selectedTag" mandatory>
-          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsSaved" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsSaved" :key="tag.value" @click="onHeaderTag(tag)">{{ tag.name }}</v-chip>
         </v-chip-group>
         <v-chip-group v-else-if="headerType == 'categories'" active-class="selectedTag" mandatory show-arrows>
-          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsCategories" :key="tag" @click="onHeaderTag(tag)">{{ tag }}</v-chip>
+          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsCategories" :key="tag.value" @click="onHeaderTag(tag)">{{ tag.name }}</v-chip>
         </v-chip-group>
       </div>
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderBottom" />
@@ -115,15 +115,15 @@ import AudioPlayer from "../components/AudioPlayer";
 import Share from "../components/Share";
 import FullScreenItem from "../components/FullScreenItem";
 import Date from "../components/Date";
-import VideoView from "../views/VideoView";
 
-import axios from "axios";
-import sanitizeHTML from "sanitize-html";
+//import axios from "axios";
+//import sanitizeHTML from "sanitize-html";
 import db from "../database";
-import rssparser from "../services/rssparser";
-import velocity from "velocity-animate";
+//import rssparser from "../services/rssparser";
+//import velocity from "velocity-animate";
 import flavors from "../config";
 import router from "../router";
+import moment from "moment";
 
 export default {
   name: "Home",
@@ -135,23 +135,13 @@ export default {
     AudioPlayer,
     Share,
     FullScreenItem,
-    Date,
-    VideoView
+    Date
   },
   props: {
     headerTitle: null,
     headerType: null
   },
   methods: {
-    urlUpdated(url) {
-      console.log("PARSE URL!!!!!!!!!!");
-      this.url = url;
-      const self = this;
-      rssparser.fetchUrl(url, function(feed, items) {
-        self.title = feed.title;
-        self.items = items;
-      });
-    },
     itemClicked(eventInfo) {
       console.log(
         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
@@ -228,13 +218,6 @@ export default {
       this.currentHeaderTag = tag;
     },
 
-    filterItems() {
-      console.log("Filter items");
-      this.filteredItems = this.items.filter(function(i) {
-        return Math.random() > 0.5;
-      });
-    },
-
     updateHeader() {
       if (this.headerType == 'saved') {
         this.currentHeaderTag = this.headerTagsSaved[0];
@@ -249,6 +232,40 @@ export default {
       //TODO - call this onShow or similar, when tab is changed
       console.log("Updated, scroll to top");
       this.$refs.mainItemList.scrollTop = 0;
+    },
+
+updateFilteredItems() {
+      if (this.$store.state.currentFeedItems == null) {
+        this.filteredItems = [];
+      } else if (this.currentHeaderTag != null && this.currentHeaderTag.value.startsWith('saved_')) {
+        const self = this;
+        db.items.toArray().then(items => self.filteredItems = self.sortItemsOnPubDate(
+          items.filter(function(i){ return i.favorite }).map(function itemObject(item) {
+           return new ItemModel(item.item);
+        }).filter(function(i) {
+          if (self.currentHeaderTag.value == 'saved_week') {
+            return (i.pubDate != null && moment().subtract(7, 'days').isBefore(i.pubDate));
+          } else if (self.currentHeaderTag.value == 'saved_month') {
+            return (i.pubDate != null && moment().subtract(1, 'months').isBefore(i.pubDate));
+          }
+          return true;
+        })
+        ));
+      } else {
+        this.filteredItems = this.sortItemsOnPubDate(this.$store.state.currentFeedItems.filter(function(i) {
+          return Math.random() > 0.5;
+        }));
+      }
+},
+    sortItemsOnPubDate(items) {
+      return items.sort(function(a, b) {
+          if (a.pubDate == null) {
+            return 1;
+          } else if (b.pubDate == null) {
+            return -1;
+          }
+          return moment(a.pubDate).isBefore(b.pubDate) ? 1 : -1;
+        });
     }
   },
 
@@ -266,20 +283,22 @@ export default {
   },
 
   watch: {
-    items: function() {
-      this.filterItems();
-    },
     headerType: function() {
       console.log("Header type changed to " + this.headerType);
       this.updateHeader();
     },
     currentHeaderTag: function() {
-      console.log("Header tag changed to " + this.currentHeaderTag);
-      this.filterItems();
+      console.log("Filter items");
+      this.updateFilteredItems();
     }
   },
 
   mounted() {
+    this.$store.watch((state) => state.currentFeedItems, (oldValue, newValue) => {
+      console.log('Items string is changing')
+      this.updateFilteredItems();
+    })
+
     // Store the audio player instance.
     this.$root.audioPlayer = this.$refs.audioPlayer;
 
@@ -296,28 +315,31 @@ export default {
       file.href = flavor.webFontCssFile;
       document.head.appendChild(file);
     }
+
     var WebFont = require("webfontloader");
     WebFont.load(flavor.webFontConfig);
-    if (process.env.NODE_ENV === "production") {
-      // For production builds, default to first url in config.
-      this.urlUpdated(flavor.feeds[0].url);
-    } else {
-      this.urlUpdated("./assets/nasa.xml");
-    }
 
+    this.updateFilteredItems();
     this.updateHeader();
   },
 
   data() {
     return {
       url: "Please enter a URL",
-      items: [],
-      filteredItems: [],
       showMediaList: false,
       playingMediaItem: null,
-      title: "",
-      headerTagsSaved: ['All','This week','This month'],
-      headerTagsCategories: ['Politics','Analysis','Human rights', 'Economics', 'Sports', 'Foreign politics'],
+      filteredItems: [],
+      headerTagsSaved: [
+        {name:'All',value:'saved_all'},
+        {name:'This week',value:'saved_week'},
+        {name:'This month',value:'saved_month'}],
+      headerTagsCategories: [
+        {name:'Politics',value:'cat_politics'},
+        {name:'Analysis',value:'cat_analysis'},
+        {name:'Human rights',value:'cat_human_rights'},
+        {name:'Economics',value:'cat_economics'},
+        {name:'Sports',value:'cat_sports'},
+        {name:'Foreign politics',value:'cat_foreign_politics'}],
       headerScrollFraction: 1,
       currentHeaderTag: null
     };
