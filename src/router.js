@@ -12,12 +12,6 @@ export default new Router({
       component: Main,
       children: [
         {
-          path: '/item/:id',
-          name: 'item',
-          component: () => import('./components/Article.vue'),
-          props: true
-        },
-        {
           path: '/home',
           name: 'home',
           component: () => import('./views/Home.vue'),

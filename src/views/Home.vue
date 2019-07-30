@@ -102,6 +102,10 @@
         class="audioList"
       />
     </div>
+
+    <div v-if="fullScreenItem != null" class="fullScreenItem" id="scroll-target">
+        <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem"/>
+    </div>
   </v-card>
 </template>
 
@@ -143,10 +147,11 @@ export default {
   },
   methods: {
     itemClicked(eventInfo) {
-      console.log(
-        "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
-      );
-      this.$router.push("/item/1");
+       console.log(
+         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
+       );
+      this.fullScreenItem = eventInfo.item;
+      // this.$router.push("/item/" + String.hashCode(eventInfo.item.guid));
     },
 
     setMediaPlayer(mediaPlayer) {
@@ -201,8 +206,11 @@ export default {
       router.push({ name: "onboarding" });
     },
 
-    openFullscreen(item) {
-      console.log("Open full screen");
+    onCloseFullscreen() {
+      console.log("onCloseFullscreen()");
+      this.fullScreenItem = null;
+      this.$root.mediaPlayerDocked = true;
+      this.$root.mediaPlayerInvisible = false;
     },
 
     onHeaderScroll(e) {
@@ -266,6 +274,15 @@ updateFilteredItems() {
           }
           return moment(a.pubDate).isBefore(b.pubDate) ? 1 : -1;
         });
+    },
+
+    enableDisableScrolling() {
+      document
+        .querySelector("html")
+        .classList.toggle(
+          "application--dialog-opened",
+          this.fullScreenItem != null || this.showMediaList
+        );
     }
   },
 
@@ -290,7 +307,14 @@ updateFilteredItems() {
     currentHeaderTag: function() {
       console.log("Filter items");
       this.updateFilteredItems();
-    }
+    },
+    showMediaList: function() {
+      this.enableDisableScrolling();
+    },
+
+    fullScreenItem: function() {
+      this.enableDisableScrolling();
+    },
   },
 
   mounted() {
@@ -341,7 +365,8 @@ updateFilteredItems() {
         {name:'Sports',value:'cat_sports'},
         {name:'Foreign politics',value:'cat_foreign_politics'}],
       headerScrollFraction: 1,
-      currentHeaderTag: null
+      currentHeaderTag: null,
+      fullScreenItem: null
     };
   },
   computed: {
@@ -368,6 +393,11 @@ updateFilteredItems() {
 </style>
 
 <style>
+
+.application--dialog-opened {
+  overflow: hidden;
+}
+
 .mainRoot {
   width: 100%;
   height: 100%;
@@ -450,6 +480,19 @@ updateFilteredItems() {
 .v-chip.selectedTag {
   background-color: green !important;
   color: white !important;
+}
+
+.fullScreenItem {
+  background-color: rgb(245, 248, 239);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 
 </style>
