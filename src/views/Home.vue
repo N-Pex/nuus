@@ -139,7 +139,6 @@
 </template>
 
 <script>
-import UrlInput from "../components/UrlInput";
 import ItemList from "../components/ItemList";
 import Item from "../components/Item";
 import ItemModel from "../models/itemmodel";
@@ -161,7 +160,6 @@ import moment from "moment";
 export default {
   name: "Home",
   components: {
-    UrlInput,
     ItemList,
     Item,
     VideoPlayer,
@@ -400,7 +398,6 @@ export default {
 
   data() {
     return {
-      url: "Please enter a URL",
       showMediaList: false,
       playingMediaItem: null,
       filteredItems: [],
@@ -474,6 +471,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .audioItemList {

@@ -79,6 +79,12 @@ export default {
     // }
   },
 
+  data() {
+    return {
+      url: "Please enter a URL"
+    }
+  },
+
   methods: {
     updateFlavor() {
       console.log("SET FLAVOR TO " + this.$store.state.flavor);
@@ -164,6 +170,8 @@ export default {
           "calc(var(--v-theme-title-line-height) * " + factor + ")",
         "--v-theme-title-line-height-scaled-x2":
           "calc(var(--v-theme-title-line-height) * 2 * " + factor + ")",
+        "--v-theme-title-line-height-scaled-x6":
+          "calc(var(--v-theme-title-line-height) * 6 * " + factor + ")",
         "--v-theme-body-font-size-scaled":
           "calc(var(--v-theme-body-font-size) * " + factor + ")",
         "--v-theme-body-line-height-scaled":

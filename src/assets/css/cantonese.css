@@ -1,17 +1,17 @@
 :root {
-    --v-theme-title-font: 'AlpidaUnicodeSystem', 'Roboto', sans-serif;
+    --v-theme-title-font: 'Microsoft YaHei', 'Roboto', sans-serif;
     --v-theme-title-font-size: 16px;
     --v-theme-title-line-height: 17px;
-    --v-theme-body-font: 'AlpidaUnicodeSystem', 'Roboto', sans-serif;
+    --v-theme-body-font: 'Microsoft YaHei', 'Roboto', sans-serif;
     --v-theme-body-font-size: 11px;
     --v-theme-body-line-height: 15px;
-    --v-theme-date-font: 'AlpidaUnicodeSystem', 'Roboto', sans-serif;
+    --v-theme-date-font: 'Microsoft YaHei', 'Roboto', sans-serif;
     --v-theme-date-font-size: 9px;
     --v-theme-date-line-height: 15px;
-    --v-theme-media-title-font: 'AlpidaUnicodeSystem', 'Roboto', sans-serif;
+    --v-theme-media-title-font: 'Microsoft YaHei', 'Roboto', sans-serif;
     --v-theme-media-title-font-size: 13px;
     --v-theme-media-title-line-height: 15px;
-    --v-theme-media-body-font: 'AlpidaUnicodeSystem', 'Roboto', sans-serif;
+    --v-theme-media-body-font: 'Microsoft YaHei', 'Roboto', sans-serif;
     --v-theme-media-body-font-size: 9px;
     --v-theme-media-body-line-height: 9px;
 }

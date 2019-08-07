@@ -36,14 +36,19 @@ Vue.instance = new Vue({
   router,
   store,
   i18n,
-  render: h => h(App),
+  render: function (h) {
+    let instance = h(App);
+    this.appInstance = instance;
+    return instance;
+  },
   vuetify,
   data() {
     return {
       mediaPlayer: null,
       audioPlayer: null,
       mediaPlayerDocked: false,
-      mediaPlayerInvisible: false
+      mediaPlayerInvisible: false,
+      appInstance: App
     }
   },
   computed: {

@@ -6,13 +6,13 @@
           <v-icon v-on="on">home</v-icon>
         </template>
         <v-list>
-          <v-list-tile
+          <v-list-item
             v-for="(item, index) in menuItems"
             :key="index"
             @click="menuItemClicked(item.url)"
           >
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-menu>
       <v-flex>

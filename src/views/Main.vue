@@ -1,38 +1,98 @@
 <template>
   <div>
     <div class="contentView">
-    <transition name="fade" mode="out-in">
-      <router-view :key="$route.fullPath" />
-    </transition>
+      <transition name="fade" mode="out-in">
+        <router-view :key="$route.fullPath" />
+      </transition>
     </div>
 
-    <v-bottom-navigation fixed height="60px" v-model="activeTab" color="green" class="navigationBar">
-      <v-btn @click="showHome"><v-icon class="small">$vuetify.icons.logo</v-icon></v-btn>
-      <v-btn @click="showCategories"><v-icon class="small">$vuetify.icons.categories</v-icon></v-btn>
-      <v-btn @click="showRadio"><v-icon class="small">$vuetify.icons.radio</v-icon></v-btn>
-      <v-btn @click="showSaved"><v-icon class="small">$vuetify.icons.favorites</v-icon></v-btn>
-      <v-btn @click="showMore"><v-icon class="small">$vuetify.icons.more</v-icon></v-btn>
+    <v-bottom-navigation
+      fixed
+      height="60px"
+      v-model="activeTab"
+      color="green"
+      class="navigationBar"
+    >
+      <v-btn @click="showHome">
+        <v-icon class="small">$vuetify.icons.logo</v-icon>
+      </v-btn>
+      <v-btn @click="showCategories">
+        <v-icon class="small">$vuetify.icons.categories</v-icon>
+      </v-btn>
+      <v-btn @click="showRadio">
+        <v-icon class="small">$vuetify.icons.radio</v-icon>
+      </v-btn>
+      <v-btn @click="showSaved">
+        <v-icon class="small">$vuetify.icons.favorites</v-icon>
+      </v-btn>
+
+      <v-dialog v-model="showSettings" persistent max-width="600px">
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on">
+            <v-icon class="small">$vuetify.icons.more</v-icon>
+          </v-btn>
+        </template>
+        <v-card>
+          <v-card-title>
+            <span class="headline">Settings</span>
+          </v-card-title>
+          <v-card-text>
+            <v-list class="pt-0" dense>
+              <!--<v-list-item>
+          <v-list-item-content>
+            <v-slider v-model="this.$root.textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
+          </v-list-item-content>
+              </v-list-item>-->
+
+              <v-subheader>Service</v-subheader>
+              <v-list-item>
+                <v-list-item-content>
+                  <UrlInput
+                    v-on:update:url="urlUpdated($event)"
+                    v-bind:url="this.$root.appInstance.componentInstance.url"
+                  />
+                </v-list-item-content>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-content>
+                  <v-btn block @click="showOnboarding()">Show onboarding</v-btn>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-1" text @click="showSettings = false">Close</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-bottom-navigation>
   </div>
 </template>
 
 <script>
+import UrlInput from "../components/UrlInput";
+
 export default {
   name: "Main",
-  components: {},
+  components: {
+    UrlInput
+  },
   data() {
     return {
       activeTab: null,
-      transitionName: null
+      transitionName: null,
+      showSettings: false
     };
   },
   watch: {
-  '$route' (to, from) {
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
-    this.transitionName = toDepth < fromDepth ? 'fade' : 'fade'
-    console.log("Transition now: " + this.transitionName);
-  }
+    $route(to, from) {
+      const toDepth = to.path.split("/").length;
+      const fromDepth = from.path.split("/").length;
+      this.transitionName = toDepth < fromDepth ? "fade" : "fade";
+      console.log("Transition now: " + this.transitionName);
+    }
   },
 
   methods: {
@@ -55,8 +115,7 @@ export default {
       console.log("Show radio - TODO");
     },
 
-    showMore() {
-      console.log("Show more - TODO");
+    showOnboarding() {
       this.$router.push("/onboarding");
     },
 
@@ -66,6 +125,11 @@ export default {
       }
       this.$root.mediaPlayer = null;
       this.$root.mediaPlayerInvisible = false;
+    },
+
+    urlUpdated(url) {
+      this.showSettings = false;
+      this.$root.appInstance.componentInstance.urlUpdated(url);
     }
   }
 };
@@ -88,7 +152,6 @@ export default {
   position: fixed;
   background-color: #fafafa;
 }
-
 </style>
 
 <style>
@@ -101,6 +164,6 @@ export default {
 
 .fade-enter,
 .fade-leave-active {
-  opacity: 0
+  opacity: 0;
 }
 </style>
