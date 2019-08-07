@@ -1,6 +1,6 @@
 <template>
   <v-card class="mainRoot" elevation="10">
-    <v-app-bar flat color="#fafafa">
+    <v-app-bar flat :color="toolbarColor">
       <v-app-bar-nav-icon>
         <v-icon color="#1B9739">$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
@@ -10,18 +10,47 @@
 
     <div class="mainItemList" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
       <!-- IF headerTags prop is set, show a header -->
-      <div v-if="headerType != null" class="mainListHeader mainItemListHeaderTop pa-5 pt-8 headerTitle">{{ headerTitle }}</div>
-      <div v-if="headerType != null" class="mainListHeader pl-5 pr-5 pt-2 pb-2" style="position: sticky; top: 0px; z-index: 5;">
+      <div
+        v-if="headerType != null"
+        class="mainListHeader mainItemListHeaderTop pa-5 pt-8 headerTitle"
+      >{{ headerTitle }}</div>
+      <div
+        v-if="headerType != null"
+        class="mainListHeader pl-5 pr-5 pt-2 pb-2"
+        style="position: sticky; top: 0px; z-index: 5;"
+      >
         <v-chip-group v-if="headerType == 'saved'" active-class="selectedTag" mandatory>
-          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsSaved" :key="tag.value" @click="onHeaderTag(tag)">{{ tag.name }}</v-chip>
+          <v-chip
+            active-class="selectedTag"
+            class="text-uppercase"
+            color="transparent"
+            text-color="black"
+            label
+            v-for="tag in headerTagsSaved"
+            :key="tag.value"
+            @click="onHeaderTag(tag)"
+          >{{ tag.name }}</v-chip>
         </v-chip-group>
-        <v-chip-group v-else-if="headerType == 'categories'" active-class="selectedTag" mandatory show-arrows>
-          <v-chip active-class="selectedTag" class="text-uppercase" color="transparent" text-color="black" label v-for="tag in headerTagsCategories" :key="tag.value" @click="onHeaderTag(tag)">{{ tag.name }}</v-chip>
+        <v-chip-group
+          v-else-if="headerType == 'categories'"
+          active-class="selectedTag"
+          mandatory
+          show-arrows
+        >
+          <v-chip
+            active-class="selectedTag"
+            class="text-uppercase"
+            color="transparent"
+            text-color="black"
+            label
+            v-for="tag in headerTagsCategories"
+            :key="tag.value"
+            @click="onHeaderTag(tag)"
+          >{{ tag.name }}</v-chip>
         </v-chip-group>
       </div>
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderBottom" />
       <!-- End of header -->
-
 
       <ItemList
         v-bind:items="filteredItems"
@@ -104,7 +133,7 @@
     </div>
 
     <div v-if="fullScreenItem != null" class="fullScreenItem" id="scroll-target">
-        <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem"/>
+      <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem" />
     </div>
   </v-card>
 </template>
@@ -147,9 +176,9 @@ export default {
   },
   methods: {
     itemClicked(eventInfo) {
-       console.log(
-         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
-       );
+      console.log(
+        "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
+      );
       this.fullScreenItem = eventInfo.item;
       // this.$router.push("/item/" + String.hashCode(eventInfo.item.guid));
     },
@@ -219,6 +248,7 @@ export default {
         1,
         Math.max(0, 1 - offsetTop / 120)
       ).toFixed(2);
+      this.$refs.mainItemList.style.setProperty("--v-header-scroll-fraction", this.headerScrollFraction);
     },
 
     onHeaderTag(tag) {
@@ -227,9 +257,9 @@ export default {
     },
 
     updateHeader() {
-      if (this.headerType == 'saved') {
+      if (this.headerType == "saved") {
         this.currentHeaderTag = this.headerTagsSaved[0];
-      } else if (this.headerType == 'categories') {
+      } else if (this.headerType == "categories") {
         this.currentHeaderTag = this.headerTagsCategories[0];
       } else {
         this.currentHeaderTag = null;
@@ -242,38 +272,61 @@ export default {
       this.$refs.mainItemList.scrollTop = 0;
     },
 
-updateFilteredItems() {
+    updateFilteredItems() {
       if (this.$store.state.currentFeedItems == null) {
         this.filteredItems = [];
-      } else if (this.currentHeaderTag != null && this.currentHeaderTag.value.startsWith('saved_')) {
+      } else if (
+        this.currentHeaderTag != null &&
+        this.currentHeaderTag.value.startsWith("saved_")
+      ) {
         const self = this;
-        db.items.toArray().then(items => self.filteredItems = self.sortItemsOnPubDate(
-          items.filter(function(i){ return i.favorite }).map(function itemObject(item) {
-           return new ItemModel(item.item);
-        }).filter(function(i) {
-          if (self.currentHeaderTag.value == 'saved_week') {
-            return (i.pubDate != null && moment().subtract(7, 'days').isBefore(i.pubDate));
-          } else if (self.currentHeaderTag.value == 'saved_month') {
-            return (i.pubDate != null && moment().subtract(1, 'months').isBefore(i.pubDate));
-          }
-          return true;
-        })
-        ));
+        db.items.toArray().then(
+          items =>
+            (self.filteredItems = self.sortItemsOnPubDate(
+              items
+                .filter(function(i) {
+                  return i.favorite;
+                })
+                .map(function itemObject(item) {
+                  return new ItemModel(item.item);
+                })
+                .filter(function(i) {
+                  if (self.currentHeaderTag.value == "saved_week") {
+                    return (
+                      i.pubDate != null &&
+                      moment()
+                        .subtract(7, "days")
+                        .isBefore(i.pubDate)
+                    );
+                  } else if (self.currentHeaderTag.value == "saved_month") {
+                    return (
+                      i.pubDate != null &&
+                      moment()
+                        .subtract(1, "months")
+                        .isBefore(i.pubDate)
+                    );
+                  }
+                  return true;
+                })
+            ))
+        );
       } else {
-        this.filteredItems = this.sortItemsOnPubDate(this.$store.state.currentFeedItems.filter(function(i) {
-          return Math.random() > 0.5;
-        }));
+        this.filteredItems = this.sortItemsOnPubDate(
+          this.$store.state.currentFeedItems.filter(function(i) {
+            return Math.random() > 0.5;
+          })
+        );
       }
-},
+    },
     sortItemsOnPubDate(items) {
       return items.sort(function(a, b) {
-          if (a.pubDate == null) {
-            return 1;
-          } else if (b.pubDate == null) {
-            return -1;
-          }
-          return moment(a.pubDate).isBefore(b.pubDate) ? 1 : -1;
-        });
+        if (a.pubDate == null) {
+          return 1;
+        } else if (b.pubDate == null) {
+          return -1;
+        }
+        return moment(a.pubDate).isBefore(b.pubDate) ? 1 : -1;
+      });
     },
 
     enableDisableScrolling() {
@@ -314,37 +367,35 @@ updateFilteredItems() {
 
     fullScreenItem: function() {
       this.enableDisableScrolling();
-    },
+    }
+  },
+
+  destroyed() {
+    if (this.storeWatchObject != null) {
+      console.log("Home destroyed, stop listening");
+      this.storeWatchObject();
+      this.storeWatchObject = null;
+    }
   },
 
   mounted() {
-    this.$store.watch((state) => state.currentFeedItems, (oldValue, newValue) => {
-      console.log('Items string is changing')
-      this.updateFilteredItems();
-    })
+    console.log("Home mounted, start listening!");
+    this.storeWatchObject = this.$store.watch(
+      state => state.currentFeedItems,
+      (oldValue, newValue) => {
+        console.log("Items string is changing");
+        this.updateFilteredItems();
+      }
+    );
 
     // Store the audio player instance.
     this.$root.audioPlayer = this.$refs.audioPlayer;
-
-    let flavor = flavors[this.$store.state.flavor];
-
-    // Set RTL from config
-    this.$vuetify.rtl = flavor.isRTL;
-
-    // Insert link to font style sheet so the web font loader will find the fonts.
-    if (flavor.webFontCssFile != "") {
-      let file = document.createElement("link");
-      file.rel = "stylesheet";
-      file.type = "text/css";
-      file.href = flavor.webFontCssFile;
-      document.head.appendChild(file);
-    }
-
-    var WebFont = require("webfontloader");
-    WebFont.load(flavor.webFontConfig);
-
     this.updateFilteredItems();
     this.updateHeader();
+  },
+
+  updated() {
+    console.log("Home updated");
   },
 
   data() {
@@ -354,22 +405,38 @@ updateFilteredItems() {
       playingMediaItem: null,
       filteredItems: [],
       headerTagsSaved: [
-        {name:'All',value:'saved_all'},
-        {name:'This week',value:'saved_week'},
-        {name:'This month',value:'saved_month'}],
+        { name: "All", value: "saved_all" },
+        { name: "This week", value: "saved_week" },
+        { name: "This month", value: "saved_month" }
+      ],
       headerTagsCategories: [
-        {name:'Politics',value:'cat_politics'},
-        {name:'Analysis',value:'cat_analysis'},
-        {name:'Human rights',value:'cat_human_rights'},
-        {name:'Economics',value:'cat_economics'},
-        {name:'Sports',value:'cat_sports'},
-        {name:'Foreign politics',value:'cat_foreign_politics'}],
+        { name: "Politics", value: "cat_politics" },
+        { name: "Analysis", value: "cat_analysis" },
+        { name: "Human rights", value: "cat_human_rights" },
+        { name: "Economics", value: "cat_economics" },
+        { name: "Sports", value: "cat_sports" },
+        { name: "Foreign politics", value: "cat_foreign_politics" }
+      ],
       headerScrollFraction: 1,
       currentHeaderTag: null,
       fullScreenItem: null
     };
   },
   computed: {
+    toolbarColor() {
+      let r = 255 - 82 * this.headerScrollFraction;
+      let g = 255 - 38 * this.headerScrollFraction;
+      let b = 255 - 71 * this.headerScrollFraction;
+      let conversion = c => {
+        let code = parseInt(c).toString(16)
+        if (code.length === 1) {
+          code = '0' + code
+        }
+        return code
+      }
+      console.log('#' + conversion(r) + conversion(g) + conversion(b))
+      return '#' + conversion(r) + conversion(g) + conversion(b);
+    },
     cssProps() {
       return {
         "--v-header-scroll-fraction": this.headerScrollFraction
@@ -393,7 +460,6 @@ updateFilteredItems() {
 </style>
 
 <style>
-
 .application--dialog-opened {
   overflow: hidden;
 }
@@ -457,7 +523,7 @@ updateFilteredItems() {
 
 .mainListHeader {
   /* ADDAB8 */
-  background-color: rgba(173, 218, 184, var(--v-header-scroll-fraction));
+  /*background-color: rgba(173, 218, 184, var(--v-header-scroll-fraction));*/
   background-color: rgba(
     calc(255 - 82 * var(--v-header-scroll-fraction)),
     calc(255 - 38 * var(--v-header-scroll-fraction)),
@@ -494,5 +560,4 @@ updateFilteredItems() {
   height: 100%;
   overflow-y: auto;
 }
-
 </style>

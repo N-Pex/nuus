@@ -57,6 +57,7 @@ export default {
 
     showMore() {
       console.log("Show more - TODO");
+      this.$router.push("/onboarding");
     },
 
     closeMediaPlayer() {
