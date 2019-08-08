@@ -46,6 +46,7 @@ Vue.instance = new Vue({
     return {
       mediaPlayer: null,
       audioPlayer: null,
+      videoPlayer: null,
       mediaPlayerDocked: false,
       mediaPlayerInvisible: false,
       appInstance: App

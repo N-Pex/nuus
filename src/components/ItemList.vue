@@ -29,16 +29,26 @@
         </div>
       </v-list>
       <v-list v-else ref="list">
-        <Item
-          v-for="(item, index) in items"
-          :key="item.guid"
+    <v-container fluid grid-list-sm>
+    <v-layout
+      xs12
+      row
+      wrap
+      justify-space-between
+    >
+        <v-flex v-bind:class="{'xs6': index % 5 == 0 || index % 5 == 1, 'xs12': index % 5 != 0 && index % 5 != 1}" v-for="(item, index) in items" :key="item.guid">
+        <ItemNew
           :ref="item.guid"
           class="ma-0"
           :item="item"
-          :odd="index % 2 != 0"
+          :odd="index % 2 != 0 && index % 5 != 0 && index % 5 != 1"
           v-on:itemClicked="itemClicked($event)"
           v-on:playItem="playItem($event)"
+          v-on:playStarted="onPlayStarted($event)"
         />
+        </v-flex>
+    </v-layout>
+    </v-container>
       </v-list>
       </div>
 </template>
@@ -46,6 +56,7 @@
 
 <script>
 import Item from "./Item";
+import ItemNew from "./ItemNew";
 import AudioItem from "./AudioItem";
 import VideoItem from "./VideoItem";
 import ItemModel from "../models/itemmodel";
@@ -53,6 +64,7 @@ import ItemModel from "../models/itemmodel";
 export default {
   components: {
     Item,
+    ItemNew,
     AudioItem,
     VideoItem,
     ItemModel
@@ -105,7 +117,11 @@ export default {
     },
     playItem(eventInfo) {
       this.$emit("playItem", eventInfo);
+    },
+    onPlayStarted(eventInfo) {
+      this.$emit("playStarted", eventInfo);
     }
+
   }
 };
 </script>

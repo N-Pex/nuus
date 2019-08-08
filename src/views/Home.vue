@@ -56,6 +56,7 @@
         v-bind:items="filteredItems"
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
+        v-on:playStarted="onPlayStarted($event)"
         class="pt-4"
       />
     </div>
@@ -210,6 +211,17 @@ export default {
     playItemFromMediaList(eventInfo) {
       this.$root.mediaPlayer.load(eventInfo.item, true);
       this.playingMediaItem = eventInfo.item;
+    },
+
+    onPlayStarted(item) {
+      console.log("On play started:");
+      console.log(item);
+      this.playingMediaItem = item;
+      if (item.hasVideoAttachment()) {
+        this.showMediaList = true;
+      } else {
+        this.showMediaList = false;
+      }
     },
 
     onClose() {
@@ -388,6 +400,7 @@ export default {
 
     // Store the audio player instance.
     this.$root.audioPlayer = this.$refs.audioPlayer;
+    this.$root.videoPlayer = this.$refs.videoPlayer;
     this.updateFilteredItems();
     this.updateHeader();
   },

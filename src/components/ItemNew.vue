@@ -6,33 +6,30 @@
       style="background-color: var(--v-cardBackground-base)"
       justify-space-between
     >
-      <v-flex xs1 ma-0 pa-0 v-if="playable" v-bind:class="playClassObject">
-        <div class="text-center">
-          <v-btn
-            text
-            icon
-            ma-0
-            pa-0
-            class="small-button ma-0 pa-0"
-            color="black"
-            @click="playItem()"
-          >
-            <v-icon>$vuetify.icons.play</v-icon>
-          </v-btn>
-        </div>
-      </v-flex>
       <v-flex
         grow
         mt-0
         pt-0
-        v-if="imageUrl != null"
+        v-if="hasImage || playable"
         v-bind:class="imageClassObject"
         style="width: 30%;max-width: var(--v-theme-title-line-height-scaled-x6);"
       >
         <div class="imageContainer">
-          <v-img aspect-radio="1.32" :src="imageUrl" class="ma-0 pa-0 image" />
+          <div class="imageContainerContent">
+            <div style="grid-column: 1; grid-row: 1" v-if="hasImage">
+              <v-img :src="imageUrl" class="ma-0 pa-0 image" />
+            </div>
+            <div
+              style="grid-column: 1; grid-row: 1; align-self: center"
+              class="text-center"
+              v-if="playable"
+            >
+              <PlayButton :item="item" :playerColor="hasImage ? 'white' : 'black'" showMediaPlayer v-on:playStarted="onPlayStarted($event)"/>
+            </div>
+          </div>
         </div>
       </v-flex>
+
       <v-flex @click="itemClicked()" v-bind:class="textClassObject" ml-2 mr-2 mt-0 pt-0>
         <div class="itemTitle">{{ item.title }}</div>
         <div class="contentBlock mt-2">
@@ -69,28 +66,20 @@ import ItemBase from "./ItemBase";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
 import Date from "./Date";
+import PlayButton from "./PlayButton";
 
 export default {
   extends: ItemBase,
   components: {
-    Date
+    Date,
+    PlayButton
   },
 
   computed: {
-    playClassObject: function() {
-      var sort = this.imageUrl == null ? 2 : 3;
-      if (this.odd) {
-        sort = 1;
-      }
-      let sortClass = "order-xs" + sort;
-      let o = {};
-      o[sortClass] = true;
-      return o;
-    },
     imageClassObject: function() {
       var sort = 1;
       if (this.odd) {
-        sort = this.playable ? 3 : 2;
+        sort = 2;
       }
       let sortClass = "order-xs" + sort;
       let o = {};
@@ -98,9 +87,9 @@ export default {
       return o;
     },
     textClassObject: function() {
-      var sort = this.imageUrl == null ? 1 : 2;
+      var sort = this.hasImage || this.playable ? 2 : 1;
       if (this.odd) {
-        sort = this.playable ? 2 : 1;
+        sort = 1;
       }
       let sortClass = "order-xs" + sort;
       let o = {};
@@ -120,6 +109,15 @@ export default {
   position: relative;
   width: 100%;
   padding-top: 76%;
+}
+
+.imageContainerContent {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .image {

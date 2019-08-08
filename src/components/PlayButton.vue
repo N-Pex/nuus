@@ -1,5 +1,5 @@
 <template>
-  <div v-if="item != null && item.hasAudioAttachment()">
+  <div v-if="item != null && (item.hasAudioAttachment() || item.hasVideoAttachment())">
     <v-btn
       v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == item && this.$root.mediaPlayer.isPlaying"
       text
@@ -41,6 +41,16 @@ export default {
       default: function() {
         return "#000000";
       }
+    },
+
+    /**
+     * Whether the media player should be shown when playback is started. Defaults to 'false'.
+     */
+    showMediaPlayer: {
+      type: Boolean,
+      default: function() {
+        return false;
+      }
     }
   },
 
@@ -51,7 +61,7 @@ export default {
       this.$root.mediaPlayer != null &&
       this.$root.mediaPlayer.item == this.item
     ) {
-      this.$root.mediaPlayerInvisible = true;
+      this.$root.mediaPlayerInvisible = !this.showMediaPlayer;
     }
   },
   methods: {
@@ -69,15 +79,21 @@ export default {
           this.$root.mediaPlayer.item = null;
         }
       }
-      this.$root.mediaPlayer = this.$root.audioPlayer;
-      this.$root.mediaPlayerDocked = true;
-      this.$root.mediaPlayerInvisible = true;
+      if (this.item.hasAudioAttachment()) {
+        this.$root.mediaPlayer = this.$root.audioPlayer;
+        this.$root.mediaPlayerDocked = true;
+      } else {
+        this.$root.mediaPlayer = this.$root.videoPlayer;
+        this.$root.mediaPlayerDocked = false;
+      }
+      this.$root.mediaPlayerInvisible = !this.showMediaPlayer;
       let mediaPlayer = this.$root.mediaPlayer;
       if (mediaPlayer.item == this.item) {
         mediaPlayer.play();
       } else {
         mediaPlayer.load(this.item, true);
       }
+      this.$emit("playStarted", this.item);
     }
   }
 };
