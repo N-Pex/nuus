@@ -37,7 +37,7 @@
       justify-space-between
     >
         <v-flex v-bind:class="{'xs6': index % 5 == 0 || index % 5 == 1, 'xs12': index % 5 != 0 && index % 5 != 1}" v-for="(item, index) in items" :key="item.guid">
-        <ItemNew
+        <Item
           :ref="item.guid"
           class="ma-0"
           :item="item"
@@ -56,7 +56,6 @@
 
 <script>
 import Item from "./Item";
-import ItemNew from "./ItemNew";
 import AudioItem from "./AudioItem";
 import VideoItem from "./VideoItem";
 import ItemModel from "../models/itemmodel";
@@ -64,7 +63,6 @@ import ItemModel from "../models/itemmodel";
 export default {
   components: {
     Item,
-    ItemNew,
     AudioItem,
     VideoItem,
     ItemModel
