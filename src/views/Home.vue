@@ -438,14 +438,6 @@ export default {
       return {
         "--v-header-scroll-fraction": this.headerScrollFraction
       };
-    },
-    textSizeAdjustment: {
-      get: function() {
-        return this.$store.state.textSizeAdjustment;
-      },
-      set: function(val) {
-        this.$store.commit("setTextSizeAdjustment", val);
-      }
     }
   }
 };

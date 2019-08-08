@@ -182,7 +182,8 @@ export default class RSSParser {
                             item.imageSrc = image.$.src;
 
                             // Now that we use the first image as "header image", remove that one from the content!
-                            item.content = item.content.replace(/<img.*\/>/i, "<span>HHHHH</span>");
+                            console.log("Remove old image!!!" + item.imageSrc);
+                            item.content = item.content.replace(/<img[^>]*>/i, "<span></span>");
                         }
                     }
                 });

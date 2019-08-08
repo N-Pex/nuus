@@ -30,7 +30,7 @@
         style="width: 30%;max-width: var(--v-theme-title-line-height-scaled-x6);"
       >
         <div class="imageContainer">
-          <v-img aspect-radio="1" :src="imageUrl" class="ma-0 pa-0 image" />
+          <v-img aspect-radio="1.32" :src="imageUrl" class="ma-0 pa-0 image" />
         </div>
       </v-flex>
       <v-flex @click="itemClicked()" v-bind:class="textClassObject" ml-2 mr-2 mt-0 pt-0>
@@ -160,7 +160,7 @@ export default {
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 76%;
 }
 
 .image {

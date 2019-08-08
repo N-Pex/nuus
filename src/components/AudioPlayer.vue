@@ -45,7 +45,7 @@
         </v-flex>
 
         <!-- ITEM IMAGE AND TEXT -->
-        <v-flex ma-0 pa-0 pl-2 pr-2 xs4 v-show="!isDocked" class="overlayControls">
+        <v-flex ma-0 pa-0 pl-2 pr-2 xs4 v-show="!isDocked" v-if="item != null" class="overlayControls">
           <v-container fluid grid-list-sm pa-0 ma-0>
             <v-layout xs12>
               <v-flex xs3 ml-2 pt-0 v-if="imageUrl != null">
@@ -64,14 +64,14 @@
                 <div>
                   <Date class="itemDate verticalCenter" :date="item.pubDate" />
                 </div>
-                <div class="mediaItemTitle" style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden">{{ item.title }}</div>
-                <div class="contentBlock mt-2">
+                <div class="mediaItemTitle" style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden">{{ itemTitle }}</div>
+                <!--<div class="contentBlock mt-2">
                   <div
                     v-html="item.description"
                     class="mediaItemBody"
                     style="max-height:var(--v-theme-media-body-line-height-scaled-x2);overflow:hidden"
                   />
-                </div>
+                </div>-->
               </v-flex>
             </v-layout>
           </v-container>
@@ -174,7 +174,7 @@
                 >
                   <v-icon class="tiny">$vuetify.icons.expand</v-icon>
                 </v-btn>
-                <div class="text-left mediaItemBody" style="max-height:var(--v-theme-media-body-line-height-scaled);overflow:hidden">{{ itemTitle }}</div>
+                <div class="text-left itemBody text-truncate" style="max-height:var(--v-theme-body-line-height-scaled);">{{ itemTitle }}</div>
               </v-flex>
 
               <v-flex xs1 v-show="isDocked" class="text-center">

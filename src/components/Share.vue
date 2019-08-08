@@ -48,18 +48,21 @@ export default {
   }),
   watch: {
     item: function() {
-      console.log("SHARE item change " + this.item.title);
       this.updateItem();      
     }
   },
   methods: {
     updateItem() {
+      if (this.item != null) {
       db.items
         .get(this.item.guid)
         .then(item => (this.isFavorite = (item == null) ? false : item.favorite))
         .catch(function() {
           this.isFavorite = false;
         });
+      } else {
+        this.isFavorite = false;
+      }
     },
     toggleFavorite() {
       const self = this;

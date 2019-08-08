@@ -162,7 +162,8 @@ export default {
       // the CSS code can either use the "unscaled" --v-theme-xyz-font-size values or the scaled ones
       // (--v-theme-xyz-font-size-scaled).
       let flavor = flavors[this.flavorName];
-      let factor = 1 + (0.3 * this.$store.state.textSizeAdjustment) / 6;
+      let adjustment = this.$store.state.textSizeAdjustment;
+      let factor = 1 + ((adjustment > 0 ? 0.4 : 0.2) * adjustment) / 100;
       return {
         "--v-theme-title-font-size-scaled":
           "calc(var(--v-theme-title-font-size) * " + factor + ")",

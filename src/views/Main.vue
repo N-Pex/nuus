@@ -38,11 +38,16 @@
           </v-card-title>
           <v-card-text>
             <v-list class="pt-0" dense>
-              <!--<v-list-item>
-          <v-list-item-content>
-            <v-slider v-model="this.$root.textSizeAdjustment" prepend-icon="text_fields" min="-6" max="6"/>
-          </v-list-item-content>
-              </v-list-item>-->
+              <v-list-item>
+                <v-list-item-content>
+                  <v-slider
+                    v-model="textSizeAdjustment"
+                    prepend-icon="text_fields"
+                    min="-100"
+                    max="100"
+                  />
+                </v-list-item-content>
+              </v-list-item>
 
               <v-subheader>Service</v-subheader>
               <v-list-item>
@@ -85,6 +90,16 @@ export default {
       transitionName: null,
       showSettings: false
     };
+  },
+  computed: {
+    textSizeAdjustment: {
+      get: function() {
+        return this.$store.state.textSizeAdjustment;
+      },
+      set: function(val) {
+        this.$store.commit("setTextSizeAdjustment", val);
+      }
+    }
   },
   watch: {
     $route(to, from) {

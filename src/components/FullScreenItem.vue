@@ -49,7 +49,7 @@
           />
 
           <v-container :class="{'noImage': this.imageUrl == null}">
-            <div v-html="item.description" class="itemTitle" />
+            <div v-html="item.description" class="itemDescription mb-4" />
             <div v-html="item.content" class="itemBody" />
           </v-container>
         </v-card>

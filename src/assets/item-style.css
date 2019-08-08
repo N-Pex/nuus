@@ -22,6 +22,14 @@
     line-height: var(--v-theme-title-line-height-scaled);
 }
 
+.itemDescription {
+    color: var(--v-primary-base);
+    font-family: var(--v-theme-title-font);
+    font-size: var(--v-theme-title-font-size-scaled);
+    font-weight: 400;
+    line-height: var(--v-theme-title-line-height-scaled);
+}
+
 .itemBody {
     color: var(--v-primary-base);
     font-family: var(--v-theme-body-font);
