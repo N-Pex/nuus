@@ -3,38 +3,37 @@
     <v-layout>
       <v-flex xs12>
         <v-app-bar flat fixed class="black--text toolbar" :style="cssProps">
-          <v-app-bar-nav-icon @click="onClose()" class="toolbarIcon" :style="cssProps">
-            <v-icon>arrow_back</v-icon>
+          <v-app-bar-nav-icon @click="onClose()" :style="cssProps">
+            <v-icon :color="iconColor">arrow_back</v-icon>
           </v-app-bar-nav-icon>
-
-          <div v-if="item != null && item.hasAudioAttachment()" class="toolbarObject">
-            <v-btn
-              v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == item && this.$root.mediaPlayer.isPlaying"
-              text
-              icon
-              :color="playerColor"
-              @click="pause()"
-              class="ma-2 pa-0 small-button"
-            >
-              <v-icon>$vuetify.icons.pause</v-icon>
-            </v-btn>
-            <v-btn
-              v-show="this.$root.mediaPlayer == null || this.$root.mediaPlayer.item != item || !this.$root.mediaPlayer.isPlaying"
-              text
-              icon
-              :color="playerColor"
-              @click="play()"
-              class="ma-2 pa-0 small-button"
-            >
-              <v-icon>$vuetify.icons.play</v-icon>
-            </v-btn>
-          </div>
-
-          <v-toolbar-title class="toolbarObject">{{ item.title }}</v-toolbar-title>
+          <PlayButton v-if="item != null && item.hasAudioAttachment()" :item="item" :playerColor="playerColor" />
+          <v-toolbar-title class="toolbarTitle">{{ item.title }}</v-toolbar-title>
         </v-app-bar>
         <v-card color="white" flat :style="cssProps">
-          <v-img v-if="imageUrl != null" class="white--text" height="200px" :src="imageUrl"/>
-          <Share class="share" :item="item"/>
+          <div style="height: 200px; display: grid" v-if="imageUrl != null">
+            <v-img
+              class="white--text"
+              :src="imageUrl"
+              gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,1)"
+              style="grid-column: 1; grid-row: 1"
+            />
+            <div
+              style="grid-column: 1; grid-row: 1; align-self: end; z-index: 80"
+            >
+              <v-container fluid class="itemImageTitle ma-4">
+              <v-layout align-start>
+                <v-flex xs1 v-if="playableItem">
+                  <PlayButton :item="item" :playerColor="imageTitlePlayerColor" />
+                </v-flex>
+                <v-flex :class="{ 'xs11': playableItem, 'xs12': !playableItem }">
+                  <div class="itemTitle ma-2">{{ item.title }}</div>
+                </v-flex>
+              </v-layout>
+              </v-container>
+            </div>
+          </div>
+
+          <Share class="share" :item="item" />
 
           <v-slider
             v-if="item != null && item.hasAudioAttachment()"
@@ -50,8 +49,8 @@
           />
 
           <v-container :class="{'noImage': this.imageUrl == null}">
-            <div v-html="item.description" class="itemTitle"/>
-            <div v-html="item.content" class="itemBody"/>
+            <div v-html="item.description" class="itemTitle" />
+            <div v-html="item.content" class="itemBody" />
           </v-container>
         </v-card>
       </v-flex>
@@ -64,11 +63,13 @@
 import Share from "../components/Share";
 import Vuetify from "vuetify";
 import ItemModel from "../models/itemmodel";
+import PlayButton from "../components/PlayButton";
 
 export default {
   name: "FullScreenItem",
   components: {
-    Share
+    Share,
+    PlayButton
   },
   props: {
     item: {
@@ -89,7 +90,10 @@ export default {
   mounted: function() {
     // If we are playing this item, hide the docked media player since we already
     // show the play/pause button next to the title.
-    if (this.$root.mediaPlayer != null && this.$root.mediaPlayer.item == this.item) {
+    if (
+      this.$root.mediaPlayer != null &&
+      this.$root.mediaPlayer.item == this.item
+    ) {
       this.$root.mediaPlayerInvisible = true;
     }
 
@@ -118,12 +122,17 @@ export default {
         "--v-fade-fraction": this.fadeFraction
       };
     },
+    iconColor() {
+      return "rgba(calc(255 * var(--v-fade-fraction)),calc(255 * var(--v-fade-fraction)),calc(255 * var(--v-fade-fraction)),1)";
+    },
     playerColor() {
-      return this.fullColorHex(
-        255 * this.moveFraction,
-        255 * this.moveFraction,
-        255 * this.moveFraction
-      );
+      return "rgba(calc(255 * var(--v-fade-fraction)),calc(255 * var(--v-fade-fraction)),calc(255 * var(--v-fade-fraction)),calc(1 - var(--v-fade-fraction)))";
+    },
+    imageTitlePlayerColor() {
+      return "rgba(255, 255, 255, var(--v-fade-fraction))";
+    },
+    playableItem() {
+      return this.item != null && this.item.hasAudioAttachment();
     }
   },
   methods: {
@@ -133,7 +142,10 @@ export default {
     onScroll(e) {
       if (this.imageUrl != null) {
         let offsetTop = e.target.scrollTop;
-        this.moveFraction = Math.min(1, Math.max(0, 1 - offsetTop / 150)).toFixed(2);
+        this.moveFraction = Math.min(
+          1,
+          Math.max(0, 1 - offsetTop / 150)
+        ).toFixed(2);
         if (this.moveFraction < 0.2) {
           this.fadeFraction = (this.moveFraction / 0.2).toFixed(2);
         } else {
@@ -200,24 +212,25 @@ export default {
   background-color: rgba(255, 255, 255, calc(1 - var(--v-fade-fraction)));
 }
 
-.toolbarIcon {
+.toolbarTitle {
+  position: relative;
   color: rgba(
     calc(255 * var(--v-fade-fraction)),
     calc(255 * var(--v-fade-fraction)),
     calc(255 * var(--v-fade-fraction)),
-    1
+    calc(1 - var(--v-fade-fraction))
   );
 }
 
-.toolbarObject {
+.itemImageTitle {
   position: relative;
-  left: calc(-40px * var(--v-move-fraction));
-  top: calc(150px * var(--v-move-fraction));
+  font-size: var(--v-theme-title-font-size-scaled);
+  left: calc(40px * (1 - var(--v-move-fraction)));
   color: rgba(
     calc(255 * var(--v-fade-fraction)),
     calc(255 * var(--v-fade-fraction)),
     calc(255 * var(--v-fade-fraction)),
-    1
+    var(--v-fade-fraction)
   );
 }
 
@@ -241,14 +254,15 @@ export default {
 </style>
 
 <style>
-div.image-inline, div.image-inline div {
+div.image-inline,
+div.image-inline div {
   display: inline;
 }
-div.itemBody img  {
+div.itemBody img {
   width: 120px !important;
   height: 120px !important;
 }
-.image-inline:nth-of-type(odd) img  {
+.image-inline:nth-of-type(odd) img {
   float: left !important;
   margin-right: 10px;
 }
@@ -256,5 +270,4 @@ div.itemBody img  {
   float: right !important;
   margin-left: 10px;
 }
-
 </style>
