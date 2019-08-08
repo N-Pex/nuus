@@ -14,6 +14,14 @@
     line-height: var(--v-theme-title-line-height-scaled);
 }
 
+.itemCategory {
+    color: var(--v-primary-base);
+    font-family: var(--v-theme-title-font);
+    font-size: calc(0.8 * var(--v-theme-title-font-size-scaled));
+    font-weight: 400;
+    line-height: calc(0.8 * var(--v-theme-title-line-height-scaled));
+}
+
 .headerTitle {
     color: white;
     font-family: var(--v-theme-title-font);

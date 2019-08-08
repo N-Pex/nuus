@@ -9,7 +9,6 @@
   >
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g id="Home" transform="translate(-175.000000, -757.000000)">
-        <rect fill="#FFFFFF" x="0" y="0" width="360" height="1197"></rect>
         <g
           id="media/watch"
           transform="translate(174.000000, 754.000000)"

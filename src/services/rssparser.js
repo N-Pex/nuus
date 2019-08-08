@@ -165,6 +165,16 @@ export default class RSSParser {
                 }
             }
 
+            // Try to figure out category from dc:subject.
+            var categories = i["dc:subject"];
+            if (categories != null) {
+                if (Array.isArray(categories) && categories.length > 0) {
+                    item.category = self.getText(categories[0]);
+                } else if (mediaContent != null) {
+                    item.category = self.getText(categories);
+                }
+            }
+
             items.push(item);
 
             if (item.imageSrc == null && item.content != null) {

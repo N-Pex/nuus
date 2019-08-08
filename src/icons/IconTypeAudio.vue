@@ -9,7 +9,6 @@
   >
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g id="Home" transform="translate(-116.000000, -630.000000)">
-        <rect fill="#FFFFFF" x="0" y="0" width="360" height="1197"></rect>
         <g id="media/listen" transform="translate(116.000000, 629.000000)" fill="#949494">
           <g id="noun_Audio_830722_000000" transform="translate(0.000000, 1.500000)">
             <path

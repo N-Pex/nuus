@@ -28,20 +28,33 @@
           <div v-if="index < items.length - 1" class="listDivider"/>
         </div>
       </v-list>
-      <v-list v-else ref="list">
-    <v-container fluid grid-list-sm>
+      <v-list v-else ref="list" pa-0 ma-0>
+    <v-container fluid grid-list-sm ma-0 pa-0>
     <v-layout
+    ma-0
+    pa-0
       xs12
       row
       wrap
       justify-space-between
     >
-        <v-flex v-bind:class="{'xs6': index % 5 == 0 || index % 5 == 1, 'xs12': index % 5 != 0 && index % 5 != 1}" v-for="(item, index) in items" :key="item.guid">
+        <v-flex v-bind:class="classesForIndex(index)" v-for="(item, index) in items" :key="item.guid">
         <Item
+          v-if="index != 0"
           :ref="item.guid"
-          class="ma-0"
+          class="ma-0 pa-2"
           :item="item"
-          :odd="index % 2 != 0 && index % 5 != 0 && index % 5 != 1"
+          :odd="index > 2 && index % 2 == 0"
+          v-on:itemClicked="itemClicked($event)"
+          v-on:playItem="playItem($event)"
+          v-on:playStarted="onPlayStarted($event)"
+        />
+        <ItemCategoryTitle
+          v-else
+          :ref="item.guid"
+          class="ma-0 mb-10"
+          :item="item"
+          :odd="false"
           v-on:itemClicked="itemClicked($event)"
           v-on:playItem="playItem($event)"
           v-on:playStarted="onPlayStarted($event)"
@@ -56,6 +69,7 @@
 
 <script>
 import Item from "./Item";
+import ItemCategoryTitle from "./ItemCategoryTitle";
 import AudioItem from "./AudioItem";
 import VideoItem from "./VideoItem";
 import ItemModel from "../models/itemmodel";
@@ -63,6 +77,7 @@ import ItemModel from "../models/itemmodel";
 export default {
   components: {
     Item,
+    ItemCategoryTitle,
     AudioItem,
     VideoItem,
     ItemModel
@@ -118,8 +133,19 @@ export default {
     },
     onPlayStarted(eventInfo) {
       this.$emit("playStarted", eventInfo);
+    },
+    classesForIndex(index) {
+      let o = {};
+      if (index == 0) {
+        o['xs12'] = true;
+      } else if (index == 1 || index == 2) {
+        o['xs6'] = true;
+      } else {
+        o['xs12'] = true;
+      }
+      o['pa-0'] = true;
+      return o;
     }
-
   }
 };
 </script>

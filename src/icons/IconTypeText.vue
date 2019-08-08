@@ -9,7 +9,6 @@
   >
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g id="Home" transform="translate(-75.000000, -942.000000)">
-        <rect fill="#FFFFFF" x="0" y="0" width="360" height="1197"></rect>
         <g id="media/read" transform="translate(74.000000, 940.000000)" fill="#949494">
           <g id="noun_read_1780232" transform="translate(1.000000, 2.500000)">
             <path

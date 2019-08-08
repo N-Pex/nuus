@@ -16,6 +16,7 @@ export default class ItemModel extends Object {
             this.imageSrc = o.imageSrc;
             this.enclosure = o.enclosure;
             this.enclosureType = o.enclosureType;
+            this.category = o.category;
         }
     }
 
@@ -32,4 +33,5 @@ export default class ItemModel extends Object {
     imageSrc = null;
     enclosure = "";
     enclosureType = "";
+    category = "";
 }

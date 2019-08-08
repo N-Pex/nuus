@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-sm pb-2 pt-0 pl-0 pr-0 mb-12>
+  <v-container fluid grid-list-sm>
     <v-layout
       ref="card"
       xs12

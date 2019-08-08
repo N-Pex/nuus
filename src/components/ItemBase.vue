@@ -51,12 +51,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* Special cleanup of the display */
 a:empty {
   display: none;
 }
 br {
-  display: none;
+  content: ' ';
+  display: none !important;
 }
+.itemBody p:last-of-type {
+  margin-bottom: 0px;
+}
+
 </style>

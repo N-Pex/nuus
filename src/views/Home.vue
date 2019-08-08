@@ -8,7 +8,7 @@
       <v-toolbar-title class="feedTitle text-uppercase">{{ $store.state.currentFeedTitle }}</v-toolbar-title>
     </v-app-bar>
 
-    <div class="mainItemList" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
+    <div class="mainItemList ma-0" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
       <!-- IF headerTags prop is set, show a header -->
       <div
         v-if="headerType != null"
@@ -57,7 +57,7 @@
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
         v-on:playStarted="onPlayStarted($event)"
-        class="pt-4"
+        class="pt-0 ma-0"
       />
     </div>
 
@@ -320,10 +320,19 @@ export default {
                 })
             ))
         );
-      } else {
+      } else if (
+        this.currentHeaderTag != null &&
+        this.currentHeaderTag.value.startsWith("category_")
+        ) {
         this.filteredItems = this.sortItemsOnPubDate(
           this.$store.state.currentFeedItems.filter(function(i) {
             return Math.random() > 0.5;
+          })
+        );
+      } else {
+        this.filteredItems = this.sortItemsOnPubDate(
+          this.$store.state.currentFeedItems.filter(function(i) {
+            return true;
           })
         );
       }
