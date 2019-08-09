@@ -6,28 +6,26 @@
       style="background-color: var(--v-cardBackground-base)"
       justify-space-between
     >
-      <v-flex
-        grow
-        mt-0
-        pt-0
-        v-if="hasImage || playable"
-        v-bind:class="imageClassObject"
-        style="width: 30%;max-width: var(--v-theme-image-width);"
-      >
-        <div class="imageContainer">
-          <div class="imageContainerContent">
-            <div style="grid-column: 1; grid-row: 1" v-if="hasImage">
-              <v-img :src="imageUrl" class="ma-0 pa-0 image" />
-            </div>
-            <div
-              style="grid-column: 1; grid-row: 1; align-self: center"
-              class="text-center"
-              v-if="playable"
-            >
-              <PlayButton :item="item" :playerColor="hasImage ? 'white' : 'black'" showMediaPlayer v-on:playStarted="onPlayStarted($event)"/>
-            </div>
-          </div>
-        </div>
+      <v-flex grow mt-0 pt-0 v-if="hasImage || playable" v-bind:class="imageClassObject">
+        <v-img
+          :aspect-ratio="4/3"
+          class="image ma-0 mb-2 pa-0 text-center"
+          :src="hasImage ? imageUrl : ''"
+          @error="onError"
+          style="height: var(--v-theme-image-height);width: var(--v-theme-image-width);"
+        >
+          <v-layout pa-2 column fill-height class="lightbox white--text" justify-center>
+            <v-flex shrink>
+              <PlayButton
+                v-if="playable"
+                :item="item"
+                :playerColor="hasImage ? 'white' : 'black'"
+                showMediaPlayer
+                v-on:playStarted="onPlayStarted($event)"
+              />
+            </v-flex>
+          </v-layout>
+        </v-img>
       </v-flex>
 
       <v-flex @click="itemClicked()" v-bind:class="textClassObject" ml-2 mr-2 mt-0 pt-0>
@@ -44,6 +42,10 @@
           <ItemType :item="item" />
         </div>
       </v-flex>
+
+      <v-flex order-xs3 v-if="showFavorites">
+        <ItemFavoriteButton :item="item" />
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -52,6 +54,7 @@
 <script>
 import ItemBase from "./ItemBase";
 import ItemType from "./ItemType";
+import ItemFavoriteButton from "./ItemFavoriteButton";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
 import Date from "./Date";
@@ -62,9 +65,26 @@ export default {
   components: {
     Date,
     PlayButton,
-    ItemType
+    ItemType,
+    ItemFavoriteButton
   },
-
+  props: {
+    item: {
+      type: ItemModel,
+      default: function() {
+        return new ItemModel();
+      }
+    },
+    showFavorites: {
+      type: Boolean,
+      default: function() {
+        return false;
+      }
+    }
+  },
+  methods: {
+    onError(e) {}
+  },
   computed: {
     imageClassObject: function() {
       var sort = 1;
@@ -111,12 +131,7 @@ export default {
 }
 
 .image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   object-fit: cover;
+  background-color: #efefef;
 }
-
 </style>

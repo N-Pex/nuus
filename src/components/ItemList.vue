@@ -9,21 +9,21 @@
             :key="item.guid"
           >
             <ItemHalfWidth
-              v-if="!plain && (index == 1 || index == 2)"
+              v-if="index == 1 || index == 2"
               :ref="item.guid"
               class="ma-0 pa-2 mb-10"
               :item="item"
-              :odd="!plain && index > 2 && index % 2 == 0"
+              :odd="index > 2 && index % 2 == 0"
               v-on:itemClicked="itemClicked($event)"
               v-on:playItem="playItem($event)"
               v-on:playStarted="onPlayStarted($event)"
             />
             <Item
-              v-else-if="index != 0 || plain"
+              v-else-if="index != 0"
               :ref="item.guid"
               class="ma-0 pa-2 mb-10"
               :item="item"
-              :odd="!plain && index > 2 && index % 2 == 0"
+              :odd="index > 2 && index % 2 == 0"
               v-on:itemClicked="itemClicked($event)"
               v-on:playItem="playItem($event)"
               v-on:playStarted="onPlayStarted($event)"
@@ -60,21 +60,10 @@ export default {
     ItemHalfWidth,
     ItemCategoryTitle
   },
-  props: {
-    /**
-     * Set this to "true" to only show a plain list.
-     */
-    plain: {
-      type: Boolean,
-      default: function() {
-        return false;
-      }
-    }
-  },
   methods: {
     classesForIndex(index) {
       let o = {};
-      if (index == 0 || this.plain) {
+      if (index == 0) {
         o["xs12"] = true;
       } else if (index == 1 || index == 2) {
         o["xs6"] = true;

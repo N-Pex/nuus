@@ -65,6 +65,15 @@
         </v-layout>
       </v-container>
 
+      <ItemListPlain
+        v-else-if="currentHeaderTag != null"
+        v-bind:items="filteredItems"
+        v-on:itemClicked="itemClicked($event)"
+        v-on:playItem="playItem($event)"
+        v-on:playStarted="onPlayStarted($event)"
+        class="pt-0 ma-0"
+        :showFavorites="currentHeaderTag != null && currentHeaderTag.value.startsWith('saved_')"
+      />
       <ItemList
         v-else
         v-bind:items="filteredItems"
@@ -154,6 +163,7 @@
 
 <script>
 import ItemList from "../components/ItemList";
+import ItemListPlain from "../components/ItemListPlain";
 import ItemListAudio from "../components/ItemListAudio";
 import ItemListVideo from "../components/ItemListVideo";
 import Item from "../components/Item";
@@ -177,6 +187,7 @@ export default {
   name: "Home",
   components: {
     ItemList,
+    ItemListPlain,
     ItemListAudio,
     ItemListVideo,
     Item,
