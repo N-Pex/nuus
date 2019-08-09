@@ -1,0 +1,31 @@
+<template>
+  <div class="ma-0 pa-0" ref="container">
+    <v-list ref="list">
+      <VideoItem
+        v-for="(item, index) in items"
+        :key="item.guid"
+        :ref="item.guid"
+        class="ma-0"
+        :item="item"
+        :isSelected="item == selectedItem"
+        :odd="index % 2 != 0"
+        v-on:itemClicked="playItem($event)"
+        v-on:playItem="playItem($event)"
+      />
+    </v-list>
+  </div>
+</template>
+
+
+<script>
+import ItemListBase from "./ItemListBase";
+import VideoItem from "./VideoItem";
+import ItemModel from "../models/itemmodel";
+
+export default {
+  extends: ItemListBase,
+  components: {
+    VideoItem
+  }
+};
+</script>

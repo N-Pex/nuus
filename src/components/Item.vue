@@ -12,7 +12,7 @@
         pt-0
         v-if="hasImage || playable"
         v-bind:class="imageClassObject"
-        style="width: 30%;max-width: var(--v-theme-title-line-height-scaled-x6);"
+        style="width: 30%;max-width: var(--v-theme-image-width);"
       >
         <div class="imageContainer">
           <div class="imageContainerContent">

@@ -1,6 +1,6 @@
 <template>
-  <v-card class="mainRoot" elevation="10">
-    <v-app-bar flat :color="toolbarColor">
+  <div class="mainRoot" :style="cssProps">
+    <v-app-bar flat color="rgba(calc(255 - 82 * var(--v-header-scroll-fraction)),calc(255 - 38 * var(--v-header-scroll-fraction)),calc(255 - 71 * var(--v-header-scroll-fraction)),1)">
       <v-app-bar-nav-icon>
         <v-icon color="#1B9739">$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
@@ -8,7 +8,7 @@
       <v-toolbar-title class="feedTitle text-uppercase">{{ $store.state.currentFeedTitle }}</v-toolbar-title>
     </v-app-bar>
 
-    <div class="mainItemList ma-0" v-on:scroll="onHeaderScroll" :style="cssProps" ref="mainItemList">
+    <div class="mainItemList ma-0" v-on:scroll="onHeaderScroll" ref="mainItemList">
       <!-- IF headerTags prop is set, show a header -->
       <div
         v-if="headerType != null"
@@ -58,6 +58,7 @@
         v-on:playItem="playItem($event)"
         v-on:playStarted="onPlayStarted($event)"
         class="pt-0 ma-0"
+        :plain="currentHeaderTag != null"
       />
     </div>
 
@@ -100,8 +101,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-      <ItemList
-        listType="video"
+      <ItemListVideo
         :items="filteredItems | videoItems"
         v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasVideoAttachment()"
         :selectedItem="playingMediaItem"
@@ -122,8 +122,7 @@
         v-show="this.$root.mediaPlayer != null && this.$root.mediaPlayer == this.$refs.audioPlayer && !this.$root.mediaPlayerInvisible"
       />
 
-      <ItemList
-        listType="audio"
+      <ItemListAudio
         :items="filteredItems | audioItems"
         v-if="showMediaList && playingMediaItem != null && playingMediaItem.hasAudioAttachment()"
         :selectedItem="playingMediaItem"
@@ -136,11 +135,13 @@
     <div v-if="fullScreenItem != null" class="fullScreenItem" id="scroll-target">
       <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem" />
     </div>
-  </v-card>
+  </div>
 </template>
 
 <script>
 import ItemList from "../components/ItemList";
+import ItemListAudio from "../components/ItemListAudio";
+import ItemListVideo from "../components/ItemListVideo";
 import Item from "../components/Item";
 import ItemModel from "../models/itemmodel";
 import VideoPlayer from "../components/VideoPlayer";
@@ -162,6 +163,8 @@ export default {
   name: "Home",
   components: {
     ItemList,
+    ItemListAudio,
+    ItemListVideo,
     Item,
     VideoPlayer,
     AudioPlayer,
@@ -253,12 +256,12 @@ export default {
     },
 
     onHeaderScroll(e) {
+      console.log("On header scroll");
       let offsetTop = e.target.scrollTop;
       this.headerScrollFraction = Math.min(
         1,
         Math.max(0, 1 - offsetTop / 120)
       ).toFixed(2);
-      this.$refs.mainItemList.style.setProperty("--v-header-scroll-fraction", this.headerScrollFraction);
     },
 
     onHeaderTag(tag) {
@@ -414,10 +417,6 @@ export default {
     this.updateHeader();
   },
 
-  updated() {
-    console.log("Home updated");
-  },
-
   data() {
     return {
       showMediaList: false,
@@ -442,20 +441,6 @@ export default {
     };
   },
   computed: {
-    toolbarColor() {
-      let r = 255 - 82 * this.headerScrollFraction;
-      let g = 255 - 38 * this.headerScrollFraction;
-      let b = 255 - 71 * this.headerScrollFraction;
-      let conversion = c => {
-        let code = parseInt(c).toString(16)
-        if (code.length === 1) {
-          code = '0' + code
-        }
-        return code
-      }
-      console.log('#' + conversion(r) + conversion(g) + conversion(b))
-      return '#' + conversion(r) + conversion(g) + conversion(b);
-    },
     cssProps() {
       return {
         "--v-header-scroll-fraction": this.headerScrollFraction
@@ -483,7 +468,7 @@ export default {
 
 .mainItemList {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 60px);
   overflow-y: auto;
   overflow-x: hidden;
 }
