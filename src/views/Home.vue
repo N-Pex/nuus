@@ -1,14 +1,14 @@
 <template>
   <div class="mainRoot" :style="cssProps">
-    <v-app-bar flat color="rgba(calc(255 - 82 * var(--v-header-scroll-fraction)),calc(255 - 38 * var(--v-header-scroll-fraction)),calc(255 - 71 * var(--v-header-scroll-fraction)),1)">
+    <v-app-bar flat :absolute="useTransparentAppBar" :class="{ 'mainListHeader': !useTransparentAppBar, 'transparentAppBar': useTransparentAppBar }">
       <v-app-bar-nav-icon>
         <v-icon color="#1B9739">$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
       <v-spacer />
-      <v-toolbar-title class="feedTitle text-uppercase">{{ $store.state.currentFeedTitle }}</v-toolbar-title>
+      <v-toolbar-title :class="{ 'feedTitleWhite': useTransparentAppBar, 'feedTitle': true, 'text-uppercase': true}">{{ $store.state.currentFeedTitle }}</v-toolbar-title>
     </v-app-bar>
 
-    <div class="mainItemList ma-0" v-on:scroll="onHeaderScroll" ref="mainItemList">
+    <div :class="{'mainItemList': useTransparentAppBar, 'mainItemListMinusAppBar': !useTransparentAppBar, 'ma-0': true}" v-on:scroll="onHeaderScroll" ref="mainItemList">
       <!-- IF headerTags prop is set, show a header -->
       <div
         v-if="headerType != null"
@@ -52,7 +52,21 @@
       <div v-if="headerType != null" class="mainListHeader mainItemListHeaderBottom" />
       <!-- End of header -->
 
+      <!-- If empty saved tab -->
+      <v-container v-if="currentHeaderTag != null && currentHeaderTag.value.startsWith('saved_') && filteredItems.length == 0"
+       fluid fill-height>
+        <v-layout fill-height justify-center align-center>
+          <v-flex>
+            <div class="text-center">
+              <v-icon class="ma-5 pa-0" style="width: 64px; height: 64px" color="green">$vuetify.icons.favorites</v-icon>
+            </div>
+            <div class="text-center">When you save stories and media, they will appear here.</div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
       <ItemList
+        v-else
         v-bind:items="filteredItems"
         v-on:itemClicked="itemClicked($event)"
         v-on:playItem="playItem($event)"
@@ -325,7 +339,7 @@ export default {
         );
       } else if (
         this.currentHeaderTag != null &&
-        this.currentHeaderTag.value.startsWith("category_")
+        this.currentHeaderTag.value.startsWith("cat_")
         ) {
         this.filteredItems = this.sortItemsOnPubDate(
           this.$store.state.currentFeedItems.filter(function(i) {
@@ -445,6 +459,9 @@ export default {
       return {
         "--v-header-scroll-fraction": this.headerScrollFraction
       };
+    },
+    useTransparentAppBar() {
+      return this.currentHeaderTag == null;
     }
   }
 };
@@ -460,6 +477,10 @@ export default {
   overflow: hidden;
 }
 
+.transparentAppBar {
+  background-color: rgba(255,255,255,calc(1 - var(--v-header-scroll-fraction))) !important;
+}
+
 .mainRoot {
   width: 100%;
   height: 100%;
@@ -467,6 +488,13 @@ export default {
 }
 
 .mainItemList {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mainItemListMinusAppBar {
   width: 100%;
   height: calc(100% - 60px);
   overflow-y: auto;
@@ -518,6 +546,15 @@ export default {
   overflow-x: hidden;
 }
 
+.feedTitleWhite {
+  color: rgba(
+    calc(255 * var(--v-header-scroll-fraction)),
+    calc(255 * var(--v-header-scroll-fraction)),
+    calc(255 * var(--v-header-scroll-fraction)),
+    1
+  ) !important;
+}
+
 .mainListHeader {
   /* ADDAB8 */
   /*background-color: rgba(173, 218, 184, var(--v-header-scroll-fraction));*/
@@ -526,7 +563,7 @@ export default {
     calc(255 - 38 * var(--v-header-scroll-fraction)),
     calc(255 - 71 * var(--v-header-scroll-fraction)),
     1
-  );
+  ) !important;
 }
 
 .mainItemListHeaderTop {

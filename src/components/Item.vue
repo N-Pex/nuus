@@ -41,19 +41,7 @@
         </div>
         <div>
           <Date class="itemDate verticalCenter" :date="item.pubDate" ago />&nbsp;
-          <span class="verticalCenter">
-            <v-icon
-              v-if="item.hasVideoAttachment()"
-              class="ma-0 pa-0 tiny"
-              small
-            >$vuetify.icons.typeVideo</v-icon>
-            <v-icon
-              v-else-if="item.hasAudioAttachment()"
-              class="ma-0 pa-0 tiny"
-              small
-            >$vuetify.icons.typeAudio</v-icon>
-            <v-icon v-else class="ma-0 pa-0 tiny" small>$vuetify.icons.typeText</v-icon>
-          </span>
+          <ItemType :item="item" />
         </div>
       </v-flex>
     </v-layout>
@@ -63,6 +51,7 @@
 
 <script>
 import ItemBase from "./ItemBase";
+import ItemType from "./ItemType";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
 import Date from "./Date";
@@ -72,7 +61,8 @@ export default {
   extends: ItemBase,
   components: {
     Date,
-    PlayButton
+    PlayButton,
+    ItemType
   },
 
   computed: {
@@ -128,4 +118,5 @@ export default {
   right: 0;
   object-fit: cover;
 }
+
 </style>

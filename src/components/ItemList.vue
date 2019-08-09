@@ -11,7 +11,7 @@
             <ItemHalfWidth
               v-if="!plain && (index == 1 || index == 2)"
               :ref="item.guid"
-              class="ma-0 pa-2"
+              class="ma-0 pa-2 mb-10"
               :item="item"
               :odd="!plain && index > 2 && index % 2 == 0"
               v-on:itemClicked="itemClicked($event)"
@@ -21,7 +21,7 @@
             <Item
               v-else-if="index != 0 || plain"
               :ref="item.guid"
-              class="ma-0 pa-2"
+              class="ma-0 pa-2 mb-10"
               :item="item"
               :odd="!plain && index > 2 && index % 2 == 0"
               v-on:itemClicked="itemClicked($event)"
