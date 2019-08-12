@@ -323,7 +323,7 @@ export default {
             (self.filteredItems = self.sortItemsOnPubDate(
               items
                 .filter(function(i) {
-                  return i.favorite;
+                  return i.item.isFavorite;
                 })
                 .map(function itemObject(item) {
                   return new ItemModel(item.item);

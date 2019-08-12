@@ -34,4 +34,6 @@ export default class ItemModel extends Object {
     enclosure = "";
     enclosureType = "";
     category = "";
+
+    isFavorite = false;
 }

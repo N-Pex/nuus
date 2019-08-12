@@ -1,8 +1,5 @@
 <template>
-  <v-btn medium icon ma-0 pa-0 color="black" style="min-width: 0" @click="toggleFavorite()">
-    <v-icon v-if="isFavorite" class="ma-0 pa-0 small" color="green">$vuetify.icons.favorite</v-icon>
-    <v-icon v-else class="ma-0 pa-0 small" color="black">$vuetify.icons.favoriteNot</v-icon>
-  </v-btn>
+  <v-checkbox :ripple="{center: true}" class="ma-0 pa-0 text-center small align-center justify-center" v-model="isFavorite" hide-details on-icon="$vuetify.icons.favorite" off-icon="$vuetify.icons.favoriteNot" />
 </template>
 
 
@@ -22,39 +19,54 @@ export default {
   watch: {
     item: function() {
       this.updateItem();
+    },
+    isFavorite() {
+      console.log("Updated isFavorite!!!");
+      if (this.loaded) {
+        this.storeFavorite(this.isFavorite);
+      }
     }
   },
   mounted: function() {
     this.updateItem();
   },
   data: () => ({
+    loaded: false,
     isFavorite: false
   }),
   methods: {
     // Toggle favorite status of item.
-    toggleFavorite() {
+    storeFavorite(isFav) {
+      console.log("Store favorite: " + isFav);
       const self = this;
-      const fav = !self.isFavorite;
-      this.$nextTick(function() {
+      if (!isFav) {
+        console.log("Delete");
+        this.item.isFavorite = false;
+        db.items.where('id').equals(this.item.guid).delete();
+      } else {
+        this.item.isFavorite = true;
       db.items
         .put({
           id: this.item.guid,
-          favorite: fav,
           item: this.item
         })
-        .then(item => {
-          self.isFavorite = fav;
-        })
-        .catch(function() {});
+        .catch(function(error) {
+          console.log("DEXIE Error: " + error);
         });
+      }
     },
     updateItem() {
+      const self = this;
       db.items
         .get(this.item.guid)
-        .then(item => (this.isFavorite = item.favorite))
-        .catch(function() {});
+        .then(item => self.isFavorite = item.item.isFavorite)
+        .catch(function() {
+          self.isFavorite = false;
+        }).then(self.$nextTick(function() {
+          console.log("Loaded. Fav is " + self.isFavorite);
+          self.loaded = true;
+        }));
     }
   }
 };
 </script>
-

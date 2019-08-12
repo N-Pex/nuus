@@ -237,19 +237,19 @@ export default {
 .share {
   background-color: white;
   width: 100%;
-  height: 50px;
+  height: 60px;
   position: sticky;
-  top: 50px;
+  top: 60px;
 }
 
 .progress {
   position: sticky;
-  top: 100px;
+  top: 110px;
 }
 
 .noImage {
   /* Prevent the content from disappearing under toolbar and share bar! */
-  padding-top: 100px;
+  padding-top: 110px;
 }
 </style>
 

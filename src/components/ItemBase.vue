@@ -41,10 +41,13 @@ export default {
       });
     },
     itemClicked() {
-      console.log("Item " + this.$refs.card.getBoundingClientRect());
+      var rect = null;
+      if (this.$refs.card != null) {
+        rect = this.$refs.card.getBoundingClientRect();
+      }
       this.$emit("itemClicked", {
         item: this.item,
-        rect: this.$refs.card.getBoundingClientRect()
+        rect: rect
       });
     }
   }
@@ -63,5 +66,4 @@ br {
 .itemBody p:last-of-type {
   margin-bottom: 0px;
 }
-
 </style>
