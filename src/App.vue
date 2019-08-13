@@ -29,23 +29,6 @@ if (!String.hashCode) {
   };
 }
 
-var temp = new ItemModel();
-Object.defineProperty(ItemModel.prototype, "hasVideoAttachment", {
-  enumerable: false,
-  value: function() {
-    return (
-      this.enclosureType != null && this.enclosureType.indexOf("video") === 0
-    );
-  }
-});
-Object.defineProperty(ItemModel.prototype, "hasAudioAttachment", {
-  enumerable: false,
-  value: function() {
-    return (
-      this.enclosureType != null && this.enclosureType.indexOf("audio") === 0
-    );
-  }
-});
 
 export default {
   name: "App",

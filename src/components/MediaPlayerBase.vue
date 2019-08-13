@@ -19,6 +19,7 @@ export default {
     imageUrl: null,
     enclosureURL: "",
     enclosureType: null,
+    enclosureIsBlob: false,
     duration: 0,
     currentPlaySeconds: 0,
     currentPlayPercentage: 0,
@@ -34,6 +35,17 @@ export default {
       this.update();
     }
   },
+  
+  destroyed: function() {
+    if (this.enclosureIsBlob && this.enclosureURL != null) {
+      var myURL = window.URL || window.webkitURL;
+      console.log("Revoking audio blob: " + this.enclosureURL);
+      myURL.revokeObjectURL(this.enclosureURL);
+      this.enclosureIsBlob = false;
+      this.enclosureURL = null;
+    }
+  },
+
   computed: {},
   filters: {
     timeInColonFormat: function(value) {
@@ -90,13 +102,21 @@ export default {
     },
 
     async enclosure() {
-      if (this.item.enclosure.startsWith("file://")) {
+      var self = this;
+      if (this.item != null && this.item.enclosure != null) {
         let blob = await db.getMediaFile(this.item.enclosure);
+        console.log("So blob is:");
+        console.log(blob);
+        if (blob == null) {
+          return this.item.enclosure;
+        }
+        console.log("Creating blob for playback");
         var myURL = window.URL || window.webkitURL;
         let url = myURL.createObjectURL(blob.blob);
+        this.enclosureIsBlob = true;
         return url;
       }
-      return this.item.enclosure;
+      return null;
     },
 
     onCanPlay() {

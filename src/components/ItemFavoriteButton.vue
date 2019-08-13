@@ -1,5 +1,12 @@
 <template>
-  <v-checkbox :ripple="{center: true}" class="ma-0 pa-0 text-center small align-center justify-center" v-model="isFavorite" hide-details on-icon="$vuetify.icons.favorite" off-icon="$vuetify.icons.favoriteNot" />
+  <v-checkbox
+    :ripple="{center: true}"
+    class="ma-0 pa-0 text-center small align-center justify-center"
+    v-model="isFavorite"
+    hide-details
+    on-icon="$vuetify.icons.favorite"
+    off-icon="$vuetify.icons.favoriteNot"
+  />
 </template>
 
 
@@ -41,31 +48,45 @@ export default {
       const self = this;
       if (!isFav) {
         console.log("Delete");
-        this.item.isFavorite = false;
-        db.items.where('id').equals(this.item.guid).delete();
+        this.item.savedByUser = null;
+        db.items
+          .where("id")
+          .equals(this.item.guid)
+          .delete();
+        this.item.cancelDownloadMedia();
+        this.item.deleteDownloadedMedia();
       } else {
-        this.item.isFavorite = true;
-      db.items
-        .put({
-          id: this.item.guid,
-          item: this.item
-        })
-        .catch(function(error) {
-          console.log("DEXIE Error: " + error);
-        });
+        this.item.savedByUser = Date.now();
+
+        db.items
+          .put({
+            id: this.item.guid,
+            item: this.item.serialize()
+          })
+          .catch(function(error) {
+            console.log("DEXIE Error: " + error);
+          });
+        this.item.downloadMedia();
       }
     },
     updateItem() {
       const self = this;
       db.items
         .get(this.item.guid)
-        .then(item => self.isFavorite = item.item.isFavorite)
+        .then(item => {
+          self.isFavorite = ItemModel.fromString(item.item).savedByUser != null;
+          self.$nextTick(function() {
+            console.log("Set loaded = true");
+            self.loaded = true;
+          });
+        })
         .catch(function() {
           self.isFavorite = false;
-        }).then(self.$nextTick(function() {
-          console.log("Loaded. Fav is " + self.isFavorite);
-          self.loaded = true;
-        }));
+          self.$nextTick(function() {
+            console.log("Set loaded = true");
+            self.loaded = true;
+          });
+        });
     }
   }
 };

@@ -62,7 +62,7 @@
                 pt-0
               >
                 <div>
-                  <Date class="itemDate verticalCenter" :date="item.pubDate" />
+                  <DateView class="itemDate verticalCenter" :date="item.pubDate" />
                 </div>
                 <div class="mediaItemTitle" style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden">{{ itemTitle }}</div>
                 <!--<div class="contentBlock mt-2">
@@ -203,12 +203,12 @@
 <script>
 import MediaPlayerBase from "./MediaPlayerBase.vue";
 import Share from "./Share.vue";
-import Date from "./Date";
+import DateView from "./DateView";
 
 export default {
   extends: MediaPlayerBase,
   components: {
-    Share, Date
+    Share, DateView
   },
   data: () => ({
     draggingSlider: false

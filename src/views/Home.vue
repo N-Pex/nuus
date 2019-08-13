@@ -107,7 +107,7 @@
         <v-layout xs12>
           <v-flex xs12 ml-2 mr-2 mt-0 pt-0>
             <div>
-              <Date class="itemDate verticalCenter" :date="playingMediaItem.pubDate" />
+              <DateView class="itemDate verticalCenter" :date="playingMediaItem.pubDate" />
             </div>
             <div
               class="mediaItemTitle"
@@ -172,7 +172,7 @@ import VideoPlayer from "../components/VideoPlayer";
 import AudioPlayer from "../components/AudioPlayer";
 import Share from "../components/Share";
 import FullScreenItem from "../components/FullScreenItem";
-import Date from "../components/Date";
+import DateView from "../components/DateView";
 
 //import axios from "axios";
 //import sanitizeHTML from "sanitize-html";
@@ -195,7 +195,7 @@ export default {
     AudioPlayer,
     Share,
     FullScreenItem,
-    Date
+    DateView
   },
   props: {
     headerTitle: null,
@@ -322,26 +322,25 @@ export default {
           items =>
             (self.filteredItems = self.sortItemsOnPubDate(
               items
-                .filter(function(i) {
-                  return i.item.isFavorite;
-                })
                 .map(function itemObject(item) {
-                  return new ItemModel(item.item);
+                  return ItemModel.fromString(item.item);
                 })
                 .filter(function(i) {
+                  return i.savedByUser != null;
+                })
+                .filter(function(i) {
+                  var saveDate = new Date(parseInt(i.savedByUser, 10));
                   if (self.currentHeaderTag.value == "saved_week") {
                     return (
-                      i.pubDate != null &&
                       moment()
                         .subtract(7, "days")
-                        .isBefore(i.pubDate)
+                        .isBefore(saveDate)
                     );
                   } else if (self.currentHeaderTag.value == "saved_month") {
                     return (
-                      i.pubDate != null &&
                       moment()
                         .subtract(1, "months")
-                        .isBefore(i.pubDate)
+                        .isBefore(saveDate)
                     );
                   }
                   return true;

@@ -43,7 +43,7 @@
                 />
               </div>
               <div>
-                <Date class="itemDate verticalCenter" :date="item.pubDate" ago />&nbsp;
+                <DateView class="itemDate verticalCenter" :date="item.pubDate" ago />&nbsp;
                 <ItemType :item="item" />
               </div>
             </div>
@@ -60,13 +60,13 @@ import ItemBase from "./ItemBase";
 import ItemType from "./ItemType";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
-import Date from "./Date";
+import DateView from "./DateView";
 import PlayButton from "./PlayButton";
 
 export default {
   extends: ItemBase,
   components: {
-    Date,
+    DateView,
     PlayButton,
     ItemType
   }

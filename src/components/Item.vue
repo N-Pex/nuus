@@ -6,11 +6,11 @@
       style="background-color: var(--v-cardBackground-base)"
       justify-space-between
     >
-      <v-flex grow mt-0 pt-0 v-if="hasImage || playable" v-bind:class="imageClassObject">
+      <v-flex shrink style="min-width: var(--v-theme-image-width)" mt-0 pt-0 v-if="hasImage || playable" v-bind:class="imageClassObject">
         <v-img
           :aspect-ratio="4/3"
           class="image ma-0 mb-2 pa-0 text-center"
-          :src="hasImage ? imageUrl : ''"
+          :src="imageBlobUrl != null ? imageBlobUrl : (imageUrl == null ? '' : imageUrl)"
           @error="onError"
           style="height: var(--v-theme-image-height);width: var(--v-theme-image-width);"
         >
@@ -38,7 +38,7 @@
           />
         </div>
         <div>
-          <Date class="itemDate verticalCenter" :date="item.pubDate" ago />&nbsp;
+          <DateView class="itemDate verticalCenter" :date="item.pubDate" ago />&nbsp;
           <ItemType :item="item" />
         </div>
       </v-flex>
@@ -57,13 +57,13 @@ import ItemType from "./ItemType";
 import ItemFavoriteButton from "./ItemFavoriteButton";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
-import Date from "./Date";
+import DateView from "./DateView";
 import PlayButton from "./PlayButton";
 
 export default {
   extends: ItemBase,
   components: {
-    Date,
+    DateView,
     PlayButton,
     ItemType,
     ItemFavoriteButton

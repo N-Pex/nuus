@@ -16,19 +16,43 @@ export default {
     odd: false
   },
 
+  destroyed: function() {
+    if (this.imageBlobUrl != null) {
+      var myURL = window.URL || window.webkitURL;
+      console.log("Revoking: " + this.imageBlobUrl);
+      myURL.revokeObjectURL(this.imageBlobUrl);
+      this.imageBlobUrl = null;
+    }
+  },
+
   mounted: function() {
     var self = this;
-    this.imageUrl = this.item.imageSrc;
+    if (this.item != null && this.item.imageSrc != null) {
+      db.getMediaFile(this.item.imageSrc).then(function (blob) {
+      if (blob == null) {
+        console.log("Not saved, return: " + self.item.imageSrc);
+        self.imageUrl = self.item.imageSrc;
+      } else {
+        var myURL = window.URL || window.webkitURL;
+        let url = myURL.createObjectURL(blob.blob);
+        self.imageBlobUrl = url;
+        console.log("Saved, return: " + self.imageBlobUrl);
+      }
+    });
+    } else {
+      this.imageUrl = null;
+    }
   },
   data: () => ({
-    imageUrl: null
+    imageUrl: null,
+    imageBlobUrl: null
   }),
   computed: {
     playable: function() {
       return this.item != null && (this.item.hasVideoAttachment() || this.item.hasAudioAttachment());
     },
     hasImage: function() {
-      return this.imageUrl != null;
+      return this.item != null && this.item.imageSrc != null;
     },
   },
   methods: {

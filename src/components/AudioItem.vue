@@ -8,7 +8,7 @@
               <v-icon v-else class="ma-0 pa-0 tiny" small>$vuetify.icons.typeAudio</v-icon>
             </span>
             &nbsp;
-            <Date class="itemDate verticalCenter" :date="item.pubDate" ago />
+            <DateView class="itemDate verticalCenter" :date="item.pubDate" ago />
         </div>
         <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
           {{ item.title }}
@@ -18,19 +18,7 @@
         </div>
       </v-flex>
       <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-center ma-0 pa-0">
-        <v-btn
-          medium
-          text
-          icon
-          ma-0
-          pa-0
-          color="black"
-          style="min-width: 0"
-          @click="toggleFavorite()"
-        >
-          <v-icon v-if="isFavorite" class="ma-0 pa-0 small" color="green">$vuetify.icons.favorite</v-icon>
-          <v-icon v-else class="ma-0 pa-0 small" color="black">$vuetify.icons.favoriteNot</v-icon>
-        </v-btn>
+        <ItemFavoriteButton :item="item" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -40,11 +28,11 @@
 <script>
 import db from "../database";
 import ItemModel from "../models/itemmodel";
-import Date from "./Date";
+import DateView from "./DateView";
 
 export default {
       components: {
-    Date
+    DateView
   },
   props: {
     item: {
@@ -56,40 +44,12 @@ export default {
     isSelected: false,
     odd: false
   },
-  watch: {
-    item: function() {
-      this.updateItem();
-    }
-  },
-  mounted: function() {
-    this.updateItem();
-  },
-  data: () => ({
-    isFavorite: false
-  }),
   methods: {
-    // Toggle favorite status of item.
-    toggleFavorite() {
-      const self = this;
-      db.items
-        .put({ id: this.item.guid, favorite: !this.isFavorite, item: this.item })
-        .then(item => {
-          self.isFavorite = !self.isFavorite;
-        })
-        .catch(function() {});
-    },
     itemClicked() {
       this.$emit("itemClicked", {
         item: this.item,
         rect: this.$refs.card.getBoundingClientRect()
       });
-    },
-
-    updateItem() {
-      db.items
-        .get(this.item.guid)
-        .then(item => (this.isFavorite = item.favorite))
-        .catch(function() {});
     }
   }
 };
