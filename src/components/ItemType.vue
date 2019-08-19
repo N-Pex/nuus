@@ -1,12 +1,13 @@
 <template>
   <span class="verticalCenter">
-    <v-icon v-if="item.hasVideoAttachment()" class="ma-0 pa-0 tiny" small>$vuetify.icons.typeVideo</v-icon>
+    <v-icon v-if="item.hasVideoAttachment()" :color="color" class="ma-0 pa-0 tiny" small>$vuetify.icons.typeVideo</v-icon>
     <v-icon
       v-else-if="item.hasAudioAttachment()"
+      :color="color"
       class="ma-0 pa-0 tiny"
       small
     >$vuetify.icons.typeAudio</v-icon>
-    <v-icon v-else class="ma-0 pa-0 tiny" small>$vuetify.icons.typeText</v-icon>
+    <v-icon v-else class="ma-0 pa-0 tiny" :color="color" small>$vuetify.icons.typeText</v-icon>
   </span>
 </template>
 
@@ -20,6 +21,12 @@ export default {
       type: ItemModel,
       default: function() {
         return new ItemModel();
+      }
+    },
+    color: {
+      type: String,
+      default: function() {
+        return "secondary";
       }
     }
   }

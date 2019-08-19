@@ -44,7 +44,7 @@
               </div>
               <div>
                 <DateView class="itemDate verticalCenter" :date="item.pubDate" ago />&nbsp;
-                <ItemType :item="item" />
+                <ItemType :item="item" color="white" />
               </div>
             </div>
           </v-flex>
