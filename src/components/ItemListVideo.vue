@@ -2,7 +2,7 @@
   <div class="ma-0 pa-0" ref="container">
     <v-list ref="list">
       <VideoItem
-        v-for="(item, index) in items"
+        v-for="item in items"
         :key="item.guid"
         :ref="item.guid"
         class="ma-0"
