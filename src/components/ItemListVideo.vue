@@ -8,7 +8,6 @@
         class="ma-0"
         :item="item"
         :isSelected="item == selectedItem"
-        :odd="index % 2 != 0"
         v-on:itemClicked="playItem($event)"
         v-on:playItem="playItem($event)"
       />

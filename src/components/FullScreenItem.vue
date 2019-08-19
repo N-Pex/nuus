@@ -10,10 +10,10 @@
           <v-toolbar-title class="toolbarTitle">{{ item.title }}</v-toolbar-title>
         </v-app-bar>
         <v-card color="white" flat :style="cssProps">
-          <div style="height: 200px; display: grid" v-if="imageUrl != null">
+          <div style="height: 200px; display: grid" v-if="hasImage">
             <v-img
               class="white--text"
-              :src="imageUrl"
+              :src="imageSrc"
               gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,1)"
               style="grid-column: 1; grid-row: 1"
             />
@@ -48,7 +48,7 @@
             v-on:end="draggingSlider = false"
           />
 
-          <v-container :class="{'noImage': this.imageUrl == null}">
+          <v-container :class="{'noImage': !hasImage}">
             <div v-html="item.description" class="itemDescription mb-4" />
             <div v-html="item.content" class="itemBody" />
           </v-container>
@@ -60,6 +60,7 @@
 
 
 <script>
+import ItemBase from "./ItemBase";
 import Share from "../components/Share";
 import Vuetify from "vuetify";
 import ItemModel from "../models/itemmodel";
@@ -67,22 +68,14 @@ import PlayButton from "../components/PlayButton";
 
 export default {
   name: "FullScreenItem",
+  extends: ItemBase,
   components: {
     Share,
     PlayButton
   },
-  props: {
-    item: {
-      type: ItemModel,
-      default: function() {
-        return new ItemModel();
-      }
-    }
-  },
   data: () => ({
     moveFraction: 1,
     fadeFraction: 0,
-    imageUrl: null,
     draggingSlider: false,
     currentPlayPercentage: 0
   }),
@@ -97,8 +90,7 @@ export default {
       this.$root.mediaPlayerInvisible = true;
     }
 
-    this.imageUrl = this.item.imageSrc;
-    if (this.imageUrl == null) {
+    if (!this.hasImage) {
       this.moveFraction = 0;
       this.fadeFraction = 0;
     } else {
@@ -140,7 +132,7 @@ export default {
       this.$emit("close");
     },
     onScroll(e) {
-      if (this.imageUrl != null) {
+      if (this.hasImage) {
         let offsetTop = e.target.scrollTop;
         this.moveFraction = Math.min(
           1,

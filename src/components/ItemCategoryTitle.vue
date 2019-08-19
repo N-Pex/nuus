@@ -3,7 +3,7 @@
     <div class="imageContainerContent">
       <div style="grid-column: 1; grid-row: 1" v-if="hasImage">
         <v-img
-          :src="imageUrl"
+          :src="imageSrc"
           class="ma-0 pa-0 image"
           gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,1)"
         />

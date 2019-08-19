@@ -26,23 +26,20 @@
 
 
 <script>
+import ItemBase from "./ItemBase";
+import ItemFavoriteButton from "./ItemFavoriteButton";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
 import DateView from "./DateView";
 
 export default {
-      components: {
-    DateView
+  components: {
+    ItemBase,
+    DateView,
+    ItemFavoriteButton
   },
   props: {
-    item: {
-      type: ItemModel,
-      default: function() {
-        return new ItemModel();
-      }
-    },
-    isSelected: false,
-    odd: false
+    isSelected: false
   },
   methods: {
     itemClicked() {

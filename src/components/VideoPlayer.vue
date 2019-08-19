@@ -3,7 +3,7 @@
     <v-container fill-height fluid ma-0 pa-0>
       <v-layout fill-height align-center row ma-0 pa-0>
         <v-flex fill-height ma-0 pa-0 :class="'xs'+ (isDocked ? 3 : 12)" style="display: grid">
-          <div style="grid-column: 1; grid-row: 1">
+          <div style="grid-column: 1; grid-row: 1; overflow: hidden">
             <!-- VIDEO PLAYER -->
             <video
               class="player"

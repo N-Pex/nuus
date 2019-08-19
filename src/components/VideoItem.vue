@@ -2,7 +2,7 @@
   <v-container fluid grid-list-lg pb-1 pt-4 pl-0 pr-0 ma-0>
     <v-layout ref="card" xs12 style="background-color: var(--v-cardBackground-base)">
       <v-flex xs4 mt-0 pt-0>
-        <v-img aspect-ratio="1.77" max-height="70px" :src="imageUrl" ma-0 pa-0 v-if="imageUrl != null" />
+        <v-img aspect-ratio="1.77" max-height="70px" :src="imageSrcOrFeedImage" ma-0 pa-0 />
       </v-flex>
       <v-flex @click="itemClicked()" xs7 ml-2 mr-2 mt-0 pt-0>
         <div style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
@@ -25,26 +25,24 @@
 
 
 <script>
+import ItemBase from "./ItemBase";
 import db from "../database";
 import ItemModel from "../models/itemmodel";
 import DateView from "./DateView";
+import ItemFavoriteButton from "./ItemFavoriteButton";
 
 export default {
+  extends: ItemBase,
   components: {
-    DateView
+    DateView,
+    ItemFavoriteButton
   },
   props: {
-    item: {
-      type: ItemModel,
-      default: function() {
-        return new ItemModel();
-      }
-    },
-    isSelected: false,
-    odd: false
+    isSelected: false
   },
   watch: {
     item: function() {
+      console.log("VideoItem - item changed!!!");
       this.updateItem();
     }
   },
@@ -52,8 +50,13 @@ export default {
     this.updateItem();
   },
   data: () => ({
-    imageUrl: null
+    feedImageSrc: null
   }),
+  computed: {
+    imageSrcOrFeedImage: function() {
+      return this.imageSrc;
+    }
+  },
   methods: {
     itemClicked() {
       this.$emit("itemClicked", {
@@ -63,10 +66,8 @@ export default {
     },
 
     updateItem() {
-      this.imageUrl = this.item.imageSrc;
-
-      // If no thumbnail, try generic feed image
-      if (this.imageUrl == null) {
+      if (!this.hasImage) {
+        console.log("Video item - no image!!!");
         this.imageUrl = this.item.feed.imageUrl;
       }
     }

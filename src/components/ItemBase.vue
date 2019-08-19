@@ -54,6 +54,10 @@ export default {
     hasImage: function() {
       return this.item != null && this.item.imageSrc != null;
     },
+    // A property that can be used as "src" in images. It can fetch the image from a blob, a url or just defaults to '' to avoid errors.
+    imageSrc: function() {
+      return this.imageBlobUrl != null ? this.imageBlobUrl : (this.imageUrl == null ? '' : this.imageUrl)
+    }
   },
   methods: {
     onPlayStarted(item) {
