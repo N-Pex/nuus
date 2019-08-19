@@ -1,8 +1,9 @@
 <template>
   <v-checkbox
     :ripple="{center: true}"
-    class="ma-0 pa-0 text-center small align-center justify-center"
+    class="ma-0 pa-0 text-center align-center justify-center"
     v-model="isFavorite"
+    small
     hide-details
     on-icon="$vuetify.icons.favorite"
     off-icon="$vuetify.icons.favoriteNot"

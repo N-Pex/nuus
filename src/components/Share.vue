@@ -2,22 +2,22 @@
   <v-container fluid ma-0 pa-1>
     <v-layout text-center wrap justify-center align-center>
       <v-flex xs3>
-        <v-btn class="tiny-button" text icon medium color="black">
+        <v-btn class="medium-button" icon color="black">
           <v-icon>$vuetify.icons.share</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" text icon medium color="black">
+        <v-btn class="medium-button" icon color="black">
           <v-icon>$vuetify.icons.facebook</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="tiny-button" text icon medium color="black">
+        <v-btn class="medium-button" icon color="black">
           <v-icon>$vuetify.icons.download</v-icon>
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <ItemFavoriteButton class="ma-0 pa-0 tiny-button" :item="item" />
+        <ItemFavoriteButton class="ma-0 pa-0 medium-button" :item="item" />
       </v-flex>
     </v-layout>
   </v-container>
