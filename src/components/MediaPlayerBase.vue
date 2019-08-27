@@ -5,6 +5,7 @@
 import db from "../database";
 import ItemModel from "../models/itemmodel";
 import { constants } from "crypto";
+import MediaCache from "../mediacache";
 
 export default {
   props: {
@@ -19,7 +20,6 @@ export default {
     imageUrl: null,
     enclosureURL: "",
     enclosureType: null,
-    enclosureIsBlob: false,
     duration: 0,
     currentPlaySeconds: 0,
     currentPlayPercentage: 0,
@@ -37,13 +37,8 @@ export default {
   },
   
   destroyed: function() {
-    if (this.enclosureIsBlob && this.enclosureURL != null) {
-      var myURL = window.URL || window.webkitURL;
-      console.log("Revoking audio blob: " + this.enclosureURL);
-      myURL.revokeObjectURL(this.enclosureURL);
-      this.enclosureIsBlob = false;
-      this.enclosureURL = null;
-    }
+    MediaCache.releaseMedia(this.enclosureURL);
+    this.enclosureURL = null;
   },
 
   computed: {},
@@ -75,8 +70,8 @@ export default {
       ) {
         this.itemTitle = this.item.title;
         const self = this;
-        this.enclosure().then(function(res) {
-          self.enclosureURL = res;
+        this.enclosure(function(url) {
+          self.enclosureURL = url;
           self.enclosureType = self.item.enclosureType;
           self.$refs.player.pause();
           self.$refs.player.load();
@@ -89,7 +84,11 @@ export default {
 
         // If no thumbnail, try generic feed image
         if (this.imageUrl == null) {
-          this.imageUrl = this.item.feed.imageUrl;
+          db.getFeed(this.item.feed).then(feed => {
+            if (feed != null) {
+              this.imageUrl = feed.imageUrl;
+            }
+          });
         }
       } else {
         this.itemTitle = "";
@@ -101,22 +100,12 @@ export default {
       }
     },
 
-    async enclosure() {
-      var self = this;
+    enclosure(callback) {
       if (this.item != null && this.item.enclosure != null) {
-        let blob = await db.getMediaFile(this.item.enclosure);
-        console.log("So blob is:");
-        console.log(blob);
-        if (blob == null) {
-          return this.item.enclosure;
-        }
-        console.log("Creating blob for playback");
-        var myURL = window.URL || window.webkitURL;
-        let url = myURL.createObjectURL(blob.blob);
-        this.enclosureIsBlob = true;
-        return url;
+        MediaCache.getMedia(this.item.enclosure, false, function(url) {
+          callback(url);
+        });
       }
-      return null;
     },
 
     onCanPlay() {
@@ -143,17 +132,21 @@ export default {
       if ("mediaSession" in navigator && this.item != null) {
         let meta = {
           title: this.item.title,
-          artist: this.item.feed.title
         };
-        if (this.item.feed.imageUrl != null) {
-          console.log("Set artwork to " + this.item.feed.imageUrl);
-          meta.artwork = [
-            {
-              src: this.item.feed.imageUrl
-            }
-          ];
-        }
         navigator.mediaSession.metadata = new MediaMetadata(meta);
+        db.getFeed(this.item.feed).then(feed => {
+          if (feed != null) {
+            navigator.mediaSession.metadata.artist = feed.title;
+            if (feed.imageUrl != null) {
+              console.log("Set artwork to " + feed.imageUrl);
+              navigator.mediaSession.metadata.artwork = [
+                {
+                  src: feed.imageUrl
+               }
+              ];
+            }
+          }
+        });
       }
     },
 

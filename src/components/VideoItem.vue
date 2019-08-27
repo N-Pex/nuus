@@ -30,6 +30,7 @@ import db from "../database";
 import ItemModel from "../models/itemmodel";
 import DateView from "./DateView";
 import ItemFavoriteButton from "./ItemFavoriteButton";
+import MediaCache from "../mediacache";
 
 export default {
   extends: ItemBase,
@@ -42,6 +43,10 @@ export default {
   },
   watch: {
     item: function() {
+      if (this.feedImageSrc != null) {
+        MediaCache.releaseMedia(this.feedImageSrc);
+      }
+      this.feedImageSrc = null;
       console.log("VideoItem - item changed!!!");
       this.updateItem();
     }
@@ -54,7 +59,7 @@ export default {
   }),
   computed: {
     imageSrcOrFeedImage: function() {
-      return this.imageSrc;
+      return this.feedImageSrc == null ? this.imageSrc : this.feedImageSrc;
     }
   },
   methods: {
@@ -68,7 +73,15 @@ export default {
     updateItem() {
       if (!this.hasImage) {
         console.log("Video item - no image!!!");
-        this.imageUrl = this.item.feed.imageUrl;
+        const self = this;
+        db.getFeed(this.item.feed).then(feed => {
+          if (feed != null) {
+            MediaCache.getMedia(feed.imageUrl, true, function(url) {
+              console.log("Using feed blob " + url);
+              self.feedImageSrc = url;
+            });
+          }
+        });
       }
     }
   }

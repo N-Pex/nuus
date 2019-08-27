@@ -22,7 +22,7 @@ export default class RSSParser {
                             if (relativePath == "index.rss") {
                                 promises.push(file.async("string")
                                     .then(function (text) {
-                                        result = self.parseFeed(self, text);
+                                        result = self.parseFeed(self, text, url);
                                     }));
                             } else if (relativePath.startsWith("enc/") && !file.dir) {
                                 let url = "file://" + relativePath;
@@ -58,7 +58,7 @@ export default class RSSParser {
             console.log("Ask axios to get: " + url);
             axios.get(url)
                 .then(function (response) {
-                    let result = self.parseFeed(self, response.data);
+                    let result = self.parseFeed(self, response.data, url);
                     callback(result.feed, result.items);
                 })
                 .catch(function (error) {
@@ -71,7 +71,7 @@ export default class RSSParser {
         }
     }
 
-    static parseFeed(self, data) {
+    static parseFeed(self, data, url) {
         // Get the parseString function
         var parseString = require('xml2js').parseString;
 
@@ -79,21 +79,25 @@ export default class RSSParser {
         parseString(data, { explicitArray: false }, function (err, result) {
             //console.log(result);
             if (result["rdf:RDF"] != null) {
-                parseResult = self.parseRDF(self, result);
+                parseResult = self.parseRDF(self, result, url);
             } else if (result.rss != null) {
-                parseResult = self.parseRSS(self, result);
+                parseResult = self.parseRSS(self, result, url);
             }
         });
         console.log(parseResult);
+
+        // Store feed in DB
+        db.storeFeed(parseResult.feed);
+
         return parseResult;
     }
 
-    static parseRSS(self, result) {
-        return self.parseData(self, result.rss.channel, result.rss.channel);
+    static parseRSS(self, result, feedUrl) {
+        return self.parseData(self, result.rss.channel, result.rss.channel, feedUrl);
     }
 
-    static parseRDF(self, result) {
-        return self.parseData(self, result["rdf:RDF"].channel, result["rdf:RDF"]);
+    static parseRDF(self, result, feedUrl) {
+        return self.parseData(self, result["rdf:RDF"].channel, result["rdf:RDF"], feedUrl);
     }
 
     static getText = function(elt) {
@@ -102,10 +106,11 @@ export default class RSSParser {
         return null;
     }
 
-    static parseData(self, channelElement, itemParentElement) {
+    static parseData(self, channelElement, itemParentElement, feedUrl) {
         var items = [];
 
         var feed = new FeedModel();
+        feed.url = feedUrl;
         feed.title = channelElement.title;
         feed.link = channelElement.link;
         feed.description = channelElement.description;
@@ -122,7 +127,7 @@ export default class RSSParser {
 
         itemParentElement.item.forEach(i => {
             var item = new ItemModel();
-            item.feed = feed;
+            item.feed = feedUrl;
             item.title = i.title;
             item.link = i.link;
             item.guid = self.getText(i.guid);

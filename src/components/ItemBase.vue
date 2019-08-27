@@ -3,6 +3,7 @@
 <script>
 import db from "../database";
 import ItemModel from "../models/itemmodel";
+import MediaCache from "../mediacache";
 
 export default {
 
@@ -17,35 +18,22 @@ export default {
   },
 
   destroyed: function() {
-    if (this.imageBlobUrl != null) {
-      var myURL = window.URL || window.webkitURL;
-      console.log("Revoking: " + this.imageBlobUrl);
-      myURL.revokeObjectURL(this.imageBlobUrl);
-      this.imageBlobUrl = null;
-    }
+    MediaCache.releaseMedia(this.imageUrl);
+    this.imageUrl = null;
   },
 
   mounted: function() {
     var self = this;
     if (this.item != null && this.item.imageSrc != null) {
-      db.getMediaFile(this.item.imageSrc).then(function (blob) {
-      if (blob == null) {
-        console.log("Not saved, return: " + self.item.imageSrc);
-        self.imageUrl = self.item.imageSrc;
-      } else {
-        var myURL = window.URL || window.webkitURL;
-        let url = myURL.createObjectURL(blob.blob);
-        self.imageBlobUrl = url;
-        console.log("Saved, return: " + self.imageBlobUrl);
-      }
-    });
+      MediaCache.getMedia(this.item.imageSrc, false, function(url) {
+        self.imageUrl = url;
+      });
     } else {
       this.imageUrl = null;
     }
   },
   data: () => ({
-    imageUrl: null,
-    imageBlobUrl: null
+    imageUrl: null
   }),
   computed: {
     playable: function() {
@@ -56,7 +44,7 @@ export default {
     },
     // A property that can be used as "src" in images. It can fetch the image from a blob, a url or just defaults to '' to avoid errors.
     imageSrc: function() {
-      return this.imageBlobUrl != null ? this.imageBlobUrl : (this.imageUrl == null ? '' : this.imageUrl)
+      return this.imageUrl == null ? '' : this.imageUrl;
     }
   },
   methods: {

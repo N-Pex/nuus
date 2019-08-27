@@ -51,7 +51,6 @@ export default {
           .where("id")
           .equals(this.item.guid)
           .delete();
-        this.item.cancelDownloadMedia();
         this.item.deleteDownloadedMedia();
       } else {
         this.item.savedByUser = Date.now();
