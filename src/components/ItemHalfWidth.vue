@@ -3,7 +3,7 @@
     <v-img
       :aspect-ratio="4/3"
       class="image ma-0 mb-2 pa-0 text-center"
-      :src="hasImage ? imageUrl : ''"
+      :src="imageSrc"
       @error="onError"
     >
       <v-layout pa-2 column fill-height class="lightbox white--text" justify-center>
