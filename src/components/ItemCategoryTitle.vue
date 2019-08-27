@@ -58,8 +58,6 @@
 <script>
 import ItemBase from "./ItemBase";
 import ItemType from "./ItemType";
-import db from "../database";
-import ItemModel from "../models/itemmodel";
 import DateView from "./DateView";
 import PlayButton from "./PlayButton";
 

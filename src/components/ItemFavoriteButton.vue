@@ -45,10 +45,7 @@ export default {
   methods: {
     // Toggle favorite status of item.
     storeFavorite(isFav) {
-      console.log("Store favorite: " + isFav);
-      const self = this;
       if (!isFav) {
-        console.log("Delete");
         this.item.savedByUser = null;
         db.items
           .where("id")
@@ -77,14 +74,12 @@ export default {
         .then(item => {
           self.isFavorite = ItemModel.fromString(item.item).savedByUser != null;
           self.$nextTick(function() {
-            console.log("Set loaded = true");
             self.loaded = true;
           });
         })
         .catch(function() {
           self.isFavorite = false;
           self.$nextTick(function() {
-            console.log("Set loaded = true");
             self.loaded = true;
           });
         });

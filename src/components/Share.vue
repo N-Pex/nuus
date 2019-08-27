@@ -24,10 +24,8 @@
 </template>
 
 <script>
-import flavors from "../config";
 import ItemModel from "../models/itemmodel";
 import ItemFavoriteButton from "./ItemFavoriteButton";
-import db from "../database";
 
 export default {
   components: {
