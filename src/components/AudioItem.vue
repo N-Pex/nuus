@@ -33,6 +33,7 @@ import ItemModel from "../models/itemmodel";
 import DateView from "./DateView";
 
 export default {
+  extends: ItemBase,
   components: {
     ItemBase,
     DateView,

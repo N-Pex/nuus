@@ -27,13 +27,30 @@ export default {
       timer: null
     };
   },
-  mounted: function() {
-    this.updateDateString();
-    if (this.ago) {
-      this.timer = setInterval(this.updateDateString, 6000);
+  watch: {
+    date() {
+      this.changed();
+    },
+    ago() {
+      this.changed();
     }
   },
+  mounted: function() {
+    this.changed();
+  },
   methods: {
+    changed() {
+      if (this.timer != null) {
+        let timer = this.timer;
+        this.timer = null;
+        clearInterval(timer);
+      }
+      this.updateDateString();
+      if (this.ago) {
+        const self = this;
+        this.timer = setInterval(() => { self.updateDateString() }, 6000);
+      }
+    },
     updateDateString() {
       var m = moment(this.date);
       if (this.ago) {
@@ -69,12 +86,6 @@ export default {
         }
         return this.$t("time.days", { time: diff });
       }
-    },
-    cancelAutoUpdate: function() {
-      if (this.timer != null) {
-        clearInterval(this.timer);
-      }
-      this.timer = null;
     }
   },
   beforeDestroy() {

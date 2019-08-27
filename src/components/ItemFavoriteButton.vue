@@ -68,6 +68,12 @@ export default {
       }
     },
     updateItem() {
+      if (this.item == null) {
+        this.isFavorite = false;
+        this.loaded = false;
+        return;
+      }
+
       const self = this;
       db.items
         .get(this.item.guid)
