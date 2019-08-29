@@ -228,10 +228,9 @@ export default {
 
 .share {
   background-color: white;
-  width: 100%;
   height: 60px;
   position: sticky;
-  top: 60px;
+  top: 50px;
 }
 
 .progress {

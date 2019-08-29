@@ -3,11 +3,11 @@
 # abort on errors
 set -e
 
-# Build the workbox service worker manifest
-workbox injectManifest workbox-config.js
-
 # build
 npm run build
+
+# Build the workbox service worker manifest
+workbox injectManifest workbox-config.js
 
 # navigate into the build output directory
 cd dist

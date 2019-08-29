@@ -1,6 +1,6 @@
 <template>
   <div class="ma-0 pa-0" ref="container">
-    <v-list ref="list">
+    <v-list ref="list" class="itemList">
       <div
         v-for="(item, index) in items"
         :key="item.guid"

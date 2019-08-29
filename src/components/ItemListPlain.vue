@@ -1,6 +1,6 @@
 <template>
   <div class="ma-0 pa-0" ref="container">
-    <v-list ref="list" pa-0 ma-0>
+    <v-list ref="list" pa-0 ma-0 class="itemList">
       <v-container fluid grid-list-sm ma-0 pa-0>
         <v-layout ma-0 pa-0 xs12 row wrap justify-space-between>
           <v-flex class="xs12 pa-0"

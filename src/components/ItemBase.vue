@@ -72,14 +72,14 @@ export default {
 
 <style>
 /* Special cleanup of the display */
-a:empty {
+.itemList a:empty {
   display: none;
 }
-br {
+.itemList br {
   content: ' ';
   display: none !important;
 }
-.itemBody p:last-of-type {
+.itemList .itemBody p:last-of-type {
   margin-bottom: 0px;
 }
 </style>

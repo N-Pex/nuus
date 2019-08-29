@@ -155,7 +155,7 @@
       />
     </div>
 
-    <div v-if="fullScreenItem != null" class="fullScreenItem" id="scroll-target">
+    <div v-if="fullScreenItem != null" class="fullScreenItem ma-0 pa-0" id="scroll-target">
       <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem" />
     </div>
   </div>
@@ -603,5 +603,6 @@ export default {
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 </style>
