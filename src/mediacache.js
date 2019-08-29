@@ -12,6 +12,10 @@ class MediaCache {
     constructor() {
     }
 
+    // Get a url for a piece of media. If the media is downloaded, create (or reuse) a
+    // blob url. Otherwise, if 'download' is true, make sure to download it.
+    // If 'callback' is null and 'download' is true the item will be downloaded, but
+    // the blob url is never created.
     getMedia(url, download, callback) {
         const self = this;
         db.getMediaFile(url).then(function (blob) {

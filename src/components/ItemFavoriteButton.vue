@@ -58,6 +58,7 @@ export default {
         db.items
           .put({
             id: this.item.guid,
+            feed: this.item.feed,
             item: this.item.serialize()
           })
           .catch(function(error) {
