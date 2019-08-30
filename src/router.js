@@ -30,6 +30,12 @@ export default new Router({
           props: { headerType: 'categories', headerTitle: 'SECTIONS' }
         },
         {
+          path: '/radio',
+          name: 'radio',
+          component: () => import('./views/Radio.vue'),
+          props: true
+        },
+        {
           path: '/saved',
           name: 'saved',
           component: () => import('./views/Home.vue'),

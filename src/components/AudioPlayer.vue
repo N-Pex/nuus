@@ -27,6 +27,7 @@
             pa-2
             class="tiny-button"
             style="position: absolute; left: 10px; top: 10px"
+            v-show="showCloseMinimizeButtons"
           >
             <v-icon class="small">$vuetify.icons.collapse</v-icon>
           </v-btn>
@@ -39,6 +40,7 @@
             pa-2
             class="tiny-button"
             style="position: absolute; right: 10px; top: 10px"
+            v-show="showCloseMinimizeButtons"
           >
             <v-icon class="small">$vuetify.icons.close</v-icon>
           </v-btn>
@@ -211,6 +213,14 @@ export default {
   extends: MediaPlayerBase,
   components: {
     Share, DateView
+  },
+  props: {
+    showCloseMinimizeButtons: {
+      type: Boolean,
+      default: function() {
+        return true;
+      }
+    }
   },
   data: () => ({
     draggingSlider: false

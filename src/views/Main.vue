@@ -127,7 +127,8 @@ export default {
     },
 
     showRadio() {
-      console.log("Show radio - TODO");
+      this.closeMediaPlayer();
+      this.$router.replace("/radio");
     },
 
     showOnboarding() {
