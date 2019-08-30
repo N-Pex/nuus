@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Roboto';
-    src: url('indieflower.ttf') format('truetype');
+    src: url('Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('indieflower.ttf') format('truetype');
+    src: url('Roboto-Bold.ttf') format('truetype');
     font-weight: bold;
 }

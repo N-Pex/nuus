@@ -16,6 +16,9 @@ db.version(3).stores(
     }
 )
 db.getMediaFile = async function(url) {
+    if (url == null) {
+        return Promise.resolve(null);
+    }
     return await db.media.get(url);
 }
 

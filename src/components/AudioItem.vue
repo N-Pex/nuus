@@ -18,7 +18,7 @@
         </div>
       </v-flex>
       <v-flex xs1 ma-0 pa-0 style="min-width: 70px" class="text-center ma-0 pa-0">
-        <ItemFavoriteButton :item="item" />
+        <ItemFavoriteButton :item="item" class="small-button" />
       </v-flex>
     </v-layout>
   </v-container>

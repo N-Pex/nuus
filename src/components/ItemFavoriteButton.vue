@@ -1,13 +1,7 @@
 <template>
-  <v-checkbox
-    :ripple="{center: true}"
-    class="ma-0 pa-0 text-center align-center justify-center"
-    v-model="isFavorite"
-    small
-    hide-details
-    on-icon="$vuetify.icons.favorite"
-    off-icon="$vuetify.icons.favoriteNot"
-  />
+  <v-btn icon v-blur @click="toggle" class="ma-0 pa-0 text-center align-center justify-center">
+    <v-icon :color="iconColor">{{icon}}</v-icon>
+  </v-btn>
 </template>
 
 
@@ -35,6 +29,14 @@ export default {
       }
     }
   },
+  computed: {
+    iconColor() {
+      return this.isFavorite ? "accent" : "secondary";
+    },
+    icon() {
+      return this.isFavorite ? "$vuetify.icons.favorite" : "$vuetify.icons.favoriteNot";
+    }
+  },
   mounted: function() {
     this.updateItem();
   },
@@ -43,6 +45,10 @@ export default {
     isFavorite: false
   }),
   methods: {
+    toggle() {
+      this.isFavorite = !this.isFavorite;
+    },
+
     // Toggle favorite status of item.
     storeFavorite(isFav) {
       if (!isFav) {
