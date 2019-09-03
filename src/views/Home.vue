@@ -54,7 +54,7 @@
 
       <!-- If empty saved tab -->
       <v-container v-if="currentHeaderTag != null && currentHeaderTag.value.startsWith('saved_') && filteredItems.length == 0"
-       fluid fill-height>
+       fluid>
         <v-layout fill-height justify-center align-center>
           <v-flex>
             <div class="text-center">
@@ -320,8 +320,8 @@ export default {
       ) {
         const self = this;
         db.items.toArray().then(
-          items =>
-            (self.filteredItems = self.sortItemsOnPubDate(
+          (items) => {
+              self.filteredItems = self.sortItemsOnPubDate(
               items
                 .map(function itemObject(item) {
                   return ItemModel.fromString(item.item);
@@ -346,8 +346,7 @@ export default {
                   }
                   return true;
                 })
-            ))
-        );
+        )});
       } else if (
         this.currentHeaderTag != null &&
         this.currentHeaderTag.value.startsWith("cat_")
@@ -417,6 +416,19 @@ export default {
     }
   },
 
+  created() {
+    this.$root.$on('favChanged', () => {
+      if (this.currentHeaderTag != null && this.currentHeaderTag.value.startsWith("saved_")) {
+        this.updateFilteredItems();
+      }
+    })
+  },
+
+  beforeDestroy() {
+    console.log("BeforeDestroyed");
+    this.$root.$off('favChanged');
+  },
+
   destroyed() {
     if (this.storeWatchObject != null) {
       console.log("Home destroyed, stop listening");
@@ -441,7 +453,7 @@ export default {
     this.updateFilteredItems();
     this.updateHeader();
   },
-
+  
   data() {
     return {
       showMediaList: false,
@@ -564,6 +576,12 @@ export default {
     calc(255 * var(--v-header-scroll-fraction)),
     1
   ) !important;
+  text-decoration: underline rgba(
+    calc(255 * var(--v-header-scroll-fraction)),
+    calc(255 * var(--v-header-scroll-fraction)),
+    calc(255 * var(--v-header-scroll-fraction)),
+    1
+  ) solid;
 }
 
 .mainListHeader {

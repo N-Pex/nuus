@@ -72,6 +72,7 @@ export default {
           });
         this.item.downloadMedia();
       }
+      this.$root.$emit("favChanged");
     },
     updateItem() {
       if (this.item == null) {

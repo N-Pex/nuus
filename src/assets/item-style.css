@@ -4,6 +4,7 @@
     font-size: var(--v-theme-body-font-size);
     font-weight: 400;
     line-height: var(--v-theme-body-line-height);
+    text-decoration: underline var(--v-primary-base) solid;
 }
 
 .itemTitle {
