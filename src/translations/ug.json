@@ -1,0 +1,9 @@
+{
+    "time": {
+      "never": "never",
+      "recently": "just now",
+      "minutes": "1 minute ago | {n} minutes ago",
+      "hours": "1 hour ago | {n} hours ago",
+      "days": "1 day ago | {n} days ago"
+    }
+}

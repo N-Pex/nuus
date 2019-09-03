@@ -69,22 +69,13 @@ export default {
         return this.$t("time.recently");
       } else if (ti < 3600 && Math.round(ti / 60) < 60) {
         var diff = Math.round(ti / 60);
-        if (diff == 1) {
-          return this.$t("time.minute", { time: diff });
-        }
-        return this.$t("time.minutes", { time: diff });
+        return this.$tc("time.minutes", diff);
       } else if (ti < 86400 && Math.round(ti / 60 / 60) < 24) {
         var diff = Math.round(ti / 60 / 60);
-        if (diff == 1) {
-          return this.$t("time.hour", { time: diff });
-        }
-        return this.$t("time.hours", { time: diff });
+        return this.$tc("time.hours", diff);
       } else {
         var diff = Math.round(ti / 60 / 60 / 24);
-        if (diff == 1) {
-          return this.$t("time.day", { time: diff });
-        }
-        return this.$t("time.days", { time: diff });
+        return this.$tc("time.days", diff);
       }
     }
   },
