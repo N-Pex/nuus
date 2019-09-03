@@ -4,6 +4,7 @@
     class="ma-0 pa-0 imageContainer"
     lazy-src="invalid.png"
     gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,1)"
+    v-on="!playable ? { click: itemClicked } : {}"
   >
     <v-layout ref="card" fill-height justify-space-between align-end pa-2>
       <v-flex grow mt-0 pt-0 v-if="playable">

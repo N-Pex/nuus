@@ -5,6 +5,7 @@
       class="image ma-0 mb-2 pa-0 text-center"
       :src="imageSrc"
       @error="onError"
+      v-on="!playable ? { click: itemClicked } : {}"
     >
       <v-layout pa-2 column fill-height class="lightbox white--text" justify-center>
         <v-flex shrink>

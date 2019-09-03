@@ -13,6 +13,7 @@
           :src="imageSrc"
           @error="onError"
           style="height: var(--v-theme-image-height);width: var(--v-theme-image-width);"
+          v-on="!playable ? { click: itemClicked } : {}"
         >
           <v-layout pa-2 column fill-height class="lightbox white--text" justify-center>
             <v-flex shrink>
