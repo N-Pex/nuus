@@ -155,7 +155,7 @@
       />
     </div>
 
-    <div v-if="fullScreenItem != null" class="fullScreenItem ma-0 pa-0" id="scroll-target">
+    <div v-if="fullScreenItem != null && this.$route.query.fullscreen !== undefined" class="fullScreenItem ma-0 pa-0" id="scroll-target">
       <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem" />
     </div>
   </div>
@@ -207,7 +207,7 @@ export default {
         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
       );
       this.fullScreenItem = eventInfo.item;
-      // this.$router.push("/item/" + String.hashCode(eventInfo.item.guid));
+      this.$router.push('?fullscreen');
     },
 
     setMediaPlayer(mediaPlayer) {
@@ -278,6 +278,7 @@ export default {
       this.fullScreenItem = null;
       this.$root.mediaPlayerDocked = true;
       this.$root.mediaPlayerInvisible = false;
+      this.$router.go(-1);
     },
 
     onHeaderScroll(e) {

@@ -2,7 +2,9 @@
   <div>
     <div class="contentView">
       <transition name="fade" mode="out-in">
-        <router-view :key="$route.fullPath" />
+        <keep-alive>
+          <router-view :key="$route.path" />
+        </keep-alive>
       </transition>
     </div>
 
