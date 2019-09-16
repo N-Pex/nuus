@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="contentView">
+    <div class="contentView" style="z-index: 3">
       <transition name="fade" mode="out-in">
         <keep-alive>
           <router-view :key="$route.path" />
@@ -11,6 +11,7 @@
     <v-bottom-navigation
       fixed
       height="60px"
+      style="z-index: 2"
       v-model="activeTab"
       color="green"
       class="navigationBar"
