@@ -89,6 +89,7 @@ export default {
   data() {
     return {
       activeTab: null,
+      oldActiveTab: null,
       transitionName: null,
       showSettings: false
     };
@@ -104,6 +105,19 @@ export default {
     }
   },
   watch: {
+    showSettings: function() {
+      if (!this.showSettings) {
+        // Restore selected tab
+        this.activeTab = this.oldActiveTab;
+      }
+    },
+    // Never allow the settings dialog to be active...
+    activeTab: function() {
+      console.log("Set active to " + this.activeTab);
+      if (this.activeTab != 4) {
+        this.oldActiveTab = this.activeTab;
+      }
+    },
     $route(to, from) {
       const toDepth = to.path.split("/").length;
       const fromDepth = from.path.split("/").length;
@@ -114,6 +128,7 @@ export default {
 
   methods: {
     showHome() {
+      this.activeTab = 0;
       this.closeMediaPlayer();
       this.$router.replace("/home");
     },
@@ -146,8 +161,10 @@ export default {
     },
 
     urlUpdated(url) {
+      this.oldActiveTab = 0;
       this.showSettings = false;
       this.$root.appInstance.componentInstance.urlUpdated(url);
+      this.showHome();
     }
   }
 };
