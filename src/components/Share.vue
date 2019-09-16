@@ -2,7 +2,7 @@
   <v-container fluid ma-0 pa-1>
     <v-layout text-center wrap justify-center align-center>
       <v-flex xs3>
-        <v-btn class="medium-button" icon color="black">
+        <v-btn class="medium-button" icon color="black" @click="share">
           <v-icon>$vuetify.icons.share</v-icon>
         </v-btn>
       </v-flex>
@@ -12,7 +12,7 @@
         </v-btn>
       </v-flex>
       <v-flex xs3>
-        <v-btn class="medium-button" icon color="black">
+        <v-btn class="medium-button" icon color="black" @click="download">
           <v-icon>$vuetify.icons.download</v-icon>
         </v-btn>
       </v-flex>
@@ -38,6 +38,15 @@ export default {
         return new ItemModel();
       }
     }
+  },
+  methods: {
+    share() {
+      this.$root.appInstance.componentInstance.shareItem(this.item);
+    },
+    download() {
+      this.$root.appInstance.componentInstance.printItem(this.item);
+    }
   }
 };
+
 </script>

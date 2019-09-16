@@ -1,5 +1,6 @@
 <template>
   <v-app :style="themeCSSVariables">
+    <PrintItem id="printedItem" ref="printedItem" v-if="printedItem != null" :item="printedItem" v-on:imageUrlSet="printItemLoaded" />
     <router-view :style="cssProps" />
   </v-app>
 </template>
@@ -8,6 +9,7 @@
 import flavors from "./config";
 import ItemModel from "./models/itemmodel";
 import rssparser from "./services/rssparser";
+import PrintItem from "./components/PrintItem";
 
 // Make sure Array.isArray is defined
 if (!Array.isArray) {
@@ -32,6 +34,9 @@ if (!String.hashCode) {
 
 export default {
   name: "App",
+  components: {
+    PrintItem
+  },
   mounted() {
     console.log("App mounted");
     this.storeWatchObject = this.$store.watch(
@@ -64,11 +69,38 @@ export default {
 
   data() {
     return {
-      url: "Please enter a URL"
+      url: "Please enter a URL",
+      printedItem: null
     }
   },
 
   methods: {
+
+    shareItem(item) {
+      //TODO
+      console.log("Share item: " + item.title);
+    },
+
+    printItem(item) {
+      // Set "printedItem". This will result in ParintItem getting showed. We then wait for the
+      // event "itemUrlSet" to continue the print operation after that. See "printItemLoaded" below.
+      this.printedItem = item;
+    },
+
+    printItemLoaded() {
+      const self = this;
+
+      // Wait a tick to allow everything to settle.
+      this.$nextTick(function() {
+        window.focus();
+        window.onafterprint = function(event) {
+          self.printedItem = null;
+          window.onafterprint = null;
+        };
+        window.print();
+      });
+    },
+
     updateFlavor() {
       console.log("SET FLAVOR TO " + this.$store.state.flavor);
       let flavor = flavors[this.$store.state.flavor];
@@ -189,3 +221,26 @@ export default {
   }
 };
 </script>
+
+<style>
+@media screen {
+  #printedItem {
+    display: none;
+   }
+}
+
+@media print {
+ body * {
+  visibility:hidden;
+  }
+  #printedItem, #printedItem * {
+    visibility:visible !important;
+  }
+  #printedItem {
+    position: absolute !important;
+    left:0;
+    top:0;
+    width: 100%;
+  }
+}
+</style>

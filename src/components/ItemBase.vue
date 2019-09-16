@@ -27,9 +27,11 @@ export default {
     if (this.item != null && this.item.imageSrc != null) {
       MediaCache.getMedia(this.item.imageSrc, false, function(url) {
         self.imageUrl = url;
+        self.$emit("imageUrlSet");
       });
     } else {
       this.imageUrl = null;
+      this.$emit("imageUrlSet");
     }
   },
   data: () => ({
