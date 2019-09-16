@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-g {
+g, path {
     fill: currentColor !important;
 }
 </style>
