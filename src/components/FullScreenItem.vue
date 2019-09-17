@@ -10,7 +10,7 @@
           <v-toolbar-title class="toolbarTitle">{{ item.title }}</v-toolbar-title>
         </v-app-bar>
         <v-card color="white" flat :style="cssProps">
-          <div style="height: 200px; display: grid" v-if="hasImage">
+          <div style="height: var(--v-theme-caption-image-height); max-height: 40vh; display: grid" v-if="hasImage">
             <v-img
               class="white--text"
               :src="imageSrc"
@@ -202,6 +202,7 @@ export default {
 .toolbar {
   height: 50px;
   background-color: rgba(255, 255, 255, calc(1 - var(--v-fade-fraction)));
+  z-index: 100;
 }
 
 .toolbarTitle {
@@ -231,6 +232,7 @@ export default {
   height: 60px;
   position: sticky;
   top: 50px;
+  z-index: 100;
 }
 
 .progress {

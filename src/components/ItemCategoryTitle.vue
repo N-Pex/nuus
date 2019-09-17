@@ -78,7 +78,8 @@ export default {
 
 .imageContainer {
   width: 100%;
-  height: 200px;
+  height: var(--v-theme-caption-image-height);
+  max-height: 40vh;
   background-color: white;
 }
 </style>

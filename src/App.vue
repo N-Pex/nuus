@@ -186,6 +186,8 @@ export default {
           "calc(var(--v-theme-title-line-height) * " + factor + ")",
         "--v-theme-title-line-height-scaled-x2":
           "calc(var(--v-theme-title-line-height) * 2 * " + factor + ")",
+        "--v-theme-caption-image-height":
+          "calc(var(--v-theme-title-line-height) * 10 * " + factor + ")",
         "--v-theme-image-height":
           "calc(var(--v-theme-title-line-height) * 6 * " + factor + ")",
         "--v-theme-image-width":

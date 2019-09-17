@@ -6,13 +6,13 @@
       style="background-color: var(--v-cardBackground-base)"
       justify-space-between
     >
-      <v-flex shrink style="min-width: var(--v-theme-image-width)" mt-0 pt-0 v-if="hasImage || playable" v-bind:class="imageClassObject">
+      <v-flex shrink style="max-width: var(--v-theme-image-width);width: 30%" mt-0 pt-0 v-if="hasImage || playable" v-bind:class="imageClassObject">
         <v-img
           :aspect-ratio="4/3"
           class="image ma-0 mb-2 pa-0 text-center"
           :src="imageSrc"
           @error="onError"
-          style="height: var(--v-theme-image-height);width: var(--v-theme-image-width);"
+          style="width: var(--v-theme-image-width);"
           v-on="!playable ? { click: itemClicked } : {}"
         >
           <v-layout pa-2 column fill-height class="lightbox white--text" justify-center>

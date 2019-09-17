@@ -612,7 +612,7 @@ export default {
 }
 
 .fullScreenItem {
-  background-color: rgb(245, 248, 239);
+  background-color: white;
   z-index: 20;
   position: fixed;
   top: 0;

@@ -1,6 +1,6 @@
 <template>
         <v-card color="white" flat ma-0 pa-0>        
-          <div style="height: 200px; display: grid">
+          <div style="height: var(--v-theme-caption-image-height); display: grid">
             <img
               v-if="hasImage"
               class="white--text image"
@@ -73,8 +73,8 @@ export default {
 
 .image {
   width: 100%;
-  height: 200px;
-  max-height: 200px;
+  height: var(--v-theme-caption-image-height);
+  max-height: 40vh;
   object-fit: cover;
   background-color: aqua;
 }
