@@ -1,14 +1,24 @@
 <template>
   <div class="mainRoot" :style="cssProps">
-    <v-app-bar flat :absolute="useTransparentAppBar" :class="{ 'mainListHeader': !useTransparentAppBar, 'transparentAppBar': useTransparentAppBar }">
+    <v-app-bar
+      flat
+      :absolute="useTransparentAppBar"
+      :class="{ 'mainListHeader': !useTransparentAppBar, 'transparentAppBar': useTransparentAppBar }"
+    >
       <v-app-bar-nav-icon>
         <v-icon color="#1B9739">$vuetify.icons.logo</v-icon>
       </v-app-bar-nav-icon>
       <v-spacer />
-      <v-toolbar-title :class="{ 'feedTitleWhite': useTransparentAppBar, 'feedTitle': true, 'text-uppercase': true}">{{ $store.state.currentFeedTitle }}</v-toolbar-title>
+      <v-toolbar-title
+        :class="{ 'feedTitleWhite': useTransparentAppBar, 'feedTitle': true, 'text-uppercase': true}"
+      >{{ $store.state.currentFeedTitle }}</v-toolbar-title>
     </v-app-bar>
 
-    <div :class="{'mainItemList': useTransparentAppBar, 'mainItemListMinusAppBar': !useTransparentAppBar, 'ma-0': true}" v-on:scroll="onHeaderScroll" ref="mainItemList">
+    <div
+      :class="{'mainItemList': useTransparentAppBar, 'mainItemListMinusAppBar': !useTransparentAppBar, 'ma-0': true}"
+      v-on:scroll="onHeaderScroll"
+      ref="mainItemList"
+    >
       <!-- IF headerTags prop is set, show a header -->
       <div
         v-if="headerType != null"
@@ -31,11 +41,30 @@
             @click="onHeaderTag(tag)"
           >{{ tag.name }}</v-chip>
         </v-chip-group>
+
+        <v-chip-group
+          v-else-if="headerType == 'categories' && headerTagsCategories.length == 0"
+          active-class="selectedTag"
+          mandatory
+          show-arrows
+        >
+          <!-- No categories loaded, just insert a hidden placeholder here -->
+          <v-chip
+            active-class="selectedTag"
+            class="text-uppercase"
+            color="transparent"
+            text-color="black"
+            label
+            style="display: none"
+          >{{ "No categories" }}</v-chip>
+        </v-chip-group>
+
         <v-chip-group
           v-else-if="headerType == 'categories'"
           active-class="selectedTag"
           mandatory
           show-arrows
+          v-model="selectedTag"
         >
           <v-chip
             active-class="selectedTag"
@@ -45,7 +74,6 @@
             label
             v-for="tag in headerTagsCategories"
             :key="tag.value"
-            @click="onHeaderTag(tag)"
           >{{ tag.name }}</v-chip>
         </v-chip-group>
       </div>
@@ -53,14 +81,39 @@
       <!-- End of header -->
 
       <!-- If empty saved tab -->
-      <v-container v-if="currentHeaderTag != null && currentHeaderTag.value.startsWith('saved_') && filteredItems.length == 0"
-       fluid>
+      <v-container
+        v-if="currentHeaderTag != null && currentHeaderTag.value.startsWith('saved_') && filteredItems.length == 0"
+        fluid
+      >
         <v-layout fill-height justify-center align-center>
           <v-flex>
             <div class="text-center">
-              <v-icon class="ma-5 pa-0" style="width: 64px; height: 64px" color="green">$vuetify.icons.favorites</v-icon>
+              <v-icon
+                class="ma-5 pa-0"
+                style="width: 64px; height: 64px"
+                color="green"
+              >$vuetify.icons.favorites</v-icon>
             </div>
             <div class="text-center">When you save stories and media, they will appear here.</div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
+      <!-- If empty categories tab -->
+      <v-container
+        v-else-if="headerType == 'categories' && headerTagsCategories.length == 0"
+        fluid
+      >
+        <v-layout fill-height justify-center align-center>
+          <v-flex>
+            <div class="text-center">
+              <v-icon
+                class="ma-5 pa-0"
+                style="width: 64px; height: 64px"
+                color="green"
+              >$vuetify.icons.favorites</v-icon>
+            </div>
+            <div class="text-center">No categories loaded.</div>
           </v-flex>
         </v-layout>
       </v-container>
@@ -155,7 +208,11 @@
       />
     </div>
 
-    <div v-if="fullScreenItem != null && this.$route.query.fullscreen !== undefined" class="fullScreenItem ma-0 pa-0" id="scroll-target">
+    <div
+      v-if="fullScreenItem != null && this.$route.query.fullscreen !== undefined"
+      class="fullScreenItem ma-0 pa-0"
+      id="scroll-target"
+    >
       <FullScreenItem v-on:close="onCloseFullscreen()" :item="fullScreenItem" />
     </div>
   </div>
@@ -207,7 +264,7 @@ export default {
         "Item clicked " + eventInfo.item.title + " at rect " + eventInfo.rect
       );
       this.fullScreenItem = eventInfo.item;
-      this.$router.push('?fullscreen');
+      this.$router.push("?fullscreen");
     },
 
     setMediaPlayer(mediaPlayer) {
@@ -282,7 +339,6 @@ export default {
     },
 
     onHeaderScroll(e) {
-      console.log("On header scroll");
       let offsetTop = e.target.scrollTop;
       this.headerScrollFraction = Math.min(
         1,
@@ -291,7 +347,6 @@ export default {
     },
 
     onHeaderTag(tag) {
-      console.log("Tag selected: " + tag);
       this.currentHeaderTag = tag;
     },
 
@@ -307,7 +362,6 @@ export default {
 
     scrollToTop() {
       //TODO - call this onShow or similar, when tab is changed
-      console.log("Updated, scroll to top");
       this.$refs.mainItemList.scrollTop = 0;
     },
 
@@ -319,43 +373,37 @@ export default {
         this.currentHeaderTag.value.startsWith("saved_")
       ) {
         const self = this;
-        db.items.toArray().then(
-          (items) => {
-              self.filteredItems = self.sortItemsOnPubDate(
-              items
-                .map(function itemObject(item) {
-                  return ItemModel.fromString(item.item);
-                })
-                .filter(function(i) {
-                  return i.savedByUser != null;
-                })
-                .filter(function(i) {
-                  var saveDate = new Date(parseInt(i.savedByUser, 10));
-                  if (self.currentHeaderTag.value == "saved_week") {
-                    return (
-                      moment()
-                        .subtract(7, "days")
-                        .isBefore(saveDate)
-                    );
-                  } else if (self.currentHeaderTag.value == "saved_month") {
-                    return (
-                      moment()
-                        .subtract(1, "months")
-                        .isBefore(saveDate)
-                    );
-                  }
-                  return true;
-                })
-        )});
+        db.items.toArray().then(items => {
+          self.filteredItems = self.sortItemsOnPubDate(
+            items
+              .map(function itemObject(item) {
+                return ItemModel.fromString(item.item);
+              })
+              .filter(function(i) {
+                return i.savedByUser != null;
+              })
+              .filter(function(i) {
+                var saveDate = new Date(parseInt(i.savedByUser, 10));
+                if (self.currentHeaderTag.value == "saved_week") {
+                  return moment()
+                    .subtract(7, "days")
+                    .isBefore(saveDate);
+                } else if (self.currentHeaderTag.value == "saved_month") {
+                  return moment()
+                    .subtract(1, "months")
+                    .isBefore(saveDate);
+                }
+                return true;
+              })
+          );
+        });
       } else if (
         this.currentHeaderTag != null &&
         this.currentHeaderTag.value.startsWith("cat_")
-        ) {
-        this.filteredItems = this.sortItemsOnPubDate(
-          this.$store.state.currentFeedItems.filter(function(i) {
-            return Math.random() > 0.5;
-          })
-        );
+      ) {
+          var index = parseInt(this.currentHeaderTag.value.substr(4), 10);
+          var cat = this.$store.state.currentFeedCategories[index];
+          this.filteredItems = this.sortItemsOnPubDate(cat.items);
       } else {
         this.filteredItems = this.sortItemsOnPubDate(
           this.$store.state.currentFeedItems.filter(function(i) {
@@ -417,16 +465,19 @@ export default {
   },
 
   created() {
-    this.$root.$on('favChanged', () => {
-      if (this.currentHeaderTag != null && this.currentHeaderTag.value.startsWith("saved_")) {
+    this.$root.$on("favChanged", () => {
+      if (
+        this.currentHeaderTag != null &&
+        this.currentHeaderTag.value.startsWith("saved_")
+      ) {
         this.updateFilteredItems();
       }
-    })
+    });
   },
 
   beforeDestroy() {
     console.log("BeforeDestroyed");
-    this.$root.$off('favChanged');
+    this.$root.$off("favChanged");
   },
 
   destroyed() {
@@ -453,7 +504,7 @@ export default {
     this.updateFilteredItems();
     this.updateHeader();
   },
-  
+
   data() {
     return {
       showMediaList: false,
@@ -463,14 +514,6 @@ export default {
         { name: "All", value: "saved_all" },
         { name: "This week", value: "saved_week" },
         { name: "This month", value: "saved_month" }
-      ],
-      headerTagsCategories: [
-        { name: "Politics", value: "cat_politics" },
-        { name: "Analysis", value: "cat_analysis" },
-        { name: "Human rights", value: "cat_human_rights" },
-        { name: "Economics", value: "cat_economics" },
-        { name: "Sports", value: "cat_sports" },
-        { name: "Foreign politics", value: "cat_foreign_politics" }
       ],
       headerScrollFraction: 1,
       currentHeaderTag: null,
@@ -484,7 +527,33 @@ export default {
       };
     },
     useTransparentAppBar() {
-      return this.currentHeaderTag == null;
+      return this.headerType == null;
+    },
+    headerTagsCategories() {
+      var cats = [];
+      for (var i = 0; i < this.$store.state.currentFeedCategories.length; i++) {
+        let cat = this.$store.state.currentFeedCategories[i];
+        cats.push({ name: cat.category, value: "cat_" + i });
+      }
+      return cats;
+    },
+    selectedTag: {
+      get: function () {
+        if (this.currentHeaderTag != null) {
+          if (this.headerType == "saved") {
+            return this.headerTagsSaved.indexOf(this.currentHeaderTag);
+          }
+          return this.headerTagsCategories.indexOf(this.currentHeaderTag);
+        }
+        return 0;
+      },
+      set: function (val) {
+          if (this.headerType == "saved") {
+            this.currentHeaderTag = this.headerTagsSaved[val];
+          } else {
+            this.currentHeaderTag = this.headerTagsCategories[val];
+          }
+      }
     }
   }
 };
@@ -501,7 +570,12 @@ export default {
 }
 
 .transparentAppBar {
-  background-color: rgba(255,255,255,calc(1 - var(--v-header-scroll-fraction))) !important;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    calc(1 - var(--v-header-scroll-fraction))
+  ) !important;
 }
 
 .mainRoot {
@@ -576,12 +650,14 @@ export default {
     calc(255 * var(--v-header-scroll-fraction)),
     1
   ) !important;
-  text-decoration: underline rgba(
-    calc(255 * var(--v-header-scroll-fraction)),
-    calc(255 * var(--v-header-scroll-fraction)),
-    calc(255 * var(--v-header-scroll-fraction)),
-    1
-  ) solid;
+  text-decoration: underline
+    rgba(
+      calc(255 * var(--v-header-scroll-fraction)),
+      calc(255 * var(--v-header-scroll-fraction)),
+      calc(255 * var(--v-header-scroll-fraction)),
+      1
+    )
+    solid;
 }
 
 .mainListHeader {

@@ -56,17 +56,6 @@ export default {
     }
   },
 
-  updated() {
-    console.log("App updated");
-    // let flavor = flavors[this.$store.state.flavor];
-    // if (process.env.NODE_ENV === "production") {
-    //   // For production builds, default to first url in config.
-    //   this.urlUpdated(flavor.feeds[0].url);
-    // } else {
-    //   this.urlUpdated("./assets/nasa.xml");
-    // }
-  },
-
   data() {
     return {
       url: "Please enter a URL",
@@ -129,18 +118,33 @@ export default {
 
       if (process.env.NODE_ENV === "production") {
         // For production builds, default to first url in config.
-        this.urlUpdated(flavor.feeds[0].url);
+        this.serviceUpdated(flavor.services[0]);
       } else {
-        this.urlUpdated("./assets/nasa.xml");
+        this.serviceUpdated({title: "Nasa Test", url: "./assets/nasa.xml", categories: []});
       }
     },
 
-    urlUpdated(url) {
-      this.url = url;
+    serviceUpdated(service) {
+      this.url = service.url;
       const self = this;
-      rssparser.fetchUrl(url, function(feed, items) {
+      self.$store.commit("clearCategories");
+      rssparser.fetchUrl(this.url, function(feed, items) {
         self.$store.commit("setCurrentFeedTitle", feed.title);
         self.$store.commit("setCurrentFeedItems", items);
+        if (service.categories != null) {
+          for (var i = 0; i < service.categories.length; i++) {
+            const index = i;
+            var category = service.categories[i];
+            let url = category.url;
+            rssparser.fetchUrl(url, function(feed, items) {
+              var catTitle = feed.category;
+              if (catTitle == null || catTitle.length == 0) {
+                catTitle = "Category " + (index + 1);
+              }
+              self.$store.commit("addCategoryItems", {category: catTitle, feed: feed, items: items});
+            });
+          }
+        }
       });
     },
 

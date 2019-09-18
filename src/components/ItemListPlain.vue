@@ -16,7 +16,6 @@
               v-on:itemClicked="itemClicked($event)"
               v-on:playItem="playItem($event)"
               v-on:playStarted="onPlayStarted($event)"
-              v-show="item.savedByUser != null"
             />
           </v-flex>
         </v-layout>

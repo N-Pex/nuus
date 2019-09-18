@@ -9,7 +9,7 @@
           <v-list-item
             v-for="(item, index) in menuItems"
             :key="index"
-            @click="menuItemClicked(item.url)"
+            @click="serviceSelected(item)"
           >
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
@@ -35,27 +35,33 @@ export default {
     url: String
   },
   mounted: function() {
-    let feeds = flavors[this.$store.state.flavor].feeds;
-    for (var i = 0; i < feeds.length; ++i) {
-      let feed = feeds[i];
-      this.menuItems.splice(i, 0, {title: feed.title, url: feed.url});
+    let services = flavors[this.$store.state.flavor].services;
+    for (var i = 0; i < services.length; ++i) {
+      let service = services[i];
+      this.menuItems.splice(i, 0, service);
     }
   },
   data: () => ({
     menuItems: [
-      { title: "NASA Audio/Video test feed", url: "./assets/nasa.xml" }
+      { title: "NASA Audio/Video test feed", url: "./assets/nasa.xml", categories: [] }
 /*      { title: "The Guardian", url: "./assets/test.xml" },
       { title: "Zipped bundle", url: "./assets/bundle.zip" },
       { title: "NASA Audio", url: "./assets/nasa2.xml" }*/
     ],
-    dataUrl: ""
+    dataUrl: "",
+    service: null
   }),
+  watch: {
+    dataUrl() {
+      this.service = {title: "Custom feed", url: this.data, categories: []};
+    }
+  },
   methods: {
     loadIconClicked() {
-      this.$emit("update:url", this.dataUrl);
+      this.$emit("update:service", this.service);
     },
-    menuItemClicked(url) {
-      this.dataUrl = url;
+    serviceSelected(service) {
+      this.service = service;
       this.loadIconClicked();
     }
   }

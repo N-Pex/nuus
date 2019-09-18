@@ -22,7 +22,8 @@ export default new Vuex.Store({
     flavor: "english",
     textSizeAdjustment: 0,
     currentFeedTitle: "",
-    currentFeedItems: []
+    currentFeedItems: [],
+    currentFeedCategories: []
   },
   mutations: {
     onboarded (state, onboarded) {
@@ -42,6 +43,12 @@ export default new Vuex.Store({
     },
     setCurrentFeedItems(state, items) {
       state.currentFeedItems = items;
+    },
+    clearCategories(state) {
+      state.currentFeedCategories = [];
+    },
+    addCategoryItems(state, category) {
+      state.currentFeedCategories.push(category);
     }
  },
   plugins: [vuexPersist.plugin]

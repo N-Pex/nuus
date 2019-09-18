@@ -5,6 +5,12 @@ import FeedModel from '../models/feedmodel.js';
 import ItemModel from '../models/itemmodel.js';
 
 export default class RSSParser {
+
+    static fetchCategoryUrl(url, callback) {
+        // TODO - add cat requests to array, so we can cancel them if main feed changes?
+        return RSSParser.fetchUrl(url, callback);
+    }
+
     static fetchUrl(url, callback) {
         const self = this;
         if (url.endsWith("zip")) {
@@ -125,6 +131,26 @@ export default class RSSParser {
             feed.imageUrl = channelElement["itunes:image"].$.href;
         }
 
+        // Categories
+        var feedCategories = channelElement["itunes:category"];
+        if (feedCategories != null) {
+            if (Array.isArray(feedCategories) && feedCategories.length > 0) {
+                feed.category = feedCategories[0].$.text;
+            } else {
+                feed.category = feedCategories.$.text;
+            }
+        }
+        if (feed.category == null) {
+            var feedCategories = channelElement["category"];
+            if (feedCategories != null) {
+                if (Array.isArray(feedCategories) && feedCategories.length > 0) {
+                    feed.category = self.getText(feedCategories[0]);
+                } else {
+                    feed.category = self.getText(feedCategories);
+                }
+            }    
+        }
+
         itemParentElement.item.forEach(i => {
             var item = new ItemModel();
             item.feed = feedUrl;
@@ -175,7 +201,7 @@ export default class RSSParser {
             if (categories != null) {
                 if (Array.isArray(categories) && categories.length > 0) {
                     item.category = self.getText(categories[0]);
-                } else if (mediaContent != null) {
+                } else if (categories != null) {
                     item.category = self.getText(categories);
                 }
             }

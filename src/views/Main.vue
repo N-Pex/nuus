@@ -56,7 +56,7 @@
               <v-list-item>
                 <v-list-item-content>
                   <UrlInput
-                    v-on:update:url="urlUpdated($event)"
+                    v-on:update:service="serviceUpdated($event)"
                     v-bind:url="this.$root.appInstance.componentInstance.url"
                   />
                 </v-list-item-content>
@@ -161,10 +161,10 @@ export default {
       this.$root.mediaPlayerInvisible = false;
     },
 
-    urlUpdated(url) {
+    serviceUpdated(service) {
       this.oldActiveTab = 0;
       this.showSettings = false;
-      this.$root.appInstance.componentInstance.urlUpdated(url);
+      this.$root.appInstance.componentInstance.serviceUpdated(service);
       this.showHome();
     }
   }

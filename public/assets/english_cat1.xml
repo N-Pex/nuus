@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns="http://purl.org/rss/1.0/" xmlns:enc="http://purl.oclc.org/net/rss_2.0/enc#">
+
+
+
+
+    
+
+
+
+
+<channel rdf:about="https://www.rfa.org/english/RSS">
+  <title>RFA Home</title>
+  <link>https://www.rfa.org</link>
+  <category>Science &amp; Medicine</category>
+  <description>
+    
+      RFA is a private, nonprofit corporation that broadcasts news and information to listeners in Asian countries where full, accurate, and timely news reports are unavailable.
+    
+  </description>
+  
+
+  
+            <syn:updatePeriod>hourly</syn:updatePeriod>
+            <syn:updateFrequency>1</syn:updateFrequency>
+            <syn:updateBase>2012-05-16T23:01:44Z</syn:updateBase>
+        
+
+  <image rdf:resource="/english/images/rfa-logo-400.jpg"/>
+
+  <items>
+    <rdf:Seq>
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/korea/nk-pyongsan-uranium-08282019180529.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/vietnam/southchina-sea-malaysia-08282019191927.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/tibet/sichuan-yachengar-08282019173854.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/cambodia/restrictions-08282019172340.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/myanmar/myanmar-army-sues-kachin-pastor-08282019170236.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/myanmar/bodies-of-four-victims-recovered-08282019162618.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/uyghur/letter-08282019154954.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/philippines-apology-08282019154628.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/vietnam/australia-vietnam-laos-hr-dialogue-08282019151620.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/cartoons/fentanyl-china-cartoon-08282019145726.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/hongkong-rally-08282019134512.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/china/thinktank-closed-08282019131354.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/laos/troops-08272019175857.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/myanmar/ongoing-clashes-in-myanmars-rakhine-state-08272019170323.html"/>
+          
+      
+      
+	      
+		      <rdf:li rdf:resource="https://www.rfa.org/english/news/laos/migrants-08272019160657.html"/>
+          
+      
+    </rdf:Seq>
+  </items>
+
+</channel>
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/korea/nk-pyongsan-uranium-08282019180529.html">
+		<title>South Korea Analyzes Seawater for Nuclear Waste Contamination from North Korean Uranium Mine</title>
+    <link>https://www.rfa.org/english/news/korea/nk-pyongsan-uranium-08282019180529.html</link>
+    <description>Waste may have leaked from a pipeline into a river that flows into the Yellow Sea.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/korea/nk-pyongsan-uranium-08282019180529.html/pyongsan-uranium-nk.jpg"></img><p>The government of South Korea is conducting analyses on seawater samples taken from the Yellow sea, situated west of the Korean peninsula, after a report by RFA’s Korean Service raised the possibility of radioactive waste from a uranium mine in North Korea flowing into the sea.</p>
+<p>RFA’s report published on August 15<sup> </sup>said that waste from the Pyongsan uranium mine in North Hwanghae province, and its ore milling process, were leaking from a pipeline constructed over the Ryesong river, with the potential to contaminate downstream locations including the sea. It cited claims by Jacob Vogel, a U.S.-based North Korea expert.</p>
+<p>The river flows south into the estuary where the Han river meets the sea. The estuary is divided by the de-facto maritime border between the two Koreas, called the Northern Limit Line (NLL) in the South.</p>
+<p>“We collected the seawater near the NLL on the morning of August 23<sup>rd</sup>, and we are already analyzing [the samples],” said Lee Sang-min, a spokesperson for South Korea’s Unification Ministry.</p>
+<p>“The analysis will take about two weeks,” said the spokesperson, adding that the ministry would release more details once the study is complete.</p>
+<p>The ministry also said on a social networking site on Aug. 23 that it would also collect and analyze seawater from six other locations near the NLL.</p>
+<p>During a press briefing, Lee said that Pyongsan has only uranium mines and uranium mills, and that experts are advising the government that radioactive contaminants in those types of facilities cannot harm the human body.</p>
+<p>Regardless, concerned voices in the public sector are calling for accurate fact-finding missions to ensure public safety.</p>
+<p>Shin Yong-hyeon, a spokesperson for South Korea’s opposition Bareunmirae Party, said during a party meeting Tuesday that the decision to analyze the seawater was a belated response.</p>
+<p>Meanwhile the <i>Seoul Shinmun</i> newspaper published an article by the Institute of Korean Studies’ Park Sang-Eun Monday which urged the South Korean government to conduct an investigation into the matter with private scholars.</p>
+<p>Experts in South Korea point out that there is a need to confirm North Korean authorities are properly managing the mine, because even a tiny amount of radiation could be harmful if it is stored in the human body for a long period of time.</p>
+<p>Kim Ik-jung, a former medical professor at Seoul’s Dongguk University who served as a member of the Nuclear Safety and Security Commission, told RFA that North Korean authorities had a responsibility to ensure the safety of the mine.</p>
+<p>“Poor post-management of inactive mines often leads to river water contamination,” said Kim.</p>
+<p>“If North Korea is actually digging up uranium there, they are obliged to do a number of things to verify the safety of the mines and to secure them.”</p>
+<p><b><i>Reported by Seoung Wook Hong for RFA’s Korean Service. Translated by Leejin Jun. Written in English by Eugene Whong.</i></b></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    
+      <dc:subject>pollution</dc:subject>
+    
+    
+      <dc:subject>nuclear</dc:subject>
+    
+    <dc:date>2019-08-29T01:07:58Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/vietnam/southchina-sea-malaysia-08282019191927.html">
+		<title>Malaysia, Vietnam Voice ‘Serious Concern’ About South China Sea</title>
+    <link>https://www.rfa.org/english/news/vietnam/southchina-sea-malaysia-08282019191927.html</link>
+    <description>Disputes should be resolved through peaceful means, Prime Ministers Mahathir Mohamad and Nguyen Xuan Phuc say.</description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/vietnam/southchina-sea-malaysia-08282019191927.html/vn-my.jpg"></img><p>Malaysia and Vietnam on Wednesday expressed “serious concern over recent developments in the South China Sea” after Chinese vessels challenged their energy assets and sea boundaries in the disputed region.</p>
+<p>The two countries issued a joint statement underscoring “the importance” of maintaining peace, stability, security and the rule of law in the vast sea in conjunction with a three-day visit to Vietnam by Malaysian Prime Minister Mahathir Mohamad.</p>
+<p>Mahathir held talks with his Vietnamese counterpart Nguyen Xuan Phuc on Tuesday, after which Phuc said the two countries would work closely with other Southeast Asian nations to ensure freedom of navigation and overflight in disputed areas in the South China Sea, Malaysian media reported.</p>
+<p>In their statement, Malaysia and Vietnam also emphasized “the importance of self-restraint, non-militarization” and “avoidance of activities that may escalate tensions.”</p>
+<p>The statement came as a Chinese survey vessel extended its activities to an area closer to Vietnam's coastline at the weekend and the Chinese coast guard tracked around an oil rig on Malaysia’s continental shelf.</p>
+<p>The Haiyang Dizhi 8 vessel first entered Vietnam's exclusive economic zone early last month for seismic survey, triggering a tense standoff between military and coast guard vessels from Vietnam and China.</p>
+<p>Hanoi described the incursions as a “serious violation” of Vietnamese sovereignty and demanded that Beijing remove the vessel.</p>
+<p>The United States accused China of using “bullying tactics” by carrying out "coercive interference" in oil and gas activities in waters claimed by Vietnam.</p>
+<p>China claims nearly all of the South China Sea. The Philippines, Taiwan, Brunei, Malaysia and Vietnam also have overlapping territorial claims to the sea, which is vital to international shipping and trade.</p>
+<p>Meanwhile, a Chinese survey ship, “Shiyan 2,” was spotted operating in Malaysia’s EEZ near the Luconia Breakers, according to information posted on Twitter on Aug. 4 by Ryan Martinson, a professor at the U.S. Naval College in Washington. On Aug. 9, he reported that the same ship was continuing to operate in the EEZ, which lies off Sarawak state in Malaysian Borneo.</p>
+<p>On Aug. 14, Martinson posted more information saying that another Chinese survey ship, “Haiyang 4,” was heading to Malaysia’s exclusive zone.</p>
+<p>Malaysian officials have not confirmed the reports about the alleged intrusions but told BenarNews, an RFA-affiliated online news service, that they would look into them.</p>
+<p>Malaysian Foreign Minister Saifuddin Abdullah said recently that the 2002 Declaration of Conduct Parties, which set loose guidelines of behavior by claimant nations in the sea region, had “no fangs” and Beijing’s militarization could potentially escalate regional tensions.</p>
+<p>In their joint statement Wednesday, Kuala Lumpur and Hanoi underlined support for the full and effective implementation of a code of conduct in the sea region.<br/><br/>“The two sides agreed that disputes shall be resolved through peaceful means, including full respect for legal and diplomatic processes, without resorting to the threat or use or force,” the statement said.</p>
+<p>China has built numerous military installations with advanced ballistic-missile capabilities on reclaimed islands under its control in the South China Sea.</p>
+<p><i><strong>Reported by BenarNews, an RFA-affiliated online news service.</strong></i></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-08-28T23:27:45Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+
+	
+    <item rdf:about="https://www.rfa.org/english/news/tibet/sichuan-yachengar-08282019173854.html">
+		<title>Photo Shows Dramatic Demolition of Yachen Gar Buddhist Complex</title>
+    <link>https://www.rfa.org/english/news/tibet/sichuan-yachengar-08282019173854.html</link>
+    <description>A vast expanse of grass is all that remains of half the complex in Sichuan. </description>
+         
+    <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<img src="https://www.rfa.org/english/news/tibet/sichuan-yachengar-08282019173854.html/tibet-complex.jpg"></img><p>Rapid demolition at the Yachen Gar Tibetan Buddhist center in western China’s Sichuan province has raised nearly half of the sprawling complex, leaving a vast patch of grass where thousands on nuns and monks once lived and studied, sources in the region told RFA’s Tibetan Service.</p>
+<p>"Almost half of the entire Yachen Gar complex has been razed since the demolition of the nuns' dwellings began in July,” said a source in Tibet.</p>
+<p>Demolition of the nuns’ dwellings the sprawling center in Palyul (in Chinese, Baidu) county began on July 19 and moved ahead quickly, with at least 100 structures now torn down, a Tibetan living in the area told RFA last month.</p>
+<p>The destruction follows the forced removal beginning in May of over 7,000 residents of Yachen Gar, which once housed around 10,000 monks and nuns devoted to scriptural study and meditation.</p>
+<p>A short video clip taken on August 11 and sent to RFA shows that Chinese authorities moved quickly with the demolition, leaving only barren ground where the dwellings were leveled.</p>
+<p>A photo of Yachen Gar received by RFA on Tuesday shows a clear flat site where the 3000 nuns’ dwellings once stood.</p>
+<p>"The Chinese authorities took days to clear the wreckage of Yachen Gar. Now in its place, they have planted grass, and the ground is covered by green plastic," said a source in exile, who spoke to contacts in Tibet.</p>
+<p>"Almost half of the Yachen Gar complex has been destroyed,” said the source in Tibet.</p>
+<p>“It takes a walk of about 20-30 minutes to cover the entire length of the leveled ground," said the source.</p>
+<p>"The Chinese authorities have cordoned off the areas from pedestrians and also to foster the growth of grass,” added the source.</p>
+<p>"The Chinese authorities still intend to destroy more monks’ dwellings in other parts of Yachen Gar. However, due to repeated appeals by senior monks, it is temporarily put on hold,” said the source in Tibet.</p>
+<p>“A definitive and stern order from high-level authorities would easily break the truce,” added the source.</p>
+<p>Many of those expelled from Yachen Gar are now being held in detention and subjected to political re-education and beatings, sources told RFA in earlier reports.</p>
+<p>Chinese officials have meanwhile been stationed at the center to “maintain a tight watch” over those who remain and to check on all outside visitors, while travel to and from the center is strictly monitored and restricted, sources say.</p>
+<p>Restrictions on Yachen Gar and the better-known Larung Gar complex in Sichuan’s Serthar (Seda) county are part of “an unfolding political strategy” aimed at controlling the influence and growth of these important centers for Tibetan Buddhist study and practice, a Tibetan advocacy group said in a March 2017 report.</p>
+<p>“[Both centers] have drawn thousands of Chinese practitioners to study Buddhist ethics and receive spiritual teaching since their establishment, and have bridged Tibetan and Chinese communities,” the Washington-based International Campaign for Tibet said.<br/> <br/> During 2017 and 2018, at least 4,820 Tibetan and Han Chinese monks and nuns were removed from Larung Gar, with over 7,000 dwellings and other structures torn down beginning in 2001, according to sources in the region.</p>
+<p><b><i>Reported by Kunsang Tenzin for RFA’s Tibetan Service. Translated by Dorjee Damdul. Written in English by Paul Eckert.</i></b></p>]]></content:encoded>
+    <dc:publisher>Radio Free Asia</dc:publisher>
+    <dc:creator></dc:creator>
+    <dc:rights></dc:rights>
+    <dc:date>2019-08-28T21:46:09Z</dc:date>
+    <dc:type>Story</dc:type>
+  </item>
+
+
+</rdf:RDF>

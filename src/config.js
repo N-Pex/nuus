@@ -10,7 +10,7 @@ export default {
                 }
             }
         },
-        feeds: [
+        services: [
             {title: "Main service", url: "https://www.rfa.org/uyghur/RSS"},
             {title: "Main service (cached)", url: "./assets/uyghur.xml"}
         ],
@@ -27,7 +27,7 @@ export default {
                 }
             }
         },
-        feeds: [
+        services: [
             {title: "Main service", url: "https://www.rfa.org/mandarin/RSS"},
             {title: "Main service (cached)", url: "./assets/mandarin.xml"}
         ],
@@ -44,7 +44,7 @@ export default {
                 }
             }
         },
-        feeds: [
+        services: [
             {title: "Main service", url: "https://www.rfa.org/cantonese/RSS"}
         ],
         isRTL: false
@@ -60,7 +60,7 @@ export default {
                 }
             }
         },
-        feeds: [
+        services: [
             {title: "Main service", url: "https://www.rfa.org/burmese/RSS"}
         ],
         isRTL: false
@@ -73,9 +73,12 @@ export default {
                 families: ['Roboto']
             }
         },
-        feeds: [
+        services: [
             {title: "Main service", url: "https://www.rfa.org/english/RSS"},
-            {title: "Main service (cached)", url: "./assets/english.xml"}
+            {title: "Main service (cached)", url: "./assets/english.xml", categories: [
+                {url: "./assets/english_cat1.xml"},
+                {url: "./assets/english_cat2.xml"}
+            ]}
         ],
         isRTL: false
     }

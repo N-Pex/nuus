@@ -7,6 +7,7 @@ export default class FeedModel extends Object {
             this.link = o.link;
             this.description = o.description;
             this.imageUrl = o.imageUrl;
+            this.category = o.category;
         }
     }
 
@@ -15,4 +16,5 @@ export default class FeedModel extends Object {
     link = "";
     description = "";
     imageUrl = null;
+    category = null;
 }
