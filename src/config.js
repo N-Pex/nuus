@@ -74,7 +74,10 @@ export default {
             }
         },
         services: [
-            {title: "Main service", url: "https://www.rfa.org/english/RSS"},
+            {title: "Main service", url: "https://www.rfa.org/english/RSS", categories: [
+                {url: "./assets/english_cat1.xml"},
+                {url: "./assets/english_cat2.xml"}
+            ]},
             {title: "Main service (cached)", url: "./assets/english.xml", categories: [
                 {url: "./assets/english_cat1.xml"},
                 {url: "./assets/english_cat2.xml"}
