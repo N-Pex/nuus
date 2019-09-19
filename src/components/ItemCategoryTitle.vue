@@ -20,7 +20,7 @@
       <v-flex>
         <div class="itemCategory text-uppercase">{{ item.category }}</div>
         <div @click="itemClicked()" ml-2 mr-2 mt-0 pt-0>
-          <div class="itemTitle">{{ item.title }}</div>
+          <div class="itemTitleFeatured">{{ item.title }}</div>
           <div class="contentBlock mt-2">
             <div
               v-html="item.description"
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-.itemTitle,
+.itemTitleFeatured,
 .itemBody,
 .itemDate,
 .tiny {
