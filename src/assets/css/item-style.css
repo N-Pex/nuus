@@ -75,3 +75,17 @@
     font-size: var(--v-theme-body-font-size-scaled);
     line-height: var(--v-theme-body-line-height-scaled);
 }
+
+.pullquote {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #666666;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-family: var(--v-theme-title-featured-font);
+    font-size: var(--v-theme-title-featured-font-size-scaled);
+    line-height: var(--v-theme-title-featured-line-height-scaled);
+}

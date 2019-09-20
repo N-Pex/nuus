@@ -86,7 +86,16 @@ export default {
             {title: "Main service (cached)", url: "./assets/english.xml", categories: [
                 {url: "./assets/english_cat1.xml"},
                 {url: "./assets/english_cat2.xml"}
+            ]},
+            {title: "Test RSS 2.0", url: "https://tengview.rfaweb.org/english/gp-app/main-feed/app_rss.xml", categories: [
+                {url: "https://tengview.rfaweb.org/english/gp-app/category1/app_rss.xml"},
+                {url: "https://tengview.rfaweb.org/english/gp-app/category2/app_rss.xml"}
+            ]},
+            {title: "Test RSS 2.0 (cached)", url: "./assets/rss2_main.xml", categories: [
+                {url: "./assets/rss2_cat1.xml"},
+                {url: "./assets/rss2_cat2.xml"}
             ]}
+
         ],
         isRTL: false
     }
