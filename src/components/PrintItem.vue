@@ -57,8 +57,8 @@ export default {
 
 <style>
 @media print {
-  @import url("../assets/item-style.css");
-  @import url("../assets/shared-styles.css");  
+  @import url("../assets/css/item-style.css");
+  @import url("../assets/css/shared-styles.css");  
 }
 </style>
 
@@ -66,7 +66,7 @@ export default {
 
 .itemImageTitle {
   position: relative;
-  font-size: var(--v-theme-title-font-size-scaled);
+  font-size: var(--v-theme-title-featured-font-size-scaled);
   left: 0px;
   color: white;
 }

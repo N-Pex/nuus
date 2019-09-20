@@ -164,13 +164,13 @@
             </div>
             <div
               class="mediaItemTitle"
-              style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden"
+              style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden"
             >{{ playingMediaItem.title }}</div>
             <div class="contentBlock mt-2">
               <div
                 v-html="playingMediaItem.description"
                 class="mediaItemBody"
-                style="max-height:var(--v-theme-media-body-line-height-scaled-x2);overflow:hidden"
+                style="max-height:var(--v-theme-body-line-height-scaled-x2);overflow:hidden"
               />
             </div>
             <Share :item="playingMediaItem" />
@@ -560,8 +560,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("../assets/item-style.css");
-@import url("../assets/shared-styles.css");
+@import url("../assets/css/item-style.css");
+@import url("../assets/css/shared-styles.css");
 </style>
 
 <style>

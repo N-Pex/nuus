@@ -5,7 +5,7 @@
         <v-img aspect-ratio="1.77" max-height="70px" :src="imageSrcOrFeedImage" ma-0 pa-0 />
       </v-flex>
       <v-flex @click="itemClicked()" xs7 ml-2 mr-2 mt-0 pt-0>
-        <div style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
+        <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
           {{ item.title }}
         </div>
         <div>

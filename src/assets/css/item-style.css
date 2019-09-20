@@ -9,42 +9,42 @@
 
 .itemTitle {
     color: var(--v-primary-base);
-    font-family: var(--v-theme-media-title-font);
-    font-size: var(--v-theme-media-title-font-size-scaled);
-    font-weight: 700;
-    line-height: var(--v-theme-media-title-line-height-scaled);
-}
-
-.itemTitleFeatured {
-    color: var(--v-primary-base);
     font-family: var(--v-theme-title-font);
     font-size: var(--v-theme-title-font-size-scaled);
     font-weight: 700;
     line-height: var(--v-theme-title-line-height-scaled);
+}
+
+.itemTitleFeatured {
+    color: var(--v-primary-base);
+    font-family: var(--v-theme-title-featured-font);
+    font-size: var(--v-theme-title-featured-font-size-scaled);
+    font-weight: 700;
+    line-height: var(--v-theme-title-featured-line-height-scaled);
 }
 
 .itemCategory {
     color: var(--v-primary-base);
     font-family: var(--v-theme-title-font);
-    font-size: calc(0.8 * var(--v-theme-title-font-size-scaled));
+    font-size: calc(0.8 * var(--v-theme-title-featured-font-size-scaled));
     font-weight: 400;
-    line-height: calc(0.8 * var(--v-theme-title-line-height-scaled));
+    line-height: calc(0.8 * var(--v-theme-title-featured-line-height-scaled));
 }
 
 .headerTitle {
     color: white;
     font-family: var(--v-theme-title-font);
-    font-size: var(--v-theme-title-font-size-scaled);
+    font-size: var(--v-theme-title-featured-font-size-scaled);
     font-weight: 700;
-    line-height: var(--v-theme-title-line-height-scaled);
+    line-height: var(--v-theme-title-featured-line-height-scaled);
 }
 
 .itemDescription {
     color: var(--v-primary-base);
     font-family: var(--v-theme-title-font);
-    font-size: var(--v-theme-title-font-size-scaled);
+    font-size: var(--v-theme-title-featured-font-size-scaled);
     font-weight: 400;
-    line-height: var(--v-theme-title-line-height-scaled);
+    line-height: var(--v-theme-title-featured-line-height-scaled);
 }
 
 .itemBody {
@@ -63,15 +63,15 @@
 
 .mediaItemTitle {
     color: var(--v-primary-base);
-    font-family: var(--v-theme-media-title-font);
-    font-size: var(--v-theme-media-title-font-size-scaled);
+    font-family: var(--v-theme-title-font);
+    font-size: var(--v-theme-title-font-size-scaled);
     font-weight: 700;
-    line-height: var(--v-theme-media-title-line-height-scaled);
+    line-height: var(--v-theme-title-line-height-scaled);
 }
 
 .mediaItemBody {
     color: var(--v-primary-base);
-    font-family: var(--v-theme-media-body-font);
-    font-size: var(--v-theme-media-body-font-size-scaled);
-    line-height: var(--v-theme-media-body-line-height-scaled);
+    font-family: var(--v-theme-body-font);
+    font-size: var(--v-theme-body-font-size-scaled);
+    line-height: var(--v-theme-body-line-height-scaled);
 }

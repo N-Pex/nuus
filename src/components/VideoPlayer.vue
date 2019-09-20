@@ -116,7 +116,7 @@
             style="min-width: 0;min-height: 0; position:relative;top:0px">
             <v-icon class="tiny">$vuetify.icons.expand</v-icon>
           </v-btn>
-                <div class="text-left mediaItemBody" style="max-height:var(--v-theme-media-body-line-height-scaled);overflow:hidden">{{ itemTitle }}</div>
+                <div class="text-left mediaItemBody" style="max-height:var(--v-theme-body-line-height-scaled);overflow:hidden">{{ itemTitle }}</div>
         </v-flex>
 
         <v-flex xs1 v-show="isDocked" class="text-center">

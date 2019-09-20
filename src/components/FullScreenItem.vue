@@ -217,7 +217,7 @@ export default {
 
 .itemImageTitle {
   position: relative;
-  font-size: var(--v-theme-title-font-size-scaled);
+  font-size: var(--v-theme-title-featured-font-size-scaled);
   left: calc(40px * (1 - var(--v-move-fraction)));
   color: rgba(
     calc(255 * var(--v-fade-fraction)),

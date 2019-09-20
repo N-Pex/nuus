@@ -172,8 +172,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("../assets/item-style.css");
-@import url("../assets/shared-styles.css");
+@import url("../assets/css/item-style.css");
+@import url("../assets/css/shared-styles.css");
 
 .contentView {
   position: fixed;

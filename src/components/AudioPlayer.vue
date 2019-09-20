@@ -66,14 +66,14 @@
                 <div>
                   <DateView class="itemDate verticalCenter" :date="item.pubDate" />
                 </div>
-                <div class="mediaItemTitle" style="max-height:var(--v-theme-media-title-line-height-scaled-x2);overflow:hidden">{{ itemTitle }}</div>
+                <div class="mediaItemTitle" style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden">{{ itemTitle }}</div>
                 
                 <div class="contentBlock mt-2">
                   <span class="mediaItemBody" style="color: green" flat>Read more</span>
                   <!--<div
                     v-html="item.description"
                     class="mediaItemBody"
-                    style="max-height:var(--v-theme-media-body-line-height-scaled-x2);overflow:hidden"
+                    style="max-height:var(--v-theme-body-line-height-scaled-x2);overflow:hidden"
                   />-->
                 </div>
               </v-flex>

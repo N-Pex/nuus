@@ -1,6 +1,7 @@
 export default {
     uyghur: {
-        themeCSSVariables: require("!css-loader!@/assets/css/uyghur.css").toString(),
+        webFontName: "'AlpidaUnicodeSystem', 'Roboto', sans-serif",
+        webFontSize: "15pt",
         webFontCssFile: "./assets/fonts/uyghur.css",
         webFontConfig: {
             custom: {
@@ -17,7 +18,8 @@ export default {
         isRTL: true
     },
     mandarin: {
-        themeCSSVariables: require("!css-loader!@/assets/css/mandarin.css").toString(),
+        webFontName: "'Microsoft YaHei', 'Roboto', sans-serif",
+        webFontSize: "15pt",
         webFontCssFile: "./assets/fonts/mandarin.css",
         webFontConfig: {
             custom: {
@@ -34,7 +36,8 @@ export default {
         isRTL: false
     },
     cantonese: {
-        themeCSSVariables: require("!css-loader!@/assets/css/cantonese.css").toString(),
+        webFontName: "'Microsoft YaHei', 'Roboto', sans-serif",
+        webFontSize: "15pt",
         webFontCssFile: "./assets/fonts/cantonese.css",
         webFontConfig: {
             custom: {
@@ -50,7 +53,8 @@ export default {
         isRTL: false
     },
     burmese: {
-        themeCSSVariables: require("!css-loader!@/assets/css/burmese.css").toString(),
+        webFontName: "'Zawgyi-One', 'Roboto', sans-serif",
+        webFontSize: "15pt",
         webFontCssFile: "./assets/fonts/burmese.css",
         webFontConfig: {
             custom: {
@@ -66,7 +70,8 @@ export default {
         isRTL: false
     },
     english: {
-        themeCSSVariables: require("!css-loader!@/assets/css/english.css").toString(),
+        webFontName: "'Roboto', sans-serif",
+        webFontSize: "15pt",
         webFontCssFile: "./assets/fonts/english.css",
         webFontConfig: {
             google: {

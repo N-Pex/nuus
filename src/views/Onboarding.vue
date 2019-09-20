@@ -55,5 +55,5 @@ export default {
 </script>
 
 <style scoped>
-@import url("../assets/item-style.css");
+@import url("../assets/css/item-style.css");
 </style>

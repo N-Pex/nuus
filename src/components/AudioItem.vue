@@ -10,10 +10,10 @@
             &nbsp;
             <DateView class="itemDate verticalCenter" :date="item.pubDate" ago />
         </div>
-        <div style="max-height:var(--v-theme-title-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
+        <div style="max-height:var(--v-theme-title-featured-line-height-scaled-x2);overflow:hidden" :class="{mediaItemTitle: true, selected: isSelected}">
           {{ item.title }}
         </div>
-        <div style="margin-top:8px;max-height:var(--v-theme-media-body-line-height-scaled);overflow:hidden" class="mediaItemBody">
+        <div style="margin-top:8px;max-height:var(--v-theme-body-line-height-scaled);overflow:hidden" class="mediaItemBody">
           <div v-html="item.description"/>
         </div>
       </v-flex>
