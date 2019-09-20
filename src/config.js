@@ -2,7 +2,7 @@ export default {
     uyghur: {
         webFontName: "'AlpidaUnicodeSystem', 'Roboto', sans-serif",
         webFontSize: "15pt",
-        webFontCssFile: "./assets/fonts/uyghur.css",
+        webFontCssFile: "./assets/fonts/alpida.css",
         webFontConfig: {
             custom: {
                 families: ["AlpidaUnicodeSystem"],
@@ -20,12 +20,12 @@ export default {
     mandarin: {
         webFontName: "'Microsoft YaHei', 'Roboto', sans-serif",
         webFontSize: "15pt",
-        webFontCssFile: "./assets/fonts/mandarin.css",
+        webFontCssFile: "./assets/fonts/yahei.css",
         webFontConfig: {
             custom: {
-                families: ["AlpidaUnicodeSystem"],
+                families: ["Microsoft YaHei"],
                 testStrings: {
-                    "AlpidaUnicodeSystem": "\u067E"
+                    "Microsoft YaHei": "\u4E00"
                 }
             }
         },
@@ -38,12 +38,12 @@ export default {
     cantonese: {
         webFontName: "'Microsoft YaHei', 'Roboto', sans-serif",
         webFontSize: "15pt",
-        webFontCssFile: "./assets/fonts/cantonese.css",
+        webFontCssFile: "./assets/fonts/yahei.css",
         webFontConfig: {
             custom: {
-                families: ["AlpidaUnicodeSystem"],
+                families: ["Microsoft YaHei"],
                 testStrings: {
-                    "AlpidaUnicodeSystem": "\u067E"
+                    "Microsoft YaHei": "\u4E00"
                 }
             }
         },
@@ -55,7 +55,7 @@ export default {
     burmese: {
         webFontName: "'Zawgyi-One', 'Roboto', sans-serif",
         webFontSize: "15pt",
-        webFontCssFile: "./assets/fonts/burmese.css",
+        webFontCssFile: "./assets/fonts/zawgyione.css",
         webFontConfig: {
             custom: {
                 families: ["Zawgyi-One"],
@@ -72,7 +72,7 @@ export default {
     english: {
         webFontName: "'Roboto', sans-serif",
         webFontSize: "15pt",
-        webFontCssFile: "./assets/fonts/english.css",
+        webFontCssFile: "./assets/fonts/roboto.css",
         webFontConfig: {
             google: {
                 families: ['Roboto']
