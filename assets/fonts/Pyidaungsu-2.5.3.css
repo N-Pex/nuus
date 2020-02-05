@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Pyidaungsu';
+    src: url('Pyidaungsu-2.5.3_Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pyidaungsu';
+    src: url('Pyidaungsu-2.5.3_Bold.ttf') format('truetype');
+    font-weight: bold;
+}

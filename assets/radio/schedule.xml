@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<broadcast_schedule xmlns:rfaba="http://rfa.org/xml/broadcast_schedule">
+<rfaba:service>
+    <rfaba:service_name>Burmese</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>00:30</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_1/index.m3u8</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>12:30</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_2/index.m3u8</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>13:30</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_3/index.m3u8</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Cantonese</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>14:00</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_1/index.m3u8</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Mandarin</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>03:00</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_1/index.m3u8</rfaba:url>
+        <rfaba:duration>210</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>15:00</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_1/index.m3u8</rfaba:url>
+        <rfaba:duration>420</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>23:00</rfaba:start_time>
+        <rfaba:url>https://rfahls-i.akamaihd.net/hls/live/226232/RFALive_1/index.m3u8</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Korean</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>10:00</rfaba:start_time>
+        <rfaba:url>http://rfalive2.akacast.a...et/RFALive2.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>15:00</rfaba:start_time>
+        <rfaba:url>http://rfalive2.akacast.a...et/RFALive2.m3u</rfaba:url>
+        <rfaba:duration>240</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>21:00</rfaba:start_time>
+        <rfaba:url>http://rfalive2.akacast.a...et/RFALive2.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Lao</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>00:00</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>11:00</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Khmer</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>12:30</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>14:30</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>30</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>22:30</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Tibetan</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>01:00</rfaba:start_time>
+        <rfaba:url>http://rfalive4.akacast.a...et/RFALive4.m3u</rfaba:url>
+        <rfaba:duration>120</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>06:00</rfaba:start_time>
+        <rfaba:url>http://rfalive4.akacast.a...et/RFALive4.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>10:00</rfaba:start_time>
+        <rfaba:url>http://rfalive4.akacast.a...et/RFALive4.m3u</rfaba:url>
+        <rfaba:duration>240</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>15:00</rfaba:start_time>
+        <rfaba:url>http://rfalive4.akacast.a...et/RFALive4.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>22:00</rfaba:start_time>
+        <rfaba:url>http://rfalive4.akacast.a...et/RFALive4.m3u</rfaba:url>
+        <rfaba:duration>120</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Uyghur</rfaba:service_name>
+    <rfaba:broadcast>
+        <rfaba:start_time>01:00</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+    <rfaba:broadcast>
+        <rfaba:start_time>16:00</rfaba:start_time>
+        <rfaba:url>http://rfalive3.akacast.a...et/RFALive3.m3u</rfaba:url>
+        <rfaba:duration>60</rfaba:duration>
+    </rfaba:broadcast>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Vietnamese</rfaba:service_name>
+</rfaba:service>
+<rfaba:service>
+    <rfaba:service_name>Bengali</rfaba:service_name>
+</rfaba:service>
+</broadcast_schedule>
